@@ -28,7 +28,3 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-unix|win32: LIBS += -L'C:/Program Files/PostgreSQL/14/lib/' -llibpq
-
-INCLUDEPATH += 'C:/Program Files/PostgreSQL/14/include'
-DEPENDPATH += 'C:/Program Files/PostgreSQL/14/include'

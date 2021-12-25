@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <task_manager.h>
+#include <QJsonObject>
+
 
 
 QT_BEGIN_NAMESPACE
