@@ -9,12 +9,20 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->setCurrentIndex(0);
     tasker= new Task_manager(this);
     tasker->Init();
+    ui->centralwidget=ui->stackedWidget;
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 
+}
+
+void MainWindow::on_EnterMainWindow()
+{
+    connect(this,SIGNAL(contactSelected(QListWidgetItem*,QLabel*)),tasker,SLOT(on_ContactSelected(QListWidgetItem*,QLabel*)));
+    connect(this,SIGNAL(sendMessage(QLineEdit*)),tasker,SLOT(on_SendMessage(QLineEdit*)));
+    tasker->chat_pane = ui->chat_pane;
 }
 
 
@@ -27,6 +35,7 @@ void MainWindow::on_login_btn_clicked()
     tasker->ValidateLoginDetails(details);
     if(tasker->IsLoginSuccessful()){
        tasker->SetupMainPage(ui->stackedWidget);
+       tasker->SetupContacts(ui->contacts_list);
     }
     else{
         ui->status_label_login->setStyleSheet("QLabel{color: red}");
@@ -54,5 +63,20 @@ void MainWindow::on_submit_btn_signup_clicked()
     if(tasker->IsSignUpSuccessful()){
         tasker->SetupLoginPage(ui->stackedWidget);
     }
+}
+
+
+void MainWindow::on_send_btn_chat_clicked()
+{
+    //qDebug()<<"send clicked";
+    emit sendMessage(ui->message_box_chat);
+}
+
+
+void MainWindow::on_contacts_list_itemClicked(QListWidgetItem *item)
+{
+
+    emit contactSelected(item,ui->username_label_chat);
+   // qDebug()<<"Contact selected main window";
 }
 

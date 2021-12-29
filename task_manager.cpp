@@ -6,6 +6,7 @@
 Task_manager::Task_manager(QObject *parent)
     : QObject{parent}
 {
+        connect(this,SIGNAL(enteredMainWindow()),parent,SLOT(on_EnterMainWindow()));
 }
 
 void Task_manager::Init()
@@ -33,6 +34,17 @@ void Task_manager::ValidateLoginDetails(const QJsonObject &details)
     if(query.next()){
         qDebug()<<"User details are correct";
         this->SetState(STATUS::LOGIN_SUCCESSFUL);
+        query.exec("SELECT id,username,firstname,lastname,contactno FROM public.users WHERE username='"+username+"';");
+        if(query.next()){
+            profile_details.id = query.value(0).toInt();
+            profile_details.user_name = query.value(1).toString().toStdString();
+            profile_details.first_name = query.value(2).toString().toStdString();
+            profile_details.last_name = query.value(3).toString().toStdString();
+            profile_details.contactno = query.value(4).toString().toStdString();
+        }
+        else{
+            qDebug()<<query.lastError().text();
+        }
     }
     else{
         qDebug()<<query.lastError();
@@ -81,6 +93,9 @@ void Task_manager::SetupMainPage(QStackedWidget *pager)
 {
     if(this->GetState()==STATUS::LOGIN_SUCCESSFUL){
         pager->setCurrentIndex(2);
+        emit enteredMainWindow();
+        x_SetupMainWindowControls();
+
     }
 }
 
@@ -88,6 +103,17 @@ void Task_manager::SetupLoginPage(QStackedWidget *pager)
 {
     if(this->GetState()==STATUS::SIGNUP_SUCCESSFUL){
         pager->setCurrentIndex(0);
+    }
+
+}
+
+void Task_manager::SetupContacts(QListWidget *contact_list)
+{
+    QSqlQuery query(this->x_db);
+    query.exec("SELECT username FROM public.users WHERE username!='"+QString::fromStdString(profile_details.user_name)+"';");
+    while(query.next()){
+      qDebug()<<query.value(0);
+      contact_list->addItem(query.value(0).toString());
     }
 
 }
@@ -110,6 +136,30 @@ bool Task_manager::IsLoginSuccessful()
 bool Task_manager::IsSignUpSuccessful()
 {
     return (this->GetState()==STATUS::SIGNUP_SUCCESSFUL);
+}
+
+void Task_manager::on_ContactSelected(QListWidgetItem *contact, QLabel* name)
+{
+   // qDebug()<<"Contact selected";
+    name->setText(contact->text());
+    emit setUpChatConnection(contact->text(),profile_details);
+
+}
+
+void Task_manager::on_SendMessage(QLineEdit *msg)
+{
+    QSqlQuery query(x_db);
+    x_chat_manager->SendChat(msg->text().toStdString());
+    //qDebug()<<"reached taskmanager send btn";
+    msg->clear();
+}
+
+void Task_manager::x_SetupMainWindowControls()
+{
+    this->x_chat_manager = new ChatManager(this);
+    this->x_chat_manager->query = new QSqlQuery(this->x_db);
+    this->x_chat_manager->chat_pane = this->chat_pane;
+    connect(this,SIGNAL(setUpChatConnection(QString,profile)),x_chat_manager,SLOT(on_SetupChatConnection(QString,profile)));
 }
 
 
