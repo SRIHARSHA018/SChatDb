@@ -8,7 +8,8 @@
 #include <QListWidget>
 #include <QListWidgetItem>
 #include <QLabel>
-
+#include <set>
+#include <profile.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,10 +23,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 signals:
-    void contactSelected(QListWidgetItem* contact,QLabel* name);
+    void contactSelected(QListWidgetItem* contact,QLabel* name,STATUS mode);
     void sendMessage(QLineEdit* msg);
 public slots:
     void on_EnterMainWindow();
+    void on_cleanUpGroupsPage();
+    void on_cleanUpLoginPage();
 
 private slots:
     void on_login_btn_clicked();
@@ -38,9 +41,34 @@ private slots:
 
     void on_contacts_list_itemClicked(QListWidgetItem *item);
 
+    void on_groups_list_itemClicked(QListWidgetItem *item);
+
+    void on_createGroup_btn_clicked();
+
+    void on_editProfile_btn_clicked();
+
+    void on_save_details_profile_clicked();
+
+    void on_Home_btn_clicked();
+
+    void on_Home_btn_2_clicked();
+
+    void on_contactListtoAddtoGroup_itemClicked(QListWidgetItem *item);
+
+    void on_removeGroupMember_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_create_group_btn_clicked();
+
+    void on_signout_btn_clicked();
+
+    void on_submit_btn_signup_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     Task_manager* tasker;
-
+    std::set<QString> x_group_members;
+    void x_cleanUpEverything();
 };
 #endif // MAINWINDOW_H

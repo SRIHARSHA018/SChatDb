@@ -10,6 +10,18 @@ struct profile{
     int id=-1;
 };
 
+enum STATUS{
+    LOGIN_SUCCESSFUL,
+    LOGIN_FAILED,
+
+    SIGNUP_SUCCESSFUL,
+    SIGNUP_FAILED,
+
+    REGULAR_CHAT,
+    GROUP_CHAT
+};
+
+
 
 
 #endif // PROFILE_H

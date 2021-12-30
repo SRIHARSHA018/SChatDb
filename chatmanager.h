@@ -23,16 +23,20 @@ class ChatManager : public QObject
 public:
     explicit ChatManager(QObject *parent = nullptr);
     void SendChat(std::string msg);
+    void SendGroupChat(std::string msg);
     void DisplayChat();
+    void DisplayGroupChat();
     QSqlQuery* query;
     QListWidget* chat_pane;
 signals:
 public slots:
     void on_SetupChatConnection(QString name,profile details);
+    void on_SetupGroupChatConnection(QString name,profile details);
 private:
     int x_sender_id;
     profile x_profile_details_reciever;
     void x_fetchRecieverDetails();
+    void x_fetchGroupRecieverDetails();
 };
 
 #endif // CHATMANAGER_H

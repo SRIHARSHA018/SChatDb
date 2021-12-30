@@ -25,6 +25,22 @@ void ChatManager::SendChat(std::string msg)
    }
 }
 
+void ChatManager::SendGroupChat(std::string msg)
+{
+    query->prepare("INSERT INTO public.group_messages (message,sender_id,group_id) VALUES (?,?,?);");
+    query->bindValue(0,QString::fromStdString(msg));
+    //qDebug()<<this->x_sender_id;
+    query->bindValue(1,this->x_sender_id);
+    query->bindValue(2,this->x_profile_details_reciever.id);
+    if(query->exec()){
+      qDebug()<<"message inserted";
+      this->DisplayGroupChat();
+    }
+    else{
+        qDebug()<<query->lastError();
+    }
+}
+
 void ChatManager::DisplayChat()
 {
     chat_pane->clear();
@@ -43,7 +59,7 @@ void ChatManager::DisplayChat()
                 chat_pane->addItem(item);
             }
             else{
-                item->setTextAlignment(Qt::AlignRight);
+                item->setTextAlignment(Qt::AlignLeft);
                 chat_pane->addItem(item);
             }
         }
@@ -51,10 +67,37 @@ void ChatManager::DisplayChat()
     else{
         qDebug()<<query->lastError();
     }
+
     chat_pane->scrollToBottom();
 
 }
+void ChatManager::DisplayGroupChat()
+{
+    chat_pane->clear();
+    query->prepare("SELECT message,sender_id,group_id FROM public.group_messages WHERE group_id=? ORDER BY id ASC;");
+    query->bindValue(0,this->x_profile_details_reciever.id);
+    if(query->exec()){
+        //qDebug()<<"got messages";
+        while(query->next()){
+            QListWidgetItem* item =new QListWidgetItem(query->value(0).toString());
+          //qDebug()<<query->value(0).toString()<<" "<<query->value(1).toString()<<" "<<query->value(2).toString();
+            if(query->value(1).toInt()==this->x_sender_id){
+                item->setTextAlignment(Qt::AlignRight);
+                chat_pane->addItem(item);
+            }
+            else{
+                item->setTextAlignment(Qt::AlignLeft);
+                chat_pane->addItem(item);
+            }
+        }
+    }
+    else{
+        qDebug()<<query->lastError();
+    }
 
+    chat_pane->scrollToBottom();
+
+}
 
 void ChatManager::on_SetupChatConnection(QString name,profile details)
 {
@@ -64,6 +107,15 @@ void ChatManager::on_SetupChatConnection(QString name,profile details)
     this->x_fetchRecieverDetails();
     this->DisplayChat();
     //qDebug()<<"contact setup done";
+}
+
+void ChatManager::on_SetupGroupChatConnection(QString name, profile details)
+{
+    this->x_sender_id = details.id;
+    //qDebug()<<"Chat connection established"<<name;
+    this->x_profile_details_reciever.user_name = name.toStdString();
+    this->x_fetchGroupRecieverDetails();
+    this->DisplayGroupChat();
 }
 
 void ChatManager::x_fetchRecieverDetails()
@@ -76,4 +128,15 @@ void ChatManager::x_fetchRecieverDetails()
         else{
             qDebug()<<query->lastError();
         }
+}
+
+void ChatManager::x_fetchGroupRecieverDetails()
+{
+    query->exec("SELECT id FROM public.groups WHERE group_name='"+QString::fromStdString(this->x_profile_details_reciever.user_name)+"';");
+    if(query->next()){
+        this->x_profile_details_reciever.id=query->value(0).toInt();
+    }
+    else{
+        qDebug()<<query->lastError();
+    }
 }
