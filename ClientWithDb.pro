@@ -11,17 +11,20 @@ CONFIG += c++11
 
 SOURCES += \
     chatmanager.cpp \
+    emoji_pop_up.cpp \
     main.cpp \
     mainwindow.cpp \
     task_manager.cpp
 
 HEADERS += \
     chatmanager.h \
+    emoji_pop_up.h \
     mainwindow.h \
     profile.h \
     task_manager.h
 
 FORMS += \
+    emoji_pop_up.ui \
     mainwindow.ui
 
 # Default rules for deployment.

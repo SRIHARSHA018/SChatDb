@@ -6,21 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>967</width>
-    <height>625</height>
+    <width>1003</width>
+    <height>684</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
       <x>19</x>
       <y>9</y>
-      <width>941</width>
-      <height>581</height>
+      <width>971</width>
+      <height>631</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -39,7 +51,7 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -166,7 +178,7 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -363,8 +375,8 @@
        <rect>
         <x>0</x>
         <y>20</y>
-        <width>931</width>
-        <height>531</height>
+        <width>961</width>
+        <height>601</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -499,6 +511,14 @@
          </item>
          <item>
           <widget class="QListWidget" name="chat_pane">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
            <property name="verticalScrollBarPolicy">
             <enum>Qt::ScrollBarAlwaysOff</enum>
            </property>
@@ -516,7 +536,20 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QLineEdit" name="message_box_chat"/>
+            <widget class="QLineEdit" name="message_box_chat">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="emoji_btn">
+             <property name="text">
+              <string>emojis</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QPushButton" name="send_btn_chat">
@@ -533,7 +566,7 @@
      </widget>
     </widget>
     <widget class="QWidget" name="EditProfile">
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -738,7 +771,7 @@
      </widget>
     </widget>
     <widget class="QWidget" name="groupcreation_page">
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -908,7 +941,7 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -919,7 +952,7 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_7"/>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -930,7 +963,7 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_8"/>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -942,17 +975,6 @@
     <layout class="QVBoxLayout" name="verticalLayout_9"/>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>967</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

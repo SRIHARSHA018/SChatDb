@@ -22,7 +22,7 @@ void MainWindow::on_EnterMainWindow()
 {
     connect(this,SIGNAL(contactSelected(QListWidgetItem*,QLabel*,STATUS)),tasker,SLOT(on_ContactSelected(QListWidgetItem*,QLabel*,STATUS)));
     connect(this,SIGNAL(sendMessage(QLineEdit*)),tasker,SLOT(on_SendMessage(QLineEdit*)));
-    ui->username_label_chat->setText(QString("\xF0\x9F\x98\x81"));
+    ui->username_label_chat->setText(QString(" hiiii \xF0\x9F\x98\x81"));
     tasker->chat_pane = ui->chat_pane;
 }
 
@@ -39,6 +39,11 @@ void MainWindow::on_cleanUpLoginPage()
 {
     ui->username_box->clear();
     ui->password_box->clear();
+}
+
+void MainWindow::on_emojiSelected(QString emoji)
+{
+    ui->message_box_chat->setText(ui->message_box_chat->text()+emoji);
 }
 
 
@@ -212,5 +217,11 @@ void MainWindow::x_cleanUpEverything()
     ui->contacts_list->clear();
     ui->groups_list->clear();
     ui->chat_pane->clear();
+}
+
+void MainWindow::on_emoji_btn_clicked()
+{
+    this->emojisWin =new emoji_pop_up(this);
+    emojisWin->show();
 }
 

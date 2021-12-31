@@ -7,8 +7,11 @@
 #include <QLineEdit>
 #include <QListWidget>
 #include <QListWidgetItem>
+#include <QTableWidget>
+#include <QTableWidgetItem>
 #include <QLabel>
 #include <set>
+#include <emoji_pop_up.h>
 #include <profile.h>
 
 QT_BEGIN_NAMESPACE
@@ -29,6 +32,7 @@ public slots:
     void on_EnterMainWindow();
     void on_cleanUpGroupsPage();
     void on_cleanUpLoginPage();
+    void on_emojiSelected(QString emoji);
 
 private slots:
     void on_login_btn_clicked();
@@ -57,18 +61,19 @@ private slots:
 
     void on_removeGroupMember_clicked();
 
-    void on_pushButton_clicked();
-
     void on_create_group_btn_clicked();
 
     void on_signout_btn_clicked();
 
     void on_submit_btn_signup_2_clicked();
 
+    void on_emoji_btn_clicked();
+
 private:
     Ui::MainWindow *ui;
     Task_manager* tasker;
     std::set<QString> x_group_members;
     void x_cleanUpEverything();
+    emoji_pop_up* emojisWin;
 };
 #endif // MAINWINDOW_H
