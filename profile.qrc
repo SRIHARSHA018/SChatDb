@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/profile">
+        <file>resources/Profile_avatar_placeholder_large.png</file>
+    </qresource>
+</RCC>

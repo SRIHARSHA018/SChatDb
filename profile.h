@@ -7,6 +7,7 @@ struct profile{
     std::string first_name;
     std::string last_name;
     std::string contactno;
+    std::string profile_pic=":/profile/resources/Profile_avatar_placeholder_large.png";
     int id=-1;
 };
 

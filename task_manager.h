@@ -36,7 +36,8 @@ public:
     bool IsSignUpSuccessful();
     void setUpEditProfileWindow(QStackedWidget* pager);
     void setProfileDetails(const QJsonObject& details);
-    void displayDetails(QListWidget* preview);
+    void displayDetails(QListWidget* preview,QLabel* profile_pic);
+    void setProfilePic(const std::string& filename);
     profile profile_details;
     QListWidget* chat_pane;
 

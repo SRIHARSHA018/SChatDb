@@ -1,5 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QPixmap>
+#include <QFileDialog>
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -118,7 +122,7 @@ void MainWindow::on_createGroup_btn_clicked()
 void MainWindow::on_editProfile_btn_clicked()
 {
     tasker->setUpEditProfileWindow(ui->stackedWidget);
-    tasker->displayDetails(ui->PreviewDetails_list);
+    tasker->displayDetails(ui->PreviewDetails_list,ui->profile_picture);
 }
 
 
@@ -151,7 +155,7 @@ void MainWindow::on_save_details_profile_clicked()
         }
     }
     tasker->setProfileDetails(changed_profile_details);
-    tasker->displayDetails(ui->PreviewDetails_list);
+    tasker->displayDetails(ui->PreviewDetails_list,ui->profile_picture);
 }
 
 
@@ -223,5 +227,14 @@ void MainWindow::on_emoji_btn_clicked()
 {
     this->emojisWin =new emoji_pop_up(this);
     emojisWin->show();
+}
+
+
+void MainWindow::on_profile_pic_btn_edit_clicked()
+{
+   QFileDialog dialog(this);
+   auto filename = QFileDialog::getOpenFileName(this,tr("Profile pic"));
+   tasker->setProfilePic(filename.toStdString());
+   tasker->displayDetails(ui->PreviewDetails_list,ui->profile_picture);
 }
 

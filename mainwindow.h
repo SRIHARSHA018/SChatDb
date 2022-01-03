@@ -69,6 +69,8 @@ private slots:
 
     void on_emoji_btn_clicked();
 
+    void on_profile_pic_btn_edit_clicked();
+
 private:
     Ui::MainWindow *ui;
     Task_manager* tasker;

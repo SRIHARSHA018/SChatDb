@@ -237,13 +237,20 @@ void Task_manager::setProfileDetails(const QJsonObject &details)
 
 }
 
-void Task_manager::displayDetails(QListWidget *preview)
+void Task_manager::displayDetails(QListWidget *preview, QLabel* profile_pic)
 {
     preview->clear();
     preview->addItem(QString::fromStdString("Username: "+this->profile_details.user_name));
     preview->addItem(QString::fromStdString("Firstname: "+this->profile_details.first_name));
     preview->addItem(QString::fromStdString("Lastname: "+this->profile_details.last_name));
     preview->addItem(QString::fromStdString("Phone Number: "+this->profile_details.contactno));
+    QPixmap pic(QString::fromStdString(this->profile_details.profile_pic));
+    profile_pic->setPixmap(pic);
+}
+
+void Task_manager::setProfilePic(const std::string &filename)
+{
+    this->profile_details.profile_pic = filename;
 }
 
 void Task_manager::on_ContactSelected(QListWidgetItem *contact, QLabel* name,STATUS mode)
