@@ -38,6 +38,7 @@ public:
     void setProfileDetails(const QJsonObject& details);
     void displayDetails(QListWidget* preview,QLabel* profile_pic);
     void setProfilePic(const std::string& filename);
+    void cleanUp();
     profile profile_details;
     QListWidget* chat_pane;
 

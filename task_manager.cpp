@@ -2,6 +2,9 @@
 #include <QDebug>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QImage>
+#include <QBuffer>
+#include <QPixmap>
 
 Task_manager::Task_manager(QObject *parent)
     : QObject{parent}
@@ -35,13 +38,21 @@ void Task_manager::ValidateLoginDetails(const QJsonObject &details)
     if(query.next()){
         qDebug()<<"User details are correct";
         this->SetState(STATUS::LOGIN_SUCCESSFUL);
-        query.exec("SELECT id,username,firstname,lastname,contactno FROM public.users WHERE username='"+username+"';");
+        query.exec("SELECT id,username,firstname,lastname,contactno,profile_pic FROM public.users WHERE username='"+username+"';");
         if(query.next()){
             profile_details.id = query.value(0).toInt();
             profile_details.user_name = query.value(1).toString().toStdString();
             profile_details.first_name = query.value(2).toString().toStdString();
             profile_details.last_name = query.value(3).toString().toStdString();
             profile_details.contactno = query.value(4).toString().toStdString();
+            if(!query.value(5).isNull()){
+                qDebug()<<"feteched image";
+                QPixmap image;
+                if(image.loadFromData(query.value(5).toByteArray())){
+                    profile_details.profile_pic = image;
+                }
+                //qDebug()<<QString::fromStdString(profile_details.profile_pic);
+            }
         }
         else{
             qDebug()<<query.lastError().text();
@@ -244,13 +255,40 @@ void Task_manager::displayDetails(QListWidget *preview, QLabel* profile_pic)
     preview->addItem(QString::fromStdString("Firstname: "+this->profile_details.first_name));
     preview->addItem(QString::fromStdString("Lastname: "+this->profile_details.last_name));
     preview->addItem(QString::fromStdString("Phone Number: "+this->profile_details.contactno));
-    QPixmap pic(QString::fromStdString(this->profile_details.profile_pic));
-    profile_pic->setPixmap(pic);
+    profile_pic->setPixmap(this->profile_details.profile_pic);
 }
 
 void Task_manager::setProfilePic(const std::string &filename)
 {
-    this->profile_details.profile_pic = filename;
+    QSqlQuery query(this->x_db);
+    query.prepare("UPDATE public.users SET profile_pic= ? WHERE id = ?;");
+
+    QImage image;
+    image.load(QString::fromStdString(filename));
+    QByteArray image_bytes;
+    QBuffer buffer(&image_bytes);
+    buffer.open(QIODevice::WriteOnly);
+    image.save(&buffer,"PNG");
+    query.bindValue(0,image_bytes);
+    query.bindValue(1,this->profile_details.id);
+    if(query.exec()){
+        qDebug()<<"insertion of image successful";
+        if(this->profile_details.profile_pic.loadFromData(image_bytes)){
+            qDebug()<<"profile pic updated successfully";
+        }
+        else{
+            qDebug()<<"Failed to update";
+        }
+    }
+    else{
+        qDebug()<<query.lastError().text();
+    }
+
+}
+
+void Task_manager::cleanUp()
+{
+    this->profile_details.profile_pic = QPixmap(DEFAULT_PROFILE_PIC);
 }
 
 void Task_manager::on_ContactSelected(QListWidgetItem *contact, QLabel* name,STATUS mode)

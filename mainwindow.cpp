@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QPixmap>
 #include <QFileDialog>
-
+#include <QResource>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -208,6 +208,7 @@ void MainWindow::on_signout_btn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     this->x_cleanUpEverything();
+    tasker->cleanUp();
 }
 
 
@@ -221,6 +222,8 @@ void MainWindow::x_cleanUpEverything()
     ui->contacts_list->clear();
     ui->groups_list->clear();
     ui->chat_pane->clear();
+    ui->status_label_login->clear();
+    ui->status_label_signup->clear();
 }
 
 void MainWindow::on_emoji_btn_clicked()
