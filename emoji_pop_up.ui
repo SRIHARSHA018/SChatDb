@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>454</width>
-    <height>282</height>
+    <width>505</width>
+    <height>296</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Emojis</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -21,6 +21,29 @@
        <pointsize>16</pointsize>
       </font>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::NoContextMenu</enum>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableView:item{
+padding:5px;
+}
+QTableView{
+padding:5px;
+}</string>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
      <property name="gridStyle">
       <enum>Qt::NoPen</enum>
      </property>
@@ -28,7 +51,7 @@
       <bool>false</bool>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>73</number>
+      <number>79</number>
      </attribute>
      <row>
       <property name="text">

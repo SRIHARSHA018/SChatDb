@@ -23,8 +23,4 @@ enum STATUS{
     REGULAR_CHAT,
     GROUP_CHAT
 };
-
-
-
-
 #endif // PROFILE_H

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1006</width>
-    <height>719</height>
+    <width>848</width>
+    <height>663</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>SChat</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">
@@ -28,15 +28,6 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_18">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_7"/>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_8"/>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_9"/>
-    </item>
-    <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -44,139 +35,259 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="loginPage">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_13">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <widget class="QLabel" name="status_label_login">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <widget class="QLabel" name="label">
-              <property name="font">
-               <font>
-                <pointsize>20</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Username:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="username_box">
-              <property name="font">
-               <font>
-                <pointsize>18</pointsize>
-               </font>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QLabel" name="label_2">
-              <property name="font">
-               <font>
-                <pointsize>20</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Password :</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="password_box">
-              <property name="font">
-               <font>
-                <pointsize>18</pointsize>
-               </font>
-              </property>
-              <property name="echoMode">
-               <enum>QLineEdit::Password</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="QPushButton" name="login_btn">
-            <property name="text">
-             <string>login</string>
-            </property>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignHCenter">
-           <widget class="QLabel" name="label_3">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="text">
-             <string>OR</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="signup_btn">
-            <property name="text">
-             <string>SIgn Up</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>5</width>
-              <height>50</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
+         <widget class="QWidget" name="LoginForStyle" native="true">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>500</width>
+            <height>500</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(160, 215, 221);
+padding: 10px;
+</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="spacing">
+            <number>1</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>10</number>
+           </property>
+           <property name="rightMargin">
+            <number>10</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>36</pointsize>
+               <italic>true</italic>
+               <underline>true</underline>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Log In</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="status_label_login">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="username_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+	background-color: rgb(217, 217, 217);
+	border-color: rgb(99, 99, 99);
+	border-radius: 5px;
+}</string>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>Username</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="password_box">
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+	background-color: rgb(217, 217, 217);
+	border-color: rgb(99, 99, 99);
+	border-radius: 5px;
+}</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>Password</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="login_btn">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+background-color: rgb(79, 223, 255);
+color: rgb(255, 255, 255);
+padding:10px;
+border-radius:5px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+             </property>
+             <property name="text">
+              <string>Log In</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(172, 172, 172);</string>
+             </property>
+             <property name="text">
+              <string>OR</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="signup_btn">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+background-color: rgb(79, 223, 255);
+color: rgb(255, 255, 255);
+padding:10px;
+border-radius:5px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+             </property>
+             <property name="text">
+              <string>SIgn Up</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -189,180 +300,281 @@
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_14">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_15">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_6">
-            <item>
-             <widget class="QLabel" name="status_label_signup">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QFormLayout" name="formLayout">
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_5">
-                <property name="font">
-                 <font>
-                  <pointsize>20</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Username:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="username_box_signup">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="label_7">
-                <property name="font">
-                 <font>
-                  <pointsize>20</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>First name</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QLineEdit" name="firstname_box_signup">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QLabel" name="label_8">
-                <property name="font">
-                 <font>
-                  <pointsize>20</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Last name</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QLineEdit" name="lastname_box_signup">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="0">
-               <widget class="QLabel" name="label_6">
-                <property name="font">
-                 <font>
-                  <pointsize>20</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Password:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="1">
-               <widget class="QLineEdit" name="password_box_signup">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="0">
-               <widget class="QLabel" name="label_9">
-                <property name="font">
-                 <font>
-                  <pointsize>20</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Confirm Password:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="1">
-               <widget class="QLineEdit" name="confirmpass_box_signup">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="5" column="0">
-               <widget class="QLabel" name="label_10">
-                <property name="font">
-                 <font>
-                  <pointsize>20</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>mobile number:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="5" column="1">
-               <widget class="QLineEdit" name="mobileno_box_signup">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="6" column="1">
-               <widget class="QPushButton" name="submit_btn_signup">
-                <property name="text">
-                 <string>Submit</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="QPushButton" name="submit_btn_signup_2">
-            <property name="text">
-             <string>Back To Login</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <widget class="QWidget" name="signup_styles" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>600</width>
+            <height>600</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(160, 215, 221);
+padding: 10px;
+</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <property name="spacing">
+            <number>7</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>10</number>
+           </property>
+           <property name="rightMargin">
+            <number>10</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <pointsize>36</pointsize>
+               <italic>true</italic>
+               <underline>true</underline>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Sign Up</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QLabel" name="status_label_signup">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="formLayout">
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="username_box_signup">
+                 <property name="font">
+                  <font>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Username</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="firstname_box_signup">
+                 <property name="font">
+                  <font>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Firstname</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="lastname_box_signup">
+                 <property name="font">
+                  <font>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Lastname</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="password_box_signup">
+                 <property name="font">
+                  <font>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Password</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="confirmpass_box_signup">
+                 <property name="font">
+                  <font>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Confirm Password</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QLineEdit" name="mobileno_box_signup">
+                 <property name="font">
+                  <font>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Mobile number</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QPushButton" name="submit_btn_signup">
+                 <property name="font">
+                  <font>
+                   <pointsize>14</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-color: rgb(220, 150, 29);
+padding:10px;
+border-radius:10px;
+}
+QPushButton:pressed{
+background-color: rgb(150, 150, 29);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Submit</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="1">
+                <widget class="QPushButton" name="submit_btn_signup_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>300</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>14</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-color: rgb(220, 150, 29);
+padding:10px;
+border-radius:10px;
+}
+QPushButton:pressed{
+background-color: rgb(150, 150, 29);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Back To Login</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -375,413 +587,826 @@
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_15">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <property name="spacing">
-             <number>6</number>
-            </property>
-            <property name="sizeConstraint">
-             <enum>QLayout::SetDefaultConstraint</enum>
-            </property>
-            <item>
-             <widget class="QLabel" name="label_4">
-              <property name="font">
-               <font>
-                <pointsize>20</pointsize>
-                <bold>true</bold>
-               </font>
+         <widget class="QWidget" name="StyleWholeMain" native="true">
+          <property name="styleSheet">
+           <string notr="true">padding:5px;
+background-color:white;
+</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QFrame" name="StylePaneLeft">
+             <property name="styleSheet">
+              <string notr="true">QFrame{
+border:1px solid black;
+border-radius:5px;
+}</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <property name="spacing">
+               <number>6</number>
               </property>
-              <property name="text">
-               <string>Contacts:</string>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QListWidget" name="contacts_list">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
-               <widget class="QLabel" name="label_11">
+               <widget class="QLabel" name="label_4">
                 <property name="font">
                  <font>
-                  <pointsize>20</pointsize>
-                  <bold>true</bold>
+                  <pointsize>24</pointsize>
+                  <italic>true</italic>
+                  <bold>false</bold>
+                  <underline>true</underline>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">border:0;</string>
+                </property>
                 <property name="text">
-                 <string>Groups:</string>
+                 <string>Contacts</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="createGroup_btn">
-                <property name="text">
-                 <string>create group</string>
+               <widget class="QListWidget" name="contacts_list">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::ClickFocus</enum>
+                </property>
+                <property name="contextMenuPolicy">
+                 <enum>Qt::DefaultContextMenu</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QListView{
+border:0;
+padding:5px;
+margin:5px;
+border:1px solid grey;
+border-radius:10px;
+}
+QListView::item{
+background-color: rgb(220, 85, 0);
+border-radius:10px;
+padding:10px;
+margin:10px;
+}
+QListView::item:selected{
+background-color: rgb(150, 85, 0);
+}</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>false</bool>
                 </property>
                </widget>
               </item>
-             </layout>
-            </item>
-            <item>
-             <widget class="QListWidget" name="groups_list">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
                 <item>
-                 <widget class="QLabel" name="username_label_chat">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
+                 <widget class="QLabel" name="label_11">
                   <property name="font">
                    <font>
-                    <pointsize>20</pointsize>
-                    <bold>true</bold>
+                    <pointsize>24</pointsize>
+                    <italic>true</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">border:0;</string>
+                  </property>
                   <property name="text">
-                   <string/>
+                   <string>Groups:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="signout_btn">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
+                 <widget class="QPushButton" name="createGroup_btn">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{color: rgb(255, 255, 255);
+background-color:rgb(85, 159, 255);
+padding:10px;
+border-radius:10px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
                   </property>
                   <property name="text">
-                   <string>SignOut</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="editProfile_btn">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Edit My Profile</string>
+                   <string>create group</string>
                   </property>
                  </widget>
                 </item>
                </layout>
               </item>
               <item>
-               <widget class="QLabel" name="userstatus_label_chat">
-                <property name="text">
-                 <string/>
+               <widget class="QListWidget" name="groups_list">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::ClickFocus</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QListView{
+border:0;
+padding:10px;
+margin:10px;
+border:1px solid grey;
+border-radius:10px;
+}
+QListView::item{
+background-color: rgb(220, 85, 0);
+border-radius:10px;
+padding:10px;
+margin:10px;
+}
+QListView::item:selected{
+background-color: rgb(150, 85, 0);
+}</string>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::ContiguousSelection</enum>
                 </property>
                </widget>
               </item>
              </layout>
-            </item>
-            <item>
-             <widget class="QListWidget" name="chat_pane">
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="autoFillBackground">
-               <bool>false</bool>
-              </property>
-              <property name="verticalScrollBarPolicy">
-               <enum>Qt::ScrollBarAlwaysOff</enum>
-              </property>
-              <property name="horizontalScrollBarPolicy">
-               <enum>Qt::ScrollBarAlwaysOff</enum>
-              </property>
-              <property name="verticalScrollMode">
-               <enum>QAbstractItemView::ScrollPerItem</enum>
-              </property>
-              <property name="flow">
-               <enum>QListView::TopToBottom</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_4">
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="Style_rightPane">
+             <property name="styleSheet">
+              <string notr="true">QFrame{
+border:1px solid black;
+border-radius:5px;
+}</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
               <item>
-               <widget class="QLineEdit" name="message_box_chat">
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_6">
+                  <item>
+                   <widget class="QLabel" name="username_label_chat">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>20</pointsize>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border:0;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="signout_btn">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-color: rgb(220, 150, 29);
+padding:10px;
+border-radius:10px;
+}
+QPushButton:pressed{
+background-color: rgb(150, 150, 29);
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>SignOut</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="editProfile_btn">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{color: rgb(255, 255, 255);
+background-color: rgb(85, 159, 255);
+padding:10px;
+border-radius:10px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Edit My Profile</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QLabel" name="userstatus_label_chat">
+                  <property name="styleSheet">
+                   <string notr="true">border:0;</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QListWidget" name="chat_pane">
                 <property name="font">
                  <font>
                   <pointsize>14</pointsize>
                  </font>
                 </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="emoji_btn">
-                <property name="text">
-                 <string>emojis</string>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QListView{
+border:0;
+padding:10px;
+margin:10px;
+border-radius:10px;
+}
+QListView::item{
+padding:10px;
+margin:10px;
+}</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="verticalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOff</enum>
+                </property>
+                <property name="horizontalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOff</enum>
+                </property>
+                <property name="sizeAdjustPolicy">
+                 <enum>QAbstractScrollArea::AdjustIgnored</enum>
+                </property>
+                <property name="autoScroll">
+                 <bool>true</bool>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>false</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::NoSelection</enum>
+                </property>
+                <property name="textElideMode">
+                 <enum>Qt::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollPerPixel</enum>
+                </property>
+                <property name="movement">
+                 <enum>QListView::Static</enum>
+                </property>
+                <property name="flow">
+                 <enum>QListView::TopToBottom</enum>
+                </property>
+                <property name="isWrapping" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="layoutMode">
+                 <enum>QListView::SinglePass</enum>
+                </property>
+                <property name="viewMode">
+                 <enum>QListView::ListMode</enum>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionRectVisible">
+                 <bool>false</bool>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="send_btn_chat">
-                <property name="text">
-                 <string>Send</string>
+               <widget class="QFrame" name="Style_pallete_send">
+                <property name="styleSheet">
+                 <string notr="true">QFrame{
+border-radius:10px;
+border:1px solid grey;
+}</string>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <property name="spacing">
+                  <number>1</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="QLineEdit" name="message_box_chat">
+                   <property name="font">
+                    <font>
+                     <pointsize>14</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit{
+background-color: rgb(243, 243, 243);
+border-radius:10px;
+padding:3px;
+margin:3px;
+}
+</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="emoji_btn">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>2</width>
+                     <height>2</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+	image: url(:/profile/resources/happy.png);
+background-repeat:norepeat;
+background-position: center;
+background-color: rgb(85, 159, 255);
+border-radius:5px;
+padding:3px;
+margin:3px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="send_btn_chat">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="baseSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>8</pointsize>
+                    </font>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::ClickFocus</enum>
+                   </property>
+                   <property name="contextMenuPolicy">
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="autoFillBackground">
+                    <bool>false</bool>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+	image: url(:/profile/resources/round_send_white_36dp.png);
+background-repeat:norepeat;
+background-position: center;
+background-color: rgb(85, 159, 255);
+border-radius:5px;
+padding:10px;
+margin:3px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>10</width>
+                     <height>10</height>
+                    </size>
+                   </property>
+                   <property name="flat">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
-            </item>
-           </layout>
-          </item>
-         </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="EditProfile">
        <layout class="QHBoxLayout" name="horizontalLayout_16">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_10">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_8">
-            <item>
-             <widget class="QLabel" name="status_profileEdit">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="Home_btn">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Back To Home</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
-            <item>
-             <layout class="QFormLayout" name="formLayout_2">
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_12">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Username:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="profileEdit_username_box">
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="label_13">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>First name</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QLineEdit" name="profileEdit_firstname_box">
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QLabel" name="label_14">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Last name</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QLineEdit" name="profileEdit_lastname_box">
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="0">
-               <widget class="QLabel" name="label_15">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Password:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="1">
-               <widget class="QLineEdit" name="profileEdit_password_box">
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="0">
-               <widget class="QLabel" name="label_16">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Confirm Password:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="1">
-               <widget class="QLineEdit" name="profileEdit_confirmpass_box">
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="5" column="0">
-               <widget class="QLabel" name="label_17">
-                <property name="font">
-                 <font>
-                  <pointsize>18</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>mobile number:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="5" column="1">
-               <widget class="QLineEdit" name="profileEdit_contactno_box">
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item row="6" column="1">
-               <widget class="QPushButton" name="save_details_profile">
-                <property name="text">
-                 <string>save</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_16">
-              <item>
-               <widget class="QListWidget" name="PreviewDetails_list">
-                <property name="font">
-                 <font>
-                  <pointsize>20</pointsize>
-                 </font>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="profile_picture">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>200</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="profile_pic_btn_edit">
-                <property name="text">
-                 <string>upload image</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-         </layout>
+         <widget class="QFrame" name="StyleEditProfile">
+          <property name="styleSheet">
+           <string notr="true">padding:5px;
+background-color:white;
+</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <widget class="QLabel" name="status_profileEdit">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Home_btn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+background-color: rgb(79, 223, 255);
+color: rgb(255, 255, 255);
+padding:10px;
+border-radius:5px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+               </property>
+               <property name="text">
+                <string>Back To Home</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <layout class="QFormLayout" name="formLayout_2">
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="profileEdit_username_box">
+                 <property name="font">
+                  <font>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>New Username</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="profileEdit_firstname_box">
+                 <property name="font">
+                  <font>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>New Firstname</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="profileEdit_lastname_box">
+                 <property name="font">
+                  <font>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>New Lastname</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="profileEdit_password_box">
+                 <property name="font">
+                  <font>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>New Password</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="profileEdit_confirmpass_box">
+                 <property name="font">
+                  <font>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Confirm password</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="profileEdit_contactno_box">
+                 <property name="font">
+                  <font>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+}</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>New Mobile number</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QPushButton" name="save_details_profile">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+background-color: rgb(79, 223, 255);
+color: rgb(255, 255, 255);
+padding:10px;
+border-radius:5px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Save</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_16">
+               <item>
+                <widget class="QListWidget" name="PreviewDetails_list">
+                 <property name="font">
+                  <font>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="contextMenuPolicy">
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QListView{
+border:0;
+padding:5px;
+margin:5px;
+border:1px solid grey;
+border-radius:10px;
+}
+QListView::item{
+padding:5px;
+border:1px solid lightgrey;
+}</string>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QAbstractScrollArea::AdjustToContents</enum>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::NoSelection</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="profile_picture">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>200</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="textInteractionFlags">
+                  <set>Qt::NoTextInteraction</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="profile_pic_btn_edit">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+background-color: rgb(79, 223, 255);
+color: rgb(255, 255, 255);
+padding:10px;
+border-radius:5px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Upload Image</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -817,6 +1442,23 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+background-color: rgb(79, 223, 255);
+color: rgb(255, 255, 255);
+padding:10px;
+border-radius:5px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+              </property>
               <property name="text">
                <string>Back To Home</string>
               </property>
@@ -827,121 +1469,259 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_11">
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_11">
-              <item>
-               <widget class="QLabel" name="label_18">
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Add contacts to Group :</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QListWidget" name="contactListtoAddtoGroup">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QFrame" name="StyleContactsToAdd">
+              <property name="styleSheet">
+               <string notr="true">QFrame{
+border:2px solid black;
+}</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <widget class="QLabel" name="label_18">
+                 <property name="font">
+                  <font>
+                   <pointsize>20</pointsize>
+                   <italic>true</italic>
+                   <bold>false</bold>
+                   <underline>true</underline>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border:0;</string>
+                 </property>
+                 <property name="text">
+                  <string>Add contacts to Group :</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QListWidget" name="contactListtoAddtoGroup">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QListView{
+border:0;
+padding:5px;
+margin:5px;
+border:1px solid grey;
+border-radius:10px;
+}
+QListView::item{
+background-color: rgb(220, 85, 0);
+border-radius:10px;
+padding:10px;
+margin:10px;
+}
+QListView::item:selected{
+background-color: rgb(150, 85, 0);
+}</string>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_13">
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_9">
-                <item>
-                 <widget class="QLabel" name="label_19">
-                  <property name="font">
-                   <font>
-                    <pointsize>16</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Group Name:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLineEdit" name="group_name_box">
-                  <property name="font">
-                   <font>
-                    <pointsize>18</pointsize>
-                   </font>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QVBoxLayout" name="verticalLayout_12">
-                <item>
-                 <widget class="QLabel" name="label_20">
-                  <property name="font">
-                   <font>
-                    <pointsize>16</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Group Description:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QTextEdit" name="group_desc_box">
-                  <property name="font">
-                   <font>
-                    <pointsize>12</pointsize>
-                   </font>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_21">
-                <property name="font">
-                 <font>
-                  <pointsize>16</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Group Members:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_10">
-                <item>
-                 <widget class="QListWidget" name="group_members"/>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="removeGroupMember">
-                  <property name="text">
-                   <string>Remove Group Member</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <widget class="QPushButton" name="create_group_btn">
-                <property name="text">
-                 <string>Create Group</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QFrame" name="StyleGroupDetailsPane">
+              <property name="styleSheet">
+               <string notr="true">QFrame{
+border:2px solid black;
+}
+</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_13">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <item>
+                  <widget class="QLabel" name="label_19">
+                   <property name="font">
+                    <font>
+                     <pointsize>20</pointsize>
+                     <italic>true</italic>
+                     <bold>false</bold>
+                     <underline>true</underline>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border:0;</string>
+                   </property>
+                   <property name="text">
+                    <string>Group Name:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="group_name_box">
+                   <property name="font">
+                    <font>
+                     <pointsize>18</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+padding:5px;
+}</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_12">
+                 <item>
+                  <widget class="QLabel" name="label_20">
+                   <property name="font">
+                    <font>
+                     <pointsize>20</pointsize>
+                     <italic>true</italic>
+                     <bold>false</bold>
+                     <underline>true</underline>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border:0;</string>
+                   </property>
+                   <property name="text">
+                    <string>Group Description:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="group_desc_box">
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QTextEdit{
+background-color: rgb(217, 217, 217);
+border-color: rgb(99, 99, 99);
+border-radius:10px;
+border:0;
+padding:5px;
+}</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_21">
+                 <property name="font">
+                  <font>
+                   <pointsize>20</pointsize>
+                   <italic>true</italic>
+                   <bold>false</bold>
+                   <underline>true</underline>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border:0;</string>
+                 </property>
+                 <property name="text">
+                  <string>Group Members:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <item>
+                  <widget class="QListWidget" name="group_members">
+                   <property name="focusPolicy">
+                    <enum>Qt::ClickFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QListView{
+border:0;
+padding:5px;
+margin:5px;
+border:1px solid grey;
+border-radius:10px;
+}
+QListView::item{
+background-color: rgb(220, 85, 0);
+border-radius:10px;
+padding:10px;
+margin:10px;
+}
+QListView::item:selected{
+background-color: rgb(150, 85, 0);
+}</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="removeGroupMember">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: rgb(255, 51, 51);
+color: rgb(255, 255, 255);
+padding:10px;
+border-radius:5px;
+}
+QPushButton:pressed{
+background-color: rgb(200, 51, 51);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Remove Group Member</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPushButton" name="create_group_btn">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+background-color: rgb(79, 223, 255);
+color: rgb(255, 255, 255);
+padding:10px;
+border-radius:5px;
+}
+QPushButton:pressed{
+background-color: rgb(79, 180,245);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Create Group</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </item>
            </layout>
           </item>

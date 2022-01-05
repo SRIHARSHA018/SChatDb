@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/profile">
         <file>resources/Profile_avatar_placeholder_large.png</file>
+        <file>resources/happy.png</file>
+        <file>resources/round_send_white_36dp.png</file>
     </qresource>
 </RCC>

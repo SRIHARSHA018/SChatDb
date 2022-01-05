@@ -1,6 +1,6 @@
 #include "chatmanager.h"
 #include <QDebug>
-
+#include <QLabel>
 
 ChatManager::ChatManager(QObject *parent)
     : QObject{parent}
@@ -52,7 +52,7 @@ void ChatManager::DisplayChat()
     if(query->exec()){
         //qDebug()<<"got messages";
         while(query->next()){
-            QListWidgetItem* item =new QListWidgetItem(query->value(0).toString());
+            QListWidgetItem* item =new QListWidgetItem(query->value(0).toString(),chat_pane);
           //qDebug()<<query->value(0).toString()<<" "<<query->value(1).toString()<<" "<<query->value(2).toString();
             if(query->value(1).toInt()==this->x_sender_id){
                 item->setTextAlignment(Qt::AlignRight);
@@ -67,7 +67,7 @@ void ChatManager::DisplayChat()
     else{
         qDebug()<<query->lastError();
     }
-
+    //qDebug()<<chat_pane->currentRow();
     chat_pane->scrollToBottom();
 
 }
