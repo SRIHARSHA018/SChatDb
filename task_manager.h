@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QSqlDriver>
 #include <string>
 #include <QSqlDatabase>
 #include <QJsonObject>
@@ -38,6 +39,7 @@ public:
     void setProfileDetails(const QJsonObject& details);
     void displayDetails(QListWidget* preview,QLabel* profile_pic);
     void setProfilePic(const std::string& filename);
+    void SendMessage(QLineEdit* msg);
     void cleanUp();
     profile profile_details;
     QListWidget* chat_pane;
@@ -50,7 +52,7 @@ signals:
     void cleanUpLoginPage();
 public slots:
     void on_ContactSelected(QListWidgetItem* contact,QLabel* name,STATUS mode);
-    void on_SendMessage(QLineEdit* msg);
+    void notificationReceived(const QString& name,  QSqlDriver::NotificationSource source, const QVariant &payload);
 private:
     QSqlDatabase x_db;
     void x_LoginSuccessful();

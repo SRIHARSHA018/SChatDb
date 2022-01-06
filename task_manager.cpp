@@ -2,8 +2,10 @@
 #include <QDebug>
 #include <QSqlQuery>
 #include <QSqlError>
+
 #include <QImage>
 #include <QBuffer>
+#include <QtGlobal>
 #include <QPixmap>
 
 Task_manager::Task_manager(QObject *parent)
@@ -128,6 +130,17 @@ void Task_manager::SetupMainPage(QStackedWidget *pager)
         emit cleanUpLoginPage();
         emit enteredMainWindow();
         x_SetupMainWindowControls();
+        if(this->x_db.driver()->hasFeature(QSqlDriver::EventNotifications)){
+            this->x_db.driver()->subscribeToNotification("msg");
+            //qDebug()<<"got the feature";
+            qDebug()<<this->x_db.driver()->subscribedToNotifications();
+            connect(this->x_db.driver(), SIGNAL(notification(const QString&, QSqlDriver::NotificationSource , const QVariant &)),
+                    this, SLOT(notificationReceived(const QString&, QSqlDriver::NotificationSource, const QVariant &)));
+
+        }
+        else{
+            //qDebug()<<"No Event feature";
+        }
 
     }
 }
@@ -143,7 +156,7 @@ void Task_manager::SetupLoginPage(QStackedWidget *pager)
 void Task_manager::SetupContacts(QListWidget *contact_list)
 {
     QSqlQuery query(this->x_db);
-    query.exec("SELECT username FROM public.users WHERE username!='"+QString::fromStdString(profile_details.user_name)+"';");
+    query.exec("SELECT firstname FROM public.users WHERE username!='"+QString::fromStdString(profile_details.user_name)+"';");
     while(query.next()){
      // qDebug()<<query.value(0);
       contact_list->addItem(query.value(0).toString());
@@ -311,7 +324,29 @@ void Task_manager::on_ContactSelected(QListWidgetItem *contact, QLabel* name,STA
     }
 }
 
-void Task_manager::on_SendMessage(QLineEdit *msg)
+void Task_manager::notificationReceived(const QString &name,  QSqlDriver::NotificationSource source, const QVariant &payload)
+{
+    //qDebug()<<name<<" "<<source<<" "<<payload;
+    switch(this->GetState())
+    {
+    case STATUS::REGULAR_CHAT:
+        if(name=="msg"){
+           // qDebug()<<"got notify";
+            this->x_chat_manager->DisplayChat();
+           // qDebug()<<"updated chat";
+        }
+        break;
+    case STATUS::GROUP_CHAT:
+        if(name=="msg"){
+            this->x_chat_manager->DisplayGroupChat();
+        }
+        break;
+    default:
+        break;
+    }
+}
+
+void Task_manager::SendMessage(QLineEdit *msg)
 {
     switch(this->GetState())
     {
@@ -336,7 +371,7 @@ void Task_manager::on_SendMessage(QLineEdit *msg)
 void Task_manager::x_SetupMainWindowControls()
 {
     this->x_chat_manager = new ChatManager(this);
-    this->x_chat_manager->query = new QSqlQuery(this->x_db);
+    this->x_chat_manager->query = QSqlQuery(this->x_db);
     this->x_chat_manager->chat_pane = this->chat_pane;
     connect(this,SIGNAL(setUpChatConnection(QString,profile)),x_chat_manager,SLOT(on_SetupChatConnection(QString,profile)));
     connect(this,SIGNAL(setUpGroupChatConnection(QString,profile)),x_chat_manager,SLOT(on_SetupGroupChatConnection(QString,profile)));

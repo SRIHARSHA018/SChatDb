@@ -27,7 +27,6 @@ public:
     ~MainWindow();
 signals:
     void contactSelected(QListWidgetItem* contact,QLabel* name,STATUS mode);
-    void sendMessage(QLineEdit* msg);
 public slots:
     void on_EnterMainWindow();
     void on_cleanUpGroupsPage();

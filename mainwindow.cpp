@@ -25,8 +25,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_EnterMainWindow()
 {
     connect(this,SIGNAL(contactSelected(QListWidgetItem*,QLabel*,STATUS)),tasker,SLOT(on_ContactSelected(QListWidgetItem*,QLabel*,STATUS)));
-    connect(this,SIGNAL(sendMessage(QLineEdit*)),tasker,SLOT(on_SendMessage(QLineEdit*)));
-    ui->username_label_chat->setText(QString(" hiiii \xF0\x9F\x98\x81"));
+    //ui->username_label_chat->setText(QString(" hiiii \xF0\x9F\x98\x81"));
     tasker->chat_pane = ui->chat_pane;
 }
 
@@ -95,7 +94,7 @@ void MainWindow::on_submit_btn_signup_clicked()
 void MainWindow::on_send_btn_chat_clicked()
 {
     //qDebug()<<"send clicked";
-    emit sendMessage(ui->message_box_chat);
+    tasker->SendMessage(ui->message_box_chat);
 }
 
 

@@ -106,7 +106,7 @@ padding: 10px;
               <font>
                <pointsize>36</pointsize>
                <italic>true</italic>
-               <underline>true</underline>
+               <underline>false</underline>
               </font>
              </property>
              <property name="styleSheet">
@@ -341,7 +341,7 @@ padding: 10px;
               <font>
                <pointsize>36</pointsize>
                <italic>true</italic>
-               <underline>true</underline>
+               <underline>false</underline>
               </font>
              </property>
              <property name="styleSheet">
@@ -883,6 +883,8 @@ border-radius:10px;
 QListView::item{
 padding:10px;
 margin:10px;
+border:1px solid lightgrey;
+border-radius:5px;
 }</string>
                 </property>
                 <property name="frameShape">

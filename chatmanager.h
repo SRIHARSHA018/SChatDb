@@ -26,7 +26,7 @@ public:
     void SendGroupChat(std::string msg);
     void DisplayChat();
     void DisplayGroupChat();
-    QSqlQuery* query;
+    QSqlQuery query;
     QListWidget* chat_pane;
 signals:
 public slots:
