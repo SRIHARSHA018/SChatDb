@@ -20,9 +20,9 @@ void ChatManager::SendChat(std::string msg)
      qDebug()<<"message inserted";
      this->DisplayChat();
    }
-   else{
+   /*else{
        qDebug()<<query.lastError();
-   }
+   }*/
 }
 
 void ChatManager::SendGroupChat(std::string msg)
@@ -36,9 +36,9 @@ void ChatManager::SendGroupChat(std::string msg)
       qDebug()<<"message inserted";
       this->DisplayGroupChat();
     }
-    else{
+    /*else{
         qDebug()<<query.lastError();
-    }
+    }*/
 }
 
 void ChatManager::DisplayChat()
@@ -64,9 +64,9 @@ void ChatManager::DisplayChat()
             }
         }
     }
-    else{
+    /*else{
         qDebug()<<query.lastError();
-    }
+    }*/
     //qDebug()<<chat_pane->currentRow();
     chat_pane->scrollToBottom();
 
@@ -94,9 +94,9 @@ void ChatManager::DisplayGroupChat()
             }
         }
     }
-    else{
+    /*else{
         qDebug()<<query.lastError();
-    }
+    }*/
 
     chat_pane->scrollToBottom();
 
@@ -128,9 +128,9 @@ void ChatManager::x_fetchRecieverDetails()
         if(query.next()){
             this->x_profile_details_reciever.id=query.value(0).toInt();
         }
-        else{
+        /*else{
             qDebug()<<query.lastError();
-        }
+        }*/
 }
 
 void ChatManager::x_fetchGroupRecieverDetails()
@@ -139,7 +139,7 @@ void ChatManager::x_fetchGroupRecieverDetails()
     if(query.next()){
         this->x_profile_details_reciever.id=query.value(0).toInt();
     }
-    else{
+    /*else{
         qDebug()<<query.lastError();
-    }
+    }*/
 }

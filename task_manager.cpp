@@ -2,11 +2,11 @@
 #include <QDebug>
 #include <QSqlQuery>
 #include <QSqlError>
-
 #include <QImage>
 #include <QBuffer>
 #include <QtGlobal>
 #include <QPixmap>
+#include <iostream>
 
 Task_manager::Task_manager(QObject *parent)
     : QObject{parent}
@@ -23,12 +23,19 @@ void Task_manager::Init()
     x_db.setPassword("Sj@&15634");
     x_db.setDatabaseName("Schat");
     x_db.setPort(5432);
-    if(x_db.open()){
-        qDebug()<<"DatabaseConnected";
+    try{
+        if(x_db.open()){
+            qDebug()<<"DatabaseConnected";
+        }
+        else{
+            //qDebug()<<"failed";
+            throw "Database Connection failed";
+        }
     }
-    else{
-        qDebug()<<"failed";
+    catch(...){
+        std::cout<<"Database connection failure, Please check the connection";
     }
+
 }
 
 void Task_manager::ValidateLoginDetails(const QJsonObject &details)
@@ -38,7 +45,7 @@ void Task_manager::ValidateLoginDetails(const QJsonObject &details)
     auto password = details["password"].toString();
     query.exec( QString("SELECT username,password FROM public.users WHERE username='"+username+"' AND password='"+password+"';"));
     if(query.next()){
-        qDebug()<<"User details are correct";
+        //qDebug()<<"User details are correct";
         this->SetState(STATUS::LOGIN_SUCCESSFUL);
         query.exec("SELECT id,username,firstname,lastname,contactno,profile_pic FROM public.users WHERE username='"+username+"';");
         if(query.next()){
@@ -48,7 +55,7 @@ void Task_manager::ValidateLoginDetails(const QJsonObject &details)
             profile_details.last_name = query.value(3).toString().toStdString();
             profile_details.contactno = query.value(4).toString().toStdString();
             if(!query.value(5).isNull()){
-                qDebug()<<"feteched image";
+                //qDebug()<<"feteched image";
                 QPixmap image;
                 if(image.loadFromData(query.value(5).toByteArray())){
                     profile_details.profile_pic = image;
@@ -56,12 +63,12 @@ void Task_manager::ValidateLoginDetails(const QJsonObject &details)
                 //qDebug()<<QString::fromStdString(profile_details.profile_pic);
             }
         }
-        else{
+        /*else{
             qDebug()<<query.lastError().text();
-        }
+        }*/
     }
     else{
-        qDebug()<<query.lastError();
+        //qDebug()<<query.lastError();
         this->SetState(STATUS::LOGIN_FAILED);
     }
 }
@@ -84,9 +91,9 @@ void Task_manager::ValidateSignUpDetails(const QJsonObject &details, QLabel* sta
         else if(query.exec("INSERT INTO public.users (username,password,firstname,lastname,contactno) VALUES ('"+username+"','"+password+"','"+ firstname + "', '" + lastname + "', '" + contactno + "');")){
             this->SetState(STATUS::SIGNUP_SUCCESSFUL);
         }
-        else{
-            qDebug()<<query.lastError();
-        }
+        /*else{
+            qDebug()<<query.lastError().text().toStdString();
+        }*/
     }
     else{
         if(password.length()<6){
@@ -133,7 +140,7 @@ void Task_manager::SetupMainPage(QStackedWidget *pager)
         if(this->x_db.driver()->hasFeature(QSqlDriver::EventNotifications)){
             this->x_db.driver()->subscribeToNotification("msg");
             //qDebug()<<"got the feature";
-            qDebug()<<this->x_db.driver()->subscribedToNotifications();
+            //qDebug()<<this->x_db.driver()->subscribedToNotifications();
             connect(this->x_db.driver(), SIGNAL(notification(const QString&, QSqlDriver::NotificationSource , const QVariant &)),
                     this, SLOT(notificationReceived(const QString&, QSqlDriver::NotificationSource, const QVariant &)));
 
@@ -179,9 +186,9 @@ void Task_manager::SetupGroups(QListWidget *groups)
             }
         }
     }
-    else{
+   /* else{
         qDebug()<<query.lastError().text();
-    }
+    }*/
 
 }
 
@@ -285,17 +292,17 @@ void Task_manager::setProfilePic(const std::string &filename)
     query.bindValue(0,image_bytes);
     query.bindValue(1,this->profile_details.id);
     if(query.exec()){
-        qDebug()<<"insertion of image successful";
+       // qDebug()<<"insertion of image successful";
         if(this->profile_details.profile_pic.loadFromData(image_bytes)){
-            qDebug()<<"profile pic updated successfully";
+        //    qDebug()<<"profile pic updated successfully";
         }
-        else{
-            qDebug()<<"Failed to update";
-        }
+        //else{
+        //    qDebug()<<"Failed to update";
+       // }
     }
-    else{
+    /*else{
         qDebug()<<query.lastError().text();
-    }
+    }*/
 
 }
 
@@ -352,13 +359,13 @@ void Task_manager::SendMessage(QLineEdit *msg)
     {
     case STATUS::REGULAR_CHAT:
         //QSqlQuery query(x_db);
-        qDebug()<<"Regular Chat";
+       // qDebug()<<"Regular Chat";
         x_chat_manager->SendChat(msg->text().toStdString());
         //qDebug()<<"reached taskmanager send btn";
         msg->clear();
         break;
     case STATUS::GROUP_CHAT:
-        qDebug()<<"Group Chat";
+        //qDebug()<<"Group Chat";
         x_chat_manager->SendGroupChat(msg->text().toStdString());
         msg->clear();
         break;
@@ -370,9 +377,15 @@ void Task_manager::SendMessage(QLineEdit *msg)
 
 void Task_manager::x_SetupMainWindowControls()
 {
+
     this->x_chat_manager = new ChatManager(this);
     this->x_chat_manager->query = QSqlQuery(this->x_db);
-    this->x_chat_manager->chat_pane = this->chat_pane;
+    try{
+        this->x_chat_manager->chat_pane = this->chat_pane;
+    }catch(const std::exception& e){
+        std::cout<<e.what();
+    }
+
     connect(this,SIGNAL(setUpChatConnection(QString,profile)),x_chat_manager,SLOT(on_SetupChatConnection(QString,profile)));
     connect(this,SIGNAL(setUpGroupChatConnection(QString,profile)),x_chat_manager,SLOT(on_SetupGroupChatConnection(QString,profile)));
 
@@ -391,10 +404,10 @@ void Task_manager::x_createGroup(const QJsonObject &details, QLabel *status, QLi
         if(query.next()){
             ids+=','+query.value(0).toString();
         }
-        else{
+        /*else{
             qDebug()<<"Error here";
             qDebug()<<query.lastError().text();
-        }
+        }*/
     }
     //qDebug()<<ids;
     query.prepare("INSERT INTO public.groups (group_name,description,participants) VALUES (?,?,?);");
@@ -406,9 +419,9 @@ void Task_manager::x_createGroup(const QJsonObject &details, QLabel *status, QLi
         status->setText(QString::fromStdString("successfully created"));
         emit cleanUpGroupsPage();
     }
-    else{
+    /*else{
             qDebug()<<query.lastError().text();
-    }
+    }*/
 
 }
 

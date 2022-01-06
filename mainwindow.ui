@@ -671,6 +671,12 @@ background-color: rgb(150, 85, 0);
                 <property name="frameShape">
                  <enum>QFrame::NoFrame</enum>
                 </property>
+                <property name="verticalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOff</enum>
+                </property>
+                <property name="horizontalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOff</enum>
+                </property>
                 <property name="alternatingRowColors">
                  <bool>false</bool>
                 </property>
@@ -742,6 +748,12 @@ margin:10px;
 QListView::item:selected{
 background-color: rgb(150, 85, 0);
 }</string>
+                </property>
+                <property name="verticalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOff</enum>
+                </property>
+                <property name="horizontalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOff</enum>
                 </property>
                 <property name="alternatingRowColors">
                  <bool>true</bool>
@@ -998,7 +1010,7 @@ margin:3px;
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
-	image: url(:/profile/resources/happy.png);
+	background-image: url(:/profile/resources/happy.png);
 background-repeat:norepeat;
 background-position: center;
 background-color: rgb(85, 159, 255);
@@ -1045,7 +1057,7 @@ background-color: rgb(79, 180,245);
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
-	image: url(:/profile/resources/round_send_white_36dp.png);
+image: url(:/profile/resources/round_send_white_36dp.png);
 background-repeat:norepeat;
 background-position: center;
 background-color: rgb(85, 159, 255);
