@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8cpp" xml:lang="en-US">
-<title>E:/workspace/qt/ClientPulled/SChatDb/SRC/main.cpp File Reference</title>
-<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/main.cpp</primary></indexterm>
+<title>SRC/main.cpp File Reference</title>
+<indexterm><primary>SRC/main.cpp</primary></indexterm>
 <programlisting linenumbering="unnumbered">#include &quot;mainwindow.h&quot;
 #include &lt;QApplication&gt;
 #include &lt;QTest&gt;

@@ -1,17 +1,10 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['main_5fwindow_2',['main_window',['../class_ui___main_window.html#a97f55345d0575b081d22a32f4fe79c81',1,'Ui_MainWindow']]],
-  ['mainwindow_3',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()'],['../class_ui_1_1_main_window.html',1,'Ui::MainWindow']]],
-  ['mainwindow_2ecpp_4',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
-  ['mainwindow_2eh_5',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
-  ['message_5fbox_5fchat_6',['message_box_chat',['../class_ui___main_window.html#a655c6f3fcac024488518cc8dda765bb8',1,'Ui_MainWindow']]],
-  ['mobileno_5fbox_5fsignup_7',['mobileno_box_signup',['../class_ui___main_window.html#aa92f58fa5018c2a0565704858d5435e1',1,'Ui_MainWindow']]],
-  ['moc_5fchatmanager_2ecpp_8',['moc_chatmanager.cpp',['../moc__chatmanager_8cpp.html',1,'']]],
-  ['moc_5femoji_5fpop_5fup_2ecpp_9',['moc_emoji_pop_up.cpp',['../moc__emoji__pop__up_8cpp.html',1,'']]],
-  ['moc_5fmainwindow_2ecpp_10',['moc_mainwindow.cpp',['../moc__mainwindow_8cpp.html',1,'']]],
-  ['moc_5fpredefs_2eh_11',['moc_predefs.h',['../moc__predefs_8h.html',1,'']]],
-  ['moc_5ftask_5fmanager_2ecpp_12',['moc_task_manager.cpp',['../moc__task__manager_8cpp.html',1,'']]],
-  ['moc_5ftest_5fapp_2ecpp_13',['moc_test_app.cpp',['../moc__test__app_8cpp.html',1,'']]]
+  ['on_5fcleanupgroupspage_0',['on_cleanUpGroupsPage',['../class_main_window.html#aa649a72035add83412df5806b7d1a457',1,'MainWindow']]],
+  ['on_5fcleanuploginpage_1',['on_cleanUpLoginPage',['../class_main_window.html#ad58baa98f19b32c2cc1cfcd9ee9bef85',1,'MainWindow']]],
+  ['on_5fcontactselected_2',['on_ContactSelected',['../class_task__manager.html#a94a24ecfee7f884c2d5a88a03185a1d3',1,'Task_manager']]],
+  ['on_5femojiselected_3',['on_emojiSelected',['../class_main_window.html#aa8c176f2ebc486fa184a70c7f4bff187',1,'MainWindow']]],
+  ['on_5fentermainwindow_4',['on_EnterMainWindow',['../class_main_window.html#afcb7fbc4f2188ae33fe1daef711fdec0',1,'MainWindow']]],
+  ['on_5fsetupchatconnection_5',['on_SetupChatConnection',['../class_chat_manager.html#a15348d3bc3eaa99a84f94798cbfa00a0',1,'ChatManager']]],
+  ['on_5fsetupgroupchatconnection_6',['on_SetupGroupChatConnection',['../class_chat_manager.html#adad8b7f76c29f0b3aefa3e0455490163',1,'ChatManager']]]
 ];

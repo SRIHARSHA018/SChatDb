@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_r_c_2test__app_8cpp" xml:lang="en-US">
-<title>E:/workspace/qt/ClientPulled/SChatDb/SRC/test_app.cpp File Reference</title>
-<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/test_app.cpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;test_app.h&quot;
-#include &lt;QJsonObject&gt;
-#include &lt;QLabel&gt;
-#include &lt;task_manager.h&gt;
-</programlisting></section>

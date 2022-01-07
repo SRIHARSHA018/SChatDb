@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_1e771ff450ae847412a8c28572c155bb" xml:lang="en-US">
-<title>E:/workspace/qt/ClientPulled/SChatDb/SRC Directory Reference</title>
-<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC Directory Reference</primary></indexterm>
+<title>SRC Directory Reference</title>
+<indexterm><primary>SRC Directory Reference</primary></indexterm>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
@@ -25,9 +25,9 @@
 </listitem>
             <listitem><para>file <link linkend="_task__manager_8h">task_manager.h</link></para>
 </listitem>
-            <listitem><para>file <link linkend="__s_r_c_2test__app_8cpp">test_app.cpp</link></para>
+            <listitem><para>file <link linkend="_test__app_8cpp">test_app.cpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="__s_r_c_2test__app_8h">test_app.h</link></para>
+            <listitem><para>file <link linkend="_test__app_8h">test_app.h</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

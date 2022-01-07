@@ -111,8 +111,6 @@ Definition at line <link linkend="_mainwindow_8cpp_source_1l00023">23</link> of 
 <indexterm><primary>MainWindow</primary><secondary>contactSelected</secondary></indexterm>
 <para><computeroutput>void MainWindow::contactSelected (QListWidgetItem * contact, QLabel * name, <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> mode)<computeroutput>[signal]</computeroutput></computeroutput></para>
 <para>This is a Signal function which will be invoked when a contact element is selected. Then the contact details are setup with respect to contact. </para>
-<para>
-Definition at line <link linkend="_moc__mainwindow_8cpp_source_1l00263">263</link> of file <link linkend="_moc__mainwindow_8cpp_source">moc_mainwindow.cpp</link>.</para>
 </section>
 <anchor xml:id="_class_main_window_1aa649a72035add83412df5806b7d1a457"/><section>
     <title>on_cleanUpGroupsPage</title>
@@ -196,5 +194,5 @@ Definition at line <link linkend="_mainwindow_8cpp_source_1l00032">32</link> of 
 </section>
 <para>
 The documentation for this class was generated from the following files:</para>
-E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_mainwindow_8h">mainwindow.h</link>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/<link linkend="_moc__mainwindow_8cpp">moc_mainwindow.cpp</link>E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_mainwindow_8cpp">mainwindow.cpp</link></section>
+SRC/<link linkend="_mainwindow_8h">mainwindow.h</link>SRC/<link linkend="_mainwindow_8cpp">mainwindow.cpp</link></section>
 </section>

@@ -1,0 +1,73 @@
+\doxysection{test\+\_\+app.\+cpp}
+\label{test__app_8cpp_source}\index{SRC/test\_app.cpp@{SRC/test\_app.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}test\_app.h"{}}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <QJsonObject>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <task\_manager.h>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 test\_app::test\_app(QObject *parent)}
+\DoxyCodeLine{00008     : QObject\{parent\}}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00018 \textcolor{keywordtype}{void} test\_app::initTestCase()}
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{00020     t\_db = QSqlDatabase::addDatabase(\textcolor{stringliteral}{"{}QPSQL"{}});}
+\DoxyCodeLine{00021     t\_db.setHostName(\textcolor{stringliteral}{"{}localhost"{}});}
+\DoxyCodeLine{00022     t\_db.setUserName(\textcolor{stringliteral}{"{}postgres"{}});}
+\DoxyCodeLine{00023     t\_db.setPassword(\textcolor{stringliteral}{"{}Sj@\&15634"{}});}
+\DoxyCodeLine{00024     t\_db.setDatabaseName(\textcolor{stringliteral}{"{}Schat"{}});}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \textcolor{keywordtype}{void} test\_app::init()}
+\DoxyCodeLine{00029 \{}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 \}}
+\DoxyCodeLine{00036 \textcolor{keywordtype}{void} test\_app::DatabaseConnection\_test()}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038     QCOMPARE(t\_db.open(),\textcolor{keyword}{true});}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00044 \textcolor{keywordtype}{void} test\_app::SignUp\_test()}
+\DoxyCodeLine{00045 \{}
+\DoxyCodeLine{00046     QJsonObject details;}
+\DoxyCodeLine{00047     details[\textcolor{stringliteral}{"{}username"{}}]=QString(\textcolor{stringliteral}{"{}test\_dummy"{}});}
+\DoxyCodeLine{00048     details[\textcolor{stringliteral}{"{}password"{}}]=QString(\textcolor{stringliteral}{"{}password"{}});}
+\DoxyCodeLine{00049     details[\textcolor{stringliteral}{"{}firstname"{}}]=QString(\textcolor{stringliteral}{"{}dummy\_first"{}});}
+\DoxyCodeLine{00050     details[\textcolor{stringliteral}{"{}lastname"{}}]=QString(\textcolor{stringliteral}{"{}dummy\_last"{}});}
+\DoxyCodeLine{00051     details[\textcolor{stringliteral}{"{}confirmpassword"{}}]=QString(\textcolor{stringliteral}{"{}password"{}});}
+\DoxyCodeLine{00052     details[\textcolor{stringliteral}{"{}contactno"{}}] = QString(\textcolor{stringliteral}{"{}0000000000"{}});}
+\DoxyCodeLine{00053     Task\_manager t\_tasker;}
+\DoxyCodeLine{00054     t\_tasker.Init();}
+\DoxyCodeLine{00055     t\_tasker.ValidateSignUpDetails(details,\textcolor{keyword}{new} QLabel());}
+\DoxyCodeLine{00056     QCOMPARE(t\_tasker.IsSignUpSuccessful(),\textcolor{keyword}{true});}
+\DoxyCodeLine{00057 \}}
+\DoxyCodeLine{00062 \textcolor{keywordtype}{void} test\_app::Login\_test()}
+\DoxyCodeLine{00063 \{}
+\DoxyCodeLine{00064     QJsonObject details;}
+\DoxyCodeLine{00065     details[\textcolor{stringliteral}{"{}username"{}}]=QString(\textcolor{stringliteral}{"{}test\_dummy"{}});}
+\DoxyCodeLine{00066     details[\textcolor{stringliteral}{"{}password"{}}]=QString(\textcolor{stringliteral}{"{}password"{}});}
+\DoxyCodeLine{00067     Task\_manager t\_tasker;}
+\DoxyCodeLine{00068     t\_tasker.Init();}
+\DoxyCodeLine{00069     t\_tasker.ValidateLoginDetails(details);}
+\DoxyCodeLine{00070     QCOMPARE(t\_tasker.IsLoginSuccessful(),\textcolor{keyword}{true});}
+\DoxyCodeLine{00071 \}}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073 \textcolor{keywordtype}{void} test\_app::cleanup()}
+\DoxyCodeLine{00074 \{}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076 \}}
+\DoxyCodeLine{00081 \textcolor{keywordtype}{void} test\_app::cleanupTestCase()}
+\DoxyCodeLine{00082 \{}
+\DoxyCodeLine{00083     QSqlQuery query(this-\/>t\_db);}
+\DoxyCodeLine{00084     query.prepare(\textcolor{stringliteral}{"{}DELETE FROM public.users WHERE username=?;"{}});}
+\DoxyCodeLine{00085     query.bindValue(0,QString::fromStdString(\textcolor{stringliteral}{"{}test\_dummy"{}}));}
+\DoxyCodeLine{00086     QCOMPARE(query.exec(),\textcolor{keyword}{true});}
+\DoxyCodeLine{00087 \}}
+
+\end{DoxyCode}

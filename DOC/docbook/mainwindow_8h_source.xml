@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainwindow_8h_source" xml:lang="en-US">
 <title>mainwindow.h</title>
-<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/mainwindow.h</primary></indexterm>
+<indexterm><primary>SRC/mainwindow.h</primary></indexterm>
 Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_mainwindow_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;MAINWINDOW_H</emphasis>
 <anchor xml:id="_mainwindow_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;MAINWINDOW_H</emphasis>
 <anchor xml:id="_mainwindow_8h_source_1l00003"/>00003 
@@ -29,7 +29,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 <anchor xml:id="_mainwindow_8h_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<link linkend="_class_main_window_1a996c5a2b6f77944776856f08ec30858d">MainWindow</link>(QWidget&#32;*parent&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>);
 <anchor xml:id="_mainwindow_8h_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<link linkend="_class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</link>();
 <anchor xml:id="_mainwindow_8h_source_1l00030"/>00030 signals:
-<anchor xml:id="_mainwindow_8h_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1a88a355a3de354aa568146e01f7d7548e">contactSelected</link>(QListWidgetItem*&#32;contact,QLabel*&#32;name,<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;mode);
+<anchor xml:id="_mainwindow_8h_source_1l00033"/><link linkend="_class_main_window_1a88a355a3de354aa568146e01f7d7548e">00033</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1a88a355a3de354aa568146e01f7d7548e">contactSelected</link>(QListWidgetItem*&#32;contact,QLabel*&#32;name,<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;mode);
 <anchor xml:id="_mainwindow_8h_source_1l00034"/>00034 <emphasis role="keyword">public</emphasis>&#32;slots:
 <anchor xml:id="_mainwindow_8h_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1afcb7fbc4f2188ae33fe1daef711fdec0">on_EnterMainWindow</link>();
 <anchor xml:id="_mainwindow_8h_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1aa649a72035add83412df5806b7d1a457">on_cleanUpGroupsPage</link>();
@@ -74,7 +74,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 <anchor xml:id="_mainwindow_8h_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_profile_pic_btn_edit_clicked();
 <anchor xml:id="_mainwindow_8h_source_1l00098"/>00098 
 <anchor xml:id="_mainwindow_8h_source_1l00099"/>00099 <emphasis role="keyword">private</emphasis>:
-<anchor xml:id="_mainwindow_8h_source_1l00101"/>00101 &#32;&#32;&#32;&#32;<link linkend="_class_ui_1_1_main_window">Ui::MainWindow</link>&#32;*ui;
+<anchor xml:id="_mainwindow_8h_source_1l00101"/>00101 &#32;&#32;&#32;&#32;Ui::MainWindow&#32;*ui;
 <anchor xml:id="_mainwindow_8h_source_1l00103"/>00103 &#32;&#32;&#32;&#32;<link linkend="_class_task__manager">Task_manager</link>*&#32;tasker;
 <anchor xml:id="_mainwindow_8h_source_1l00104"/>00104 &#32;&#32;&#32;&#32;std::set&lt;QString&gt;&#32;x_group_members;
 <anchor xml:id="_mainwindow_8h_source_1l00106"/>00106 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;x_cleanUpEverything();

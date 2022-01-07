@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_chatmanager_8h_source" xml:lang="en-US">
 <title>chatmanager.h</title>
-<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/chatmanager.h</primary></indexterm>
+<indexterm><primary>SRC/chatmanager.h</primary></indexterm>
 Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_chatmanager_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;CHATMANAGER_H</emphasis>
 <anchor xml:id="_chatmanager_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;CHATMANAGER_H</emphasis>
 <anchor xml:id="_chatmanager_8h_source_1l00003"/>00003 

@@ -223,8 +223,6 @@ Definition at line <link linkend="_task__manager_8cpp_source_1l00388">388</link>
 
 <para>Cleanup for groups page ui elements. </para>
 </para>
-<para>
-Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00238">238</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
 </section>
 <anchor xml:id="_class_task__manager_1a24fb62c89440b033031210e4591f7616"/><section>
     <title>cleanUpLoginPage</title>
@@ -234,8 +232,6 @@ Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00238">238</
 
 <para>Cleanup for Login page ui elements. </para>
 </para>
-<para>
-Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00244">244</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
 </section>
 <anchor xml:id="_class_task__manager_1a3f952dc180c1272323abbf98b802d723"/><section>
     <title>displayDetails()</title>
@@ -285,8 +281,6 @@ Definition at line <link linkend="_task__manager_8cpp_source_1l00343">343</link>
 
 <para>Make <link linkend="_class_main_window">MainWindow</link> class to setup essentials. </para>
 </para>
-<para>
-Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00218">218</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
 </section>
 <anchor xml:id="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c"/><section>
     <title>GetState()</title>
@@ -600,8 +594,6 @@ Definition at line <link linkend="_task__manager_8cpp_source_1l00249">249</link>
 
 <para>Setup Chat connection when contact is selected. </para>
 </para>
-<para>
-Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00224">224</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
 </section>
 <anchor xml:id="_class_task__manager_1aa51984dfdedd6acacfe0ae3033b49baf"/><section>
     <title>SetupContacts()</title>
@@ -681,8 +673,6 @@ Definition at line <link linkend="_task__manager_8cpp_source_1l00277">277</link>
 
 <para>Setup Group connection when group is selected. </para>
 </para>
-<para>
-Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00231">231</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
 </section>
 <anchor xml:id="_class_task__manager_1a31feeb979c4c678ae6cd27ed3d8e7ae6"/><section>
     <title>SetupGroups()</title>
@@ -943,5 +933,5 @@ Definition at line <link linkend="_task__manager_8h_source_1l00067">67</link> of
 </section>
 <para>
 The documentation for this class was generated from the following files:</para>
-E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_task__manager_8h">task_manager.h</link>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/<link linkend="_moc__task__manager_8cpp">moc_task_manager.cpp</link>E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_task__manager_8cpp">task_manager.cpp</link></section>
+SRC/<link linkend="_task__manager_8h">task_manager.h</link>SRC/<link linkend="_task__manager_8cpp">task_manager.cpp</link></section>
 </section>

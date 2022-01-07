@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainwindow_8cpp" xml:lang="en-US">
-<title>E:/workspace/qt/ClientPulled/SChatDb/SRC/mainwindow.cpp File Reference</title>
-<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/mainwindow.cpp</primary></indexterm>
+<title>SRC/mainwindow.cpp File Reference</title>
+<indexterm><primary>SRC/mainwindow.cpp</primary></indexterm>
 <programlisting linenumbering="unnumbered">#include &quot;mainwindow.h&quot;
 #include &quot;ui_mainwindow.h&quot;
 #include &lt;QPixmap&gt;

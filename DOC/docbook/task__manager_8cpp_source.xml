@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_task__manager_8cpp_source" xml:lang="en-US">
 <title>task_manager.cpp</title>
-<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/task_manager.cpp</primary></indexterm>
+<indexterm><primary>SRC/task_manager.cpp</primary></indexterm>
 Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_task__manager_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_task__manager_8h">task_manager.h</link>&quot;</emphasis>
 <anchor xml:id="_task__manager_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&lt;QDebug&gt;</emphasis>
 <anchor xml:id="_task__manager_8cpp_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;QSqlQuery&gt;</emphasis>

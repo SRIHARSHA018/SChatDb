@@ -23,8 +23,6 @@
         <itemizedlist>
             <listitem><para><link linkend="_classtest__app_1aeca767bfc172af77e2c4cdf52306f0ff">test_app</link> (QObject *parent=nullptr)</para>
 </listitem>
-            <listitem><para><link linkend="_classtest__app_1aeca767bfc172af77e2c4cdf52306f0ff">test_app</link> (QObject *parent=nullptr)</para>
-</listitem>
         </itemizedlist>
 </simplesect>
 <section>
@@ -36,25 +34,19 @@
 
 <para>Testing class for SChat. </para>
 <para>
-Definition at line <link linkend="__s_r_c_2test__app_8h_source_1l00014">14</link> of file <link linkend="__s_r_c_2test__app_8h_source">test_app.h</link>.</para>
+Definition at line <link linkend="_test__app_8h_source_1l00014">14</link> of file <link linkend="_test__app_8h_source">test_app.h</link>.</para>
 </section>
 <section>
 <title>Constructor &amp; Destructor Documentation</title>
 <anchor xml:id="_classtest__app_1aeca767bfc172af77e2c4cdf52306f0ff"/><section>
-    <title>test_app()<computeroutput>[1/2]</computeroutput></title>
+    <title>test_app()</title>
 <indexterm><primary>test_app</primary><secondary>test_app</secondary></indexterm>
 <indexterm><primary>test_app</primary><secondary>test_app</secondary></indexterm>
 <para><computeroutput>test_app::test_app (QObject * parent = <computeroutput>nullptr</computeroutput>
 )<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
-Definition at line <link linkend="__s_r_c_2test__app_8cpp_source_1l00007">7</link> of file <link linkend="__s_r_c_2test__app_8cpp_source">test_app.cpp</link>.</para>
+Definition at line <link linkend="_test__app_8cpp_source_1l00007">7</link> of file <link linkend="_test__app_8cpp_source">test_app.cpp</link>.</para>
 </section>
-<anchor xml:id="_classtest__app_1aeca767bfc172af77e2c4cdf52306f0ff"/><section>
-    <title>test_app()<computeroutput>[2/2]</computeroutput></title>
-<indexterm><primary>test_app</primary><secondary>test_app</secondary></indexterm>
-<indexterm><primary>test_app</primary><secondary>test_app</secondary></indexterm>
-<para><computeroutput>test_app::test_app (QObject * parent = <computeroutput>nullptr</computeroutput>
-)<computeroutput>[explicit]</computeroutput></computeroutput></para></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="__s_r_c_2test__app_8h">test_app.h</link>E:/workspace/qt/ClientPulled/SChatDb/TESTS/<link linkend="__t_e_s_t_s_2test__app_8h">test_app.h</link>E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="__s_r_c_2test__app_8cpp">test_app.cpp</link>E:/workspace/qt/ClientPulled/SChatDb/TESTS/<link linkend="__t_e_s_t_s_2test__app_8cpp">test_app.cpp</link></section>
+SRC/<link linkend="_test__app_8h">test_app.h</link>SRC/<link linkend="_test__app_8cpp">test_app.cpp</link></section>
 </section>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_emoji__pop__up_8h" xml:lang="en-US">
-<title>E:/workspace/qt/ClientPulled/SChatDb/SRC/emoji_pop_up.h File Reference</title>
-<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/emoji_pop_up.h</primary></indexterm>
+<title>SRC/emoji_pop_up.h File Reference</title>
+<indexterm><primary>SRC/emoji_pop_up.h</primary></indexterm>
 <programlisting linenumbering="unnumbered">#include &lt;QDialog&gt;
 #include &lt;QTableWidget&gt;
 #include &lt;QTableWidgetItem&gt;

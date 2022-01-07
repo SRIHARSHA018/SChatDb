@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['id_0',['id',['../structprofile.html#a495f383adeff6448ebe436557896de6c',1,'profile']]]
+  ['query_0',['query',['../class_chat_manager.html#ac198a6ebd0d7e6d31a79c3298ee7079f',1,'ChatManager']]]
 ];

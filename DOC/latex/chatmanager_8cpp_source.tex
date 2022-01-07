@@ -1,144 +1,144 @@
-\hypertarget{chatmanager_8cpp_source}{}\doxysection{chatmanager.\+cpp}
-\label{chatmanager_8cpp_source}\index{E:/workspace/qt/ClientPulled/SChatDb/SRC/chatmanager.cpp@{E:/workspace/qt/ClientPulled/SChatDb/SRC/chatmanager.cpp}}
-\mbox{\hyperlink{chatmanager_8cpp}{Go to the documentation of this file.}}
+\doxysection{chatmanager.\+cpp}
+\label{chatmanager_8cpp_source}\index{SRC/chatmanager.cpp@{SRC/chatmanager.cpp}}
+\textbf{ Go to the documentation of this file.}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{chatmanager_8h}{chatmanager.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <QDebug>}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <QLabel>}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00004}00004 }
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00005}\mbox{\hyperlink{class_chat_manager_af07f739d452b3481011bfb368c20eeac}{00005}} \mbox{\hyperlink{class_chat_manager_af07f739d452b3481011bfb368c20eeac}{ChatManager::ChatManager}}(QObject *parent)}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00006}00006     : QObject\{parent\}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00007}00007 \{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00008}00008 }
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00009}00009 \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00015}\mbox{\hyperlink{class_chat_manager_a76b6fe934b15f768c3c6f67bb9c05a51}{00015}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_a76b6fe934b15f768c3c6f67bb9c05a51}{ChatManager::SendChat}}(std::string msg)}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00016}00016 \{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00017}00017    this-\/>x\_fetchRecieverDetails();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00018}00018    \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.prepare(\textcolor{stringliteral}{"{}INSERT INTO public.messages (message,sender\_id,reciever\_id) VALUES (?,?,?);"{}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00019}00019    \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(0,QString::fromStdString(msg));}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00020}00020    \textcolor{comment}{//qDebug()<<this-\/>x\_sender\_id;}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00021}00021    \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(1,this-\/>x\_sender\_id);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00022}00022    \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(2,this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00023}00023    \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.exec())\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00024}00024      qDebug()<<\textcolor{stringliteral}{"{}message inserted"{}};}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00025}00025      this-\/>\mbox{\hyperlink{class_chat_manager_ad0d86de90b2f5fcc7ac7449ebf4aa118}{DisplayChat}}();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00026}00026    \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00027}00027    \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00028}00028 \textcolor{comment}{       qDebug()<<query.lastError();}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00029}00029 \textcolor{comment}{   \}*/}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00030}00030 \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00036}\mbox{\hyperlink{class_chat_manager_a056db0c78b7a03f59015c1d4ecf1c48f}{00036}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_a056db0c78b7a03f59015c1d4ecf1c48f}{ChatManager::SendGroupChat}}(std::string msg)}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00037}00037 \{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00038}00038     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.prepare(\textcolor{stringliteral}{"{}INSERT INTO public.group\_messages (message,sender\_id,group\_id) VALUES (?,?,?);"{}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00039}00039     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(0,QString::fromStdString(msg));}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00040}00040     \textcolor{comment}{//qDebug()<<this-\/>x\_sender\_id;}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00041}00041     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(1,this-\/>x\_sender\_id);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00042}00042     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(2,this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00043}00043     \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.exec())\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00044}00044       qDebug()<<\textcolor{stringliteral}{"{}message inserted"{}};}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00045}00045       this-\/>\mbox{\hyperlink{class_chat_manager_ae7d5f10f9b62470a34be758c8f4020c3}{DisplayGroupChat}}();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00046}00046     \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00047}00047     \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00048}00048 \textcolor{comment}{        qDebug()<<query.lastError();}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00049}00049 \textcolor{comment}{    \}*/}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00050}00050 \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00055}\mbox{\hyperlink{class_chat_manager_ad0d86de90b2f5fcc7ac7449ebf4aa118}{00055}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_ad0d86de90b2f5fcc7ac7449ebf4aa118}{ChatManager::DisplayChat}}()}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00056}00056 \{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00057}00057     \mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00058}00058     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.prepare(\textcolor{stringliteral}{"{}SELECT message,sender\_id,reciever\_id FROM public.messages WHERE (sender\_id=? AND reciever\_id=?) OR (sender\_id=? AND reciever\_id=?) ORDER BY id ASC;"{}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00059}00059     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(0,this-\/>x\_sender\_id);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00060}00060     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(1,this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00061}00061     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(2,this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00062}00062     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(3,this-\/>x\_sender\_id);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00063}00063     \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.exec())\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00064}00064         \textcolor{comment}{//qDebug()<<"{}got messages"{};}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00065}00065         \textcolor{keywordflow}{while}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.next())\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00066}00066             QListWidgetItem* item =\textcolor{keyword}{new} QListWidgetItem(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.value(0).toString(),\mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00067}00067           \textcolor{comment}{//qDebug()<<query.value(0).toString()<<"{} "{}<<query.value(1).toString()<<"{} "{}<<query.value(2).toString();}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00068}00068             \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.value(1).toInt()==this-\/>x\_sender\_id)\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00069}00069                 item-\/>setTextAlignment(Qt::AlignRight);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00070}00070                 \mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}}-\/>addItem(item);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00071}00071             \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00072}00072             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00073}00073                 item-\/>setTextAlignment(Qt::AlignLeft);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00074}00074                 \mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}}-\/>addItem(item);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00075}00075             \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00076}00076         \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00077}00077     \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00078}00078     \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00079}00079 \textcolor{comment}{        qDebug()<<query.lastError();}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00080}00080 \textcolor{comment}{    \}*/}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00081}00081     \textcolor{comment}{//qDebug()<<chat\_pane-\/>currentRow();}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00082}00082     \mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}}-\/>scrollToBottom();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00083}00083 }
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00084}00084 \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00089}\mbox{\hyperlink{class_chat_manager_ae7d5f10f9b62470a34be758c8f4020c3}{00089}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_ae7d5f10f9b62470a34be758c8f4020c3}{ChatManager::DisplayGroupChat}}()}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00090}00090 \{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00091}00091     \mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00092}00092 }
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00093}00093     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.prepare(\textcolor{stringliteral}{"{}SELECT public.group\_messages.message,sender\_id,firstname FROM public.group\_messages INNER JOIN public.users ON public.users.id = sender\_id AND group\_id=? ORDER BY public.group\_messages.id ASC;"{}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00094}00094     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.bindValue(0,this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00095}00095     \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.exec())\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00096}00096         \textcolor{comment}{//qDebug()<<"{}got messages"{};}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00097}00097         \textcolor{keywordflow}{while}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.next())\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00098}00098             QListWidgetItem* item =\textcolor{keyword}{new} QListWidgetItem(\mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00099}00099           \textcolor{comment}{//qDebug()<<query.value(0).toString()<<"{} "{}<<query.value(1).toString()<<"{} "{}<<query.value(2).toString();}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00100}00100             \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.value(1).toInt()==this-\/>x\_sender\_id)\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00101}00101                 item-\/>setText(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.value(0).toString());}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00102}00102                 item-\/>setTextAlignment(Qt::AlignRight);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00103}00103                 \mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}}-\/>addItem(item);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00104}00104             \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00105}00105             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00106}00106                 item-\/>setText(\textcolor{stringliteral}{"{}@"{}}+\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.value(2).toString()+\textcolor{stringliteral}{"{}:-\/\(\backslash\)n  "{}}+\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.value(0).toString());}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00107}00107                 item-\/>setTextAlignment(Qt::AlignLeft);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00108}00108                 \mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}}-\/>addItem(item);}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00109}00109             \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00110}00110         \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00111}00111     \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00112}00112     \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00113}00113 \textcolor{comment}{        qDebug()<<query.lastError();}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00114}00114 \textcolor{comment}{    \}*/}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00115}00115 }
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00116}00116     \mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}}-\/>scrollToBottom();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00117}00117 }
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00118}00118 \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00125}\mbox{\hyperlink{class_chat_manager_a15348d3bc3eaa99a84f94798cbfa00a0}{00125}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_a15348d3bc3eaa99a84f94798cbfa00a0}{ChatManager::on\_SetupChatConnection}}(QString name,\mbox{\hyperlink{structprofile}{profile}} details)}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00126}00126 \{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00127}00127     this-\/>x\_sender\_id = details.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}};}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00128}00128     \textcolor{comment}{//qDebug()<<this-\/>x\_profile\_details-\/>id;}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00129}00129     this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a8ce634fbaa51e8f9d9fefc9b810650d4}{first\_name}}=name.toStdString();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00130}00130     this-\/>x\_fetchRecieverDetails();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00131}00131     this-\/>\mbox{\hyperlink{class_chat_manager_ad0d86de90b2f5fcc7ac7449ebf4aa118}{DisplayChat}}();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00132}00132     \textcolor{comment}{//qDebug()<<"{}contact setup done"{};}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00133}00133 \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00140}\mbox{\hyperlink{class_chat_manager_adad8b7f76c29f0b3aefa3e0455490163}{00140}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_adad8b7f76c29f0b3aefa3e0455490163}{ChatManager::on\_SetupGroupChatConnection}}(QString name, \mbox{\hyperlink{structprofile}{profile}} details)}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00141}00141 \{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00142}00142     this-\/>x\_sender\_id = details.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}};}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00143}00143     \textcolor{comment}{//qDebug()<<"{}Chat connection established"{}<<name;}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00144}00144     this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a8ce634fbaa51e8f9d9fefc9b810650d4}{first\_name}} = name.toStdString();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00145}00145     this-\/>x\_fetchGroupRecieverDetails();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00146}00146     this-\/>\mbox{\hyperlink{class_chat_manager_ae7d5f10f9b62470a34be758c8f4020c3}{DisplayGroupChat}}();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00147}00147 \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00152}00152 \textcolor{keywordtype}{void} ChatManager::x\_fetchRecieverDetails()}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00153}00153 \{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00154}00154 }
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00155}00155         \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.exec(\textcolor{stringliteral}{"{}SELECT id FROM public.users WHERE firstname='"{}}+QString::fromStdString(this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a8ce634fbaa51e8f9d9fefc9b810650d4}{first\_name}})+\textcolor{stringliteral}{"{}';"{}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00156}00156         \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.next())\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00157}00157             this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}}=\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.value(0).toInt();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00158}00158         \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00159}00159         \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00160}00160 \textcolor{comment}{            qDebug()<<query.lastError();}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00161}00161 \textcolor{comment}{        \}*/}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00162}00162 \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00167}00167 \textcolor{keywordtype}{void} ChatManager::x\_fetchGroupRecieverDetails()}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00168}00168 \{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00169}00169     \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.exec(\textcolor{stringliteral}{"{}SELECT id FROM public.groups WHERE group\_name='"{}}+QString::fromStdString(this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a8ce634fbaa51e8f9d9fefc9b810650d4}{first\_name}})+\textcolor{stringliteral}{"{}';"{}});}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00170}00170     \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.next())\{}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00171}00171         this-\/>x\_profile\_details\_reciever.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}}=\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}}.value(0).toInt();}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00172}00172     \}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00173}00173     \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00174}00174 \textcolor{comment}{        qDebug()<<query.lastError();}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00175}00175 \textcolor{comment}{    \}*/}}
-\DoxyCodeLine{\Hypertarget{chatmanager_8cpp_source_l00176}00176 \}}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}chatmanager.h"{}}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <QDebug>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 ChatManager::ChatManager(QObject *parent)}
+\DoxyCodeLine{00006     : QObject\{parent\}}
+\DoxyCodeLine{00007 \{}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \}}
+\DoxyCodeLine{00015 \textcolor{keywordtype}{void} ChatManager::SendChat(std::string msg)}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017    this-\/>x\_fetchRecieverDetails();}
+\DoxyCodeLine{00018    query.prepare(\textcolor{stringliteral}{"{}INSERT INTO public.messages (message,sender\_id,reciever\_id) VALUES (?,?,?);"{}});}
+\DoxyCodeLine{00019    query.bindValue(0,QString::fromStdString(msg));}
+\DoxyCodeLine{00020    \textcolor{comment}{//qDebug()<<this-\/>x\_sender\_id;}}
+\DoxyCodeLine{00021    query.bindValue(1,this-\/>x\_sender\_id);}
+\DoxyCodeLine{00022    query.bindValue(2,this-\/>x\_profile\_details\_reciever.id);}
+\DoxyCodeLine{00023    \textcolor{keywordflow}{if}(query.exec())\{}
+\DoxyCodeLine{00024      qDebug()<<\textcolor{stringliteral}{"{}message inserted"{}};}
+\DoxyCodeLine{00025      this-\/>DisplayChat();}
+\DoxyCodeLine{00026    \}}
+\DoxyCodeLine{00027    \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00028 \textcolor{comment}{       qDebug()<<query.lastError();}}
+\DoxyCodeLine{00029 \textcolor{comment}{   \}*/}}
+\DoxyCodeLine{00030 \}}
+\DoxyCodeLine{00036 \textcolor{keywordtype}{void} ChatManager::SendGroupChat(std::string msg)}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038     query.prepare(\textcolor{stringliteral}{"{}INSERT INTO public.group\_messages (message,sender\_id,group\_id) VALUES (?,?,?);"{}});}
+\DoxyCodeLine{00039     query.bindValue(0,QString::fromStdString(msg));}
+\DoxyCodeLine{00040     \textcolor{comment}{//qDebug()<<this-\/>x\_sender\_id;}}
+\DoxyCodeLine{00041     query.bindValue(1,this-\/>x\_sender\_id);}
+\DoxyCodeLine{00042     query.bindValue(2,this-\/>x\_profile\_details\_reciever.id);}
+\DoxyCodeLine{00043     \textcolor{keywordflow}{if}(query.exec())\{}
+\DoxyCodeLine{00044       qDebug()<<\textcolor{stringliteral}{"{}message inserted"{}};}
+\DoxyCodeLine{00045       this-\/>DisplayGroupChat();}
+\DoxyCodeLine{00046     \}}
+\DoxyCodeLine{00047     \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00048 \textcolor{comment}{        qDebug()<<query.lastError();}}
+\DoxyCodeLine{00049 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{00050 \}}
+\DoxyCodeLine{00055 \textcolor{keywordtype}{void} ChatManager::DisplayChat()}
+\DoxyCodeLine{00056 \{}
+\DoxyCodeLine{00057     chat\_pane-\/>clear();}
+\DoxyCodeLine{00058     query.prepare(\textcolor{stringliteral}{"{}SELECT message,sender\_id,reciever\_id FROM public.messages WHERE (sender\_id=? AND reciever\_id=?) OR (sender\_id=? AND reciever\_id=?) ORDER BY id ASC;"{}});}
+\DoxyCodeLine{00059     query.bindValue(0,this-\/>x\_sender\_id);}
+\DoxyCodeLine{00060     query.bindValue(1,this-\/>x\_profile\_details\_reciever.id);}
+\DoxyCodeLine{00061     query.bindValue(2,this-\/>x\_profile\_details\_reciever.id);}
+\DoxyCodeLine{00062     query.bindValue(3,this-\/>x\_sender\_id);}
+\DoxyCodeLine{00063     \textcolor{keywordflow}{if}(query.exec())\{}
+\DoxyCodeLine{00064         \textcolor{comment}{//qDebug()<<"{}got messages"{};}}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{while}(query.next())\{}
+\DoxyCodeLine{00066             QListWidgetItem* item =\textcolor{keyword}{new} QListWidgetItem(query.value(0).toString(),chat\_pane);}
+\DoxyCodeLine{00067           \textcolor{comment}{//qDebug()<<query.value(0).toString()<<"{} "{}<<query.value(1).toString()<<"{} "{}<<query.value(2).toString();}}
+\DoxyCodeLine{00068             \textcolor{keywordflow}{if}(query.value(1).toInt()==this-\/>x\_sender\_id)\{}
+\DoxyCodeLine{00069                 item-\/>setTextAlignment(Qt::AlignRight);}
+\DoxyCodeLine{00070                 chat\_pane-\/>addItem(item);}
+\DoxyCodeLine{00071             \}}
+\DoxyCodeLine{00072             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00073                 item-\/>setTextAlignment(Qt::AlignLeft);}
+\DoxyCodeLine{00074                 chat\_pane-\/>addItem(item);}
+\DoxyCodeLine{00075             \}}
+\DoxyCodeLine{00076         \}}
+\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00078     \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00079 \textcolor{comment}{        qDebug()<<query.lastError();}}
+\DoxyCodeLine{00080 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{00081     \textcolor{comment}{//qDebug()<<chat\_pane-\/>currentRow();}}
+\DoxyCodeLine{00082     chat\_pane-\/>scrollToBottom();}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084 \}}
+\DoxyCodeLine{00089 \textcolor{keywordtype}{void} ChatManager::DisplayGroupChat()}
+\DoxyCodeLine{00090 \{}
+\DoxyCodeLine{00091     chat\_pane-\/>clear();}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093     query.prepare(\textcolor{stringliteral}{"{}SELECT public.group\_messages.message,sender\_id,firstname FROM public.group\_messages INNER JOIN public.users ON public.users.id = sender\_id AND group\_id=? ORDER BY public.group\_messages.id ASC;"{}});}
+\DoxyCodeLine{00094     query.bindValue(0,this-\/>x\_profile\_details\_reciever.id);}
+\DoxyCodeLine{00095     \textcolor{keywordflow}{if}(query.exec())\{}
+\DoxyCodeLine{00096         \textcolor{comment}{//qDebug()<<"{}got messages"{};}}
+\DoxyCodeLine{00097         \textcolor{keywordflow}{while}(query.next())\{}
+\DoxyCodeLine{00098             QListWidgetItem* item =\textcolor{keyword}{new} QListWidgetItem(chat\_pane);}
+\DoxyCodeLine{00099           \textcolor{comment}{//qDebug()<<query.value(0).toString()<<"{} "{}<<query.value(1).toString()<<"{} "{}<<query.value(2).toString();}}
+\DoxyCodeLine{00100             \textcolor{keywordflow}{if}(query.value(1).toInt()==this-\/>x\_sender\_id)\{}
+\DoxyCodeLine{00101                 item-\/>setText(query.value(0).toString());}
+\DoxyCodeLine{00102                 item-\/>setTextAlignment(Qt::AlignRight);}
+\DoxyCodeLine{00103                 chat\_pane-\/>addItem(item);}
+\DoxyCodeLine{00104             \}}
+\DoxyCodeLine{00105             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00106                 item-\/>setText(\textcolor{stringliteral}{"{}@"{}}+query.value(2).toString()+\textcolor{stringliteral}{"{}:-\/\(\backslash\)n  "{}}+query.value(0).toString());}
+\DoxyCodeLine{00107                 item-\/>setTextAlignment(Qt::AlignLeft);}
+\DoxyCodeLine{00108                 chat\_pane-\/>addItem(item);}
+\DoxyCodeLine{00109             \}}
+\DoxyCodeLine{00110         \}}
+\DoxyCodeLine{00111     \}}
+\DoxyCodeLine{00112     \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00113 \textcolor{comment}{        qDebug()<<query.lastError();}}
+\DoxyCodeLine{00114 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116     chat\_pane-\/>scrollToBottom();}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118 \}}
+\DoxyCodeLine{00125 \textcolor{keywordtype}{void} ChatManager::on\_SetupChatConnection(QString name,profile details)}
+\DoxyCodeLine{00126 \{}
+\DoxyCodeLine{00127     this-\/>x\_sender\_id = details.id;}
+\DoxyCodeLine{00128     \textcolor{comment}{//qDebug()<<this-\/>x\_profile\_details-\/>id;}}
+\DoxyCodeLine{00129     this-\/>x\_profile\_details\_reciever.first\_name=name.toStdString();}
+\DoxyCodeLine{00130     this-\/>x\_fetchRecieverDetails();}
+\DoxyCodeLine{00131     this-\/>DisplayChat();}
+\DoxyCodeLine{00132     \textcolor{comment}{//qDebug()<<"{}contact setup done"{};}}
+\DoxyCodeLine{00133 \}}
+\DoxyCodeLine{00140 \textcolor{keywordtype}{void} ChatManager::on\_SetupGroupChatConnection(QString name, profile details)}
+\DoxyCodeLine{00141 \{}
+\DoxyCodeLine{00142     this-\/>x\_sender\_id = details.id;}
+\DoxyCodeLine{00143     \textcolor{comment}{//qDebug()<<"{}Chat connection established"{}<<name;}}
+\DoxyCodeLine{00144     this-\/>x\_profile\_details\_reciever.first\_name = name.toStdString();}
+\DoxyCodeLine{00145     this-\/>x\_fetchGroupRecieverDetails();}
+\DoxyCodeLine{00146     this-\/>DisplayGroupChat();}
+\DoxyCodeLine{00147 \}}
+\DoxyCodeLine{00152 \textcolor{keywordtype}{void} ChatManager::x\_fetchRecieverDetails()}
+\DoxyCodeLine{00153 \{}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155         query.exec(\textcolor{stringliteral}{"{}SELECT id FROM public.users WHERE firstname='"{}}+QString::fromStdString(this-\/>x\_profile\_details\_reciever.first\_name)+\textcolor{stringliteral}{"{}';"{}});}
+\DoxyCodeLine{00156         \textcolor{keywordflow}{if}(query.next())\{}
+\DoxyCodeLine{00157             this-\/>x\_profile\_details\_reciever.id=query.value(0).toInt();}
+\DoxyCodeLine{00158         \}}
+\DoxyCodeLine{00159         \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00160 \textcolor{comment}{            qDebug()<<query.lastError();}}
+\DoxyCodeLine{00161 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{00162 \}}
+\DoxyCodeLine{00167 \textcolor{keywordtype}{void} ChatManager::x\_fetchGroupRecieverDetails()}
+\DoxyCodeLine{00168 \{}
+\DoxyCodeLine{00169     query.exec(\textcolor{stringliteral}{"{}SELECT id FROM public.groups WHERE group\_name='"{}}+QString::fromStdString(this-\/>x\_profile\_details\_reciever.first\_name)+\textcolor{stringliteral}{"{}';"{}});}
+\DoxyCodeLine{00170     \textcolor{keywordflow}{if}(query.next())\{}
+\DoxyCodeLine{00171         this-\/>x\_profile\_details\_reciever.id=query.value(0).toInt();}
+\DoxyCodeLine{00172     \}}
+\DoxyCodeLine{00173     \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00174 \textcolor{comment}{        qDebug()<<query.lastError();}}
+\DoxyCodeLine{00175 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{00176 \}}
 
 \end{DoxyCode}

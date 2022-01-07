@@ -1,413 +1,413 @@
-\hypertarget{task__manager_8cpp_source}{}\doxysection{task\+\_\+manager.\+cpp}
-\label{task__manager_8cpp_source}\index{E:/workspace/qt/ClientPulled/SChatDb/SRC/task\_manager.cpp@{E:/workspace/qt/ClientPulled/SChatDb/SRC/task\_manager.cpp}}
-\mbox{\hyperlink{task__manager_8cpp}{Go to the documentation of this file.}}
+\doxysection{task\+\_\+manager.\+cpp}
+\label{task__manager_8cpp_source}\index{SRC/task\_manager.cpp@{SRC/task\_manager.cpp}}
+\textbf{ Go to the documentation of this file.}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{task__manager_8h}{task\_manager.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <QDebug>}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <QSqlQuery>}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <QSqlError>}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <QImage>}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <QBuffer>}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <QtGlobal>}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <QPixmap>}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00015}\mbox{\hyperlink{class_task__manager_a0bea96effe1595b32539666ea2cff9aa}{00015}} \mbox{\hyperlink{class_task__manager_a0bea96effe1595b32539666ea2cff9aa}{Task\_manager::Task\_manager}}(QObject *parent)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00016}00016     : QObject\{parent\}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00017}00017 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00018}00018         connect(\textcolor{keyword}{this},SIGNAL(\mbox{\hyperlink{class_task__manager_a470715f9c760ee45bbdc7b809e6f3cee}{enteredMainWindow}}()),parent,SLOT(on\_EnterMainWindow()));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00019}00019         connect(\textcolor{keyword}{this},SIGNAL(\mbox{\hyperlink{class_task__manager_a24fb62c89440b033031210e4591f7616}{cleanUpLoginPage}}()),parent,SLOT(on\_cleanUpLoginPage()));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00020}00020 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00025}\mbox{\hyperlink{class_task__manager_ae601874b1890f2f035f5311b0ff50f7e}{00025}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_ae601874b1890f2f035f5311b0ff50f7e}{Task\_manager::Init}}()}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00026}00026 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00027}00027     x\_db = QSqlDatabase::addDatabase(\textcolor{stringliteral}{"{}QPSQL"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00029}00029     x\_db.setHostName(\textcolor{stringliteral}{"{}localhost"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00030}00030     x\_db.setUserName(\textcolor{stringliteral}{"{}postgres"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00031}00031     x\_db.setPassword(\textcolor{stringliteral}{"{}Sj@\&15634"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00032}00032     x\_db.setDatabaseName(\textcolor{stringliteral}{"{}Schat"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00033}00033     x\_db.setPort(5432);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00034}00034     \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00035}00035         \textcolor{keywordflow}{if}(x\_db.open())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00036}00036             qDebug()<<\textcolor{stringliteral}{"{}DatabaseConnected"{}};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00037}00037         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00038}00038         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00039}00039             \textcolor{comment}{//qDebug()<<"{}failed"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00040}00040             \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Database Connection failed"{}};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00041}00041         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00042}00042     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00043}00043     \textcolor{keywordflow}{catch}(...)\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00044}00044         std::cout<<\textcolor{stringliteral}{"{}Database connection failure, Please check the connection"{}};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00045}00045     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00046}00046 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00047}00047 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00053}\mbox{\hyperlink{class_task__manager_a68ba4818ada6d2ddf4016cdfd4a6b831}{00053}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a68ba4818ada6d2ddf4016cdfd4a6b831}{Task\_manager::ValidateLoginDetails}}(\textcolor{keyword}{const} QJsonObject \&details)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00054}00054 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00055}00055     QSqlQuery query(x\_db);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00056}00056     \textcolor{keyword}{auto} username = details[\textcolor{stringliteral}{"{}username"{}}].toString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00057}00057     \textcolor{keyword}{auto} password = details[\textcolor{stringliteral}{"{}password"{}}].toString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00058}00058     query.exec( QString(\textcolor{stringliteral}{"{}SELECT username,password FROM public.users WHERE username='"{}}+username+\textcolor{stringliteral}{"{}' AND password='"{}}+password+\textcolor{stringliteral}{"{}';"{}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00059}00059     \textcolor{keywordflow}{if}(query.next())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00060}00060         \textcolor{comment}{//qDebug()<<"{}User details are correct"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00061}00061         this-\/>\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a3bef8f7d8b7b3cb58fb951486dc737b3}{STATUS::LOGIN\_SUCCESSFUL}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00062}00062         query.exec(\textcolor{stringliteral}{"{}SELECT id,username,firstname,lastname,contactno,profile\_pic FROM public.users WHERE username='"{}}+username+\textcolor{stringliteral}{"{}';"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00063}00063         \textcolor{keywordflow}{if}(query.next())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00065}00065             \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}} = query.value(0).toInt();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00066}00066             \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a8845e6d4ac278c3be41cf8e5bde753b2}{user\_name}} = query.value(1).toString().toStdString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00067}00067             \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a8ce634fbaa51e8f9d9fefc9b810650d4}{first\_name}} = query.value(2).toString().toStdString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00068}00068             \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a968301cdf224f740c2a477a49baa0dca}{last\_name}} = query.value(3).toString().toStdString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00069}00069             \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_ae3bf17315f4d50b6d7a923cbe9e72105}{contactno}} = query.value(4).toString().toStdString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00070}00070             \textcolor{keywordflow}{if}(!query.value(5).isNull())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00071}00071                 \textcolor{comment}{//qDebug()<<"{}feteched image"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00072}00072                 QPixmap image;}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00073}00073                 \textcolor{keywordflow}{if}(image.loadFromData(query.value(5).toByteArray()))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00074}00074                     \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a0cfcc0dfdd028e6bb76af94cba6d1a62}{profile\_pic}} = image;}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00075}00075                 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00076}00076                 \textcolor{comment}{//qDebug()<<QString::fromStdString(profile\_details.profile\_pic);}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00077}00077             \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00078}00078         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00079}00079         \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00080}00080 \textcolor{comment}{            qDebug()<<query.lastError().text();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00081}00081 \textcolor{comment}{        \}*/}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00082}00082     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00083}00083     \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00084}00084         \textcolor{comment}{//qDebug()<<query.lastError();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00085}00085         this-\/>\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4ad57e6995e0b5105bfeb9bde15ed0a7a0}{STATUS::LOGIN\_FAILED}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00086}00086     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00087}00087 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00094}\mbox{\hyperlink{class_task__manager_a9e1c7df0f397c06b6a0f62eaf96ee830}{00094}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a9e1c7df0f397c06b6a0f62eaf96ee830}{Task\_manager::ValidateSignUpDetails}}(\textcolor{keyword}{const} QJsonObject \&details, QLabel* status)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00095}00095 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00096}00096     QSqlQuery query(x\_db);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00097}00097     \textcolor{keyword}{auto} username = details[\textcolor{stringliteral}{"{}username"{}}].toString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00098}00098     \textcolor{keyword}{auto} password = details[\textcolor{stringliteral}{"{}password"{}}].toString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00099}00099     \textcolor{keyword}{auto} confirmpassword = details[\textcolor{stringliteral}{"{}confirmpassword"{}}].toString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00100}00100     \textcolor{keyword}{auto} firstname = details[\textcolor{stringliteral}{"{}firstname"{}}].toString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00101}00101     \textcolor{keyword}{auto} lastname = details[\textcolor{stringliteral}{"{}lastname"{}}].toString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00102}00102     \textcolor{keyword}{auto} contactno = details[\textcolor{stringliteral}{"{}contactno"{}}].toString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00103}00103     \textcolor{keywordflow}{if}(username.length()!=0 \&\& firstname.length()!=0 \&\& lastname.length()!=0 \&\& contactno.length()!=0 \&\& password.length()>=6)\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00104}00104         \textcolor{keywordflow}{if}(password!=confirmpassword)\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00105}00105             this-\/>\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a110999835c9c77eea71a06c701f5038a}{STATUS::SIGNUP\_FAILED}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00106}00106             status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00107}00107             status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}confirm password and password should be same."{}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00108}00108         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00109}00109         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}INSERT INTO public.users (username,password,firstname,lastname,contactno) VALUES ('"{}}+username+\textcolor{stringliteral}{"{}','"{}}+password+\textcolor{stringliteral}{"{}','"{}}+ firstname + \textcolor{stringliteral}{"{}', '"{}} + lastname + \textcolor{stringliteral}{"{}', '"{}} + contactno + \textcolor{stringliteral}{"{}');"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00110}00110             this-\/>\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a946a9f413ba99ef2cb0a173c76451f2e}{STATUS::SIGNUP\_SUCCESSFUL}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00111}00111         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00112}00112         \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00113}00113 \textcolor{comment}{            qDebug()<<query.lastError().text().toStdString();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00114}00114 \textcolor{comment}{        \}*/}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00115}00115     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00116}00116     \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00117}00117         \textcolor{keywordflow}{if}(password.length()<6)\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00118}00118             this-\/>\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a110999835c9c77eea71a06c701f5038a}{STATUS::SIGNUP\_FAILED}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00119}00119             status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00120}00120             status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}atleast 6 characters for password"{}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00121}00121         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00122}00122         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00123}00123             this-\/>\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a110999835c9c77eea71a06c701f5038a}{STATUS::SIGNUP\_FAILED}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00124}00124             status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00125}00125             status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}All fields are mandatory."{}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00126}00126         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00127}00127     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00128}00128 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00129}00129 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00138}\mbox{\hyperlink{class_task__manager_a2bf50ea73b70a5b0945489b3b221e762}{00138}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a2bf50ea73b70a5b0945489b3b221e762}{Task\_manager::ValidateGroupInfo}}(\textcolor{keyword}{const} QJsonObject \&details, QLabel *status, QListWidget* members,\textcolor{keyword}{const} std::set<QString>\& set\_members)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00139}00139 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00140}00140     \textcolor{keywordflow}{if}(details[\textcolor{stringliteral}{"{}group\_name"{}}].toString().length()==0)\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00141}00141         status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00142}00142         status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}Please Provide Group Name"{}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00143}00143     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00144}00144     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(details[\textcolor{stringliteral}{"{}desc"{}}].toString().length()==0)\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00145}00145         status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00146}00146         status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}Please Provide Group Description"{}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00147}00147     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00148}00148     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(members-\/>count()==0)\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00149}00149         status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00150}00150         status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}atleast two members are required to create a group including you"{}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00151}00151     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00152}00152     \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00153}00153         this-\/>x\_createGroup(details,status,members,set\_members);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00154}00154     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00155}00155 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00156}00156 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00162}\mbox{\hyperlink{class_task__manager_a6f273c9efef1901fba7c277ac2df9b1d}{00162}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a6f273c9efef1901fba7c277ac2df9b1d}{Task\_manager::SetupMainPage}}(QStackedWidget *pager)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00163}00163 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00164}00164     \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{GetState}}()==\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a3bef8f7d8b7b3cb58fb951486dc737b3}{STATUS::LOGIN\_SUCCESSFUL}})\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00165}00165         pager-\/>setCurrentIndex(2);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00166}00166         emit \mbox{\hyperlink{class_task__manager_a24fb62c89440b033031210e4591f7616}{cleanUpLoginPage}}();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00167}00167         emit \mbox{\hyperlink{class_task__manager_a470715f9c760ee45bbdc7b809e6f3cee}{enteredMainWindow}}();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00168}00168         x\_SetupMainWindowControls();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00169}00169         \textcolor{keywordflow}{if}(this-\/>x\_db.driver()-\/>hasFeature(QSqlDriver::EventNotifications))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00170}00170             this-\/>x\_db.driver()-\/>subscribeToNotification(\textcolor{stringliteral}{"{}msg"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00171}00171             \textcolor{comment}{//qDebug()<<"{}got the feature"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00172}00172             \textcolor{comment}{//qDebug()<<this-\/>x\_db.driver()-\/>subscribedToNotifications();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00173}00173             connect(this-\/>x\_db.driver(), SIGNAL(notification(\textcolor{keyword}{const} QString\&, QSqlDriver::NotificationSource , \textcolor{keyword}{const} QVariant \&)),}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00174}00174                     \textcolor{keyword}{this}, SLOT(\mbox{\hyperlink{class_task__manager_a718a1571930c1ef472f921d27906f286}{notificationReceived}}(\textcolor{keyword}{const} QString\&, QSqlDriver::NotificationSource, \textcolor{keyword}{const} QVariant \&)));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00175}00175 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00176}00176         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00177}00177         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00178}00178             \textcolor{comment}{//qDebug()<<"{}No Event feature"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00179}00179         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00180}00180 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00181}00181     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00182}00182 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00188}\mbox{\hyperlink{class_task__manager_ab0a0ee3bbb2640920d1ae4e6b64dcefb}{00188}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_ab0a0ee3bbb2640920d1ae4e6b64dcefb}{Task\_manager::SetupLoginPage}}(QStackedWidget *pager)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00189}00189 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00190}00190     \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{GetState}}()==\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a946a9f413ba99ef2cb0a173c76451f2e}{STATUS::SIGNUP\_SUCCESSFUL}})\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00191}00191         pager-\/>setCurrentIndex(0);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00192}00192     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00193}00193 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00194}00194 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00200}\mbox{\hyperlink{class_task__manager_aa51984dfdedd6acacfe0ae3033b49baf}{00200}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_aa51984dfdedd6acacfe0ae3033b49baf}{Task\_manager::SetupContacts}}(QListWidget *contact\_list)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00201}00201 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00202}00202     QSqlQuery query(this-\/>x\_db);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00203}00203     query.exec(\textcolor{stringliteral}{"{}SELECT firstname FROM public.users WHERE username!='"{}}+QString::fromStdString(\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a8845e6d4ac278c3be41cf8e5bde753b2}{user\_name}})+\textcolor{stringliteral}{"{}';"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00204}00204     \textcolor{keywordflow}{while}(query.next())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00205}00205      \textcolor{comment}{// qDebug()<<query.value(0);}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00206}00206       contact\_list-\/>addItem(query.value(0).toString());}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00207}00207     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00208}00208 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00209}00209 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00215}\mbox{\hyperlink{class_task__manager_a31feeb979c4c678ae6cd27ed3d8e7ae6}{00215}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a31feeb979c4c678ae6cd27ed3d8e7ae6}{Task\_manager::SetupGroups}}(QListWidget *groups)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00216}00216 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00217}00217 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00218}00218     QSqlQuery query(this-\/>x\_db);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00219}00219     query.prepare(\textcolor{stringliteral}{"{}SELECT group\_name,participants FROM public.groups;"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00220}00220     \textcolor{keywordflow}{if}(query.exec())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00221}00221         \textcolor{keywordflow}{while}(query.next())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00222}00222             \textcolor{keyword}{auto} participants = query.value(1).toString().split(\textcolor{charliteral}{','});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00223}00223             \textcolor{keywordflow}{if}(participants.contains(QString::number(this-\/>profile\_details.id)))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00224}00224                   \textcolor{comment}{//qDebug()<<query.value(0);}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00225}00225                   groups-\/>addItem(query.value(0).toString());}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00226}00226 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00227}00227             \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00228}00228         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00229}00229     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00230}00230    \textcolor{comment}{/* else\{}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00231}00231 \textcolor{comment}{        qDebug()<<query.lastError().text();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00232}00232 \textcolor{comment}{    \}*/}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00233}00233 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00234}00234 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00240}\mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{00240}} \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} \mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{Task\_manager::GetState}}()}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00241}00241 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00242}00242     \textcolor{keywordflow}{return} this-\/>x\_state;}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00243}00243 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00249}\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{00249}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{Task\_manager::SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} status)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00250}00250 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00251}00251     this-\/>x\_state = status;}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00252}00252 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00258}\mbox{\hyperlink{class_task__manager_a368c57b2d23290e5a4b2de89ca31e91d}{00258}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_task__manager_a368c57b2d23290e5a4b2de89ca31e91d}{Task\_manager::IsLoginSuccessful}}()}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00259}00259 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00260}00260     \textcolor{keywordflow}{return} (this-\/>\mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{GetState}}()==\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a3bef8f7d8b7b3cb58fb951486dc737b3}{STATUS::LOGIN\_SUCCESSFUL}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00261}00261 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00262}00262 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00268}\mbox{\hyperlink{class_task__manager_afb07a4947f98a6ab155d2e915116a120}{00268}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_task__manager_afb07a4947f98a6ab155d2e915116a120}{Task\_manager::IsSignUpSuccessful}}()}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00269}00269 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00270}00270     \textcolor{keywordflow}{return} (this-\/>\mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{GetState}}()==\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a946a9f413ba99ef2cb0a173c76451f2e}{STATUS::SIGNUP\_SUCCESSFUL}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00271}00271 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00277}\mbox{\hyperlink{class_task__manager_ae439c36213f5247fba521f97af6df77c}{00277}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_ae439c36213f5247fba521f97af6df77c}{Task\_manager::setUpEditProfileWindow}}(QStackedWidget *pager)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00278}00278 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00279}00279     pager-\/>setCurrentIndex(3);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00280}00280 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00281}00281 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00287}\mbox{\hyperlink{class_task__manager_a5d39254a45a6a0bfad8436af2b031460}{00287}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a5d39254a45a6a0bfad8436af2b031460}{Task\_manager::setProfileDetails}}(\textcolor{keyword}{const} QJsonObject \&details)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00288}00288 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00289}00289     QSqlQuery query(this-\/>x\_db);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00290}00290     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}username"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00291}00291         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET username='"{}}+details[\textcolor{stringliteral}{"{}username"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}})+\textcolor{stringliteral}{"{}';"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00292}00292             this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a8845e6d4ac278c3be41cf8e5bde753b2}{user\_name}} = details[\textcolor{stringliteral}{"{}username"{}}].toString().toStdString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00293}00293             qDebug()<<\textcolor{stringliteral}{"{}updated username successfully"{}};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00294}00294         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00295}00295         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00296}00296             qDebug()<<query.lastError().text();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00297}00297         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00298}00298     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00299}00299     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}firstname"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00300}00300         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET firstname='"{}}+details[\textcolor{stringliteral}{"{}firstname"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}})+\textcolor{stringliteral}{"{}';"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00301}00301             this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a8ce634fbaa51e8f9d9fefc9b810650d4}{first\_name}}= details[\textcolor{stringliteral}{"{}firstname"{}}].toString().toStdString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00302}00302             qDebug()<<\textcolor{stringliteral}{"{}updated firstname successfully"{}};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00303}00303         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00304}00304         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00305}00305             qDebug()<<query.lastError().text();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00306}00306         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00307}00307     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00308}00308     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}lastname"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00309}00309         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET lastname='"{}}+details[\textcolor{stringliteral}{"{}lastname"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}})+\textcolor{stringliteral}{"{}';"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00310}00310             this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a968301cdf224f740c2a477a49baa0dca}{last\_name}} = details[\textcolor{stringliteral}{"{}lastname"{}}].toString().toStdString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00311}00311             qDebug()<<\textcolor{stringliteral}{"{}updated lastname successfully"{}};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00312}00312         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00313}00313         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00314}00314             qDebug()<<query.lastError().text();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00315}00315         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00316}00316     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00317}00317     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}contactno"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00318}00318         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET contactno='"{}}+details[\textcolor{stringliteral}{"{}contactno"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}})+\textcolor{stringliteral}{"{}';"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00319}00319             this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_ae3bf17315f4d50b6d7a923cbe9e72105}{contactno}} = details[\textcolor{stringliteral}{"{}contactno"{}}].toString().toStdString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00320}00320             qDebug()<<\textcolor{stringliteral}{"{}updated contactno successfully"{}};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00321}00321         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00322}00322         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00323}00323             qDebug()<<query.lastError().text();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00324}00324         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00325}00325     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00326}00326     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}password"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00327}00327         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET password='"{}}+details[\textcolor{stringliteral}{"{}password"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}})+\textcolor{stringliteral}{"{}';"{}}))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00328}00328             qDebug()<<\textcolor{stringliteral}{"{}updated contactno successfully"{}};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00329}00329         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00330}00330         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00331}00331             qDebug()<<query.lastError().text();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00332}00332         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00333}00333     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00334}00334 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00335}00335 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00336}00336 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00343}\mbox{\hyperlink{class_task__manager_a3f952dc180c1272323abbf98b802d723}{00343}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a3f952dc180c1272323abbf98b802d723}{Task\_manager::displayDetails}}(QListWidget *preview, QLabel* profile\_pic)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00344}00344 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00345}00345     preview-\/>clear();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00346}00346     preview-\/>addItem(QString::fromStdString(\textcolor{stringliteral}{"{}Username: "{}}+this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a8845e6d4ac278c3be41cf8e5bde753b2}{user\_name}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00347}00347     preview-\/>addItem(QString::fromStdString(\textcolor{stringliteral}{"{}Firstname: "{}}+this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a8ce634fbaa51e8f9d9fefc9b810650d4}{first\_name}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00348}00348     preview-\/>addItem(QString::fromStdString(\textcolor{stringliteral}{"{}Lastname: "{}}+this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a968301cdf224f740c2a477a49baa0dca}{last\_name}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00349}00349     preview-\/>addItem(QString::fromStdString(\textcolor{stringliteral}{"{}Phone Number: "{}}+this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_ae3bf17315f4d50b6d7a923cbe9e72105}{contactno}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00350}00350     profile\_pic-\/>setPixmap(this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a0cfcc0dfdd028e6bb76af94cba6d1a62}{profile\_pic}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00351}00351 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00357}\mbox{\hyperlink{class_task__manager_ae0e44b163a8c4b41d5c77536ec77cd98}{00357}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_ae0e44b163a8c4b41d5c77536ec77cd98}{Task\_manager::setProfilePic}}(\textcolor{keyword}{const} std::string \&filename)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00358}00358 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00359}00359     QSqlQuery query(this-\/>x\_db);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00360}00360     query.prepare(\textcolor{stringliteral}{"{}UPDATE public.users SET profile\_pic= ? WHERE id = ?;"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00361}00361 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00362}00362     QImage image;}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00363}00363     image.load(QString::fromStdString(filename));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00364}00364     QByteArray image\_bytes;}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00365}00365     QBuffer buffer(\&image\_bytes);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00366}00366     buffer.open(QIODevice::WriteOnly);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00367}00367     image.save(\&buffer,\textcolor{stringliteral}{"{}PNG"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00368}00368     query.bindValue(0,image\_bytes);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00369}00369     query.bindValue(1,this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00370}00370     \textcolor{keywordflow}{if}(query.exec())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00371}00371        \textcolor{comment}{// qDebug()<<"{}insertion of image successful"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00372}00372         \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a0cfcc0dfdd028e6bb76af94cba6d1a62}{profile\_pic}}.loadFromData(image\_bytes))\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00373}00373         \textcolor{comment}{//    qDebug()<<"{}profile pic updated successfully"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00374}00374         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00375}00375         \textcolor{comment}{//else\{}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00376}00376         \textcolor{comment}{//    qDebug()<<"{}Failed to update"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00377}00377        \textcolor{comment}{// \}}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00378}00378     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00379}00379     \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00380}00380 \textcolor{comment}{        qDebug()<<query.lastError().text();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00381}00381 \textcolor{comment}{    \}*/}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00382}00382 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00383}00383 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00388}\mbox{\hyperlink{class_task__manager_a2d247180caa5d322e1ef2a144006de0b}{00388}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a2d247180caa5d322e1ef2a144006de0b}{Task\_manager::cleanUp}}()}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00389}00389 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00390}00390     this-\/>\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a0cfcc0dfdd028e6bb76af94cba6d1a62}{profile\_pic}} = QPixmap(\mbox{\hyperlink{profile_8h_aee5f1def2d0fb53bfdb4f30679ca5a02}{DEFAULT\_PROFILE\_PIC}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00391}00391 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00399}\mbox{\hyperlink{class_task__manager_a94a24ecfee7f884c2d5a88a03185a1d3}{00399}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a94a24ecfee7f884c2d5a88a03185a1d3}{Task\_manager::on\_ContactSelected}}(QListWidgetItem *contact, QLabel* name,\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} mode)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00400}00400 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00401}00401    \textcolor{comment}{// qDebug()<<"{}Contact selected"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00402}00402     \textcolor{keywordflow}{switch}(mode)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00403}00403     \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00404}00404     \textcolor{keywordflow}{case} \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223}{STATUS::REGULAR\_CHAT}}:}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00405}00405         name-\/>setText(contact-\/>text());}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00406}00406         this-\/>\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223}{STATUS::REGULAR\_CHAT}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00407}00407         emit \mbox{\hyperlink{class_task__manager_a81ae1f648beda795c78acfc0085a7df8}{setUpChatConnection}}(contact-\/>text(),\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00408}00408         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00409}00409     \textcolor{keywordflow}{case} \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb}{STATUS::GROUP\_CHAT}}:}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00410}00410         name-\/>setText(contact-\/>text());}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00411}00411         this-\/>\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb}{STATUS::GROUP\_CHAT}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00412}00412         emit \mbox{\hyperlink{class_task__manager_ac071409193a8ea2a08eb1e91e49d11ed}{setUpGroupChatConnection}}(contact-\/>text(),\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00413}00413         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00414}00414     \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00415}00415         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00416}00416     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00417}00417 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00425}\mbox{\hyperlink{class_task__manager_a718a1571930c1ef472f921d27906f286}{00425}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a718a1571930c1ef472f921d27906f286}{Task\_manager::notificationReceived}}(\textcolor{keyword}{const} QString \&name,  QSqlDriver::NotificationSource source, \textcolor{keyword}{const} QVariant \&payload)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00426}00426 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00427}00427     \textcolor{comment}{//qDebug()<<name<<"{} "{}<<source<<"{} "{}<<payload;}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00428}00428     \textcolor{keywordflow}{switch}(this-\/>\mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{GetState}}())}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00429}00429     \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00430}00430     \textcolor{keywordflow}{case} \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223}{STATUS::REGULAR\_CHAT}}:}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00431}00431         \textcolor{keywordflow}{if}(name==\textcolor{stringliteral}{"{}msg"{}})\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00432}00432            \textcolor{comment}{// qDebug()<<"{}got notify"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00433}00433             this-\/>x\_chat\_manager-\/>\mbox{\hyperlink{class_chat_manager_ad0d86de90b2f5fcc7ac7449ebf4aa118}{DisplayChat}}();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00434}00434            \textcolor{comment}{// qDebug()<<"{}updated chat"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00435}00435         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00436}00436         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00437}00437     \textcolor{keywordflow}{case} \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb}{STATUS::GROUP\_CHAT}}:}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00438}00438         \textcolor{keywordflow}{if}(name==\textcolor{stringliteral}{"{}msg"{}})\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00439}00439             this-\/>x\_chat\_manager-\/>\mbox{\hyperlink{class_chat_manager_ae7d5f10f9b62470a34be758c8f4020c3}{DisplayGroupChat}}();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00440}00440         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00441}00441         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00442}00442     \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00443}00443         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00444}00444     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00445}00445 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00451}\mbox{\hyperlink{class_task__manager_aa3f5de314d725cd5df56767df4801169}{00451}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_aa3f5de314d725cd5df56767df4801169}{Task\_manager::SendMessage}}(QLineEdit *msg)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00452}00452 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00453}00453     \textcolor{keywordflow}{switch}(this-\/>\mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{GetState}}())}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00454}00454     \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00455}00455     \textcolor{keywordflow}{case} \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223}{STATUS::REGULAR\_CHAT}}:}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00456}00456         \textcolor{comment}{//QSqlQuery query(x\_db);}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00457}00457        \textcolor{comment}{// qDebug()<<"{}Regular Chat"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00458}00458         x\_chat\_manager-\/>\mbox{\hyperlink{class_chat_manager_a76b6fe934b15f768c3c6f67bb9c05a51}{SendChat}}(msg-\/>text().toStdString());}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00459}00459         \textcolor{comment}{//qDebug()<<"{}reached taskmanager send btn"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00460}00460         msg-\/>clear();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00461}00461         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00462}00462     \textcolor{keywordflow}{case} \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb}{STATUS::GROUP\_CHAT}}:}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00463}00463         \textcolor{comment}{//qDebug()<<"{}Group Chat"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00464}00464         x\_chat\_manager-\/>\mbox{\hyperlink{class_chat_manager_a056db0c78b7a03f59015c1d4ecf1c48f}{SendGroupChat}}(msg-\/>text().toStdString());}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00465}00465         msg-\/>clear();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00466}00466         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00467}00467     \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00468}00468         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00469}00469     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00470}00470 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00471}00471 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00476}00476 \textcolor{keywordtype}{void} Task\_manager::x\_SetupMainWindowControls()}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00477}00477 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00478}00478 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00479}00479     this-\/>x\_chat\_manager = \textcolor{keyword}{new} \mbox{\hyperlink{class_chat_manager}{ChatManager}}(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00480}00480     this-\/>x\_chat\_manager-\/>\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}} = QSqlQuery(this-\/>x\_db);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00481}00481     \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00482}00482         this-\/>x\_chat\_manager-\/>\mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}} = this-\/>\mbox{\hyperlink{class_task__manager_a783de3d16e7e13349f2648cf3b3f72eb}{chat\_pane}};}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00483}00483     \}\textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00484}00484         std::cout<<e.what();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00485}00485     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00486}00486 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00487}00487     connect(\textcolor{keyword}{this},SIGNAL(\mbox{\hyperlink{class_task__manager_a81ae1f648beda795c78acfc0085a7df8}{setUpChatConnection}}(QString,\mbox{\hyperlink{structprofile}{profile}})),x\_chat\_manager,SLOT(on\_SetupChatConnection(QString,\mbox{\hyperlink{structprofile}{profile}})));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00488}00488     connect(\textcolor{keyword}{this},SIGNAL(\mbox{\hyperlink{class_task__manager_ac071409193a8ea2a08eb1e91e49d11ed}{setUpGroupChatConnection}}(QString,\mbox{\hyperlink{structprofile}{profile}})),x\_chat\_manager,SLOT(on\_SetupGroupChatConnection(QString,\mbox{\hyperlink{structprofile}{profile}})));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00489}00489 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00490}00490 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00499}00499 \textcolor{keywordtype}{void} Task\_manager::x\_createGroup(\textcolor{keyword}{const} QJsonObject \&details, QLabel *status, QListWidget *members,\textcolor{keyword}{const} std::set<QString>\& set\_members)}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00500}00500 \{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00501}00501     QSqlQuery query(this-\/>x\_db);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00502}00502     QString ids=QString::number(\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}}.\mbox{\hyperlink{structprofile_a495f383adeff6448ebe436557896de6c}{id}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00503}00503     \textcolor{comment}{//qDebug()<<members-\/>count();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00504}00504     \textcolor{comment}{//qDebug()<<members-\/>takeItem(1)-\/>text();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00505}00505     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it=set\_members.begin();it!=set\_members.end();it++)\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00506}00506         \textcolor{comment}{//qDebug()<<members-\/>takeItem(i)-\/>text();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00507}00507         \textcolor{comment}{//qDebug()<<(*it);}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00508}00508         query.exec(\textcolor{stringliteral}{"{}SELECT id FROM public.users WHERE username='"{}}+(*it)+\textcolor{stringliteral}{"{}';"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00509}00509         \textcolor{keywordflow}{if}(query.next())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00510}00510             ids+=\textcolor{charliteral}{','}+query.value(0).toString();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00511}00511         \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00512}00512         \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00513}00513 \textcolor{comment}{            qDebug()<<"{}Error here"{};}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00514}00514 \textcolor{comment}{            qDebug()<<query.lastError().text();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00515}00515 \textcolor{comment}{        \}*/}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00516}00516     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00517}00517     \textcolor{comment}{//qDebug()<<ids;}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00518}00518     query.prepare(\textcolor{stringliteral}{"{}INSERT INTO public.groups (group\_name,description,participants) VALUES (?,?,?);"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00519}00519     query.bindValue(0,details[\textcolor{stringliteral}{"{}group\_name"{}}].toString());}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00520}00520     query.bindValue(1,details[\textcolor{stringliteral}{"{}desc"{}}].toString());}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00521}00521     query.bindValue(2,ids);}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00522}00522     \textcolor{keywordflow}{if}(query.exec())\{}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00523}00523         status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: green\}"{}});}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00524}00524         status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}successfully created"{}}));}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00525}00525         emit \mbox{\hyperlink{class_task__manager_afece35eb1a2e2fe4dfd056bc4fe41c2d}{cleanUpGroupsPage}}();}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00526}00526     \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00527}00527     \textcolor{comment}{/*else\{}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00528}00528 \textcolor{comment}{            qDebug()<<query.lastError().text();}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00529}00529 \textcolor{comment}{    \}*/}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00530}00530 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00531}00531 \}}
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00532}00532 }
-\DoxyCodeLine{\Hypertarget{task__manager_8cpp_source_l00533}00533 }
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}task\_manager.h"{}}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <QDebug>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <QSqlQuery>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <QSqlError>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <QImage>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <QBuffer>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <QtGlobal>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <QPixmap>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00015 Task\_manager::Task\_manager(QObject *parent)}
+\DoxyCodeLine{00016     : QObject\{parent\}}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018         connect(\textcolor{keyword}{this},SIGNAL(enteredMainWindow()),parent,SLOT(on\_EnterMainWindow()));}
+\DoxyCodeLine{00019         connect(\textcolor{keyword}{this},SIGNAL(cleanUpLoginPage()),parent,SLOT(on\_cleanUpLoginPage()));}
+\DoxyCodeLine{00020 \}}
+\DoxyCodeLine{00025 \textcolor{keywordtype}{void} Task\_manager::Init()}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027     x\_db = QSqlDatabase::addDatabase(\textcolor{stringliteral}{"{}QPSQL"{}});}
+\DoxyCodeLine{00029     x\_db.setHostName(\textcolor{stringliteral}{"{}localhost"{}});}
+\DoxyCodeLine{00030     x\_db.setUserName(\textcolor{stringliteral}{"{}postgres"{}});}
+\DoxyCodeLine{00031     x\_db.setPassword(\textcolor{stringliteral}{"{}Sj@\&15634"{}});}
+\DoxyCodeLine{00032     x\_db.setDatabaseName(\textcolor{stringliteral}{"{}Schat"{}});}
+\DoxyCodeLine{00033     x\_db.setPort(5432);}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00035         \textcolor{keywordflow}{if}(x\_db.open())\{}
+\DoxyCodeLine{00036             qDebug()<<\textcolor{stringliteral}{"{}DatabaseConnected"{}};}
+\DoxyCodeLine{00037         \}}
+\DoxyCodeLine{00038         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00039             \textcolor{comment}{//qDebug()<<"{}failed"{};}}
+\DoxyCodeLine{00040             \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Database Connection failed"{}};}
+\DoxyCodeLine{00041         \}}
+\DoxyCodeLine{00042     \}}
+\DoxyCodeLine{00043     \textcolor{keywordflow}{catch}(...)\{}
+\DoxyCodeLine{00044         std::cout<<\textcolor{stringliteral}{"{}Database connection failure, Please check the connection"{}};}
+\DoxyCodeLine{00045     \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 \}}
+\DoxyCodeLine{00053 \textcolor{keywordtype}{void} Task\_manager::ValidateLoginDetails(\textcolor{keyword}{const} QJsonObject \&details)}
+\DoxyCodeLine{00054 \{}
+\DoxyCodeLine{00055     QSqlQuery query(x\_db);}
+\DoxyCodeLine{00056     \textcolor{keyword}{auto} username = details[\textcolor{stringliteral}{"{}username"{}}].toString();}
+\DoxyCodeLine{00057     \textcolor{keyword}{auto} password = details[\textcolor{stringliteral}{"{}password"{}}].toString();}
+\DoxyCodeLine{00058     query.exec( QString(\textcolor{stringliteral}{"{}SELECT username,password FROM public.users WHERE username='"{}}+username+\textcolor{stringliteral}{"{}' AND password='"{}}+password+\textcolor{stringliteral}{"{}';"{}}));}
+\DoxyCodeLine{00059     \textcolor{keywordflow}{if}(query.next())\{}
+\DoxyCodeLine{00060         \textcolor{comment}{//qDebug()<<"{}User details are correct"{};}}
+\DoxyCodeLine{00061         this-\/>SetState(STATUS::LOGIN\_SUCCESSFUL);}
+\DoxyCodeLine{00062         query.exec(\textcolor{stringliteral}{"{}SELECT id,username,firstname,lastname,contactno,profile\_pic FROM public.users WHERE username='"{}}+username+\textcolor{stringliteral}{"{}';"{}});}
+\DoxyCodeLine{00063         \textcolor{keywordflow}{if}(query.next())\{}
+\DoxyCodeLine{00065             profile\_details.id = query.value(0).toInt();}
+\DoxyCodeLine{00066             profile\_details.user\_name = query.value(1).toString().toStdString();}
+\DoxyCodeLine{00067             profile\_details.first\_name = query.value(2).toString().toStdString();}
+\DoxyCodeLine{00068             profile\_details.last\_name = query.value(3).toString().toStdString();}
+\DoxyCodeLine{00069             profile\_details.contactno = query.value(4).toString().toStdString();}
+\DoxyCodeLine{00070             \textcolor{keywordflow}{if}(!query.value(5).isNull())\{}
+\DoxyCodeLine{00071                 \textcolor{comment}{//qDebug()<<"{}feteched image"{};}}
+\DoxyCodeLine{00072                 QPixmap image;}
+\DoxyCodeLine{00073                 \textcolor{keywordflow}{if}(image.loadFromData(query.value(5).toByteArray()))\{}
+\DoxyCodeLine{00074                     profile\_details.profile\_pic = image;}
+\DoxyCodeLine{00075                 \}}
+\DoxyCodeLine{00076                 \textcolor{comment}{//qDebug()<<QString::fromStdString(profile\_details.profile\_pic);}}
+\DoxyCodeLine{00077             \}}
+\DoxyCodeLine{00078         \}}
+\DoxyCodeLine{00079         \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00080 \textcolor{comment}{            qDebug()<<query.lastError().text();}}
+\DoxyCodeLine{00081 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{00082     \}}
+\DoxyCodeLine{00083     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00084         \textcolor{comment}{//qDebug()<<query.lastError();}}
+\DoxyCodeLine{00085         this-\/>SetState(STATUS::LOGIN\_FAILED);}
+\DoxyCodeLine{00086     \}}
+\DoxyCodeLine{00087 \}}
+\DoxyCodeLine{00094 \textcolor{keywordtype}{void} Task\_manager::ValidateSignUpDetails(\textcolor{keyword}{const} QJsonObject \&details, QLabel* status)}
+\DoxyCodeLine{00095 \{}
+\DoxyCodeLine{00096     QSqlQuery query(x\_db);}
+\DoxyCodeLine{00097     \textcolor{keyword}{auto} username = details[\textcolor{stringliteral}{"{}username"{}}].toString();}
+\DoxyCodeLine{00098     \textcolor{keyword}{auto} password = details[\textcolor{stringliteral}{"{}password"{}}].toString();}
+\DoxyCodeLine{00099     \textcolor{keyword}{auto} confirmpassword = details[\textcolor{stringliteral}{"{}confirmpassword"{}}].toString();}
+\DoxyCodeLine{00100     \textcolor{keyword}{auto} firstname = details[\textcolor{stringliteral}{"{}firstname"{}}].toString();}
+\DoxyCodeLine{00101     \textcolor{keyword}{auto} lastname = details[\textcolor{stringliteral}{"{}lastname"{}}].toString();}
+\DoxyCodeLine{00102     \textcolor{keyword}{auto} contactno = details[\textcolor{stringliteral}{"{}contactno"{}}].toString();}
+\DoxyCodeLine{00103     \textcolor{keywordflow}{if}(username.length()!=0 \&\& firstname.length()!=0 \&\& lastname.length()!=0 \&\& contactno.length()!=0 \&\& password.length()>=6)\{}
+\DoxyCodeLine{00104         \textcolor{keywordflow}{if}(password!=confirmpassword)\{}
+\DoxyCodeLine{00105             this-\/>SetState(STATUS::SIGNUP\_FAILED);}
+\DoxyCodeLine{00106             status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
+\DoxyCodeLine{00107             status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}confirm password and password should be same."{}}));}
+\DoxyCodeLine{00108         \}}
+\DoxyCodeLine{00109         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}INSERT INTO public.users (username,password,firstname,lastname,contactno) VALUES ('"{}}+username+\textcolor{stringliteral}{"{}','"{}}+password+\textcolor{stringliteral}{"{}','"{}}+ firstname + \textcolor{stringliteral}{"{}', '"{}} + lastname + \textcolor{stringliteral}{"{}', '"{}} + contactno + \textcolor{stringliteral}{"{}');"{}}))\{}
+\DoxyCodeLine{00110             this-\/>SetState(STATUS::SIGNUP\_SUCCESSFUL);}
+\DoxyCodeLine{00111         \}}
+\DoxyCodeLine{00112         \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00113 \textcolor{comment}{            qDebug()<<query.lastError().text().toStdString();}}
+\DoxyCodeLine{00114 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{00115     \}}
+\DoxyCodeLine{00116     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00117         \textcolor{keywordflow}{if}(password.length()<6)\{}
+\DoxyCodeLine{00118             this-\/>SetState(STATUS::SIGNUP\_FAILED);}
+\DoxyCodeLine{00119             status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
+\DoxyCodeLine{00120             status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}atleast 6 characters for password"{}}));}
+\DoxyCodeLine{00121         \}}
+\DoxyCodeLine{00122         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00123             this-\/>SetState(STATUS::SIGNUP\_FAILED);}
+\DoxyCodeLine{00124             status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
+\DoxyCodeLine{00125             status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}All fields are mandatory."{}}));}
+\DoxyCodeLine{00126         \}}
+\DoxyCodeLine{00127     \}}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129 \}}
+\DoxyCodeLine{00138 \textcolor{keywordtype}{void} Task\_manager::ValidateGroupInfo(\textcolor{keyword}{const} QJsonObject \&details, QLabel *status, QListWidget* members,\textcolor{keyword}{const} std::set<QString>\& set\_members)}
+\DoxyCodeLine{00139 \{}
+\DoxyCodeLine{00140     \textcolor{keywordflow}{if}(details[\textcolor{stringliteral}{"{}group\_name"{}}].toString().length()==0)\{}
+\DoxyCodeLine{00141         status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
+\DoxyCodeLine{00142         status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}Please Provide Group Name"{}}));}
+\DoxyCodeLine{00143     \}}
+\DoxyCodeLine{00144     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(details[\textcolor{stringliteral}{"{}desc"{}}].toString().length()==0)\{}
+\DoxyCodeLine{00145         status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
+\DoxyCodeLine{00146         status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}Please Provide Group Description"{}}));}
+\DoxyCodeLine{00147     \}}
+\DoxyCodeLine{00148     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(members-\/>count()==0)\{}
+\DoxyCodeLine{00149         status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
+\DoxyCodeLine{00150         status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}atleast two members are required to create a group including you"{}}));}
+\DoxyCodeLine{00151     \}}
+\DoxyCodeLine{00152     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00153         this-\/>x\_createGroup(details,status,members,set\_members);}
+\DoxyCodeLine{00154     \}}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156 \}}
+\DoxyCodeLine{00162 \textcolor{keywordtype}{void} Task\_manager::SetupMainPage(QStackedWidget *pager)}
+\DoxyCodeLine{00163 \{}
+\DoxyCodeLine{00164     \textcolor{keywordflow}{if}(this-\/>GetState()==STATUS::LOGIN\_SUCCESSFUL)\{}
+\DoxyCodeLine{00165         pager-\/>setCurrentIndex(2);}
+\DoxyCodeLine{00166         emit cleanUpLoginPage();}
+\DoxyCodeLine{00167         emit enteredMainWindow();}
+\DoxyCodeLine{00168         x\_SetupMainWindowControls();}
+\DoxyCodeLine{00169         \textcolor{keywordflow}{if}(this-\/>x\_db.driver()-\/>hasFeature(QSqlDriver::EventNotifications))\{}
+\DoxyCodeLine{00170             this-\/>x\_db.driver()-\/>subscribeToNotification(\textcolor{stringliteral}{"{}msg"{}});}
+\DoxyCodeLine{00171             \textcolor{comment}{//qDebug()<<"{}got the feature"{};}}
+\DoxyCodeLine{00172             \textcolor{comment}{//qDebug()<<this-\/>x\_db.driver()-\/>subscribedToNotifications();}}
+\DoxyCodeLine{00173             connect(this-\/>x\_db.driver(), SIGNAL(notification(\textcolor{keyword}{const} QString\&, QSqlDriver::NotificationSource , \textcolor{keyword}{const} QVariant \&)),}
+\DoxyCodeLine{00174                     \textcolor{keyword}{this}, SLOT(notificationReceived(\textcolor{keyword}{const} QString\&, QSqlDriver::NotificationSource, \textcolor{keyword}{const} QVariant \&)));}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176         \}}
+\DoxyCodeLine{00177         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00178             \textcolor{comment}{//qDebug()<<"{}No Event feature"{};}}
+\DoxyCodeLine{00179         \}}
+\DoxyCodeLine{00180 }
+\DoxyCodeLine{00181     \}}
+\DoxyCodeLine{00182 \}}
+\DoxyCodeLine{00188 \textcolor{keywordtype}{void} Task\_manager::SetupLoginPage(QStackedWidget *pager)}
+\DoxyCodeLine{00189 \{}
+\DoxyCodeLine{00190     \textcolor{keywordflow}{if}(this-\/>GetState()==STATUS::SIGNUP\_SUCCESSFUL)\{}
+\DoxyCodeLine{00191         pager-\/>setCurrentIndex(0);}
+\DoxyCodeLine{00192     \}}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194 \}}
+\DoxyCodeLine{00200 \textcolor{keywordtype}{void} Task\_manager::SetupContacts(QListWidget *contact\_list)}
+\DoxyCodeLine{00201 \{}
+\DoxyCodeLine{00202     QSqlQuery query(this-\/>x\_db);}
+\DoxyCodeLine{00203     query.exec(\textcolor{stringliteral}{"{}SELECT firstname FROM public.users WHERE username!='"{}}+QString::fromStdString(profile\_details.user\_name)+\textcolor{stringliteral}{"{}';"{}});}
+\DoxyCodeLine{00204     \textcolor{keywordflow}{while}(query.next())\{}
+\DoxyCodeLine{00205      \textcolor{comment}{// qDebug()<<query.value(0);}}
+\DoxyCodeLine{00206       contact\_list-\/>addItem(query.value(0).toString());}
+\DoxyCodeLine{00207     \}}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00209 \}}
+\DoxyCodeLine{00215 \textcolor{keywordtype}{void} Task\_manager::SetupGroups(QListWidget *groups)}
+\DoxyCodeLine{00216 \{}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218     QSqlQuery query(this-\/>x\_db);}
+\DoxyCodeLine{00219     query.prepare(\textcolor{stringliteral}{"{}SELECT group\_name,participants FROM public.groups;"{}});}
+\DoxyCodeLine{00220     \textcolor{keywordflow}{if}(query.exec())\{}
+\DoxyCodeLine{00221         \textcolor{keywordflow}{while}(query.next())\{}
+\DoxyCodeLine{00222             \textcolor{keyword}{auto} participants = query.value(1).toString().split(\textcolor{charliteral}{','});}
+\DoxyCodeLine{00223             \textcolor{keywordflow}{if}(participants.contains(QString::number(this-\/>profile\_details.id)))\{}
+\DoxyCodeLine{00224                   \textcolor{comment}{//qDebug()<<query.value(0);}}
+\DoxyCodeLine{00225                   groups-\/>addItem(query.value(0).toString());}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00227             \}}
+\DoxyCodeLine{00228         \}}
+\DoxyCodeLine{00229     \}}
+\DoxyCodeLine{00230    \textcolor{comment}{/* else\{}}
+\DoxyCodeLine{00231 \textcolor{comment}{        qDebug()<<query.lastError().text();}}
+\DoxyCodeLine{00232 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00234 \}}
+\DoxyCodeLine{00240 STATUS Task\_manager::GetState()}
+\DoxyCodeLine{00241 \{}
+\DoxyCodeLine{00242     \textcolor{keywordflow}{return} this-\/>x\_state;}
+\DoxyCodeLine{00243 \}}
+\DoxyCodeLine{00249 \textcolor{keywordtype}{void} Task\_manager::SetState(STATUS status)}
+\DoxyCodeLine{00250 \{}
+\DoxyCodeLine{00251     this-\/>x\_state = status;}
+\DoxyCodeLine{00252 \}}
+\DoxyCodeLine{00258 \textcolor{keywordtype}{bool} Task\_manager::IsLoginSuccessful()}
+\DoxyCodeLine{00259 \{}
+\DoxyCodeLine{00260     \textcolor{keywordflow}{return} (this-\/>GetState()==STATUS::LOGIN\_SUCCESSFUL);}
+\DoxyCodeLine{00261 \}}
+\DoxyCodeLine{00262 }
+\DoxyCodeLine{00268 \textcolor{keywordtype}{bool} Task\_manager::IsSignUpSuccessful()}
+\DoxyCodeLine{00269 \{}
+\DoxyCodeLine{00270     \textcolor{keywordflow}{return} (this-\/>GetState()==STATUS::SIGNUP\_SUCCESSFUL);}
+\DoxyCodeLine{00271 \}}
+\DoxyCodeLine{00277 \textcolor{keywordtype}{void} Task\_manager::setUpEditProfileWindow(QStackedWidget *pager)}
+\DoxyCodeLine{00278 \{}
+\DoxyCodeLine{00279     pager-\/>setCurrentIndex(3);}
+\DoxyCodeLine{00280 \}}
+\DoxyCodeLine{00281 }
+\DoxyCodeLine{00287 \textcolor{keywordtype}{void} Task\_manager::setProfileDetails(\textcolor{keyword}{const} QJsonObject \&details)}
+\DoxyCodeLine{00288 \{}
+\DoxyCodeLine{00289     QSqlQuery query(this-\/>x\_db);}
+\DoxyCodeLine{00290     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}username"{}}))\{}
+\DoxyCodeLine{00291         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET username='"{}}+details[\textcolor{stringliteral}{"{}username"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(profile\_details.id)+\textcolor{stringliteral}{"{}';"{}}))\{}
+\DoxyCodeLine{00292             this-\/>profile\_details.user\_name = details[\textcolor{stringliteral}{"{}username"{}}].toString().toStdString();}
+\DoxyCodeLine{00293             qDebug()<<\textcolor{stringliteral}{"{}updated username successfully"{}};}
+\DoxyCodeLine{00294         \}}
+\DoxyCodeLine{00295         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00296             qDebug()<<query.lastError().text();}
+\DoxyCodeLine{00297         \}}
+\DoxyCodeLine{00298     \}}
+\DoxyCodeLine{00299     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}firstname"{}}))\{}
+\DoxyCodeLine{00300         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET firstname='"{}}+details[\textcolor{stringliteral}{"{}firstname"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(profile\_details.id)+\textcolor{stringliteral}{"{}';"{}}))\{}
+\DoxyCodeLine{00301             this-\/>profile\_details.first\_name= details[\textcolor{stringliteral}{"{}firstname"{}}].toString().toStdString();}
+\DoxyCodeLine{00302             qDebug()<<\textcolor{stringliteral}{"{}updated firstname successfully"{}};}
+\DoxyCodeLine{00303         \}}
+\DoxyCodeLine{00304         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00305             qDebug()<<query.lastError().text();}
+\DoxyCodeLine{00306         \}}
+\DoxyCodeLine{00307     \}}
+\DoxyCodeLine{00308     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}lastname"{}}))\{}
+\DoxyCodeLine{00309         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET lastname='"{}}+details[\textcolor{stringliteral}{"{}lastname"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(profile\_details.id)+\textcolor{stringliteral}{"{}';"{}}))\{}
+\DoxyCodeLine{00310             this-\/>profile\_details.last\_name = details[\textcolor{stringliteral}{"{}lastname"{}}].toString().toStdString();}
+\DoxyCodeLine{00311             qDebug()<<\textcolor{stringliteral}{"{}updated lastname successfully"{}};}
+\DoxyCodeLine{00312         \}}
+\DoxyCodeLine{00313         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00314             qDebug()<<query.lastError().text();}
+\DoxyCodeLine{00315         \}}
+\DoxyCodeLine{00316     \}}
+\DoxyCodeLine{00317     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}contactno"{}}))\{}
+\DoxyCodeLine{00318         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET contactno='"{}}+details[\textcolor{stringliteral}{"{}contactno"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(profile\_details.id)+\textcolor{stringliteral}{"{}';"{}}))\{}
+\DoxyCodeLine{00319             this-\/>profile\_details.contactno = details[\textcolor{stringliteral}{"{}contactno"{}}].toString().toStdString();}
+\DoxyCodeLine{00320             qDebug()<<\textcolor{stringliteral}{"{}updated contactno successfully"{}};}
+\DoxyCodeLine{00321         \}}
+\DoxyCodeLine{00322         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00323             qDebug()<<query.lastError().text();}
+\DoxyCodeLine{00324         \}}
+\DoxyCodeLine{00325     \}}
+\DoxyCodeLine{00326     \textcolor{keywordflow}{if}(details.contains(\textcolor{stringliteral}{"{}password"{}}))\{}
+\DoxyCodeLine{00327         \textcolor{keywordflow}{if}(query.exec(\textcolor{stringliteral}{"{}UPDATE public.users SET password='"{}}+details[\textcolor{stringliteral}{"{}password"{}}].toString()+\textcolor{stringliteral}{"{}' WHERE id='"{}}+QString::number(profile\_details.id)+\textcolor{stringliteral}{"{}';"{}}))\{}
+\DoxyCodeLine{00328             qDebug()<<\textcolor{stringliteral}{"{}updated contactno successfully"{}};}
+\DoxyCodeLine{00329         \}}
+\DoxyCodeLine{00330         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00331             qDebug()<<query.lastError().text();}
+\DoxyCodeLine{00332         \}}
+\DoxyCodeLine{00333     \}}
+\DoxyCodeLine{00334 }
+\DoxyCodeLine{00335 }
+\DoxyCodeLine{00336 \}}
+\DoxyCodeLine{00343 \textcolor{keywordtype}{void} Task\_manager::displayDetails(QListWidget *preview, QLabel* profile\_pic)}
+\DoxyCodeLine{00344 \{}
+\DoxyCodeLine{00345     preview-\/>clear();}
+\DoxyCodeLine{00346     preview-\/>addItem(QString::fromStdString(\textcolor{stringliteral}{"{}Username: "{}}+this-\/>profile\_details.user\_name));}
+\DoxyCodeLine{00347     preview-\/>addItem(QString::fromStdString(\textcolor{stringliteral}{"{}Firstname: "{}}+this-\/>profile\_details.first\_name));}
+\DoxyCodeLine{00348     preview-\/>addItem(QString::fromStdString(\textcolor{stringliteral}{"{}Lastname: "{}}+this-\/>profile\_details.last\_name));}
+\DoxyCodeLine{00349     preview-\/>addItem(QString::fromStdString(\textcolor{stringliteral}{"{}Phone Number: "{}}+this-\/>profile\_details.contactno));}
+\DoxyCodeLine{00350     profile\_pic-\/>setPixmap(this-\/>profile\_details.profile\_pic);}
+\DoxyCodeLine{00351 \}}
+\DoxyCodeLine{00357 \textcolor{keywordtype}{void} Task\_manager::setProfilePic(\textcolor{keyword}{const} std::string \&filename)}
+\DoxyCodeLine{00358 \{}
+\DoxyCodeLine{00359     QSqlQuery query(this-\/>x\_db);}
+\DoxyCodeLine{00360     query.prepare(\textcolor{stringliteral}{"{}UPDATE public.users SET profile\_pic= ? WHERE id = ?;"{}});}
+\DoxyCodeLine{00361 }
+\DoxyCodeLine{00362     QImage image;}
+\DoxyCodeLine{00363     image.load(QString::fromStdString(filename));}
+\DoxyCodeLine{00364     QByteArray image\_bytes;}
+\DoxyCodeLine{00365     QBuffer buffer(\&image\_bytes);}
+\DoxyCodeLine{00366     buffer.open(QIODevice::WriteOnly);}
+\DoxyCodeLine{00367     image.save(\&buffer,\textcolor{stringliteral}{"{}PNG"{}});}
+\DoxyCodeLine{00368     query.bindValue(0,image\_bytes);}
+\DoxyCodeLine{00369     query.bindValue(1,this-\/>profile\_details.id);}
+\DoxyCodeLine{00370     \textcolor{keywordflow}{if}(query.exec())\{}
+\DoxyCodeLine{00371        \textcolor{comment}{// qDebug()<<"{}insertion of image successful"{};}}
+\DoxyCodeLine{00372         \textcolor{keywordflow}{if}(this-\/>profile\_details.profile\_pic.loadFromData(image\_bytes))\{}
+\DoxyCodeLine{00373         \textcolor{comment}{//    qDebug()<<"{}profile pic updated successfully"{};}}
+\DoxyCodeLine{00374         \}}
+\DoxyCodeLine{00375         \textcolor{comment}{//else\{}}
+\DoxyCodeLine{00376         \textcolor{comment}{//    qDebug()<<"{}Failed to update"{};}}
+\DoxyCodeLine{00377        \textcolor{comment}{// \}}}
+\DoxyCodeLine{00378     \}}
+\DoxyCodeLine{00379     \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00380 \textcolor{comment}{        qDebug()<<query.lastError().text();}}
+\DoxyCodeLine{00381 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{00382 }
+\DoxyCodeLine{00383 \}}
+\DoxyCodeLine{00388 \textcolor{keywordtype}{void} Task\_manager::cleanUp()}
+\DoxyCodeLine{00389 \{}
+\DoxyCodeLine{00390     this-\/>profile\_details.profile\_pic = QPixmap(DEFAULT\_PROFILE\_PIC);}
+\DoxyCodeLine{00391 \}}
+\DoxyCodeLine{00399 \textcolor{keywordtype}{void} Task\_manager::on\_ContactSelected(QListWidgetItem *contact, QLabel* name,STATUS mode)}
+\DoxyCodeLine{00400 \{}
+\DoxyCodeLine{00401    \textcolor{comment}{// qDebug()<<"{}Contact selected"{};}}
+\DoxyCodeLine{00402     \textcolor{keywordflow}{switch}(mode)}
+\DoxyCodeLine{00403     \{}
+\DoxyCodeLine{00404     \textcolor{keywordflow}{case} STATUS::REGULAR\_CHAT:}
+\DoxyCodeLine{00405         name-\/>setText(contact-\/>text());}
+\DoxyCodeLine{00406         this-\/>SetState(STATUS::REGULAR\_CHAT);}
+\DoxyCodeLine{00407         emit setUpChatConnection(contact-\/>text(),profile\_details);}
+\DoxyCodeLine{00408         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00409     \textcolor{keywordflow}{case} STATUS::GROUP\_CHAT:}
+\DoxyCodeLine{00410         name-\/>setText(contact-\/>text());}
+\DoxyCodeLine{00411         this-\/>SetState(STATUS::GROUP\_CHAT);}
+\DoxyCodeLine{00412         emit setUpGroupChatConnection(contact-\/>text(),profile\_details);}
+\DoxyCodeLine{00413         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00414     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00415         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00416     \}}
+\DoxyCodeLine{00417 \}}
+\DoxyCodeLine{00425 \textcolor{keywordtype}{void} Task\_manager::notificationReceived(\textcolor{keyword}{const} QString \&name,  QSqlDriver::NotificationSource source, \textcolor{keyword}{const} QVariant \&payload)}
+\DoxyCodeLine{00426 \{}
+\DoxyCodeLine{00427     \textcolor{comment}{//qDebug()<<name<<"{} "{}<<source<<"{} "{}<<payload;}}
+\DoxyCodeLine{00428     \textcolor{keywordflow}{switch}(this-\/>GetState())}
+\DoxyCodeLine{00429     \{}
+\DoxyCodeLine{00430     \textcolor{keywordflow}{case} STATUS::REGULAR\_CHAT:}
+\DoxyCodeLine{00431         \textcolor{keywordflow}{if}(name==\textcolor{stringliteral}{"{}msg"{}})\{}
+\DoxyCodeLine{00432            \textcolor{comment}{// qDebug()<<"{}got notify"{};}}
+\DoxyCodeLine{00433             this-\/>x\_chat\_manager-\/>DisplayChat();}
+\DoxyCodeLine{00434            \textcolor{comment}{// qDebug()<<"{}updated chat"{};}}
+\DoxyCodeLine{00435         \}}
+\DoxyCodeLine{00436         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00437     \textcolor{keywordflow}{case} STATUS::GROUP\_CHAT:}
+\DoxyCodeLine{00438         \textcolor{keywordflow}{if}(name==\textcolor{stringliteral}{"{}msg"{}})\{}
+\DoxyCodeLine{00439             this-\/>x\_chat\_manager-\/>DisplayGroupChat();}
+\DoxyCodeLine{00440         \}}
+\DoxyCodeLine{00441         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00442     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00443         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00444     \}}
+\DoxyCodeLine{00445 \}}
+\DoxyCodeLine{00451 \textcolor{keywordtype}{void} Task\_manager::SendMessage(QLineEdit *msg)}
+\DoxyCodeLine{00452 \{}
+\DoxyCodeLine{00453     \textcolor{keywordflow}{switch}(this-\/>GetState())}
+\DoxyCodeLine{00454     \{}
+\DoxyCodeLine{00455     \textcolor{keywordflow}{case} STATUS::REGULAR\_CHAT:}
+\DoxyCodeLine{00456         \textcolor{comment}{//QSqlQuery query(x\_db);}}
+\DoxyCodeLine{00457        \textcolor{comment}{// qDebug()<<"{}Regular Chat"{};}}
+\DoxyCodeLine{00458         x\_chat\_manager-\/>SendChat(msg-\/>text().toStdString());}
+\DoxyCodeLine{00459         \textcolor{comment}{//qDebug()<<"{}reached taskmanager send btn"{};}}
+\DoxyCodeLine{00460         msg-\/>clear();}
+\DoxyCodeLine{00461         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00462     \textcolor{keywordflow}{case} STATUS::GROUP\_CHAT:}
+\DoxyCodeLine{00463         \textcolor{comment}{//qDebug()<<"{}Group Chat"{};}}
+\DoxyCodeLine{00464         x\_chat\_manager-\/>SendGroupChat(msg-\/>text().toStdString());}
+\DoxyCodeLine{00465         msg-\/>clear();}
+\DoxyCodeLine{00466         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00467     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00468         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00469     \}}
+\DoxyCodeLine{00470 }
+\DoxyCodeLine{00471 \}}
+\DoxyCodeLine{00476 \textcolor{keywordtype}{void} Task\_manager::x\_SetupMainWindowControls()}
+\DoxyCodeLine{00477 \{}
+\DoxyCodeLine{00478 }
+\DoxyCodeLine{00479     this-\/>x\_chat\_manager = \textcolor{keyword}{new} ChatManager(\textcolor{keyword}{this});}
+\DoxyCodeLine{00480     this-\/>x\_chat\_manager-\/>query = QSqlQuery(this-\/>x\_db);}
+\DoxyCodeLine{00481     \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00482         this-\/>x\_chat\_manager-\/>chat\_pane = this-\/>chat\_pane;}
+\DoxyCodeLine{00483     \}\textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception\& e)\{}
+\DoxyCodeLine{00484         std::cout<<e.what();}
+\DoxyCodeLine{00485     \}}
+\DoxyCodeLine{00486 }
+\DoxyCodeLine{00487     connect(\textcolor{keyword}{this},SIGNAL(setUpChatConnection(QString,profile)),x\_chat\_manager,SLOT(on\_SetupChatConnection(QString,profile)));}
+\DoxyCodeLine{00488     connect(\textcolor{keyword}{this},SIGNAL(setUpGroupChatConnection(QString,profile)),x\_chat\_manager,SLOT(on\_SetupGroupChatConnection(QString,profile)));}
+\DoxyCodeLine{00489 }
+\DoxyCodeLine{00490 \}}
+\DoxyCodeLine{00499 \textcolor{keywordtype}{void} Task\_manager::x\_createGroup(\textcolor{keyword}{const} QJsonObject \&details, QLabel *status, QListWidget *members,\textcolor{keyword}{const} std::set<QString>\& set\_members)}
+\DoxyCodeLine{00500 \{}
+\DoxyCodeLine{00501     QSqlQuery query(this-\/>x\_db);}
+\DoxyCodeLine{00502     QString ids=QString::number(profile\_details.id);}
+\DoxyCodeLine{00503     \textcolor{comment}{//qDebug()<<members-\/>count();}}
+\DoxyCodeLine{00504     \textcolor{comment}{//qDebug()<<members-\/>takeItem(1)-\/>text();}}
+\DoxyCodeLine{00505     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it=set\_members.begin();it!=set\_members.end();it++)\{}
+\DoxyCodeLine{00506         \textcolor{comment}{//qDebug()<<members-\/>takeItem(i)-\/>text();}}
+\DoxyCodeLine{00507         \textcolor{comment}{//qDebug()<<(*it);}}
+\DoxyCodeLine{00508         query.exec(\textcolor{stringliteral}{"{}SELECT id FROM public.users WHERE username='"{}}+(*it)+\textcolor{stringliteral}{"{}';"{}});}
+\DoxyCodeLine{00509         \textcolor{keywordflow}{if}(query.next())\{}
+\DoxyCodeLine{00510             ids+=\textcolor{charliteral}{','}+query.value(0).toString();}
+\DoxyCodeLine{00511         \}}
+\DoxyCodeLine{00512         \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00513 \textcolor{comment}{            qDebug()<<"{}Error here"{};}}
+\DoxyCodeLine{00514 \textcolor{comment}{            qDebug()<<query.lastError().text();}}
+\DoxyCodeLine{00515 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{00516     \}}
+\DoxyCodeLine{00517     \textcolor{comment}{//qDebug()<<ids;}}
+\DoxyCodeLine{00518     query.prepare(\textcolor{stringliteral}{"{}INSERT INTO public.groups (group\_name,description,participants) VALUES (?,?,?);"{}});}
+\DoxyCodeLine{00519     query.bindValue(0,details[\textcolor{stringliteral}{"{}group\_name"{}}].toString());}
+\DoxyCodeLine{00520     query.bindValue(1,details[\textcolor{stringliteral}{"{}desc"{}}].toString());}
+\DoxyCodeLine{00521     query.bindValue(2,ids);}
+\DoxyCodeLine{00522     \textcolor{keywordflow}{if}(query.exec())\{}
+\DoxyCodeLine{00523         status-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: green\}"{}});}
+\DoxyCodeLine{00524         status-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}successfully created"{}}));}
+\DoxyCodeLine{00525         emit cleanUpGroupsPage();}
+\DoxyCodeLine{00526     \}}
+\DoxyCodeLine{00527     \textcolor{comment}{/*else\{}}
+\DoxyCodeLine{00528 \textcolor{comment}{            qDebug()<<query.lastError().text();}}
+\DoxyCodeLine{00529 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{00530 }
+\DoxyCodeLine{00531 \}}
+\DoxyCodeLine{00532 }
+\DoxyCodeLine{00533 }
 
 \end{DoxyCode}

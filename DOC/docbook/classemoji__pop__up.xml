@@ -86,10 +86,8 @@ Definition at line <link linkend="_emoji__pop__up_8cpp_source_1l00015">15</link>
     <title>emojiSelected</title>
 <indexterm><primary>emojiSelected</primary><secondary>emoji_pop_up</secondary></indexterm>
 <indexterm><primary>emoji_pop_up</primary><secondary>emojiSelected</secondary></indexterm>
-<para><computeroutput>void emoji_pop_up::emojiSelected (QString emoji)<computeroutput>[signal]</computeroutput></computeroutput></para><para>
-Definition at line <link linkend="_moc__emoji__pop__up_8cpp_source_1l00144">144</link> of file <link linkend="_moc__emoji__pop__up_8cpp_source">moc_emoji_pop_up.cpp</link>.</para>
-</section>
+<para><computeroutput>void emoji_pop_up::emojiSelected (QString emoji)<computeroutput>[signal]</computeroutput></computeroutput></para></section>
 <para>
 The documentation for this class was generated from the following files:</para>
-E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_emoji__pop__up_8h">emoji_pop_up.h</link>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/<link linkend="_moc__emoji__pop__up_8cpp">moc_emoji_pop_up.cpp</link>E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_emoji__pop__up_8cpp">emoji_pop_up.cpp</link></section>
+SRC/<link linkend="_emoji__pop__up_8h">emoji_pop_up.h</link>SRC/<link linkend="_emoji__pop__up_8cpp">emoji_pop_up.cpp</link></section>
 </section>

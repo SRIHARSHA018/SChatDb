@@ -1,0 +1,40 @@
+\doxysection{test\+\_\+app.\+h}
+\label{test__app_8h_source}\index{SRC/test\_app.h@{SRC/test\_app.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef TEST\_APP\_H}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define TEST\_APP\_H}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <QSqlDatabase>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <QSqlError>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <QTest>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <QtTest/QtTest>}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00014 \textcolor{keyword}{class }test\_app : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016     Q\_OBJECT}
+\DoxyCodeLine{00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018     \textcolor{keyword}{explicit} test\_app(QObject *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00019 signals:}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{00023     \textcolor{keywordtype}{void} initTestCase();}
+\DoxyCodeLine{00025     \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00028     \textcolor{keywordtype}{void} DatabaseConnection\_test();}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00031     \textcolor{keywordtype}{void} SignUp\_test();}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00034     \textcolor{keywordtype}{void} Login\_test();}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00037     \textcolor{keywordtype}{void} cleanup();}
+\DoxyCodeLine{00039     \textcolor{keywordtype}{void} cleanupTestCase();}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042     QSqlDatabase t\_db;}
+\DoxyCodeLine{00043 \};}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// TEST\_APP\_H}}
+
+\end{DoxyCode}

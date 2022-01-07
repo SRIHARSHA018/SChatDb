@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_task__manager_8cpp" xml:lang="en-US">
-<title>E:/workspace/qt/ClientPulled/SChatDb/SRC/task_manager.cpp File Reference</title>
-<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/task_manager.cpp</primary></indexterm>
+<title>SRC/task_manager.cpp File Reference</title>
+<indexterm><primary>SRC/task_manager.cpp</primary></indexterm>
 <programlisting linenumbering="unnumbered">#include &quot;task_manager.h&quot;
 #include &lt;QDebug&gt;
 #include &lt;QSqlQuery&gt;

@@ -1,85 +1,85 @@
-\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
-\label{mainwindow_8h_source}\index{E:/workspace/qt/ClientPulled/SChatDb/SRC/mainwindow.h@{E:/workspace/qt/ClientPulled/SChatDb/SRC/mainwindow.h}}
-\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\doxysection{mainwindow.\+h}
+\label{mainwindow_8h_source}\index{SRC/mainwindow.h@{SRC/mainwindow.h}}
+\textbf{ Go to the documentation of this file.}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef MAINWINDOW\_H}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00002}00002 \textcolor{preprocessor}{\#define MAINWINDOW\_H}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00003}00003 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QMainWindow>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{task__manager_8h}{task\_manager.h}}>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <QJsonObject>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <QLineEdit>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <QListWidget>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <QListWidgetItem>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <QTableWidget>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <QTableWidgetItem>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <QLabel>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <set>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{emoji__pop__up_8h}{emoji\_pop\_up.h}}>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{profile_8h}{profile.h}}>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00016}00016 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00017}00017 QT\_BEGIN\_NAMESPACE}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00018}00018 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_ui}{Ui}} \{ \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}}; \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00019}00019 QT\_END\_NAMESPACE}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00023}\mbox{\hyperlink{class_main_window}{00023}} \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}} : \textcolor{keyword}{public} QMainWindow}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00024}00024 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00025}00025     Q\_OBJECT}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00026}00026 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00027}00027 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00028}00028     \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget *parent = \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00029}00029     \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00030}00030 signals:}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00033}00033     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a88a355a3de354aa568146e01f7d7548e}{contactSelected}}(QListWidgetItem* contact,QLabel* name,\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} mode);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00034}00034 \textcolor{keyword}{public} slots:}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00036}00036     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_afcb7fbc4f2188ae33fe1daef711fdec0}{on\_EnterMainWindow}}();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00038}00038     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_aa649a72035add83412df5806b7d1a457}{on\_cleanUpGroupsPage}}();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00040}00040     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ad58baa98f19b32c2cc1cfcd9ee9bef85}{on\_cleanUpLoginPage}}();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00042}00042     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_aa8c176f2ebc486fa184a70c7f4bff187}{on\_emojiSelected}}(QString emoji);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00043}00043 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00044}00044 \textcolor{keyword}{private} slots:}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00046}00046     \textcolor{keywordtype}{void} on\_login\_btn\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00047}00047 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00049}00049     \textcolor{keywordtype}{void} on\_signup\_btn\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00050}00050 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00052}00052     \textcolor{keywordtype}{void} on\_submit\_btn\_signup\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00053}00053 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00055}00055     \textcolor{keywordtype}{void} on\_send\_btn\_chat\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00056}00056 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00058}00058     \textcolor{keywordtype}{void} on\_contacts\_list\_itemClicked(QListWidgetItem *item);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00059}00059 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00061}00061     \textcolor{keywordtype}{void} on\_groups\_list\_itemClicked(QListWidgetItem *item);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00062}00062 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00064}00064     \textcolor{keywordtype}{void} on\_createGroup\_btn\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00065}00065 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00067}00067     \textcolor{keywordtype}{void} on\_editProfile\_btn\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00068}00068 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00070}00070     \textcolor{keywordtype}{void} on\_save\_details\_profile\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00071}00071 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00073}00073     \textcolor{keywordtype}{void} on\_Home\_btn\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00074}00074 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00076}00076     \textcolor{keywordtype}{void} on\_Home\_btn\_2\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00077}00077 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00079}00079     \textcolor{keywordtype}{void} on\_contactListtoAddtoGroup\_itemClicked(QListWidgetItem *item);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00080}00080 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00082}00082     \textcolor{keywordtype}{void} on\_removeGroupMember\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00083}00083 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00085}00085     \textcolor{keywordtype}{void} on\_create\_group\_btn\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00086}00086 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00088}00088     \textcolor{keywordtype}{void} on\_signout\_btn\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00089}00089 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00091}00091     \textcolor{keywordtype}{void} on\_submit\_btn\_signup\_2\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00092}00092 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00094}00094     \textcolor{keywordtype}{void} on\_emoji\_btn\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00095}00095 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00097}00097     \textcolor{keywordtype}{void} on\_profile\_pic\_btn\_edit\_clicked();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00098}00098 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00099}00099 \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00101}00101     \mbox{\hyperlink{class_ui_1_1_main_window}{Ui::MainWindow}} *ui;}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00103}00103     \mbox{\hyperlink{class_task__manager}{Task\_manager}}* tasker;}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00104}00104     std::set<QString> x\_group\_members;}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00106}00106     \textcolor{keywordtype}{void} x\_cleanUpEverything();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00108}00108     \mbox{\hyperlink{classemoji__pop__up}{emoji\_pop\_up}}* emojisWin;}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00109}00109 \};}
-\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00110}00110 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MAINWINDOW\_H}}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef MAINWINDOW\_H}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define MAINWINDOW\_H}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <task\_manager.h>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <QJsonObject>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <QLineEdit>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <QListWidget>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <QListWidgetItem>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <QTableWidget>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <QTableWidgetItem>}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <emoji\_pop\_up.h>}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <profile.h>}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00018 \textcolor{keyword}{namespace }Ui \{ \textcolor{keyword}{class }MainWindow; \}}
+\DoxyCodeLine{00019 QT\_END\_NAMESPACE}
+\DoxyCodeLine{00023 \textcolor{keyword}{class }MainWindow : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{00024 \{}
+\DoxyCodeLine{00025     Q\_OBJECT}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028     MainWindow(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00029     \string~MainWindow();}
+\DoxyCodeLine{00030 signals:}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{void} contactSelected(QListWidgetItem* contact,QLabel* name,STATUS mode);}
+\DoxyCodeLine{00034 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{void} on\_EnterMainWindow();}
+\DoxyCodeLine{00038     \textcolor{keywordtype}{void} on\_cleanUpGroupsPage();}
+\DoxyCodeLine{00040     \textcolor{keywordtype}{void} on\_cleanUpLoginPage();}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{void} on\_emojiSelected(QString emoji);}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{void} on\_login\_btn\_clicked();}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00049     \textcolor{keywordtype}{void} on\_signup\_btn\_clicked();}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00052     \textcolor{keywordtype}{void} on\_submit\_btn\_signup\_clicked();}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00055     \textcolor{keywordtype}{void} on\_send\_btn\_chat\_clicked();}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00058     \textcolor{keywordtype}{void} on\_contacts\_list\_itemClicked(QListWidgetItem *item);}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00061     \textcolor{keywordtype}{void} on\_groups\_list\_itemClicked(QListWidgetItem *item);}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00064     \textcolor{keywordtype}{void} on\_createGroup\_btn\_clicked();}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00067     \textcolor{keywordtype}{void} on\_editProfile\_btn\_clicked();}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00070     \textcolor{keywordtype}{void} on\_save\_details\_profile\_clicked();}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00073     \textcolor{keywordtype}{void} on\_Home\_btn\_clicked();}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00076     \textcolor{keywordtype}{void} on\_Home\_btn\_2\_clicked();}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00079     \textcolor{keywordtype}{void} on\_contactListtoAddtoGroup\_itemClicked(QListWidgetItem *item);}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00082     \textcolor{keywordtype}{void} on\_removeGroupMember\_clicked();}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00085     \textcolor{keywordtype}{void} on\_create\_group\_btn\_clicked();}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00088     \textcolor{keywordtype}{void} on\_signout\_btn\_clicked();}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00091     \textcolor{keywordtype}{void} on\_submit\_btn\_signup\_2\_clicked();}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00094     \textcolor{keywordtype}{void} on\_emoji\_btn\_clicked();}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00097     \textcolor{keywordtype}{void} on\_profile\_pic\_btn\_edit\_clicked();}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101     Ui::MainWindow *ui;}
+\DoxyCodeLine{00103     Task\_manager* tasker;}
+\DoxyCodeLine{00104     std::set<QString> x\_group\_members;}
+\DoxyCodeLine{00106     \textcolor{keywordtype}{void} x\_cleanUpEverything();}
+\DoxyCodeLine{00108     emoji\_pop\_up* emojisWin;}
+\DoxyCodeLine{00109 \};}
+\DoxyCodeLine{00110 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MAINWINDOW\_H}}
 
 \end{DoxyCode}

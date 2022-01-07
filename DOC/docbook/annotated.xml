@@ -3,8 +3,8 @@
 <title>Class List</title>
 Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_class_chat_manager">ChatManager</link>
 <para>The <link linkend="_class_chat_manager">ChatManager</link> class </para>
-<link linkend="_classemoji__pop__up">emoji_pop_up</link><link linkend="_class_ui_1_1emoji__pop__up">Ui::emoji_pop_up</link><link linkend="_class_main_window">MainWindow</link><link linkend="_class_ui_1_1_main_window">Ui::MainWindow</link><link linkend="_structprofile">profile</link><link linkend="_structqt__meta__stringdata___chat_manager__t">qt_meta_stringdata_ChatManager_t</link><link linkend="_structqt__meta__stringdata__emoji__pop__up__t">qt_meta_stringdata_emoji_pop_up_t</link><link linkend="_structqt__meta__stringdata___main_window__t">qt_meta_stringdata_MainWindow_t</link><link linkend="_structqt__meta__stringdata___task__manager__t">qt_meta_stringdata_Task_manager_t</link><link linkend="_structqt__meta__stringdata__test__app__t">qt_meta_stringdata_test_app_t</link><link linkend="_class_task__manager">Task_manager</link>
+<link linkend="_classemoji__pop__up">emoji_pop_up</link><link linkend="_class_main_window">MainWindow</link><link linkend="_structprofile">profile</link><link linkend="_class_task__manager">Task_manager</link>
 <para>The <link linkend="_class_task__manager">Task_manager</link> class </para>
 <link linkend="_classtest__app">test_app</link>
 <para>The <link linkend="_classtest__app">test_app</link> class </para>
-<link linkend="_class_ui__emoji__pop__up">Ui_emoji_pop_up</link><link linkend="_class_ui___main_window">Ui_MainWindow</link></section>
+</section>

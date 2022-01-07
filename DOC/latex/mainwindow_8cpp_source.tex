@@ -1,225 +1,225 @@
-\hypertarget{mainwindow_8cpp_source}{}\doxysection{mainwindow.\+cpp}
-\label{mainwindow_8cpp_source}\index{E:/workspace/qt/ClientPulled/SChatDb/SRC/mainwindow.cpp@{E:/workspace/qt/ClientPulled/SChatDb/SRC/mainwindow.cpp}}
-\mbox{\hyperlink{mainwindow_8cpp}{Go to the documentation of this file.}}
+\doxysection{mainwindow.\+cpp}
+\label{mainwindow_8cpp_source}\index{SRC/mainwindow.cpp@{SRC/mainwindow.cpp}}
+\textbf{ Go to the documentation of this file.}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mainwindow_8h}{mainwindow.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ui__mainwindow_8h}{ui\_mainwindow.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <QPixmap>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <QFileDialog>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <QResource>}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00006}00006 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00012}\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{00012}} \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow::MainWindow}}(QWidget *parent)}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00013}00013     : QMainWindow(parent)}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00014}00014     , ui(new \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_main_window}{MainWindow}})}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00015}00015 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00016}00016     ui-\/>\mbox{\hyperlink{class_ui___main_window_acf4a0872c4c77d8f43a2ec66ed849b58}{setupUi}}(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00017}00017     ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}}-\/>setCurrentIndex(0);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00018}00018     tasker= \textcolor{keyword}{new} \mbox{\hyperlink{class_task__manager}{Task\_manager}}(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00019}00019     tasker-\/>\mbox{\hyperlink{class_task__manager_ae601874b1890f2f035f5311b0ff50f7e}{Init}}();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00020}00020     ui-\/>\mbox{\hyperlink{class_ui___main_window_a356f1cf3ebda15f1fac59467ee081b74}{centralwidget}}=ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}};}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00021}00021 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00022}00022 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00023}\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{00023}} \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{MainWindow::\string~MainWindow}}()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00024}00024 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00025}00025     \textcolor{keyword}{delete} ui;}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00026}00026 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00027}00027 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00032}\mbox{\hyperlink{class_main_window_afcb7fbc4f2188ae33fe1daef711fdec0}{00032}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_afcb7fbc4f2188ae33fe1daef711fdec0}{MainWindow::on\_EnterMainWindow}}()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00033}00033 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00034}00034     connect(\textcolor{keyword}{this},SIGNAL(\mbox{\hyperlink{class_main_window_a88a355a3de354aa568146e01f7d7548e}{contactSelected}}(QListWidgetItem*,QLabel*,\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}})),tasker,SLOT(on\_ContactSelected(QListWidgetItem*,QLabel*,\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}})));}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00035}00035     \textcolor{comment}{//ui-\/>username\_label\_chat-\/>setText(QString("{} hiiii \(\backslash\)xF0\(\backslash\)x9F\(\backslash\)x98\(\backslash\)x81"{}));}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00036}00036     tasker-\/>\mbox{\hyperlink{class_task__manager_a783de3d16e7e13349f2648cf3b3f72eb}{chat\_pane}} = ui-\/>\mbox{\hyperlink{class_ui___main_window_a9f5f7a5b2208b4aa333c9f5e1ff3d262}{chat\_pane}};}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00037}00037 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00042}\mbox{\hyperlink{class_main_window_aa649a72035add83412df5806b7d1a457}{00042}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_aa649a72035add83412df5806b7d1a457}{MainWindow::on\_cleanUpGroupsPage}}()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00043}00043 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00044}00044     ui-\/>\mbox{\hyperlink{class_ui___main_window_a7661b953d283e98635471ba322cffe73}{group\_name\_box}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00045}00045     ui-\/>\mbox{\hyperlink{class_ui___main_window_a096a88f2762910a08e7e29187503a40a}{group\_desc\_box}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00046}00046     ui-\/>\mbox{\hyperlink{class_ui___main_window_a4b944e17598c3d328c4c03cfa19ada12}{group\_members}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00047}00047     this-\/>x\_group\_members.clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00048}00048     tasker-\/>\mbox{\hyperlink{class_task__manager_a31feeb979c4c678ae6cd27ed3d8e7ae6}{SetupGroups}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a7084ad9b33409e639982e3c594355ec9}{groups\_list}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00049}00049 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00054}\mbox{\hyperlink{class_main_window_ad58baa98f19b32c2cc1cfcd9ee9bef85}{00054}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ad58baa98f19b32c2cc1cfcd9ee9bef85}{MainWindow::on\_cleanUpLoginPage}}()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00055}00055 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00056}00056     ui-\/>\mbox{\hyperlink{class_ui___main_window_a391cee276faf867e4531433e6e3e369e}{username\_box}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00057}00057     ui-\/>\mbox{\hyperlink{class_ui___main_window_aada55a94d464464f4f9f6a43730cf1d4}{password\_box}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00058}00058 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00064}\mbox{\hyperlink{class_main_window_aa8c176f2ebc486fa184a70c7f4bff187}{00064}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_aa8c176f2ebc486fa184a70c7f4bff187}{MainWindow::on\_emojiSelected}}(QString emoji)}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00065}00065 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00066}00066     ui-\/>\mbox{\hyperlink{class_ui___main_window_a655c6f3fcac024488518cc8dda765bb8}{message\_box\_chat}}-\/>setText(ui-\/>\mbox{\hyperlink{class_ui___main_window_a655c6f3fcac024488518cc8dda765bb8}{message\_box\_chat}}-\/>text()+emoji);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00067}00067 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00068}00068 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00074}00074 \textcolor{keywordtype}{void} MainWindow::on\_login\_btn\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00075}00075 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00076}00076 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00077}00077     QJsonObject details;}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00078}00078     details[\textcolor{stringliteral}{"{}username"{}}]=ui-\/>\mbox{\hyperlink{class_ui___main_window_a391cee276faf867e4531433e6e3e369e}{username\_box}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00079}00079     details[\textcolor{stringliteral}{"{}password"{}}]=ui-\/>\mbox{\hyperlink{class_ui___main_window_aada55a94d464464f4f9f6a43730cf1d4}{password\_box}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00080}00080     tasker-\/>\mbox{\hyperlink{class_task__manager_a68ba4818ada6d2ddf4016cdfd4a6b831}{ValidateLoginDetails}}(details);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00081}00081     \textcolor{keywordflow}{if}(tasker-\/>\mbox{\hyperlink{class_task__manager_a368c57b2d23290e5a4b2de89ca31e91d}{IsLoginSuccessful}}())\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00082}00082        tasker-\/>\mbox{\hyperlink{class_task__manager_a6f273c9efef1901fba7c277ac2df9b1d}{SetupMainPage}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00083}00083        tasker-\/>\mbox{\hyperlink{class_task__manager_aa51984dfdedd6acacfe0ae3033b49baf}{SetupContacts}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a8459834160a54df3f22b1501d364590c}{contacts\_list}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00084}00084        tasker-\/>\mbox{\hyperlink{class_task__manager_a31feeb979c4c678ae6cd27ed3d8e7ae6}{SetupGroups}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a7084ad9b33409e639982e3c594355ec9}{groups\_list}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00085}00085     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00086}00086     \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00087}00087         ui-\/>\mbox{\hyperlink{class_ui___main_window_ab9b649689a888678e3fe6a150c7e28be}{status\_label\_login}}-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00088}00088         ui-\/>\mbox{\hyperlink{class_ui___main_window_ab9b649689a888678e3fe6a150c7e28be}{status\_label\_login}}-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}login failed check your username/password and try again"{}}));}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00089}00089     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00090}00090 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00091}00091 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00096}00096 \textcolor{keywordtype}{void} MainWindow::on\_signup\_btn\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00097}00097 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00098}00098     ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}}-\/>setCurrentIndex(1);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00099}00099 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00100}00100 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00105}00105 \textcolor{keywordtype}{void} MainWindow::on\_submit\_btn\_signup\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00106}00106 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00107}00107     QJsonObject details;}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00108}00108     details[\textcolor{stringliteral}{"{}username"{}}]=ui-\/>\mbox{\hyperlink{class_ui___main_window_a87549d416d1cf57c8fc2d7a116268b24}{username\_box\_signup}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00109}00109     details[\textcolor{stringliteral}{"{}password"{}}]=ui-\/>\mbox{\hyperlink{class_ui___main_window_a98ab927dc2e25a1aae5fa61c350865a2}{password\_box\_signup}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00110}00110     details[\textcolor{stringliteral}{"{}firstname"{}}]=ui-\/>\mbox{\hyperlink{class_ui___main_window_a0e84afaa8e337c244f59caa662bd378d}{firstname\_box\_signup}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00111}00111     details[\textcolor{stringliteral}{"{}lastname"{}}]=ui-\/>\mbox{\hyperlink{class_ui___main_window_a0d62f369cbc1877c337c7ad2956a0ef1}{lastname\_box\_signup}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00112}00112     details[\textcolor{stringliteral}{"{}confirmpassword"{}}]=ui-\/>\mbox{\hyperlink{class_ui___main_window_a87f7926debd857d48ed8f7da34303e7f}{confirmpass\_box\_signup}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00113}00113     details[\textcolor{stringliteral}{"{}contactno"{}}] = ui-\/>\mbox{\hyperlink{class_ui___main_window_aa92f58fa5018c2a0565704858d5435e1}{mobileno\_box\_signup}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00114}00114     tasker-\/>\mbox{\hyperlink{class_task__manager_a9e1c7df0f397c06b6a0f62eaf96ee830}{ValidateSignUpDetails}}(details,ui-\/>\mbox{\hyperlink{class_ui___main_window_adf7bda03b5a417b2903d0bfe902d36d0}{status\_label\_signup}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00115}00115     \textcolor{keywordflow}{if}(tasker-\/>\mbox{\hyperlink{class_task__manager_afb07a4947f98a6ab155d2e915116a120}{IsSignUpSuccessful}}())\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00116}00116         tasker-\/>\mbox{\hyperlink{class_task__manager_ab0a0ee3bbb2640920d1ae4e6b64dcefb}{SetupLoginPage}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00117}00117     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00118}00118 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00119}00119 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00124}00124 \textcolor{keywordtype}{void} MainWindow::on\_send\_btn\_chat\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00125}00125 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00126}00126     \textcolor{comment}{//qDebug()<<"{}send clicked"{};}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00127}00127     tasker-\/>\mbox{\hyperlink{class_task__manager_aa3f5de314d725cd5df56767df4801169}{SendMessage}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a655c6f3fcac024488518cc8dda765bb8}{message\_box\_chat}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00128}00128 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00129}00129 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00130}00130 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00136}00136 \textcolor{keywordtype}{void} MainWindow::on\_contacts\_list\_itemClicked(QListWidgetItem *item)}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00137}00137 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00138}00138 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00139}00139     emit \mbox{\hyperlink{class_main_window_a88a355a3de354aa568146e01f7d7548e}{contactSelected}}(item,ui-\/>\mbox{\hyperlink{class_ui___main_window_acb1092d67fcb8828e98460cc70cc8886}{username\_label\_chat}},\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223}{STATUS::REGULAR\_CHAT}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00140}00140    \textcolor{comment}{// qDebug()<<"{}Contact selected main window"{};}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00141}00141 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00142}00142 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00148}00148 \textcolor{keywordtype}{void} MainWindow::on\_groups\_list\_itemClicked(QListWidgetItem *item)}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00149}00149 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00150}00150     emit \mbox{\hyperlink{class_main_window_a88a355a3de354aa568146e01f7d7548e}{contactSelected}}(item,ui-\/>\mbox{\hyperlink{class_ui___main_window_acb1092d67fcb8828e98460cc70cc8886}{username\_label\_chat}},\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb}{STATUS::GROUP\_CHAT}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00151}00151 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00152}00152 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00157}00157 \textcolor{keywordtype}{void} MainWindow::on\_createGroup\_btn\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00158}00158 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00159}00159     ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}}-\/>setCurrentIndex(4);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00160}00160     tasker-\/>\mbox{\hyperlink{class_task__manager_aa51984dfdedd6acacfe0ae3033b49baf}{SetupContacts}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a460e93c3c4145026269f10c03f0243c1}{contactListtoAddtoGroup}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00161}00161 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00166}00166 \textcolor{keywordtype}{void} MainWindow::on\_editProfile\_btn\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00167}00167 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00168}00168     tasker-\/>\mbox{\hyperlink{class_task__manager_ae439c36213f5247fba521f97af6df77c}{setUpEditProfileWindow}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00169}00169     tasker-\/>\mbox{\hyperlink{class_task__manager_a3f952dc180c1272323abbf98b802d723}{displayDetails}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a4e107504ed93688c3d5f098cf8dea25e}{PreviewDetails\_list}},ui-\/>\mbox{\hyperlink{class_ui___main_window_a17dfd1c7e4d326f3522b22af8cb78ead}{profile\_picture}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00170}00170 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00176}00176 \textcolor{keywordtype}{void} MainWindow::on\_save\_details\_profile\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00177}00177 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00178}00178 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00179}00179     QJsonObject changed\_profile\_details;}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00180}00180     \textcolor{keywordflow}{if}(ui-\/>\mbox{\hyperlink{class_ui___main_window_aec7aca825077bbed19d1dbccf90fd72e}{profileEdit\_username\_box}}-\/>text().length()!=0)\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00181}00181         changed\_profile\_details[\textcolor{stringliteral}{"{}username"{}}] = ui-\/>\mbox{\hyperlink{class_ui___main_window_aec7aca825077bbed19d1dbccf90fd72e}{profileEdit\_username\_box}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00182}00182     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00183}00183     \textcolor{keywordflow}{if}(ui-\/>\mbox{\hyperlink{class_ui___main_window_ad729dc51abb39d4cb63517f128032402}{profileEdit\_firstname\_box}}-\/>text().length()!=0)\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00184}00184         changed\_profile\_details[\textcolor{stringliteral}{"{}firstname"{}}] = ui-\/>\mbox{\hyperlink{class_ui___main_window_ad729dc51abb39d4cb63517f128032402}{profileEdit\_firstname\_box}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00185}00185 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00186}00186     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00187}00187     \textcolor{keywordflow}{if}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a11a4e333ceefcd5f27551ebf1e9cbc96}{profileEdit\_lastname\_box}}-\/>text().length()!=0)\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00188}00188         changed\_profile\_details[\textcolor{stringliteral}{"{}lastname"{}}] = ui-\/>\mbox{\hyperlink{class_ui___main_window_a11a4e333ceefcd5f27551ebf1e9cbc96}{profileEdit\_lastname\_box}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00189}00189 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00190}00190     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00191}00191     \textcolor{keywordflow}{if}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a36a9302f8787a21e2fc8b0a452bfcc4d}{profileEdit\_contactno\_box}}-\/>text().length()!=0)\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00192}00192         changed\_profile\_details[\textcolor{stringliteral}{"{}contactno"{}}] = ui-\/>\mbox{\hyperlink{class_ui___main_window_a36a9302f8787a21e2fc8b0a452bfcc4d}{profileEdit\_contactno\_box}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00193}00193 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00194}00194     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00195}00195     \textcolor{keywordflow}{if}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a288fb2684b36337ab9532132190ccb1a}{profileEdit\_password\_box}}-\/>text().length()!=0 \&\& ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d008bb2fa1dcd53ba7e843aa0ff32c0}{profileEdit\_confirmpass\_box}}-\/>text().length()!=0)\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00196}00196         \textcolor{keywordflow}{if}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d008bb2fa1dcd53ba7e843aa0ff32c0}{profileEdit\_confirmpass\_box}}-\/>text()==ui-\/>\mbox{\hyperlink{class_ui___main_window_a288fb2684b36337ab9532132190ccb1a}{profileEdit\_password\_box}}-\/>text())\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00197}00197             changed\_profile\_details[\textcolor{stringliteral}{"{}password"{}}] = ui-\/>\mbox{\hyperlink{class_ui___main_window_a288fb2684b36337ab9532132190ccb1a}{profileEdit\_password\_box}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00198}00198         \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00199}00199         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00200}00200             ui-\/>\mbox{\hyperlink{class_ui___main_window_ab3c4e608f0f40514b0707f12675d92de}{status\_profileEdit}}-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00201}00201             ui-\/>\mbox{\hyperlink{class_ui___main_window_ab3c4e608f0f40514b0707f12675d92de}{status\_profileEdit}}-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}confirm password and password should be same."{}}));}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00202}00202         \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00203}00203     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00204}00204     tasker-\/>\mbox{\hyperlink{class_task__manager_a5d39254a45a6a0bfad8436af2b031460}{setProfileDetails}}(changed\_profile\_details);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00205}00205     tasker-\/>\mbox{\hyperlink{class_task__manager_a3f952dc180c1272323abbf98b802d723}{displayDetails}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a4e107504ed93688c3d5f098cf8dea25e}{PreviewDetails\_list}},ui-\/>\mbox{\hyperlink{class_ui___main_window_a17dfd1c7e4d326f3522b22af8cb78ead}{profile\_picture}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00206}00206 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00207}00207 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00212}00212 \textcolor{keywordtype}{void} MainWindow::on\_Home\_btn\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00213}00213 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00214}00214   ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}}-\/>setCurrentIndex(2);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00215}00215 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00216}00216 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00221}00221 \textcolor{keywordtype}{void} MainWindow::on\_Home\_btn\_2\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00222}00222 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00223}00223   ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}}-\/>setCurrentIndex(2);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00224}00224 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00225}00225 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00231}00231 \textcolor{keywordtype}{void} MainWindow::on\_contactListtoAddtoGroup\_itemClicked(QListWidgetItem *item)}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00232}00232 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00233}00233 \textcolor{comment}{//    qDebug()<<"{}contact clicked"{}<<item-\/>text();}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00234}00234     \textcolor{keywordflow}{if}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a4b944e17598c3d328c4c03cfa19ada12}{group\_members}}-\/>findItems(item-\/>text(),Qt::MatchExactly).length()==0)\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00235}00235         ui-\/>\mbox{\hyperlink{class_ui___main_window_a4b944e17598c3d328c4c03cfa19ada12}{group\_members}}-\/>addItem(item-\/>text());}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00236}00236         this-\/>x\_group\_members.insert(item-\/>text());}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00237}00237     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00238}00238 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00239}00239 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00244}00244 \textcolor{keywordtype}{void} MainWindow::on\_removeGroupMember\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00245}00245 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00246}00246     \textcolor{keywordflow}{if}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a4b944e17598c3d328c4c03cfa19ada12}{group\_members}}-\/>selectedItems().length()>0)\{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00247}00247         \textcolor{comment}{//qDebug()<<ui-\/>group\_members-\/>selectedItems()[0]-\/>text();}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00248}00248         ui-\/>\mbox{\hyperlink{class_ui___main_window_a4b944e17598c3d328c4c03cfa19ada12}{group\_members}}-\/>removeItemWidget(ui-\/>\mbox{\hyperlink{class_ui___main_window_a4b944e17598c3d328c4c03cfa19ada12}{group\_members}}-\/>selectedItems()[0]);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00249}00249         this-\/>x\_group\_members.erase(this-\/>x\_group\_members.find(ui-\/>\mbox{\hyperlink{class_ui___main_window_a4b944e17598c3d328c4c03cfa19ada12}{group\_members}}-\/>selectedItems()[0]-\/>text()));}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00250}00250         \textcolor{keyword}{delete} ui-\/>\mbox{\hyperlink{class_ui___main_window_a4b944e17598c3d328c4c03cfa19ada12}{group\_members}}-\/>selectedItems()[0];}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00251}00251     \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00252}00252 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00253}00253 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00254}00254 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00259}00259 \textcolor{keywordtype}{void} MainWindow::on\_create\_group\_btn\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00260}00260 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00261}00261     QJsonObject details;}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00262}00262     details[\textcolor{stringliteral}{"{}group\_name"{}}]=ui-\/>\mbox{\hyperlink{class_ui___main_window_a7661b953d283e98635471ba322cffe73}{group\_name\_box}}-\/>text();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00263}00263     details[\textcolor{stringliteral}{"{}desc"{}}] = ui-\/>\mbox{\hyperlink{class_ui___main_window_a096a88f2762910a08e7e29187503a40a}{group\_desc\_box}}-\/>toPlainText();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00264}00264     connect(tasker,SIGNAL(cleanUpGroupsPage()),\textcolor{keyword}{this},SLOT(\mbox{\hyperlink{class_main_window_aa649a72035add83412df5806b7d1a457}{on\_cleanUpGroupsPage}}()));}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00265}00265     tasker-\/>\mbox{\hyperlink{class_task__manager_a2bf50ea73b70a5b0945489b3b221e762}{ValidateGroupInfo}}(details,ui-\/>\mbox{\hyperlink{class_ui___main_window_a03d36d07f851992a5a58b36f7cb60b32}{status\_group\_create}},ui-\/>\mbox{\hyperlink{class_ui___main_window_a4b944e17598c3d328c4c03cfa19ada12}{group\_members}},this-\/>x\_group\_members);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00266}00266 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00267}00267 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00268}00268 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00273}00273 \textcolor{keywordtype}{void} MainWindow::on\_signout\_btn\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00274}00274 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00275}00275     ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}}-\/>setCurrentIndex(0);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00276}00276     this-\/>x\_cleanUpEverything();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00277}00277     tasker-\/>\mbox{\hyperlink{class_task__manager_a2d247180caa5d322e1ef2a144006de0b}{cleanUp}}();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00278}00278 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00279}00279 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00284}00284 \textcolor{keywordtype}{void} MainWindow::on\_submit\_btn\_signup\_2\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00285}00285 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00286}00286     ui-\/>\mbox{\hyperlink{class_ui___main_window_a8d440a6df1de0bc57afcdda7476d8f19}{stackedWidget}}-\/>setCurrentIndex(0);}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00287}00287 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00292}00292 \textcolor{keywordtype}{void} MainWindow::x\_cleanUpEverything()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00293}00293 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00294}00294     ui-\/>\mbox{\hyperlink{class_ui___main_window_a8459834160a54df3f22b1501d364590c}{contacts\_list}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00295}00295     ui-\/>\mbox{\hyperlink{class_ui___main_window_a7084ad9b33409e639982e3c594355ec9}{groups\_list}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00296}00296     ui-\/>\mbox{\hyperlink{class_ui___main_window_a9f5f7a5b2208b4aa333c9f5e1ff3d262}{chat\_pane}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00297}00297     ui-\/>\mbox{\hyperlink{class_ui___main_window_ab9b649689a888678e3fe6a150c7e28be}{status\_label\_login}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00298}00298     ui-\/>\mbox{\hyperlink{class_ui___main_window_adf7bda03b5a417b2903d0bfe902d36d0}{status\_label\_signup}}-\/>clear();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00299}00299 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00300}00300 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00305}00305 \textcolor{keywordtype}{void} MainWindow::on\_emoji\_btn\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00306}00306 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00307}00307     this-\/>emojisWin =\textcolor{keyword}{new} \mbox{\hyperlink{classemoji__pop__up}{emoji\_pop\_up}}(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00308}00308     emojisWin-\/>show();}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00309}00309 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00310}00310 }
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00315}00315 \textcolor{keywordtype}{void} MainWindow::on\_profile\_pic\_btn\_edit\_clicked()}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00316}00316 \{}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00317}00317    QFileDialog dialog(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00318}00318    \textcolor{keyword}{auto} filename = QFileDialog::getOpenFileName(\textcolor{keyword}{this},tr(\textcolor{stringliteral}{"{}Profile pic"{}}));}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00319}00319    tasker-\/>\mbox{\hyperlink{class_task__manager_ae0e44b163a8c4b41d5c77536ec77cd98}{setProfilePic}}(filename.toStdString());}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00320}00320    tasker-\/>\mbox{\hyperlink{class_task__manager_a3f952dc180c1272323abbf98b802d723}{displayDetails}}(ui-\/>\mbox{\hyperlink{class_ui___main_window_a4e107504ed93688c3d5f098cf8dea25e}{PreviewDetails\_list}},ui-\/>\mbox{\hyperlink{class_ui___main_window_a17dfd1c7e4d326f3522b22af8cb78ead}{profile\_picture}});}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00321}00321 \}}
-\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00322}00322 }
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}mainwindow.h"{}}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}ui\_mainwindow.h"{}}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <QPixmap>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <QFileDialog>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <QResource>}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00012 MainWindow::MainWindow(QWidget *parent)}
+\DoxyCodeLine{00013     : QMainWindow(parent)}
+\DoxyCodeLine{00014     , ui(new Ui::MainWindow)}
+\DoxyCodeLine{00015 \{}
+\DoxyCodeLine{00016     ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{00017     ui-\/>stackedWidget-\/>setCurrentIndex(0);}
+\DoxyCodeLine{00018     tasker= \textcolor{keyword}{new} Task\_manager(\textcolor{keyword}{this});}
+\DoxyCodeLine{00019     tasker-\/>Init();}
+\DoxyCodeLine{00020     ui-\/>centralwidget=ui-\/>stackedWidget;}
+\DoxyCodeLine{00021 \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 MainWindow::\string~MainWindow()}
+\DoxyCodeLine{00024 \{}
+\DoxyCodeLine{00025     \textcolor{keyword}{delete} ui;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \}}
+\DoxyCodeLine{00032 \textcolor{keywordtype}{void} MainWindow::on\_EnterMainWindow()}
+\DoxyCodeLine{00033 \{}
+\DoxyCodeLine{00034     connect(\textcolor{keyword}{this},SIGNAL(contactSelected(QListWidgetItem*,QLabel*,STATUS)),tasker,SLOT(on\_ContactSelected(QListWidgetItem*,QLabel*,STATUS)));}
+\DoxyCodeLine{00035     \textcolor{comment}{//ui-\/>username\_label\_chat-\/>setText(QString("{} hiiii \(\backslash\)xF0\(\backslash\)x9F\(\backslash\)x98\(\backslash\)x81"{}));}}
+\DoxyCodeLine{00036     tasker-\/>chat\_pane = ui-\/>chat\_pane;}
+\DoxyCodeLine{00037 \}}
+\DoxyCodeLine{00042 \textcolor{keywordtype}{void} MainWindow::on\_cleanUpGroupsPage()}
+\DoxyCodeLine{00043 \{}
+\DoxyCodeLine{00044     ui-\/>group\_name\_box-\/>clear();}
+\DoxyCodeLine{00045     ui-\/>group\_desc\_box-\/>clear();}
+\DoxyCodeLine{00046     ui-\/>group\_members-\/>clear();}
+\DoxyCodeLine{00047     this-\/>x\_group\_members.clear();}
+\DoxyCodeLine{00048     tasker-\/>SetupGroups(ui-\/>groups\_list);}
+\DoxyCodeLine{00049 \}}
+\DoxyCodeLine{00054 \textcolor{keywordtype}{void} MainWindow::on\_cleanUpLoginPage()}
+\DoxyCodeLine{00055 \{}
+\DoxyCodeLine{00056     ui-\/>username\_box-\/>clear();}
+\DoxyCodeLine{00057     ui-\/>password\_box-\/>clear();}
+\DoxyCodeLine{00058 \}}
+\DoxyCodeLine{00064 \textcolor{keywordtype}{void} MainWindow::on\_emojiSelected(QString emoji)}
+\DoxyCodeLine{00065 \{}
+\DoxyCodeLine{00066     ui-\/>message\_box\_chat-\/>setText(ui-\/>message\_box\_chat-\/>text()+emoji);}
+\DoxyCodeLine{00067 \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00074 \textcolor{keywordtype}{void} MainWindow::on\_login\_btn\_clicked()}
+\DoxyCodeLine{00075 \{}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     QJsonObject details;}
+\DoxyCodeLine{00078     details[\textcolor{stringliteral}{"{}username"{}}]=ui-\/>username\_box-\/>text();}
+\DoxyCodeLine{00079     details[\textcolor{stringliteral}{"{}password"{}}]=ui-\/>password\_box-\/>text();}
+\DoxyCodeLine{00080     tasker-\/>ValidateLoginDetails(details);}
+\DoxyCodeLine{00081     \textcolor{keywordflow}{if}(tasker-\/>IsLoginSuccessful())\{}
+\DoxyCodeLine{00082        tasker-\/>SetupMainPage(ui-\/>stackedWidget);}
+\DoxyCodeLine{00083        tasker-\/>SetupContacts(ui-\/>contacts\_list);}
+\DoxyCodeLine{00084        tasker-\/>SetupGroups(ui-\/>groups\_list);}
+\DoxyCodeLine{00085     \}}
+\DoxyCodeLine{00086     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00087         ui-\/>status\_label\_login-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
+\DoxyCodeLine{00088         ui-\/>status\_label\_login-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}login failed check your username/password and try again"{}}));}
+\DoxyCodeLine{00089     \}}
+\DoxyCodeLine{00090 \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00096 \textcolor{keywordtype}{void} MainWindow::on\_signup\_btn\_clicked()}
+\DoxyCodeLine{00097 \{}
+\DoxyCodeLine{00098     ui-\/>stackedWidget-\/>setCurrentIndex(1);}
+\DoxyCodeLine{00099 \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00105 \textcolor{keywordtype}{void} MainWindow::on\_submit\_btn\_signup\_clicked()}
+\DoxyCodeLine{00106 \{}
+\DoxyCodeLine{00107     QJsonObject details;}
+\DoxyCodeLine{00108     details[\textcolor{stringliteral}{"{}username"{}}]=ui-\/>username\_box\_signup-\/>text();}
+\DoxyCodeLine{00109     details[\textcolor{stringliteral}{"{}password"{}}]=ui-\/>password\_box\_signup-\/>text();}
+\DoxyCodeLine{00110     details[\textcolor{stringliteral}{"{}firstname"{}}]=ui-\/>firstname\_box\_signup-\/>text();}
+\DoxyCodeLine{00111     details[\textcolor{stringliteral}{"{}lastname"{}}]=ui-\/>lastname\_box\_signup-\/>text();}
+\DoxyCodeLine{00112     details[\textcolor{stringliteral}{"{}confirmpassword"{}}]=ui-\/>confirmpass\_box\_signup-\/>text();}
+\DoxyCodeLine{00113     details[\textcolor{stringliteral}{"{}contactno"{}}] = ui-\/>mobileno\_box\_signup-\/>text();}
+\DoxyCodeLine{00114     tasker-\/>ValidateSignUpDetails(details,ui-\/>status\_label\_signup);}
+\DoxyCodeLine{00115     \textcolor{keywordflow}{if}(tasker-\/>IsSignUpSuccessful())\{}
+\DoxyCodeLine{00116         tasker-\/>SetupLoginPage(ui-\/>stackedWidget);}
+\DoxyCodeLine{00117     \}}
+\DoxyCodeLine{00118 \}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00124 \textcolor{keywordtype}{void} MainWindow::on\_send\_btn\_chat\_clicked()}
+\DoxyCodeLine{00125 \{}
+\DoxyCodeLine{00126     \textcolor{comment}{//qDebug()<<"{}send clicked"{};}}
+\DoxyCodeLine{00127     tasker-\/>SendMessage(ui-\/>message\_box\_chat);}
+\DoxyCodeLine{00128 \}}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00136 \textcolor{keywordtype}{void} MainWindow::on\_contacts\_list\_itemClicked(QListWidgetItem *item)}
+\DoxyCodeLine{00137 \{}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139     emit contactSelected(item,ui-\/>username\_label\_chat,STATUS::REGULAR\_CHAT);}
+\DoxyCodeLine{00140    \textcolor{comment}{// qDebug()<<"{}Contact selected main window"{};}}
+\DoxyCodeLine{00141 \}}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00148 \textcolor{keywordtype}{void} MainWindow::on\_groups\_list\_itemClicked(QListWidgetItem *item)}
+\DoxyCodeLine{00149 \{}
+\DoxyCodeLine{00150     emit contactSelected(item,ui-\/>username\_label\_chat,STATUS::GROUP\_CHAT);}
+\DoxyCodeLine{00151 \}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00157 \textcolor{keywordtype}{void} MainWindow::on\_createGroup\_btn\_clicked()}
+\DoxyCodeLine{00158 \{}
+\DoxyCodeLine{00159     ui-\/>stackedWidget-\/>setCurrentIndex(4);}
+\DoxyCodeLine{00160     tasker-\/>SetupContacts(ui-\/>contactListtoAddtoGroup);}
+\DoxyCodeLine{00161 \}}
+\DoxyCodeLine{00166 \textcolor{keywordtype}{void} MainWindow::on\_editProfile\_btn\_clicked()}
+\DoxyCodeLine{00167 \{}
+\DoxyCodeLine{00168     tasker-\/>setUpEditProfileWindow(ui-\/>stackedWidget);}
+\DoxyCodeLine{00169     tasker-\/>displayDetails(ui-\/>PreviewDetails\_list,ui-\/>profile\_picture);}
+\DoxyCodeLine{00170 \}}
+\DoxyCodeLine{00176 \textcolor{keywordtype}{void} MainWindow::on\_save\_details\_profile\_clicked()}
+\DoxyCodeLine{00177 \{}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179     QJsonObject changed\_profile\_details;}
+\DoxyCodeLine{00180     \textcolor{keywordflow}{if}(ui-\/>profileEdit\_username\_box-\/>text().length()!=0)\{}
+\DoxyCodeLine{00181         changed\_profile\_details[\textcolor{stringliteral}{"{}username"{}}] = ui-\/>profileEdit\_username\_box-\/>text();}
+\DoxyCodeLine{00182     \}}
+\DoxyCodeLine{00183     \textcolor{keywordflow}{if}(ui-\/>profileEdit\_firstname\_box-\/>text().length()!=0)\{}
+\DoxyCodeLine{00184         changed\_profile\_details[\textcolor{stringliteral}{"{}firstname"{}}] = ui-\/>profileEdit\_firstname\_box-\/>text();}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186     \}}
+\DoxyCodeLine{00187     \textcolor{keywordflow}{if}(ui-\/>profileEdit\_lastname\_box-\/>text().length()!=0)\{}
+\DoxyCodeLine{00188         changed\_profile\_details[\textcolor{stringliteral}{"{}lastname"{}}] = ui-\/>profileEdit\_lastname\_box-\/>text();}
+\DoxyCodeLine{00189 }
+\DoxyCodeLine{00190     \}}
+\DoxyCodeLine{00191     \textcolor{keywordflow}{if}(ui-\/>profileEdit\_contactno\_box-\/>text().length()!=0)\{}
+\DoxyCodeLine{00192         changed\_profile\_details[\textcolor{stringliteral}{"{}contactno"{}}] = ui-\/>profileEdit\_contactno\_box-\/>text();}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194     \}}
+\DoxyCodeLine{00195     \textcolor{keywordflow}{if}(ui-\/>profileEdit\_password\_box-\/>text().length()!=0 \&\& ui-\/>profileEdit\_confirmpass\_box-\/>text().length()!=0)\{}
+\DoxyCodeLine{00196         \textcolor{keywordflow}{if}(ui-\/>profileEdit\_confirmpass\_box-\/>text()==ui-\/>profileEdit\_password\_box-\/>text())\{}
+\DoxyCodeLine{00197             changed\_profile\_details[\textcolor{stringliteral}{"{}password"{}}] = ui-\/>profileEdit\_password\_box-\/>text();}
+\DoxyCodeLine{00198         \}}
+\DoxyCodeLine{00199         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00200             ui-\/>status\_profileEdit-\/>setStyleSheet(\textcolor{stringliteral}{"{}QLabel\{color: red\}"{}});}
+\DoxyCodeLine{00201             ui-\/>status\_profileEdit-\/>setText(QString::fromStdString(\textcolor{stringliteral}{"{}confirm password and password should be same."{}}));}
+\DoxyCodeLine{00202         \}}
+\DoxyCodeLine{00203     \}}
+\DoxyCodeLine{00204     tasker-\/>setProfileDetails(changed\_profile\_details);}
+\DoxyCodeLine{00205     tasker-\/>displayDetails(ui-\/>PreviewDetails\_list,ui-\/>profile\_picture);}
+\DoxyCodeLine{00206 \}}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00212 \textcolor{keywordtype}{void} MainWindow::on\_Home\_btn\_clicked()}
+\DoxyCodeLine{00213 \{}
+\DoxyCodeLine{00214   ui-\/>stackedWidget-\/>setCurrentIndex(2);}
+\DoxyCodeLine{00215 \}}
+\DoxyCodeLine{00216 }
+\DoxyCodeLine{00221 \textcolor{keywordtype}{void} MainWindow::on\_Home\_btn\_2\_clicked()}
+\DoxyCodeLine{00222 \{}
+\DoxyCodeLine{00223   ui-\/>stackedWidget-\/>setCurrentIndex(2);}
+\DoxyCodeLine{00224 \}}
+\DoxyCodeLine{00225 }
+\DoxyCodeLine{00231 \textcolor{keywordtype}{void} MainWindow::on\_contactListtoAddtoGroup\_itemClicked(QListWidgetItem *item)}
+\DoxyCodeLine{00232 \{}
+\DoxyCodeLine{00233 \textcolor{comment}{//    qDebug()<<"{}contact clicked"{}<<item-\/>text();}}
+\DoxyCodeLine{00234     \textcolor{keywordflow}{if}(ui-\/>group\_members-\/>findItems(item-\/>text(),Qt::MatchExactly).length()==0)\{}
+\DoxyCodeLine{00235         ui-\/>group\_members-\/>addItem(item-\/>text());}
+\DoxyCodeLine{00236         this-\/>x\_group\_members.insert(item-\/>text());}
+\DoxyCodeLine{00237     \}}
+\DoxyCodeLine{00238 \}}
+\DoxyCodeLine{00239 }
+\DoxyCodeLine{00244 \textcolor{keywordtype}{void} MainWindow::on\_removeGroupMember\_clicked()}
+\DoxyCodeLine{00245 \{}
+\DoxyCodeLine{00246     \textcolor{keywordflow}{if}(ui-\/>group\_members-\/>selectedItems().length()>0)\{}
+\DoxyCodeLine{00247         \textcolor{comment}{//qDebug()<<ui-\/>group\_members-\/>selectedItems()[0]-\/>text();}}
+\DoxyCodeLine{00248         ui-\/>group\_members-\/>removeItemWidget(ui-\/>group\_members-\/>selectedItems()[0]);}
+\DoxyCodeLine{00249         this-\/>x\_group\_members.erase(this-\/>x\_group\_members.find(ui-\/>group\_members-\/>selectedItems()[0]-\/>text()));}
+\DoxyCodeLine{00250         \textcolor{keyword}{delete} ui-\/>group\_members-\/>selectedItems()[0];}
+\DoxyCodeLine{00251     \}}
+\DoxyCodeLine{00252 \}}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254 }
+\DoxyCodeLine{00259 \textcolor{keywordtype}{void} MainWindow::on\_create\_group\_btn\_clicked()}
+\DoxyCodeLine{00260 \{}
+\DoxyCodeLine{00261     QJsonObject details;}
+\DoxyCodeLine{00262     details[\textcolor{stringliteral}{"{}group\_name"{}}]=ui-\/>group\_name\_box-\/>text();}
+\DoxyCodeLine{00263     details[\textcolor{stringliteral}{"{}desc"{}}] = ui-\/>group\_desc\_box-\/>toPlainText();}
+\DoxyCodeLine{00264     connect(tasker,SIGNAL(cleanUpGroupsPage()),\textcolor{keyword}{this},SLOT(on\_cleanUpGroupsPage()));}
+\DoxyCodeLine{00265     tasker-\/>ValidateGroupInfo(details,ui-\/>status\_group\_create,ui-\/>group\_members,this-\/>x\_group\_members);}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267 \}}
+\DoxyCodeLine{00268 }
+\DoxyCodeLine{00273 \textcolor{keywordtype}{void} MainWindow::on\_signout\_btn\_clicked()}
+\DoxyCodeLine{00274 \{}
+\DoxyCodeLine{00275     ui-\/>stackedWidget-\/>setCurrentIndex(0);}
+\DoxyCodeLine{00276     this-\/>x\_cleanUpEverything();}
+\DoxyCodeLine{00277     tasker-\/>cleanUp();}
+\DoxyCodeLine{00278 \}}
+\DoxyCodeLine{00279 }
+\DoxyCodeLine{00284 \textcolor{keywordtype}{void} MainWindow::on\_submit\_btn\_signup\_2\_clicked()}
+\DoxyCodeLine{00285 \{}
+\DoxyCodeLine{00286     ui-\/>stackedWidget-\/>setCurrentIndex(0);}
+\DoxyCodeLine{00287 \}}
+\DoxyCodeLine{00292 \textcolor{keywordtype}{void} MainWindow::x\_cleanUpEverything()}
+\DoxyCodeLine{00293 \{}
+\DoxyCodeLine{00294     ui-\/>contacts\_list-\/>clear();}
+\DoxyCodeLine{00295     ui-\/>groups\_list-\/>clear();}
+\DoxyCodeLine{00296     ui-\/>chat\_pane-\/>clear();}
+\DoxyCodeLine{00297     ui-\/>status\_label\_login-\/>clear();}
+\DoxyCodeLine{00298     ui-\/>status\_label\_signup-\/>clear();}
+\DoxyCodeLine{00299 \}}
+\DoxyCodeLine{00300 }
+\DoxyCodeLine{00305 \textcolor{keywordtype}{void} MainWindow::on\_emoji\_btn\_clicked()}
+\DoxyCodeLine{00306 \{}
+\DoxyCodeLine{00307     this-\/>emojisWin =\textcolor{keyword}{new} emoji\_pop\_up(\textcolor{keyword}{this});}
+\DoxyCodeLine{00308     emojisWin-\/>show();}
+\DoxyCodeLine{00309 \}}
+\DoxyCodeLine{00310 }
+\DoxyCodeLine{00315 \textcolor{keywordtype}{void} MainWindow::on\_profile\_pic\_btn\_edit\_clicked()}
+\DoxyCodeLine{00316 \{}
+\DoxyCodeLine{00317    QFileDialog dialog(\textcolor{keyword}{this});}
+\DoxyCodeLine{00318    \textcolor{keyword}{auto} filename = QFileDialog::getOpenFileName(\textcolor{keyword}{this},tr(\textcolor{stringliteral}{"{}Profile pic"{}}));}
+\DoxyCodeLine{00319    tasker-\/>setProfilePic(filename.toStdString());}
+\DoxyCodeLine{00320    tasker-\/>displayDetails(ui-\/>PreviewDetails\_list,ui-\/>profile\_picture);}
+\DoxyCodeLine{00321 \}}
+\DoxyCodeLine{00322 }
 
 \end{DoxyCode}
