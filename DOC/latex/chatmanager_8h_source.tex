@@ -1,0 +1,47 @@
+\hypertarget{chatmanager_8h_source}{}\doxysection{chatmanager.\+h}
+\label{chatmanager_8h_source}\index{E:/workspace/qt/ClientPulled/SChatDb/SRC/chatmanager.h@{E:/workspace/qt/ClientPulled/SChatDb/SRC/chatmanager.h}}
+\mbox{\hyperlink{chatmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef CHATMANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00002}00002 \textcolor{preprocessor}{\#define CHATMANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <QSqlDatabase>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <QListWidget>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <QListWidgetItem>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <QSqlQuery>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <QSqlError>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <QJsonObject>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <QJsonDocument>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <QJsonArray>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <QDateTime>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{profile_8h}{profile.h}}>}}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00023}\mbox{\hyperlink{class_chat_manager}{00023}} \textcolor{keyword}{class }\mbox{\hyperlink{class_chat_manager}{ChatManager}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00024}00024 \{}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00025}00025     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00026}00026 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00027}00027     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_chat_manager_af07f739d452b3481011bfb368c20eeac}{ChatManager}}(QObject *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00029}00029     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_a76b6fe934b15f768c3c6f67bb9c05a51}{SendChat}}(std::string msg);}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00031}00031     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_a056db0c78b7a03f59015c1d4ecf1c48f}{SendGroupChat}}(std::string msg);}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00033}00033     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_ad0d86de90b2f5fcc7ac7449ebf4aa118}{DisplayChat}}();}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00035}00035     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_ae7d5f10f9b62470a34be758c8f4020c3}{DisplayGroupChat}}();}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00037}\mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{00037}}     QSqlQuery \mbox{\hyperlink{class_chat_manager_ac198a6ebd0d7e6d31a79c3298ee7079f}{query}};}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00039}\mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{00039}}     QListWidget* \mbox{\hyperlink{class_chat_manager_aa2af7bfdd7c100313ba14731a183931a}{chat\_pane}};}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00040}00040 signals:}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00041}00041 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00043}00043     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_a15348d3bc3eaa99a84f94798cbfa00a0}{on\_SetupChatConnection}}(QString name,\mbox{\hyperlink{structprofile}{profile}} details);}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00045}00045     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_chat_manager_adad8b7f76c29f0b3aefa3e0455490163}{on\_SetupGroupChatConnection}}(QString name,\mbox{\hyperlink{structprofile}{profile}} details);}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00046}00046 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00048}00048     \textcolor{keywordtype}{int} x\_sender\_id;}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00050}00050     \mbox{\hyperlink{structprofile}{profile}} x\_profile\_details\_reciever;}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00052}00052     \textcolor{keywordtype}{void} x\_fetchRecieverDetails();}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00054}00054     \textcolor{keywordtype}{void} x\_fetchGroupRecieverDetails();}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00055}00055 \};}
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{chatmanager_8h_source_l00057}00057 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CHATMANAGER\_H}}
+
+\end{DoxyCode}

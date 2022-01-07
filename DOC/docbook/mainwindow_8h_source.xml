@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainwindow_8h_source" xml:lang="en-US">
+<title>mainwindow.h</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/mainwindow.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_mainwindow_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;MAINWINDOW_H</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;MAINWINDOW_H</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00003"/>00003 
+<anchor xml:id="_mainwindow_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;QMainWindow&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="_task__manager_8h">task_manager.h</link>&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;QJsonObject&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&lt;QLineEdit&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00008"/>00008 <emphasis role="preprocessor">#include&#32;&lt;QListWidget&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&lt;QListWidgetItem&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00010"/>00010 <emphasis role="preprocessor">#include&#32;&lt;QTableWidget&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00011"/>00011 <emphasis role="preprocessor">#include&#32;&lt;QTableWidgetItem&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00012"/>00012 <emphasis role="preprocessor">#include&#32;&lt;QLabel&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00013"/>00013 <emphasis role="preprocessor">#include&#32;&lt;set&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00014"/>00014 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="_emoji__pop__up_8h">emoji_pop_up.h</link>&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00015"/>00015 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="_profile_8h">profile.h</link>&gt;</emphasis>
+<anchor xml:id="_mainwindow_8h_source_1l00016"/>00016 
+<anchor xml:id="_mainwindow_8h_source_1l00017"/>00017 QT_BEGIN_NAMESPACE
+<anchor xml:id="_mainwindow_8h_source_1l00018"/>00018 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_ui">Ui</link>&#32;{&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_main_window">MainWindow</link>;&#32;}
+<anchor xml:id="_mainwindow_8h_source_1l00019"/>00019 QT_END_NAMESPACE
+<anchor xml:id="_mainwindow_8h_source_1l00023"/><link linkend="_class_main_window">00023</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_main_window">MainWindow</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;QMainWindow
+<anchor xml:id="_mainwindow_8h_source_1l00024"/>00024 {
+<anchor xml:id="_mainwindow_8h_source_1l00025"/>00025 &#32;&#32;&#32;&#32;Q_OBJECT
+<anchor xml:id="_mainwindow_8h_source_1l00026"/>00026 
+<anchor xml:id="_mainwindow_8h_source_1l00027"/>00027 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_mainwindow_8h_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<link linkend="_class_main_window_1a996c5a2b6f77944776856f08ec30858d">MainWindow</link>(QWidget&#32;*parent&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>);
+<anchor xml:id="_mainwindow_8h_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<link linkend="_class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</link>();
+<anchor xml:id="_mainwindow_8h_source_1l00030"/>00030 signals:
+<anchor xml:id="_mainwindow_8h_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1a88a355a3de354aa568146e01f7d7548e">contactSelected</link>(QListWidgetItem*&#32;contact,QLabel*&#32;name,<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;mode);
+<anchor xml:id="_mainwindow_8h_source_1l00034"/>00034 <emphasis role="keyword">public</emphasis>&#32;slots:
+<anchor xml:id="_mainwindow_8h_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1afcb7fbc4f2188ae33fe1daef711fdec0">on_EnterMainWindow</link>();
+<anchor xml:id="_mainwindow_8h_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1aa649a72035add83412df5806b7d1a457">on_cleanUpGroupsPage</link>();
+<anchor xml:id="_mainwindow_8h_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1ad58baa98f19b32c2cc1cfcd9ee9bef85">on_cleanUpLoginPage</link>();
+<anchor xml:id="_mainwindow_8h_source_1l00042"/>00042 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1aa8c176f2ebc486fa184a70c7f4bff187">on_emojiSelected</link>(QString&#32;emoji);
+<anchor xml:id="_mainwindow_8h_source_1l00043"/>00043 
+<anchor xml:id="_mainwindow_8h_source_1l00044"/>00044 <emphasis role="keyword">private</emphasis>&#32;slots:
+<anchor xml:id="_mainwindow_8h_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_login_btn_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00047"/>00047 
+<anchor xml:id="_mainwindow_8h_source_1l00049"/>00049 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_signup_btn_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00050"/>00050 
+<anchor xml:id="_mainwindow_8h_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_submit_btn_signup_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00053"/>00053 
+<anchor xml:id="_mainwindow_8h_source_1l00055"/>00055 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_send_btn_chat_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00056"/>00056 
+<anchor xml:id="_mainwindow_8h_source_1l00058"/>00058 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_contacts_list_itemClicked(QListWidgetItem&#32;*item);
+<anchor xml:id="_mainwindow_8h_source_1l00059"/>00059 
+<anchor xml:id="_mainwindow_8h_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_groups_list_itemClicked(QListWidgetItem&#32;*item);
+<anchor xml:id="_mainwindow_8h_source_1l00062"/>00062 
+<anchor xml:id="_mainwindow_8h_source_1l00064"/>00064 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_createGroup_btn_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00065"/>00065 
+<anchor xml:id="_mainwindow_8h_source_1l00067"/>00067 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_editProfile_btn_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00068"/>00068 
+<anchor xml:id="_mainwindow_8h_source_1l00070"/>00070 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_save_details_profile_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00071"/>00071 
+<anchor xml:id="_mainwindow_8h_source_1l00073"/>00073 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_Home_btn_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00074"/>00074 
+<anchor xml:id="_mainwindow_8h_source_1l00076"/>00076 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_Home_btn_2_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00077"/>00077 
+<anchor xml:id="_mainwindow_8h_source_1l00079"/>00079 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_contactListtoAddtoGroup_itemClicked(QListWidgetItem&#32;*item);
+<anchor xml:id="_mainwindow_8h_source_1l00080"/>00080 
+<anchor xml:id="_mainwindow_8h_source_1l00082"/>00082 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_removeGroupMember_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00083"/>00083 
+<anchor xml:id="_mainwindow_8h_source_1l00085"/>00085 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_create_group_btn_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00086"/>00086 
+<anchor xml:id="_mainwindow_8h_source_1l00088"/>00088 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_signout_btn_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00089"/>00089 
+<anchor xml:id="_mainwindow_8h_source_1l00091"/>00091 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_submit_btn_signup_2_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00092"/>00092 
+<anchor xml:id="_mainwindow_8h_source_1l00094"/>00094 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_emoji_btn_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00095"/>00095 
+<anchor xml:id="_mainwindow_8h_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_profile_pic_btn_edit_clicked();
+<anchor xml:id="_mainwindow_8h_source_1l00098"/>00098 
+<anchor xml:id="_mainwindow_8h_source_1l00099"/>00099 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_mainwindow_8h_source_1l00101"/>00101 &#32;&#32;&#32;&#32;<link linkend="_class_ui_1_1_main_window">Ui::MainWindow</link>&#32;*ui;
+<anchor xml:id="_mainwindow_8h_source_1l00103"/>00103 &#32;&#32;&#32;&#32;<link linkend="_class_task__manager">Task_manager</link>*&#32;tasker;
+<anchor xml:id="_mainwindow_8h_source_1l00104"/>00104 &#32;&#32;&#32;&#32;std::set&lt;QString&gt;&#32;x_group_members;
+<anchor xml:id="_mainwindow_8h_source_1l00106"/>00106 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;x_cleanUpEverything();
+<anchor xml:id="_mainwindow_8h_source_1l00108"/>00108 &#32;&#32;&#32;&#32;<link linkend="_classemoji__pop__up">emoji_pop_up</link>*&#32;emojisWin;
+<anchor xml:id="_mainwindow_8h_source_1l00109"/>00109 };
+<anchor xml:id="_mainwindow_8h_source_1l00110"/>00110 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;MAINWINDOW_H</emphasis>
+</programlisting></section>

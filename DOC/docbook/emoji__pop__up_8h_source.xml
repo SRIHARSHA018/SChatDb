@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_emoji__pop__up_8h_source" xml:lang="en-US">
+<title>emoji_pop_up.h</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/emoji_pop_up.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_emoji__pop__up_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;EMOJI_POP_UP_H</emphasis>
+<anchor xml:id="_emoji__pop__up_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;EMOJI_POP_UP_H</emphasis>
+<anchor xml:id="_emoji__pop__up_8h_source_1l00003"/>00003 
+<anchor xml:id="_emoji__pop__up_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;QDialog&gt;</emphasis>
+<anchor xml:id="_emoji__pop__up_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;QTableWidget&gt;</emphasis>
+<anchor xml:id="_emoji__pop__up_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;QTableWidgetItem&gt;</emphasis>
+<anchor xml:id="_emoji__pop__up_8h_source_1l00007"/>00007 
+<anchor xml:id="_emoji__pop__up_8h_source_1l00008"/>00008 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_ui">Ui</link>&#32;{
+<anchor xml:id="_emoji__pop__up_8h_source_1l00009"/>00009 <emphasis role="keyword">class&#32;</emphasis><link linkend="_classemoji__pop__up">emoji_pop_up</link>;
+<anchor xml:id="_emoji__pop__up_8h_source_1l00010"/>00010 }
+<anchor xml:id="_emoji__pop__up_8h_source_1l00011"/>00011 
+<anchor xml:id="_emoji__pop__up_8h_source_1l00012"/><link linkend="_classemoji__pop__up">00012</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_classemoji__pop__up">emoji_pop_up</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;QDialog
+<anchor xml:id="_emoji__pop__up_8h_source_1l00013"/>00013 {
+<anchor xml:id="_emoji__pop__up_8h_source_1l00014"/>00014 &#32;&#32;&#32;&#32;Q_OBJECT
+<anchor xml:id="_emoji__pop__up_8h_source_1l00015"/>00015 
+<anchor xml:id="_emoji__pop__up_8h_source_1l00016"/>00016 signals:
+<anchor xml:id="_emoji__pop__up_8h_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classemoji__pop__up_1a6f75f65d905c756f4869b45c921524a9">emojiSelected</link>(QString&#32;emoji);
+<anchor xml:id="_emoji__pop__up_8h_source_1l00018"/>00018 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_emoji__pop__up_8h_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_classemoji__pop__up_1aec3cd2d70a9a679e9395030afe088fc4">emoji_pop_up</link>(QWidget&#32;*parent&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>);
+<anchor xml:id="_emoji__pop__up_8h_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<link linkend="_classemoji__pop__up_1a33ef6725dcbf645f2eeef656c9ef8a82">~emoji_pop_up</link>();
+<anchor xml:id="_emoji__pop__up_8h_source_1l00021"/>00021 
+<anchor xml:id="_emoji__pop__up_8h_source_1l00022"/>00022 <emphasis role="keyword">private</emphasis>&#32;slots:
+<anchor xml:id="_emoji__pop__up_8h_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;on_tableWidget_itemClicked(QTableWidgetItem&#32;*item);
+<anchor xml:id="_emoji__pop__up_8h_source_1l00024"/>00024 
+<anchor xml:id="_emoji__pop__up_8h_source_1l00025"/>00025 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_emoji__pop__up_8h_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<link linkend="_class_ui_1_1emoji__pop__up">Ui::emoji_pop_up</link>&#32;*ui;
+<anchor xml:id="_emoji__pop__up_8h_source_1l00027"/>00027 };
+<anchor xml:id="_emoji__pop__up_8h_source_1l00028"/>00028 
+<anchor xml:id="_emoji__pop__up_8h_source_1l00029"/>00029 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;EMOJI_POP_UP_H</emphasis>
+</programlisting></section>

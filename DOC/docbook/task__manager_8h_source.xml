@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_task__manager_8h_source" xml:lang="en-US">
+<title>task_manager.h</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/task_manager.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_task__manager_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;TASK_MANAGER_H</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;TASK_MANAGER_H</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00003"/>00003 
+<anchor xml:id="_task__manager_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;QObject&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;QString&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;QSqlDriver&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00008"/>00008 <emphasis role="preprocessor">#include&#32;&lt;QSqlDatabase&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&lt;QJsonObject&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00010"/>00010 <emphasis role="preprocessor">#include&#32;&lt;QListWidget&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00011"/>00011 <emphasis role="preprocessor">#include&#32;&lt;QListWidgetItem&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00012"/>00012 <emphasis role="preprocessor">#include&#32;&lt;QStackedWidget&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00013"/>00013 <emphasis role="preprocessor">#include&#32;&lt;QLineEdit&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00014"/>00014 <emphasis role="preprocessor">#include&#32;&lt;QLabel&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00015"/>00015 <emphasis role="preprocessor">#include&#32;&lt;QListWidget&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00016"/>00016 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="_chatmanager_8h">chatmanager.h</link>&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00017"/>00017 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="_profile_8h">profile.h</link>&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00018"/>00018 <emphasis role="preprocessor">#include&#32;&lt;set&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00019"/>00019 <emphasis role="preprocessor">#include&#32;&lt;QLabel&gt;</emphasis>
+<anchor xml:id="_task__manager_8h_source_1l00020"/>00020 
+<anchor xml:id="_task__manager_8h_source_1l00025"/><link linkend="_class_task__manager">00025</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_task__manager">Task_manager</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;QObject
+<anchor xml:id="_task__manager_8h_source_1l00026"/>00026 {
+<anchor xml:id="_task__manager_8h_source_1l00027"/>00027 &#32;&#32;&#32;&#32;Q_OBJECT
+<anchor xml:id="_task__manager_8h_source_1l00028"/>00028 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_task__manager_8h_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_class_task__manager_1a0bea96effe1595b32539666ea2cff9aa">Task_manager</link>(QObject&#32;*parent&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>);
+<anchor xml:id="_task__manager_8h_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1ae601874b1890f2f035f5311b0ff50f7e">Init</link>();
+<anchor xml:id="_task__manager_8h_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a68ba4818ada6d2ddf4016cdfd4a6b831">ValidateLoginDetails</link>(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&amp;&#32;details);
+<anchor xml:id="_task__manager_8h_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a9e1c7df0f397c06b6a0f62eaf96ee830">ValidateSignUpDetails</link>(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&amp;&#32;details,QLabel*&#32;status);
+<anchor xml:id="_task__manager_8h_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a2bf50ea73b70a5b0945489b3b221e762">ValidateGroupInfo</link>(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&amp;&#32;details,QLabel*&#32;status,QListWidget*&#32;members,<emphasis role="keyword">const</emphasis>&#32;std::set&lt;QString&gt;&amp;&#32;set_members);
+<anchor xml:id="_task__manager_8h_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a6f273c9efef1901fba7c277ac2df9b1d">SetupMainPage</link>(QStackedWidget*&#32;pager);
+<anchor xml:id="_task__manager_8h_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1ab0a0ee3bbb2640920d1ae4e6b64dcefb">SetupLoginPage</link>(QStackedWidget*&#32;pager);
+<anchor xml:id="_task__manager_8h_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1aa51984dfdedd6acacfe0ae3033b49baf">SetupContacts</link>(QListWidget*&#32;contact_list);
+<anchor xml:id="_task__manager_8h_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a31feeb979c4c678ae6cd27ed3d8e7ae6">SetupGroups</link>(QListWidget*&#32;groups);
+<anchor xml:id="_task__manager_8h_source_1l00047"/>00047 &#32;&#32;&#32;&#32;<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;<link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">GetState</link>();
+<anchor xml:id="_task__manager_8h_source_1l00049"/>00049 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;status);
+<anchor xml:id="_task__manager_8h_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_task__manager_1a368c57b2d23290e5a4b2de89ca31e91d">IsLoginSuccessful</link>();
+<anchor xml:id="_task__manager_8h_source_1l00053"/>00053 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_task__manager_1afb07a4947f98a6ab155d2e915116a120">IsSignUpSuccessful</link>();
+<anchor xml:id="_task__manager_8h_source_1l00055"/>00055 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1ae439c36213f5247fba521f97af6df77c">setUpEditProfileWindow</link>(QStackedWidget*&#32;pager);
+<anchor xml:id="_task__manager_8h_source_1l00057"/>00057 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a5d39254a45a6a0bfad8436af2b031460">setProfileDetails</link>(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&amp;&#32;details);
+<anchor xml:id="_task__manager_8h_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a3f952dc180c1272323abbf98b802d723">displayDetails</link>(QListWidget*&#32;preview,QLabel*&#32;profile_pic);
+<anchor xml:id="_task__manager_8h_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1ae0e44b163a8c4b41d5c77536ec77cd98">setProfilePic</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;filename);
+<anchor xml:id="_task__manager_8h_source_1l00063"/>00063 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1aa3f5de314d725cd5df56767df4801169">SendMessage</link>(QLineEdit*&#32;msg);
+<anchor xml:id="_task__manager_8h_source_1l00065"/>00065 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a2d247180caa5d322e1ef2a144006de0b">cleanUp</link>();
+<anchor xml:id="_task__manager_8h_source_1l00067"/><link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">00067</link> &#32;&#32;&#32;&#32;<link linkend="_structprofile">profile</link>&#32;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>;
+<anchor xml:id="_task__manager_8h_source_1l00069"/><link linkend="_class_task__manager_1a783de3d16e7e13349f2648cf3b3f72eb">00069</link> &#32;&#32;&#32;&#32;QListWidget*&#32;<link linkend="_class_task__manager_1a783de3d16e7e13349f2648cf3b3f72eb">chat_pane</link>;
+<anchor xml:id="_task__manager_8h_source_1l00070"/>00070 
+<anchor xml:id="_task__manager_8h_source_1l00071"/>00071 signals:
+<anchor xml:id="_task__manager_8h_source_1l00073"/>00073 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a470715f9c760ee45bbdc7b809e6f3cee">enteredMainWindow</link>();
+<anchor xml:id="_task__manager_8h_source_1l00075"/>00075 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a81ae1f648beda795c78acfc0085a7df8">setUpChatConnection</link>(QString&#32;name,<link linkend="_structprofile">profile</link>&#32;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>);
+<anchor xml:id="_task__manager_8h_source_1l00077"/>00077 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1ac071409193a8ea2a08eb1e91e49d11ed">setUpGroupChatConnection</link>(QString&#32;name,<link linkend="_structprofile">profile</link>&#32;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>);
+<anchor xml:id="_task__manager_8h_source_1l00079"/>00079 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1afece35eb1a2e2fe4dfd056bc4fe41c2d">cleanUpGroupsPage</link>();
+<anchor xml:id="_task__manager_8h_source_1l00081"/>00081 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a24fb62c89440b033031210e4591f7616">cleanUpLoginPage</link>();
+<anchor xml:id="_task__manager_8h_source_1l00082"/>00082 <emphasis role="keyword">public</emphasis>&#32;slots:
+<anchor xml:id="_task__manager_8h_source_1l00084"/>00084 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a94a24ecfee7f884c2d5a88a03185a1d3">on_ContactSelected</link>(QListWidgetItem*&#32;contact,QLabel*&#32;name,<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;mode);
+<anchor xml:id="_task__manager_8h_source_1l00086"/>00086 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a718a1571930c1ef472f921d27906f286">notificationReceived</link>(<emphasis role="keyword">const</emphasis>&#32;QString&amp;&#32;name,&#32;&#32;QSqlDriver::NotificationSource&#32;source,&#32;<emphasis role="keyword">const</emphasis>&#32;QVariant&#32;&amp;payload);
+<anchor xml:id="_task__manager_8h_source_1l00087"/>00087 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_task__manager_8h_source_1l00089"/>00089 &#32;&#32;&#32;&#32;QSqlDatabase&#32;x_db;
+<anchor xml:id="_task__manager_8h_source_1l00091"/>00091 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;x_LoginSuccessful();
+<anchor xml:id="_task__manager_8h_source_1l00093"/>00093 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;x_LoginFailed();
+<anchor xml:id="_task__manager_8h_source_1l00095"/>00095 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;x_SetupMainWindowControls();
+<anchor xml:id="_task__manager_8h_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;x_createGroup(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&amp;&#32;details,QLabel*&#32;status,QListWidget*&#32;members,<emphasis role="keyword">const</emphasis>&#32;std::set&lt;QString&gt;&amp;&#32;set_members);
+<anchor xml:id="_task__manager_8h_source_1l00099"/>00099 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager">ChatManager</link>*&#32;x_chat_manager;
+<anchor xml:id="_task__manager_8h_source_1l00101"/>00101 &#32;&#32;&#32;&#32;<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;x_state;
+<anchor xml:id="_task__manager_8h_source_1l00102"/>00102 
+<anchor xml:id="_task__manager_8h_source_1l00103"/>00103 };
+<anchor xml:id="_task__manager_8h_source_1l00104"/>00104 
+<anchor xml:id="_task__manager_8h_source_1l00105"/>00105 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;TASK_MANAGER_H</emphasis>
+</programlisting></section>

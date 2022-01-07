@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_1e771ff450ae847412a8c28572c155bb" xml:lang="en-US">
+<title>E:/workspace/qt/ClientPulled/SChatDb/SRC Directory Reference</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_chatmanager_8cpp">chatmanager.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_chatmanager_8h">chatmanager.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_emoji__pop__up_8cpp">emoji_pop_up.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_emoji__pop__up_8h">emoji_pop_up.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_main_8cpp">main.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_mainwindow_8cpp">mainwindow.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_mainwindow_8h">mainwindow.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_profile_8h">profile.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_task__manager_8cpp">task_manager.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_task__manager_8h">task_manager.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__s_r_c_2test__app_8cpp">test_app.cpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__s_r_c_2test__app_8h">test_app.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

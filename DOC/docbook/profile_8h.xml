@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_profile_8h" xml:lang="en-US">
+<title>E:/workspace/qt/ClientPulled/SChatDb/SRC/profile.h File Reference</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/profile.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;string&gt;
+#include &lt;QPixmap&gt;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structprofile">profile</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_profile_8h_1aee5f1def2d0fb53bfdb4f30679ca5a02">DEFAULT_PROFILE_PIC</link>   &quot;:/profile/resources/Profile_avatar_placeholder_large.png&quot;</para>
+
+<para>This macro refers to default Profile pic path in Qt resourses path. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> { 
+<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a3bef8f7d8b7b3cb58fb951486dc737b3">LOGIN_SUCCESSFUL</link>
+, <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4ad57e6995e0b5105bfeb9bde15ed0a7a0">LOGIN_FAILED</link>
+, <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a946a9f413ba99ef2cb0a173c76451f2e">SIGNUP_SUCCESSFUL</link>
+, <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a110999835c9c77eea71a06c701f5038a">SIGNUP_FAILED</link>
+, 
+<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223">REGULAR_CHAT</link>
+, <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb">GROUP_CHAT</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_profile_8h_1aee5f1def2d0fb53bfdb4f30679ca5a02"/><section>
+    <title>DEFAULT_PROFILE_PIC</title>
+<indexterm><primary>DEFAULT_PROFILE_PIC</primary><secondary>profile.h</secondary></indexterm>
+<indexterm><primary>profile.h</primary><secondary>DEFAULT_PROFILE_PIC</secondary></indexterm>
+<para><computeroutput>#define DEFAULT_PROFILE_PIC   &quot;:/profile/resources/Profile_avatar_placeholder_large.png&quot;</computeroutput></para><para>
+
+<para>This macro refers to default Profile pic path in Qt resourses path. </para>
+</para>
+<para>
+Definition at line <link linkend="_profile_8h_source_1l00007">7</link> of file <link linkend="_profile_8h_source">profile.h</link>.</para>
+</section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4"/><section>
+    <title>STATUS</title>
+<indexterm><primary>STATUS</primary><secondary>profile.h</secondary></indexterm>
+<indexterm><primary>profile.h</primary><secondary>STATUS</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link></computeroutput></para>
+<para>This is the state enum So,the task manager can work with respect to state. This will help the App in what state it has to process. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>LOGIN_SUCCESSFUL</primary><secondary>profile.h</secondary></indexterm>
+<indexterm><primary>profile.h</primary><secondary>LOGIN_SUCCESSFUL</secondary></indexterm>
+<anchor xml:id="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a3bef8f7d8b7b3cb58fb951486dc737b3"/>LOGIN_SUCCESSFUL</entry><entry></entry></row><row><entry><indexterm><primary>LOGIN_FAILED</primary><secondary>profile.h</secondary></indexterm>
+<indexterm><primary>profile.h</primary><secondary>LOGIN_FAILED</secondary></indexterm>
+<anchor xml:id="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4ad57e6995e0b5105bfeb9bde15ed0a7a0"/>LOGIN_FAILED</entry><entry></entry></row><row><entry><indexterm><primary>SIGNUP_SUCCESSFUL</primary><secondary>profile.h</secondary></indexterm>
+<indexterm><primary>profile.h</primary><secondary>SIGNUP_SUCCESSFUL</secondary></indexterm>
+<anchor xml:id="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a946a9f413ba99ef2cb0a173c76451f2e"/>SIGNUP_SUCCESSFUL</entry><entry></entry></row><row><entry><indexterm><primary>SIGNUP_FAILED</primary><secondary>profile.h</secondary></indexterm>
+<indexterm><primary>profile.h</primary><secondary>SIGNUP_FAILED</secondary></indexterm>
+<anchor xml:id="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a110999835c9c77eea71a06c701f5038a"/>SIGNUP_FAILED</entry><entry></entry></row><row><entry><indexterm><primary>REGULAR_CHAT</primary><secondary>profile.h</secondary></indexterm>
+<indexterm><primary>profile.h</primary><secondary>REGULAR_CHAT</secondary></indexterm>
+<anchor xml:id="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223"/>REGULAR_CHAT</entry><entry></entry></row><row><entry><indexterm><primary>GROUP_CHAT</primary><secondary>profile.h</secondary></indexterm>
+<indexterm><primary>profile.h</primary><secondary>GROUP_CHAT</secondary></indexterm>
+<anchor xml:id="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb"/>GROUP_CHAT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+<para>
+Definition at line <link linkend="_profile_8h_source_1l00021">21</link> of file <link linkend="_profile_8h_source">profile.h</link>.</para>
+</section>
+</section>
+</section>

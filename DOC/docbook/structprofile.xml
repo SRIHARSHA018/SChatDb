@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structprofile" xml:lang="en-US">
+<title>profile Struct Reference</title>
+<indexterm><primary>profile</primary></indexterm>
+<para>
+<computeroutput>#include &lt;profile.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_structprofile_1a8845e6d4ac278c3be41cf8e5bde753b2">user_name</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_structprofile_1a8ce634fbaa51e8f9d9fefc9b810650d4">first_name</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_structprofile_1a968301cdf224f740c2a477a49baa0dca">last_name</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_structprofile_1ae3bf17315f4d50b6d7a923cbe9e72105">contactno</link></para>
+</listitem>
+            <listitem><para>QPixmap <link linkend="_structprofile_1a0cfcc0dfdd028e6bb76af94cba6d1a62">profile_pic</link> = QPixmap(<link linkend="_profile_8h_1aee5f1def2d0fb53bfdb4f30679ca5a02">DEFAULT_PROFILE_PIC</link>)</para>
+</listitem>
+            <listitem><para>int <link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link> =-1</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This structure stores the information of a profile details like a global object. So this will allow Every class can access the user info </para>
+<para>
+Definition at line <link linkend="_profile_8h_source_1l00010">10</link> of file <link linkend="_profile_8h_source">profile.h</link>.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structprofile_1ae3bf17315f4d50b6d7a923cbe9e72105"/><section>
+    <title>contactno</title>
+<indexterm><primary>contactno</primary><secondary>profile</secondary></indexterm>
+<indexterm><primary>profile</primary><secondary>contactno</secondary></indexterm>
+<para><computeroutput>std::string profile::contactno</computeroutput></para><para>
+Definition at line <link linkend="_profile_8h_source_1l00014">14</link> of file <link linkend="_profile_8h_source">profile.h</link>.</para>
+</section>
+<anchor xml:id="_structprofile_1a8ce634fbaa51e8f9d9fefc9b810650d4"/><section>
+    <title>first_name</title>
+<indexterm><primary>first_name</primary><secondary>profile</secondary></indexterm>
+<indexterm><primary>profile</primary><secondary>first_name</secondary></indexterm>
+<para><computeroutput>std::string profile::first_name</computeroutput></para><para>
+Definition at line <link linkend="_profile_8h_source_1l00012">12</link> of file <link linkend="_profile_8h_source">profile.h</link>.</para>
+</section>
+<anchor xml:id="_structprofile_1a495f383adeff6448ebe436557896de6c"/><section>
+    <title>id</title>
+<indexterm><primary>id</primary><secondary>profile</secondary></indexterm>
+<indexterm><primary>profile</primary><secondary>id</secondary></indexterm>
+<para><computeroutput>int profile::id =-1</computeroutput></para><para>
+Definition at line <link linkend="_profile_8h_source_1l00016">16</link> of file <link linkend="_profile_8h_source">profile.h</link>.</para>
+</section>
+<anchor xml:id="_structprofile_1a968301cdf224f740c2a477a49baa0dca"/><section>
+    <title>last_name</title>
+<indexterm><primary>last_name</primary><secondary>profile</secondary></indexterm>
+<indexterm><primary>profile</primary><secondary>last_name</secondary></indexterm>
+<para><computeroutput>std::string profile::last_name</computeroutput></para><para>
+Definition at line <link linkend="_profile_8h_source_1l00013">13</link> of file <link linkend="_profile_8h_source">profile.h</link>.</para>
+</section>
+<anchor xml:id="_structprofile_1a0cfcc0dfdd028e6bb76af94cba6d1a62"/><section>
+    <title>profile_pic</title>
+<indexterm><primary>profile_pic</primary><secondary>profile</secondary></indexterm>
+<indexterm><primary>profile</primary><secondary>profile_pic</secondary></indexterm>
+<para><computeroutput>QPixmap profile::profile_pic = QPixmap(<link linkend="_profile_8h_1aee5f1def2d0fb53bfdb4f30679ca5a02">DEFAULT_PROFILE_PIC</link>)</computeroutput></para><para>
+Definition at line <link linkend="_profile_8h_source_1l00015">15</link> of file <link linkend="_profile_8h_source">profile.h</link>.</para>
+</section>
+<anchor xml:id="_structprofile_1a8845e6d4ac278c3be41cf8e5bde753b2"/><section>
+    <title>user_name</title>
+<indexterm><primary>user_name</primary><secondary>profile</secondary></indexterm>
+<indexterm><primary>profile</primary><secondary>user_name</secondary></indexterm>
+<para><computeroutput>std::string profile::user_name</computeroutput></para><para>
+Definition at line <link linkend="_profile_8h_source_1l00011">11</link> of file <link linkend="_profile_8h_source">profile.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_profile_8h">profile.h</link></section>
+</section>

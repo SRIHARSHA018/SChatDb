@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_chat_manager" xml:lang="en-US">
+<title>ChatManager Class Reference</title>
+<indexterm><primary>ChatManager</primary></indexterm>
+<para>
+
+<para>The <link linkend="_class_chat_manager">ChatManager</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;chatmanager.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for ChatManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_chat_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Slots    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_chat_manager_1a15348d3bc3eaa99a84f94798cbfa00a0">on_SetupChatConnection</link> (QString name, <link linkend="_structprofile">profile</link> details)</para>
+
+<para>Setup chat connection to contact selected. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_chat_manager_1adad8b7f76c29f0b3aefa3e0455490163">on_SetupGroupChatConnection</link> (QString name, <link linkend="_structprofile">profile</link> details)</para>
+
+<para>Setup chat connection to group selected(group). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_chat_manager_1af07f739d452b3481011bfb368c20eeac">ChatManager</link> (QObject *parent=nullptr)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_chat_manager_1a76b6fe934b15f768c3c6f67bb9c05a51">SendChat</link> (std::string msg)</para>
+
+<para>send message using extracted text from ui element in task manager. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_chat_manager_1a056db0c78b7a03f59015c1d4ecf1c48f">SendGroupChat</link> (std::string msg)</para>
+
+<para>send message using extracted text from ui element in task manager(Group). </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_chat_manager_1ad0d86de90b2f5fcc7ac7449ebf4aa118">DisplayChat</link> ()</para>
+
+<para>Display chat history in the ui chat element from main window class. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_chat_manager_1ae7d5f10f9b62470a34be758c8f4020c3">DisplayGroupChat</link> ()</para>
+
+<para>Display chat history in the ui chat element from main window class(Group chat). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>QSqlQuery <link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link></para>
+
+<para>For making essential queries. </para>
+</listitem>
+            <listitem><para>QListWidget * <link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link></para>
+
+<para>Stores the ui element from main window class. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_class_chat_manager">ChatManager</link> class. </para>
+
+
+
+<para>Chat manager is responsible for managing chat info and setup connections to contact selected. </para>
+<para>
+Definition at line <link linkend="_chatmanager_8h_source_1l00023">23</link> of file <link linkend="_chatmanager_8h_source">chatmanager.h</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_chat_manager_1af07f739d452b3481011bfb368c20eeac"/><section>
+    <title>ChatManager()</title>
+<indexterm><primary>ChatManager</primary><secondary>ChatManager</secondary></indexterm>
+<indexterm><primary>ChatManager</primary><secondary>ChatManager</secondary></indexterm>
+<para><computeroutput>ChatManager::ChatManager (QObject * parent = <computeroutput>nullptr</computeroutput>
+)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_chatmanager_8cpp_source_1l00005">5</link> of file <link linkend="_chatmanager_8cpp_source">chatmanager.cpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_chat_manager_1ad0d86de90b2f5fcc7ac7449ebf4aa118"/><section>
+    <title>DisplayChat()</title>
+<indexterm><primary>DisplayChat</primary><secondary>ChatManager</secondary></indexterm>
+<indexterm><primary>ChatManager</primary><secondary>DisplayChat</secondary></indexterm>
+<para><computeroutput>void ChatManager::DisplayChat ( )</computeroutput></para><para>
+
+<para>Display chat history in the ui chat element from main window class. </para>
+</para>
+
+<para><link linkend="_class_chat_manager_1ad0d86de90b2f5fcc7ac7449ebf4aa118">ChatManager::DisplayChat</link>.</para>
+
+<para>Fetch user to user chat history and display using query. </para>
+<para>
+Definition at line <link linkend="_chatmanager_8cpp_source_1l00055">55</link> of file <link linkend="_chatmanager_8cpp_source">chatmanager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_chat_manager_1ae7d5f10f9b62470a34be758c8f4020c3"/><section>
+    <title>DisplayGroupChat()</title>
+<indexterm><primary>DisplayGroupChat</primary><secondary>ChatManager</secondary></indexterm>
+<indexterm><primary>ChatManager</primary><secondary>DisplayGroupChat</secondary></indexterm>
+<para><computeroutput>void ChatManager::DisplayGroupChat ( )</computeroutput></para><para>
+
+<para>Display chat history in the ui chat element from main window class(Group chat). </para>
+</para>
+
+<para><link linkend="_class_chat_manager_1ae7d5f10f9b62470a34be758c8f4020c3">ChatManager::DisplayGroupChat</link>.</para>
+
+<para><itemizedlist>
+<listitem>
+<para>Fetch user to user chat history and display using query(group). </para>
+</listitem></itemizedlist>
+</para>
+<para>
+Definition at line <link linkend="_chatmanager_8cpp_source_1l00089">89</link> of file <link linkend="_chatmanager_8cpp_source">chatmanager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_chat_manager_1a15348d3bc3eaa99a84f94798cbfa00a0"/><section>
+    <title>on_SetupChatConnection</title>
+<indexterm><primary>on_SetupChatConnection</primary><secondary>ChatManager</secondary></indexterm>
+<indexterm><primary>ChatManager</primary><secondary>on_SetupChatConnection</secondary></indexterm>
+<para><computeroutput>void ChatManager::on_SetupChatConnection (QString name, <link linkend="_structprofile">profile</link> details)<computeroutput>[slot]</computeroutput></computeroutput></para><para>
+
+<para>Setup chat connection to contact selected. </para>
+</para>
+
+<para><link linkend="_class_chat_manager_1a15348d3bc3eaa99a84f94798cbfa00a0">ChatManager::on_SetupChatConnection</link>.</para>
+
+<para>Setup connection between the users by fetching details from server. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>details</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_chatmanager_8cpp_source_1l00125">125</link> of file <link linkend="_chatmanager_8cpp_source">chatmanager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_chat_manager_1adad8b7f76c29f0b3aefa3e0455490163"/><section>
+    <title>on_SetupGroupChatConnection</title>
+<indexterm><primary>on_SetupGroupChatConnection</primary><secondary>ChatManager</secondary></indexterm>
+<indexterm><primary>ChatManager</primary><secondary>on_SetupGroupChatConnection</secondary></indexterm>
+<para><computeroutput>void ChatManager::on_SetupGroupChatConnection (QString name, <link linkend="_structprofile">profile</link> details)<computeroutput>[slot]</computeroutput></computeroutput></para><para>
+
+<para>Setup chat connection to group selected(group). </para>
+</para>
+
+<para><link linkend="_class_chat_manager_1adad8b7f76c29f0b3aefa3e0455490163">ChatManager::on_SetupGroupChatConnection</link>.</para>
+
+<para>Setup connection between the users by fetching details from server(group). 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>details</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_chatmanager_8cpp_source_1l00140">140</link> of file <link linkend="_chatmanager_8cpp_source">chatmanager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_chat_manager_1a76b6fe934b15f768c3c6f67bb9c05a51"/><section>
+    <title>SendChat()</title>
+<indexterm><primary>SendChat</primary><secondary>ChatManager</secondary></indexterm>
+<indexterm><primary>ChatManager</primary><secondary>SendChat</secondary></indexterm>
+<para><computeroutput>void ChatManager::SendChat (std::string msg)</computeroutput></para><para>
+
+<para>send message using extracted text from ui element in task manager. </para>
+</para>
+
+<para><link linkend="_class_chat_manager_1a76b6fe934b15f768c3c6f67bb9c05a51">ChatManager::SendChat</link>.</para>
+
+<para>Insert the message into server database using query. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>msg</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_chatmanager_8cpp_source_1l00015">15</link> of file <link linkend="_chatmanager_8cpp_source">chatmanager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_chat_manager_1a056db0c78b7a03f59015c1d4ecf1c48f"/><section>
+    <title>SendGroupChat()</title>
+<indexterm><primary>SendGroupChat</primary><secondary>ChatManager</secondary></indexterm>
+<indexterm><primary>ChatManager</primary><secondary>SendGroupChat</secondary></indexterm>
+<para><computeroutput>void ChatManager::SendGroupChat (std::string msg)</computeroutput></para><para>
+
+<para>send message using extracted text from ui element in task manager(Group). </para>
+</para>
+
+<para><link linkend="_class_chat_manager_1a056db0c78b7a03f59015c1d4ecf1c48f">ChatManager::SendGroupChat</link>.</para>
+
+<para>Insert the message into server database using query(group). 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>msg</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_chatmanager_8cpp_source_1l00036">36</link> of file <link linkend="_chatmanager_8cpp_source">chatmanager.cpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a"/><section>
+    <title>chat_pane</title>
+<indexterm><primary>chat_pane</primary><secondary>ChatManager</secondary></indexterm>
+<indexterm><primary>ChatManager</primary><secondary>chat_pane</secondary></indexterm>
+<para><computeroutput>QListWidget* ChatManager::chat_pane</computeroutput></para><para>
+
+<para>Stores the ui element from main window class. </para>
+</para>
+<para>
+Definition at line <link linkend="_chatmanager_8h_source_1l00039">39</link> of file <link linkend="_chatmanager_8h_source">chatmanager.h</link>.</para>
+</section>
+<anchor xml:id="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f"/><section>
+    <title>query</title>
+<indexterm><primary>query</primary><secondary>ChatManager</secondary></indexterm>
+<indexterm><primary>ChatManager</primary><secondary>query</secondary></indexterm>
+<para><computeroutput>QSqlQuery ChatManager::query</computeroutput></para><para>
+
+<para>For making essential queries. </para>
+</para>
+<para>
+Definition at line <link linkend="_chatmanager_8h_source_1l00037">37</link> of file <link linkend="_chatmanager_8h_source">chatmanager.h</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_chatmanager_8h">chatmanager.h</link>E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_chatmanager_8cpp">chatmanager.cpp</link></section>
+</section>

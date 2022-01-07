@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_moc__chatmanager_8cpp" xml:lang="en-US">
+<title>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/moc_chatmanager.cpp File Reference</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/moc_chatmanager.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;memory&gt;
+#include &quot;../../chatmanager.h&quot;
+#include &lt;QtCore/qbytearray.h&gt;
+#include &lt;QtCore/qmetatype.h&gt;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structqt__meta__stringdata___chat_manager__t">qt_meta_stringdata_ChatManager_t</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_moc__chatmanager_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(ofs,  len)       uint(offsetof(<link linkend="_structqt__meta__stringdata___chat_manager__t">qt_meta_stringdata_ChatManager_t</link>, stringdata0) + ofs), len</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_moc__chatmanager_8cpp_1a3c6e81753001d10d51e62d0a29c273bc"/><section>
+    <title>QT_MOC_LITERAL</title>
+<indexterm><primary>QT_MOC_LITERAL</primary><secondary>moc_chatmanager.cpp</secondary></indexterm>
+<indexterm><primary>moc_chatmanager.cpp</primary><secondary>QT_MOC_LITERAL</secondary></indexterm>
+<para><computeroutput>#define QT_MOC_LITERAL( ofs,  len)       uint(offsetof(<link linkend="_structqt__meta__stringdata___chat_manager__t">qt_meta_stringdata_ChatManager_t</link>, stringdata0) + ofs), len</computeroutput></para><para>
+Definition at line <link linkend="_moc__chatmanager_8cpp_source_1l00028">28</link> of file <link linkend="_moc__chatmanager_8cpp_source">moc_chatmanager.cpp</link>.</para>
+</section>
+</section>
+</section>

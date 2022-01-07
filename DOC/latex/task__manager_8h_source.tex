@@ -1,0 +1,73 @@
+\hypertarget{task__manager_8h_source}{}\doxysection{task\+\_\+manager.\+h}
+\label{task__manager_8h_source}\index{E:/workspace/qt/ClientPulled/SChatDb/SRC/task\_manager.h@{E:/workspace/qt/ClientPulled/SChatDb/SRC/task\_manager.h}}
+\mbox{\hyperlink{task__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef TASK\_MANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00002}00002 \textcolor{preprocessor}{\#define TASK\_MANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <QSqlDriver>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <QSqlDatabase>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <QJsonObject>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <QListWidget>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <QListWidgetItem>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <QStackedWidget>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <QLineEdit>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <QListWidget>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00016}00016 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{chatmanager_8h}{chatmanager.h}}>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{profile_8h}{profile.h}}>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00019}00019 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00025}\mbox{\hyperlink{class_task__manager}{00025}} \textcolor{keyword}{class }\mbox{\hyperlink{class_task__manager}{Task\_manager}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00026}00026 \{}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00027}00027     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00028}00028 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00029}00029     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_task__manager_a0bea96effe1595b32539666ea2cff9aa}{Task\_manager}}(QObject *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00031}00031     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_ae601874b1890f2f035f5311b0ff50f7e}{Init}}();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00033}00033     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a68ba4818ada6d2ddf4016cdfd4a6b831}{ValidateLoginDetails}}(\textcolor{keyword}{const} QJsonObject\& details);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00035}00035     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a9e1c7df0f397c06b6a0f62eaf96ee830}{ValidateSignUpDetails}}(\textcolor{keyword}{const} QJsonObject\& details,QLabel* status);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00037}00037     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a2bf50ea73b70a5b0945489b3b221e762}{ValidateGroupInfo}}(\textcolor{keyword}{const} QJsonObject\& details,QLabel* status,QListWidget* members,\textcolor{keyword}{const} std::set<QString>\& set\_members);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00039}00039     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a6f273c9efef1901fba7c277ac2df9b1d}{SetupMainPage}}(QStackedWidget* pager);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00041}00041     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_ab0a0ee3bbb2640920d1ae4e6b64dcefb}{SetupLoginPage}}(QStackedWidget* pager);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00043}00043     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_aa51984dfdedd6acacfe0ae3033b49baf}{SetupContacts}}(QListWidget* contact\_list);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00045}00045     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a31feeb979c4c678ae6cd27ed3d8e7ae6}{SetupGroups}}(QListWidget* groups);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00047}00047     \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} \mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{GetState}}();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00049}00049     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{SetState}}(\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} status);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00051}00051     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_task__manager_a368c57b2d23290e5a4b2de89ca31e91d}{IsLoginSuccessful}}();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00053}00053     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_task__manager_afb07a4947f98a6ab155d2e915116a120}{IsSignUpSuccessful}}();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00055}00055     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_ae439c36213f5247fba521f97af6df77c}{setUpEditProfileWindow}}(QStackedWidget* pager);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00057}00057     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a5d39254a45a6a0bfad8436af2b031460}{setProfileDetails}}(\textcolor{keyword}{const} QJsonObject\& details);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00059}00059     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a3f952dc180c1272323abbf98b802d723}{displayDetails}}(QListWidget* preview,QLabel* profile\_pic);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00061}00061     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_ae0e44b163a8c4b41d5c77536ec77cd98}{setProfilePic}}(\textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00063}00063     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_aa3f5de314d725cd5df56767df4801169}{SendMessage}}(QLineEdit* msg);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00065}00065     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a2d247180caa5d322e1ef2a144006de0b}{cleanUp}}();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00067}\mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{00067}}     \mbox{\hyperlink{structprofile}{profile}} \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}};}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00069}\mbox{\hyperlink{class_task__manager_a783de3d16e7e13349f2648cf3b3f72eb}{00069}}     QListWidget* \mbox{\hyperlink{class_task__manager_a783de3d16e7e13349f2648cf3b3f72eb}{chat\_pane}};}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00071}00071 signals:}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00073}00073     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a470715f9c760ee45bbdc7b809e6f3cee}{enteredMainWindow}}();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00075}00075     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a81ae1f648beda795c78acfc0085a7df8}{setUpChatConnection}}(QString name,\mbox{\hyperlink{structprofile}{profile}} \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}});}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00077}00077     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_ac071409193a8ea2a08eb1e91e49d11ed}{setUpGroupChatConnection}}(QString name,\mbox{\hyperlink{structprofile}{profile}} \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\_details}});}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00079}00079     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_afece35eb1a2e2fe4dfd056bc4fe41c2d}{cleanUpGroupsPage}}();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00081}00081     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a24fb62c89440b033031210e4591f7616}{cleanUpLoginPage}}();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00082}00082 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00084}00084     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a94a24ecfee7f884c2d5a88a03185a1d3}{on\_ContactSelected}}(QListWidgetItem* contact,QLabel* name,\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} mode);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00086}00086     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_task__manager_a718a1571930c1ef472f921d27906f286}{notificationReceived}}(\textcolor{keyword}{const} QString\& name,  QSqlDriver::NotificationSource source, \textcolor{keyword}{const} QVariant \&payload);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00087}00087 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00089}00089     QSqlDatabase x\_db;}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00091}00091     \textcolor{keywordtype}{void} x\_LoginSuccessful();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00093}00093     \textcolor{keywordtype}{void} x\_LoginFailed();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00095}00095     \textcolor{keywordtype}{void} x\_SetupMainWindowControls();}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00097}00097     \textcolor{keywordtype}{void} x\_createGroup(\textcolor{keyword}{const} QJsonObject\& details,QLabel* status,QListWidget* members,\textcolor{keyword}{const} std::set<QString>\& set\_members);}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00099}00099     \mbox{\hyperlink{class_chat_manager}{ChatManager}}* x\_chat\_manager;}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00101}00101     \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} x\_state;}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00103}00103 \};}
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{task__manager_8h_source_l00105}00105 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// TASK\_MANAGER\_H}}
+
+\end{DoxyCode}

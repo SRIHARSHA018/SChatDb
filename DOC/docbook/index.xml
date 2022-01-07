@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>SChat</title>
+    </info>
+<chapter>
+    <title>Namespace Documentation</title>
+<xi:include href="namespace_ui.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="class_chat_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classemoji__pop__up.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_ui_1_1emoji__pop__up.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_main_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_ui_1_1_main_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structprofile.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structqt__meta__stringdata___chat_manager__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structqt__meta__stringdata__emoji__pop__up__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structqt__meta__stringdata___main_window__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structqt__meta__stringdata___task__manager__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structqt__meta__stringdata__test__app__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_task__manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classtest__app.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_ui__emoji__pop__up.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_ui___main_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="moc__chatmanager_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__chatmanager_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__emoji__pop__up_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__emoji__pop__up_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__mainwindow_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__mainwindow_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__predefs_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__predefs_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__task__manager_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__task__manager_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__test__app_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="moc__test__app_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="qrc__profile_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="qrc__profile_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="ui__emoji__pop__up_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="ui__emoji__pop__up_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="ui__mainwindow_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="ui__mainwindow_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="chatmanager_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="chatmanager_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="chatmanager_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="chatmanager_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="emoji__pop__up_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="emoji__pop__up_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="emoji__pop__up_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="emoji__pop__up_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="mainwindow_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="mainwindow_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="mainwindow_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="mainwindow_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="profile_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="profile_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="task__manager_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="task__manager_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="task__manager_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="task__manager_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_r_c_2test__app_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_r_c_2test__app_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_t_e_s_t_s_2test__app_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_t_e_s_t_s_2test__app_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_r_c_2test__app_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_r_c_2test__app_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_t_e_s_t_s_2test__app_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_t_e_s_t_s_2test__app_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

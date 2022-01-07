@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_chatmanager_8cpp_source" xml:lang="en-US">
+<title>chatmanager.cpp</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/chatmanager.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_chatmanager_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_chatmanager_8h">chatmanager.h</link>&quot;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&lt;QDebug&gt;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;QLabel&gt;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00004"/>00004 
+<anchor xml:id="_chatmanager_8cpp_source_1l00005"/><link linkend="_class_chat_manager_1af07f739d452b3481011bfb368c20eeac">00005</link> <link linkend="_class_chat_manager_1af07f739d452b3481011bfb368c20eeac">ChatManager::ChatManager</link>(QObject&#32;*parent)
+<anchor xml:id="_chatmanager_8cpp_source_1l00006"/>00006 &#32;&#32;&#32;&#32;:&#32;QObject{parent}
+<anchor xml:id="_chatmanager_8cpp_source_1l00007"/>00007 {
+<anchor xml:id="_chatmanager_8cpp_source_1l00008"/>00008 
+<anchor xml:id="_chatmanager_8cpp_source_1l00009"/>00009 }
+<anchor xml:id="_chatmanager_8cpp_source_1l00015"/><link linkend="_class_chat_manager_1a76b6fe934b15f768c3c6f67bb9c05a51">00015</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1a76b6fe934b15f768c3c6f67bb9c05a51">ChatManager::SendChat</link>(std::string&#32;msg)
+<anchor xml:id="_chatmanager_8cpp_source_1l00016"/>00016 {
+<anchor xml:id="_chatmanager_8cpp_source_1l00017"/>00017 &#32;&#32;&#32;this-&gt;x_fetchRecieverDetails();
+<anchor xml:id="_chatmanager_8cpp_source_1l00018"/>00018 &#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.prepare(<emphasis role="stringliteral">&quot;INSERT&#32;INTO&#32;public.messages&#32;(message,sender_id,reciever_id)&#32;VALUES&#32;(?,?,?);&quot;</emphasis>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00019"/>00019 &#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(0,QString::fromStdString(msg));
+<anchor xml:id="_chatmanager_8cpp_source_1l00020"/>00020 &#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;this-&gt;x_sender_id;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(1,this-&gt;x_sender_id);
+<anchor xml:id="_chatmanager_8cpp_source_1l00022"/>00022 &#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(2,this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00023"/>00023 &#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.exec()){
+<anchor xml:id="_chatmanager_8cpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;<emphasis role="stringliteral">&quot;message&#32;inserted&quot;</emphasis>;
+<anchor xml:id="_chatmanager_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_chat_manager_1ad0d86de90b2f5fcc7ac7449ebf4aa118">DisplayChat</link>();
+<anchor xml:id="_chatmanager_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00027"/>00027 &#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00028"/>00028 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError();</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00029"/>00029 <emphasis role="comment">&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00030"/>00030 }
+<anchor xml:id="_chatmanager_8cpp_source_1l00036"/><link linkend="_class_chat_manager_1a056db0c78b7a03f59015c1d4ecf1c48f">00036</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1a056db0c78b7a03f59015c1d4ecf1c48f">ChatManager::SendGroupChat</link>(std::string&#32;msg)
+<anchor xml:id="_chatmanager_8cpp_source_1l00037"/>00037 {
+<anchor xml:id="_chatmanager_8cpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.prepare(<emphasis role="stringliteral">&quot;INSERT&#32;INTO&#32;public.group_messages&#32;(message,sender_id,group_id)&#32;VALUES&#32;(?,?,?);&quot;</emphasis>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(0,QString::fromStdString(msg));
+<anchor xml:id="_chatmanager_8cpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;this-&gt;x_sender_id;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(1,this-&gt;x_sender_id);
+<anchor xml:id="_chatmanager_8cpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(2,this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.exec()){
+<anchor xml:id="_chatmanager_8cpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;<emphasis role="stringliteral">&quot;message&#32;inserted&quot;</emphasis>;
+<anchor xml:id="_chatmanager_8cpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_chat_manager_1ae7d5f10f9b62470a34be758c8f4020c3">DisplayGroupChat</link>();
+<anchor xml:id="_chatmanager_8cpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00048"/>00048 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError();</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00049"/>00049 <emphasis role="comment">&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00050"/>00050 }
+<anchor xml:id="_chatmanager_8cpp_source_1l00055"/><link linkend="_class_chat_manager_1ad0d86de90b2f5fcc7ac7449ebf4aa118">00055</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1ad0d86de90b2f5fcc7ac7449ebf4aa118">ChatManager::DisplayChat</link>()
+<anchor xml:id="_chatmanager_8cpp_source_1l00056"/>00056 {
+<anchor xml:id="_chatmanager_8cpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>-&gt;clear();
+<anchor xml:id="_chatmanager_8cpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.prepare(<emphasis role="stringliteral">&quot;SELECT&#32;message,sender_id,reciever_id&#32;FROM&#32;public.messages&#32;WHERE&#32;(sender_id=?&#32;AND&#32;reciever_id=?)&#32;OR&#32;(sender_id=?&#32;AND&#32;reciever_id=?)&#32;ORDER&#32;BY&#32;id&#32;ASC;&quot;</emphasis>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(0,this-&gt;x_sender_id);
+<anchor xml:id="_chatmanager_8cpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(1,this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(2,this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(3,this-&gt;x_sender_id);
+<anchor xml:id="_chatmanager_8cpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.exec()){
+<anchor xml:id="_chatmanager_8cpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;got&#32;messages&quot;;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.next()){
+<anchor xml:id="_chatmanager_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;QListWidgetItem*&#32;item&#32;=<emphasis role="keyword">new</emphasis>&#32;QListWidgetItem(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.value(0).toString(),<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;query.value(0).toString()&lt;&lt;&quot;&#32;&quot;&lt;&lt;query.value(1).toString()&lt;&lt;&quot;&#32;&quot;&lt;&lt;query.value(2).toString();</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.value(1).toInt()==this-&gt;x_sender_id){
+<anchor xml:id="_chatmanager_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;item-&gt;setTextAlignment(Qt::AlignRight);
+<anchor xml:id="_chatmanager_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>-&gt;addItem(item);
+<anchor xml:id="_chatmanager_8cpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_chatmanager_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;item-&gt;setTextAlignment(Qt::AlignLeft);
+<anchor xml:id="_chatmanager_8cpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>-&gt;addItem(item);
+<anchor xml:id="_chatmanager_8cpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00079"/>00079 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError();</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00080"/>00080 <emphasis role="comment">&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;chat_pane-&gt;currentRow();</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>-&gt;scrollToBottom();
+<anchor xml:id="_chatmanager_8cpp_source_1l00083"/>00083 
+<anchor xml:id="_chatmanager_8cpp_source_1l00084"/>00084 }
+<anchor xml:id="_chatmanager_8cpp_source_1l00089"/><link linkend="_class_chat_manager_1ae7d5f10f9b62470a34be758c8f4020c3">00089</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1ae7d5f10f9b62470a34be758c8f4020c3">ChatManager::DisplayGroupChat</link>()
+<anchor xml:id="_chatmanager_8cpp_source_1l00090"/>00090 {
+<anchor xml:id="_chatmanager_8cpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>-&gt;clear();
+<anchor xml:id="_chatmanager_8cpp_source_1l00092"/>00092 
+<anchor xml:id="_chatmanager_8cpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.prepare(<emphasis role="stringliteral">&quot;SELECT&#32;public.group_messages.message,sender_id,firstname&#32;FROM&#32;public.group_messages&#32;INNER&#32;JOIN&#32;public.users&#32;ON&#32;public.users.id&#32;=&#32;sender_id&#32;AND&#32;group_id=?&#32;ORDER&#32;BY&#32;public.group_messages.id&#32;ASC;&quot;</emphasis>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.bindValue(0,this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.exec()){
+<anchor xml:id="_chatmanager_8cpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;got&#32;messages&quot;;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.next()){
+<anchor xml:id="_chatmanager_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;QListWidgetItem*&#32;item&#32;=<emphasis role="keyword">new</emphasis>&#32;QListWidgetItem(<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;query.value(0).toString()&lt;&lt;&quot;&#32;&quot;&lt;&lt;query.value(1).toString()&lt;&lt;&quot;&#32;&quot;&lt;&lt;query.value(2).toString();</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.value(1).toInt()==this-&gt;x_sender_id){
+<anchor xml:id="_chatmanager_8cpp_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;item-&gt;setText(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.value(0).toString());
+<anchor xml:id="_chatmanager_8cpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;item-&gt;setTextAlignment(Qt::AlignRight);
+<anchor xml:id="_chatmanager_8cpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>-&gt;addItem(item);
+<anchor xml:id="_chatmanager_8cpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_chatmanager_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;item-&gt;setText(<emphasis role="stringliteral">&quot;@&quot;</emphasis>+<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.value(2).toString()+<emphasis role="stringliteral">&quot;:-\n&#32;&#32;&quot;</emphasis>+<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.value(0).toString());
+<anchor xml:id="_chatmanager_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;item-&gt;setTextAlignment(Qt::AlignLeft);
+<anchor xml:id="_chatmanager_8cpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>-&gt;addItem(item);
+<anchor xml:id="_chatmanager_8cpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00113"/>00113 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError();</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00114"/>00114 <emphasis role="comment">&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00115"/>00115 
+<anchor xml:id="_chatmanager_8cpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>-&gt;scrollToBottom();
+<anchor xml:id="_chatmanager_8cpp_source_1l00117"/>00117 
+<anchor xml:id="_chatmanager_8cpp_source_1l00118"/>00118 }
+<anchor xml:id="_chatmanager_8cpp_source_1l00125"/><link linkend="_class_chat_manager_1a15348d3bc3eaa99a84f94798cbfa00a0">00125</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1a15348d3bc3eaa99a84f94798cbfa00a0">ChatManager::on_SetupChatConnection</link>(QString&#32;name,<link linkend="_structprofile">profile</link>&#32;details)
+<anchor xml:id="_chatmanager_8cpp_source_1l00126"/>00126 {
+<anchor xml:id="_chatmanager_8cpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;this-&gt;x_sender_id&#32;=&#32;details.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>;
+<anchor xml:id="_chatmanager_8cpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;this-&gt;x_profile_details-&gt;id;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a8ce634fbaa51e8f9d9fefc9b810650d4">first_name</link>=name.toStdString();
+<anchor xml:id="_chatmanager_8cpp_source_1l00130"/>00130 &#32;&#32;&#32;&#32;this-&gt;x_fetchRecieverDetails();
+<anchor xml:id="_chatmanager_8cpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_chat_manager_1ad0d86de90b2f5fcc7ac7449ebf4aa118">DisplayChat</link>();
+<anchor xml:id="_chatmanager_8cpp_source_1l00132"/>00132 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;contact&#32;setup&#32;done&quot;;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00133"/>00133 }
+<anchor xml:id="_chatmanager_8cpp_source_1l00140"/><link linkend="_class_chat_manager_1adad8b7f76c29f0b3aefa3e0455490163">00140</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1adad8b7f76c29f0b3aefa3e0455490163">ChatManager::on_SetupGroupChatConnection</link>(QString&#32;name,&#32;<link linkend="_structprofile">profile</link>&#32;details)
+<anchor xml:id="_chatmanager_8cpp_source_1l00141"/>00141 {
+<anchor xml:id="_chatmanager_8cpp_source_1l00142"/>00142 &#32;&#32;&#32;&#32;this-&gt;x_sender_id&#32;=&#32;details.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>;
+<anchor xml:id="_chatmanager_8cpp_source_1l00143"/>00143 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;Chat&#32;connection&#32;established&quot;&lt;&lt;name;</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00144"/>00144 &#32;&#32;&#32;&#32;this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a8ce634fbaa51e8f9d9fefc9b810650d4">first_name</link>&#32;=&#32;name.toStdString();
+<anchor xml:id="_chatmanager_8cpp_source_1l00145"/>00145 &#32;&#32;&#32;&#32;this-&gt;x_fetchGroupRecieverDetails();
+<anchor xml:id="_chatmanager_8cpp_source_1l00146"/>00146 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_chat_manager_1ae7d5f10f9b62470a34be758c8f4020c3">DisplayGroupChat</link>();
+<anchor xml:id="_chatmanager_8cpp_source_1l00147"/>00147 }
+<anchor xml:id="_chatmanager_8cpp_source_1l00152"/>00152 <emphasis role="keywordtype">void</emphasis>&#32;ChatManager::x_fetchRecieverDetails()
+<anchor xml:id="_chatmanager_8cpp_source_1l00153"/>00153 {
+<anchor xml:id="_chatmanager_8cpp_source_1l00154"/>00154 
+<anchor xml:id="_chatmanager_8cpp_source_1l00155"/>00155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.exec(<emphasis role="stringliteral">&quot;SELECT&#32;id&#32;FROM&#32;public.users&#32;WHERE&#32;firstname=&apos;&quot;</emphasis>+QString::fromStdString(this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a8ce634fbaa51e8f9d9fefc9b810650d4">first_name</link>)+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00156"/>00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.next()){
+<anchor xml:id="_chatmanager_8cpp_source_1l00157"/>00157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>=<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.value(0).toInt();
+<anchor xml:id="_chatmanager_8cpp_source_1l00158"/>00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00159"/>00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00160"/>00160 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError();</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00161"/>00161 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00162"/>00162 }
+<anchor xml:id="_chatmanager_8cpp_source_1l00167"/>00167 <emphasis role="keywordtype">void</emphasis>&#32;ChatManager::x_fetchGroupRecieverDetails()
+<anchor xml:id="_chatmanager_8cpp_source_1l00168"/>00168 {
+<anchor xml:id="_chatmanager_8cpp_source_1l00169"/>00169 &#32;&#32;&#32;&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.exec(<emphasis role="stringliteral">&quot;SELECT&#32;id&#32;FROM&#32;public.groups&#32;WHERE&#32;group_name=&apos;&quot;</emphasis>+QString::fromStdString(this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a8ce634fbaa51e8f9d9fefc9b810650d4">first_name</link>)+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>);
+<anchor xml:id="_chatmanager_8cpp_source_1l00170"/>00170 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.next()){
+<anchor xml:id="_chatmanager_8cpp_source_1l00171"/>00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;x_profile_details_reciever.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>=<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>.value(0).toInt();
+<anchor xml:id="_chatmanager_8cpp_source_1l00172"/>00172 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_chatmanager_8cpp_source_1l00173"/>00173 &#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00174"/>00174 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError();</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00175"/>00175 <emphasis role="comment">&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_chatmanager_8cpp_source_1l00176"/>00176 }
+</programlisting></section>

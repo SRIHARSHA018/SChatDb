@@ -1,0 +1,649 @@
+\hypertarget{class_task__manager}{}\doxysection{Task\+\_\+manager Class Reference}
+\label{class_task__manager}\index{Task\_manager@{Task\_manager}}
+
+
+The \mbox{\hyperlink{class_task__manager}{Task\+\_\+manager}} class.  
+
+
+
+
+{\ttfamily \#include $<$task\+\_\+manager.\+h$>$}
+
+Inheritance diagram for Task\+\_\+manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_task__manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_task__manager_a94a24ecfee7f884c2d5a88a03185a1d3}{on\+\_\+\+Contact\+Selected}} (QList\+Widget\+Item $\ast$contact, QLabel $\ast$name, \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} mode)
+\begin{DoxyCompactList}\small\item\em Setups the Chat Manager\textquotesingle{}s settings to the contact selected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a718a1571930c1ef472f921d27906f286}{notification\+Received}} (const QString \&name, QSql\+Driver\+::\+Notification\+Source source, const QVariant \&payload)
+\begin{DoxyCompactList}\small\item\em Notification upon any member send message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_task__manager_a470715f9c760ee45bbdc7b809e6f3cee}{entered\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Make \mbox{\hyperlink{class_main_window}{Main\+Window}} class to setup essentials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a81ae1f648beda795c78acfc0085a7df8}{set\+Up\+Chat\+Connection}} (QString name, \mbox{\hyperlink{structprofile}{profile}} \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\+\_\+details}})
+\begin{DoxyCompactList}\small\item\em Setup Chat connection when contact is selected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_ac071409193a8ea2a08eb1e91e49d11ed}{set\+Up\+Group\+Chat\+Connection}} (QString name, \mbox{\hyperlink{structprofile}{profile}} \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\+\_\+details}})
+\begin{DoxyCompactList}\small\item\em Setup Group connection when group is selected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_afece35eb1a2e2fe4dfd056bc4fe41c2d}{clean\+Up\+Groups\+Page}} ()
+\begin{DoxyCompactList}\small\item\em Cleanup for groups page ui elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a24fb62c89440b033031210e4591f7616}{clean\+Up\+Login\+Page}} ()
+\begin{DoxyCompactList}\small\item\em Cleanup for Login page ui elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task__manager_a0bea96effe1595b32539666ea2cff9aa}{Task\+\_\+manager}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_task__manager_a0bea96effe1595b32539666ea2cff9aa}{Task\+\_\+manager\+::\+Task\+\_\+manager}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_ae601874b1890f2f035f5311b0ff50f7e}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Setups Database connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a68ba4818ada6d2ddf4016cdfd4a6b831}{Validate\+Login\+Details}} (const QJson\+Object \&details)
+\begin{DoxyCompactList}\small\item\em Validates Login Details. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a9e1c7df0f397c06b6a0f62eaf96ee830}{Validate\+Sign\+Up\+Details}} (const QJson\+Object \&details, QLabel $\ast$status)
+\begin{DoxyCompactList}\small\item\em Validate Signup details. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a2bf50ea73b70a5b0945489b3b221e762}{Validate\+Group\+Info}} (const QJson\+Object \&details, QLabel $\ast$status, QList\+Widget $\ast$members, const std\+::set$<$ QString $>$ \&set\+\_\+members)
+\begin{DoxyCompactList}\small\item\em Validate Group info details. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a6f273c9efef1901fba7c277ac2df9b1d}{Setup\+Main\+Page}} (QStacked\+Widget $\ast$pager)
+\begin{DoxyCompactList}\small\item\em Setup main page and essentials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_ab0a0ee3bbb2640920d1ae4e6b64dcefb}{Setup\+Login\+Page}} (QStacked\+Widget $\ast$pager)
+\begin{DoxyCompactList}\small\item\em Setup\+Login\+Page and essentials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_aa51984dfdedd6acacfe0ae3033b49baf}{Setup\+Contacts}} (QList\+Widget $\ast$contact\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Setup contacts in main page. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a31feeb979c4c678ae6cd27ed3d8e7ae6}{Setup\+Groups}} (QList\+Widget $\ast$groups)
+\begin{DoxyCompactList}\small\item\em Setup groups in main page. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} \mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{Get\+State}} ()
+\begin{DoxyCompactList}\small\item\em This will return state of Task\+Manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{Set\+State}} (\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} status)
+\begin{DoxyCompactList}\small\item\em This will set the state of Task\+Manager. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_task__manager_a368c57b2d23290e5a4b2de89ca31e91d}{Is\+Login\+Successful}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if login details are valid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_task__manager_afb07a4947f98a6ab155d2e915116a120}{Is\+Sign\+Up\+Successful}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if signup details are valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_ae439c36213f5247fba521f97af6df77c}{set\+Up\+Edit\+Profile\+Window}} (QStacked\+Widget $\ast$pager)
+\begin{DoxyCompactList}\small\item\em Shows the users profile editor window and setup essentials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a5d39254a45a6a0bfad8436af2b031460}{set\+Profile\+Details}} (const QJson\+Object \&details)
+\begin{DoxyCompactList}\small\item\em Setup profile details when login. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a3f952dc180c1272323abbf98b802d723}{display\+Details}} (QList\+Widget $\ast$preview, QLabel $\ast$profile\+\_\+pic)
+\begin{DoxyCompactList}\small\item\em Display user chat details and reciever details. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_ae0e44b163a8c4b41d5c77536ec77cd98}{set\+Profile\+Pic}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Helps in getting the filename from the file explorer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_aa3f5de314d725cd5df56767df4801169}{Send\+Message}} (QLine\+Edit $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Message from ui element is extracted and invokes send message of chat manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task__manager_a2d247180caa5d322e1ef2a144006de0b}{clean\+Up}} ()
+\begin{DoxyCompactList}\small\item\em cleaning up ui and other elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structprofile}{profile}} \mbox{\hyperlink{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}{profile\+\_\+details}}
+\begin{DoxyCompactList}\small\item\em user profile info for operations. \end{DoxyCompactList}\item 
+QList\+Widget $\ast$ \mbox{\hyperlink{class_task__manager_a783de3d16e7e13349f2648cf3b3f72eb}{chat\+\_\+pane}}
+\begin{DoxyCompactList}\small\item\em Chat pane to display chat history and all. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_task__manager}{Task\+\_\+manager}} class. 
+
+The backend validations are done by this class and updates the ui elements of main window. 
+
+Definition at line \mbox{\hyperlink{task__manager_8h_source_l00025}{25}} of file \mbox{\hyperlink{task__manager_8h_source}{task\+\_\+manager.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_task__manager_a0bea96effe1595b32539666ea2cff9aa}\label{class_task__manager_a0bea96effe1595b32539666ea2cff9aa}} 
+\index{Task\_manager@{Task\_manager}!Task\_manager@{Task\_manager}}
+\index{Task\_manager@{Task\_manager}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{Task\_manager()}{Task\_manager()}}
+{\footnotesize\ttfamily Task\+\_\+manager\+::\+Task\+\_\+manager (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_task__manager_a0bea96effe1595b32539666ea2cff9aa}{Task\+\_\+manager\+::\+Task\+\_\+manager}}. 
+
+Setup intial connections and signals to login and main window entry. 
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_task__manager_a2d247180caa5d322e1ef2a144006de0b}\label{class_task__manager_a2d247180caa5d322e1ef2a144006de0b}} 
+\index{Task\_manager@{Task\_manager}!cleanUp@{cleanUp}}
+\index{cleanUp@{cleanUp}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{cleanUp()}{cleanUp()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::clean\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+cleaning up ui and other elements. 
+
+\mbox{\hyperlink{class_task__manager_a2d247180caa5d322e1ef2a144006de0b}{Task\+\_\+manager\+::clean\+Up}}.
+
+Cleaup profile struct. 
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00388}{388}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_afece35eb1a2e2fe4dfd056bc4fe41c2d}\label{class_task__manager_afece35eb1a2e2fe4dfd056bc4fe41c2d}} 
+\index{Task\_manager@{Task\_manager}!cleanUpGroupsPage@{cleanUpGroupsPage}}
+\index{cleanUpGroupsPage@{cleanUpGroupsPage}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{cleanUpGroupsPage}{cleanUpGroupsPage}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::clean\+Up\+Groups\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Cleanup for groups page ui elements. 
+
+
+
+Definition at line \mbox{\hyperlink{moc__task__manager_8cpp_source_l00238}{238}} of file \mbox{\hyperlink{moc__task__manager_8cpp_source}{moc\+\_\+task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a24fb62c89440b033031210e4591f7616}\label{class_task__manager_a24fb62c89440b033031210e4591f7616}} 
+\index{Task\_manager@{Task\_manager}!cleanUpLoginPage@{cleanUpLoginPage}}
+\index{cleanUpLoginPage@{cleanUpLoginPage}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{cleanUpLoginPage}{cleanUpLoginPage}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::clean\+Up\+Login\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Cleanup for Login page ui elements. 
+
+
+
+Definition at line \mbox{\hyperlink{moc__task__manager_8cpp_source_l00244}{244}} of file \mbox{\hyperlink{moc__task__manager_8cpp_source}{moc\+\_\+task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a3f952dc180c1272323abbf98b802d723}\label{class_task__manager_a3f952dc180c1272323abbf98b802d723}} 
+\index{Task\_manager@{Task\_manager}!displayDetails@{displayDetails}}
+\index{displayDetails@{displayDetails}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{displayDetails()}{displayDetails()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::display\+Details (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{preview,  }\item[{QLabel $\ast$}]{profile\+\_\+pic }\end{DoxyParamCaption})}
+
+
+
+Display user chat details and reciever details. 
+
+\mbox{\hyperlink{class_task__manager_a3f952dc180c1272323abbf98b802d723}{Task\+\_\+manager\+::display\+Details}}.
+
+Display profile details using ui elements from main window class. 
+\begin{DoxyParams}{Parameters}
+{\em preview} & \\
+\hline
+{\em profile\+\_\+pic} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00343}{343}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a470715f9c760ee45bbdc7b809e6f3cee}\label{class_task__manager_a470715f9c760ee45bbdc7b809e6f3cee}} 
+\index{Task\_manager@{Task\_manager}!enteredMainWindow@{enteredMainWindow}}
+\index{enteredMainWindow@{enteredMainWindow}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{enteredMainWindow}{enteredMainWindow}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::entered\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Make \mbox{\hyperlink{class_main_window}{Main\+Window}} class to setup essentials. 
+
+
+
+Definition at line \mbox{\hyperlink{moc__task__manager_8cpp_source_l00218}{218}} of file \mbox{\hyperlink{moc__task__manager_8cpp_source}{moc\+\_\+task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}\label{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}} 
+\index{Task\_manager@{Task\_manager}!GetState@{GetState}}
+\index{GetState@{GetState}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{GetState()}{GetState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}} Task\+\_\+manager\+::\+Get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This will return state of Task\+Manager. 
+
+\mbox{\hyperlink{class_task__manager_a17f7faa6034ecce8e4276ad38dd1720c}{Task\+\_\+manager\+::\+Get\+State}}.
+
+Return state variable for task manager. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_ae601874b1890f2f035f5311b0ff50f7e}\label{class_task__manager_ae601874b1890f2f035f5311b0ff50f7e}} 
+\index{Task\_manager@{Task\_manager}!Init@{Init}}
+\index{Init@{Init}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Setups Database connection. 
+
+\mbox{\hyperlink{class_task__manager_ae601874b1890f2f035f5311b0ff50f7e}{Task\+\_\+manager\+::\+Init}}.
+
+Database connections and intialization is done. setup deatails for database.
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a368c57b2d23290e5a4b2de89ca31e91d}\label{class_task__manager_a368c57b2d23290e5a4b2de89ca31e91d}} 
+\index{Task\_manager@{Task\_manager}!IsLoginSuccessful@{IsLoginSuccessful}}
+\index{IsLoginSuccessful@{IsLoginSuccessful}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{IsLoginSuccessful()}{IsLoginSuccessful()}}
+{\footnotesize\ttfamily bool Task\+\_\+manager\+::\+Is\+Login\+Successful (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns true if login details are valid. 
+
+\mbox{\hyperlink{class_task__manager_a368c57b2d23290e5a4b2de89ca31e91d}{Task\+\_\+manager\+::\+Is\+Login\+Successful}}.
+
+check weather login is successful. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_afb07a4947f98a6ab155d2e915116a120}\label{class_task__manager_afb07a4947f98a6ab155d2e915116a120}} 
+\index{Task\_manager@{Task\_manager}!IsSignUpSuccessful@{IsSignUpSuccessful}}
+\index{IsSignUpSuccessful@{IsSignUpSuccessful}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{IsSignUpSuccessful()}{IsSignUpSuccessful()}}
+{\footnotesize\ttfamily bool Task\+\_\+manager\+::\+Is\+Sign\+Up\+Successful (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns true if signup details are valid. 
+
+\mbox{\hyperlink{class_task__manager_afb07a4947f98a6ab155d2e915116a120}{Task\+\_\+manager\+::\+Is\+Sign\+Up\+Successful}}.
+
+Check weather signup successful. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00268}{268}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a718a1571930c1ef472f921d27906f286}\label{class_task__manager_a718a1571930c1ef472f921d27906f286}} 
+\index{Task\_manager@{Task\_manager}!notificationReceived@{notificationReceived}}
+\index{notificationReceived@{notificationReceived}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{notificationReceived}{notificationReceived}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::notification\+Received (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{QSql\+Driver\+::\+Notification\+Source}]{source,  }\item[{const QVariant \&}]{payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Notification upon any member send message. 
+
+\mbox{\hyperlink{class_task__manager_a718a1571930c1ef472f921d27906f286}{Task\+\_\+manager\+::notification\+Received}}.
+
+Notifies whenever a message is recieved into server end. This will notify clients as a signal. 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em source} & \\
+\hline
+{\em payload} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00425}{425}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a94a24ecfee7f884c2d5a88a03185a1d3}\label{class_task__manager_a94a24ecfee7f884c2d5a88a03185a1d3}} 
+\index{Task\_manager@{Task\_manager}!on\_ContactSelected@{on\_ContactSelected}}
+\index{on\_ContactSelected@{on\_ContactSelected}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{on\_ContactSelected}{on\_ContactSelected}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::on\+\_\+\+Contact\+Selected (\begin{DoxyParamCaption}\item[{QList\+Widget\+Item $\ast$}]{contact,  }\item[{QLabel $\ast$}]{name,  }\item[{\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Setups the Chat Manager\textquotesingle{}s settings to the contact selected. 
+
+\mbox{\hyperlink{class_task__manager_a94a24ecfee7f884c2d5a88a03185a1d3}{Task\+\_\+manager\+::on\+\_\+\+Contact\+Selected}}.
+
+Setup connection essentials to the contact selected using ui elements from main window class. 
+\begin{DoxyParams}{Parameters}
+{\em contact} & \\
+\hline
+{\em name} & \\
+\hline
+{\em mode} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00399}{399}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_aa3f5de314d725cd5df56767df4801169}\label{class_task__manager_aa3f5de314d725cd5df56767df4801169}} 
+\index{Task\_manager@{Task\_manager}!SendMessage@{SendMessage}}
+\index{SendMessage@{SendMessage}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{SendMessage()}{SendMessage()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Send\+Message (\begin{DoxyParamCaption}\item[{QLine\+Edit $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Message from ui element is extracted and invokes send message of chat manager. 
+
+\mbox{\hyperlink{class_task__manager_aa3f5de314d725cd5df56767df4801169}{Task\+\_\+manager\+::\+Send\+Message}}.
+
+Sends message to the contact selected. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00451}{451}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a5d39254a45a6a0bfad8436af2b031460}\label{class_task__manager_a5d39254a45a6a0bfad8436af2b031460}} 
+\index{Task\_manager@{Task\_manager}!setProfileDetails@{setProfileDetails}}
+\index{setProfileDetails@{setProfileDetails}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{setProfileDetails()}{setProfileDetails()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::set\+Profile\+Details (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{details }\end{DoxyParamCaption})}
+
+
+
+Setup profile details when login. 
+
+\mbox{\hyperlink{class_task__manager_a5d39254a45a6a0bfad8436af2b031460}{Task\+\_\+manager\+::set\+Profile\+Details}}.
+
+Upadate profile details. So it will modify details in server end. 
+\begin{DoxyParams}{Parameters}
+{\em details} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00287}{287}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_ae0e44b163a8c4b41d5c77536ec77cd98}\label{class_task__manager_ae0e44b163a8c4b41d5c77536ec77cd98}} 
+\index{Task\_manager@{Task\_manager}!setProfilePic@{setProfilePic}}
+\index{setProfilePic@{setProfilePic}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{setProfilePic()}{setProfilePic()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::set\+Profile\+Pic (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Helps in getting the filename from the file explorer. 
+
+\mbox{\hyperlink{class_task__manager_ae0e44b163a8c4b41d5c77536ec77cd98}{Task\+\_\+manager\+::set\+Profile\+Pic}}.
+
+Setup profile picture using filename in local device and uploads to server ends. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00357}{357}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}\label{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}} 
+\index{Task\_manager@{Task\_manager}!SetState@{SetState}}
+\index{SetState@{SetState}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{SetState()}{SetState()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{profile_8h_a32c27cc471df37f4fc818d65de0a56c4}{STATUS}}}]{status }\end{DoxyParamCaption})}
+
+
+
+This will set the state of Task\+Manager. 
+
+\mbox{\hyperlink{class_task__manager_a7830416fb2f0666636aa6c755ab78a98}{Task\+\_\+manager\+::\+Set\+State}}.
+
+Set state variable for task manager. 
+\begin{DoxyParams}{Parameters}
+{\em status} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00249}{249}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a81ae1f648beda795c78acfc0085a7df8}\label{class_task__manager_a81ae1f648beda795c78acfc0085a7df8}} 
+\index{Task\_manager@{Task\_manager}!setUpChatConnection@{setUpChatConnection}}
+\index{setUpChatConnection@{setUpChatConnection}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{setUpChatConnection}{setUpChatConnection}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::set\+Up\+Chat\+Connection (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{\mbox{\hyperlink{structprofile}{profile}}}]{profile\+\_\+details }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Setup Chat connection when contact is selected. 
+
+
+
+Definition at line \mbox{\hyperlink{moc__task__manager_8cpp_source_l00224}{224}} of file \mbox{\hyperlink{moc__task__manager_8cpp_source}{moc\+\_\+task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_aa51984dfdedd6acacfe0ae3033b49baf}\label{class_task__manager_aa51984dfdedd6acacfe0ae3033b49baf}} 
+\index{Task\_manager@{Task\_manager}!SetupContacts@{SetupContacts}}
+\index{SetupContacts@{SetupContacts}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{SetupContacts()}{SetupContacts()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Setup\+Contacts (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{contact\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Setup contacts in main page. 
+
+\mbox{\hyperlink{class_task__manager_aa51984dfdedd6acacfe0ae3033b49baf}{Task\+\_\+manager\+::\+Setup\+Contacts}}.
+
+Setup contacts list and display using ui element from main window class. 
+\begin{DoxyParams}{Parameters}
+{\em contact\+\_\+list} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00200}{200}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_ae439c36213f5247fba521f97af6df77c}\label{class_task__manager_ae439c36213f5247fba521f97af6df77c}} 
+\index{Task\_manager@{Task\_manager}!setUpEditProfileWindow@{setUpEditProfileWindow}}
+\index{setUpEditProfileWindow@{setUpEditProfileWindow}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{setUpEditProfileWindow()}{setUpEditProfileWindow()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::set\+Up\+Edit\+Profile\+Window (\begin{DoxyParamCaption}\item[{QStacked\+Widget $\ast$}]{pager }\end{DoxyParamCaption})}
+
+
+
+Shows the users profile editor window and setup essentials. 
+
+\mbox{\hyperlink{class_task__manager_ae439c36213f5247fba521f97af6df77c}{Task\+\_\+manager\+::set\+Up\+Edit\+Profile\+Window}}.
+
+Setup Edit window for profile details using ui element from main window class. 
+\begin{DoxyParams}{Parameters}
+{\em pager} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00277}{277}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_ac071409193a8ea2a08eb1e91e49d11ed}\label{class_task__manager_ac071409193a8ea2a08eb1e91e49d11ed}} 
+\index{Task\_manager@{Task\_manager}!setUpGroupChatConnection@{setUpGroupChatConnection}}
+\index{setUpGroupChatConnection@{setUpGroupChatConnection}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{setUpGroupChatConnection}{setUpGroupChatConnection}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::set\+Up\+Group\+Chat\+Connection (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{\mbox{\hyperlink{structprofile}{profile}}}]{profile\+\_\+details }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Setup Group connection when group is selected. 
+
+
+
+Definition at line \mbox{\hyperlink{moc__task__manager_8cpp_source_l00231}{231}} of file \mbox{\hyperlink{moc__task__manager_8cpp_source}{moc\+\_\+task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a31feeb979c4c678ae6cd27ed3d8e7ae6}\label{class_task__manager_a31feeb979c4c678ae6cd27ed3d8e7ae6}} 
+\index{Task\_manager@{Task\_manager}!SetupGroups@{SetupGroups}}
+\index{SetupGroups@{SetupGroups}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{SetupGroups()}{SetupGroups()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Setup\+Groups (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{groups }\end{DoxyParamCaption})}
+
+
+
+Setup groups in main page. 
+
+\mbox{\hyperlink{class_task__manager_a31feeb979c4c678ae6cd27ed3d8e7ae6}{Task\+\_\+manager\+::\+Setup\+Groups}}.
+
+Setup groups list of user subscribed and setup. 
+\begin{DoxyParams}{Parameters}
+{\em groups} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00215}{215}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_ab0a0ee3bbb2640920d1ae4e6b64dcefb}\label{class_task__manager_ab0a0ee3bbb2640920d1ae4e6b64dcefb}} 
+\index{Task\_manager@{Task\_manager}!SetupLoginPage@{SetupLoginPage}}
+\index{SetupLoginPage@{SetupLoginPage}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{SetupLoginPage()}{SetupLoginPage()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Setup\+Login\+Page (\begin{DoxyParamCaption}\item[{QStacked\+Widget $\ast$}]{pager }\end{DoxyParamCaption})}
+
+
+
+Setup\+Login\+Page and essentials. 
+
+\mbox{\hyperlink{class_task__manager_ab0a0ee3bbb2640920d1ae4e6b64dcefb}{Task\+\_\+manager\+::\+Setup\+Login\+Page}}.
+
+Setups login page using ui element from main window class. 
+\begin{DoxyParams}{Parameters}
+{\em pager} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00188}{188}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a6f273c9efef1901fba7c277ac2df9b1d}\label{class_task__manager_a6f273c9efef1901fba7c277ac2df9b1d}} 
+\index{Task\_manager@{Task\_manager}!SetupMainPage@{SetupMainPage}}
+\index{SetupMainPage@{SetupMainPage}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{SetupMainPage()}{SetupMainPage()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Setup\+Main\+Page (\begin{DoxyParamCaption}\item[{QStacked\+Widget $\ast$}]{pager }\end{DoxyParamCaption})}
+
+
+
+Setup main page and essentials. 
+
+\mbox{\hyperlink{class_task__manager_a6f273c9efef1901fba7c277ac2df9b1d}{Task\+\_\+manager\+::\+Setup\+Main\+Page}}.
+
+If the state is login successful then setuops main page. 
+\begin{DoxyParams}{Parameters}
+{\em pager} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00162}{162}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a2bf50ea73b70a5b0945489b3b221e762}\label{class_task__manager_a2bf50ea73b70a5b0945489b3b221e762}} 
+\index{Task\_manager@{Task\_manager}!ValidateGroupInfo@{ValidateGroupInfo}}
+\index{ValidateGroupInfo@{ValidateGroupInfo}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{ValidateGroupInfo()}{ValidateGroupInfo()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Validate\+Group\+Info (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{details,  }\item[{QLabel $\ast$}]{status,  }\item[{QList\+Widget $\ast$}]{members,  }\item[{const std\+::set$<$ QString $>$ \&}]{set\+\_\+members }\end{DoxyParamCaption})}
+
+
+
+Validate Group info details. 
+
+\mbox{\hyperlink{class_task__manager_a2bf50ea73b70a5b0945489b3b221e762}{Task\+\_\+manager\+::\+Validate\+Group\+Info}}.
+
+Validate Group info details. 
+\begin{DoxyParams}{Parameters}
+{\em details} & \\
+\hline
+{\em status} & \\
+\hline
+{\em members} & \\
+\hline
+{\em set\+\_\+members} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a68ba4818ada6d2ddf4016cdfd4a6b831}\label{class_task__manager_a68ba4818ada6d2ddf4016cdfd4a6b831}} 
+\index{Task\_manager@{Task\_manager}!ValidateLoginDetails@{ValidateLoginDetails}}
+\index{ValidateLoginDetails@{ValidateLoginDetails}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{ValidateLoginDetails()}{ValidateLoginDetails()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Validate\+Login\+Details (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{details }\end{DoxyParamCaption})}
+
+
+
+Validates Login Details. 
+
+\mbox{\hyperlink{class_task__manager_a68ba4818ada6d2ddf4016cdfd4a6b831}{Task\+\_\+manager\+::\+Validate\+Login\+Details}}.
+
+Validation for login with database queries. 
+\begin{DoxyParams}{Parameters}
+{\em details} & \\
+\hline
+\end{DoxyParams}
+local details setup.
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_task__manager_a9e1c7df0f397c06b6a0f62eaf96ee830}\label{class_task__manager_a9e1c7df0f397c06b6a0f62eaf96ee830}} 
+\index{Task\_manager@{Task\_manager}!ValidateSignUpDetails@{ValidateSignUpDetails}}
+\index{ValidateSignUpDetails@{ValidateSignUpDetails}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{ValidateSignUpDetails()}{ValidateSignUpDetails()}}
+{\footnotesize\ttfamily void Task\+\_\+manager\+::\+Validate\+Sign\+Up\+Details (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{details,  }\item[{QLabel $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+
+Validate Signup details. 
+
+\mbox{\hyperlink{class_task__manager_a9e1c7df0f397c06b6a0f62eaf96ee830}{Task\+\_\+manager\+::\+Validate\+Sign\+Up\+Details}}.
+
+Takes ui component from main window class and validates signup. 
+\begin{DoxyParams}{Parameters}
+{\em details} & \\
+\hline
+{\em status} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{task__manager_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{task__manager_8cpp_source}{task\+\_\+manager.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_task__manager_a783de3d16e7e13349f2648cf3b3f72eb}\label{class_task__manager_a783de3d16e7e13349f2648cf3b3f72eb}} 
+\index{Task\_manager@{Task\_manager}!chat\_pane@{chat\_pane}}
+\index{chat\_pane@{chat\_pane}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{chat\_pane}{chat\_pane}}
+{\footnotesize\ttfamily QList\+Widget$\ast$ Task\+\_\+manager\+::chat\+\_\+pane}
+
+
+
+Chat pane to display chat history and all. 
+
+
+
+Definition at line \mbox{\hyperlink{task__manager_8h_source_l00069}{69}} of file \mbox{\hyperlink{task__manager_8h_source}{task\+\_\+manager.\+h}}.
+
+\mbox{\Hypertarget{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}\label{class_task__manager_a93eeefe5c06cfb754ebb4c67b3ca9fba}} 
+\index{Task\_manager@{Task\_manager}!profile\_details@{profile\_details}}
+\index{profile\_details@{profile\_details}!Task\_manager@{Task\_manager}}
+\doxysubsubsection{\texorpdfstring{profile\_details}{profile\_details}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structprofile}{profile}} Task\+\_\+manager\+::profile\+\_\+details}
+
+
+
+user profile info for operations. 
+
+
+
+Definition at line \mbox{\hyperlink{task__manager_8h_source_l00067}{67}} of file \mbox{\hyperlink{task__manager_8h_source}{task\+\_\+manager.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/workspace/qt/\+Client\+Pulled/\+SChat\+Db/\+SRC/\mbox{\hyperlink{task__manager_8h}{task\+\_\+manager.\+h}}\item 
+E\+:/workspace/qt/\+Client\+Pulled/\+SChat\+Db/\+BUILD/debug/\mbox{\hyperlink{moc__task__manager_8cpp}{moc\+\_\+task\+\_\+manager.\+cpp}}\item 
+E\+:/workspace/qt/\+Client\+Pulled/\+SChat\+Db/\+SRC/\mbox{\hyperlink{task__manager_8cpp}{task\+\_\+manager.\+cpp}}\end{DoxyCompactItemize}

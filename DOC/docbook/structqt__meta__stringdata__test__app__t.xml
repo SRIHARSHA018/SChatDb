@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structqt__meta__stringdata__test__app__t" xml:lang="en-US">
+<title>qt_meta_stringdata_test_app_t Struct Reference</title>
+<indexterm><primary>qt_meta_stringdata_test_app_t</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>const uint <link linkend="_structqt__meta__stringdata__test__app__t_1aa648c1168288025443fa6585c97e8bf9">offsetsAndSize</link> [18]</para>
+</listitem>
+            <listitem><para>char <link linkend="_structqt__meta__stringdata__test__app__t_1ab459d09ec953769f3295d9ec58af0a60">stringdata0</link> [99]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_moc__test__app_8cpp_source_1l00025">25</link> of file <link linkend="_moc__test__app_8cpp_source">moc_test_app.cpp</link>.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structqt__meta__stringdata__test__app__t_1aa648c1168288025443fa6585c97e8bf9"/><section>
+    <title>offsetsAndSize</title>
+<indexterm><primary>offsetsAndSize</primary><secondary>qt_meta_stringdata_test_app_t</secondary></indexterm>
+<indexterm><primary>qt_meta_stringdata_test_app_t</primary><secondary>offsetsAndSize</secondary></indexterm>
+<para><computeroutput>const uint qt_meta_stringdata_test_app_t::offsetsAndSize[18]</computeroutput></para><para>
+Definition at line <link linkend="_moc__test__app_8cpp_source_1l00026">26</link> of file <link linkend="_moc__test__app_8cpp_source">moc_test_app.cpp</link>.</para>
+</section>
+<anchor xml:id="_structqt__meta__stringdata__test__app__t_1ab459d09ec953769f3295d9ec58af0a60"/><section>
+    <title>stringdata0</title>
+<indexterm><primary>stringdata0</primary><secondary>qt_meta_stringdata_test_app_t</secondary></indexterm>
+<indexterm><primary>qt_meta_stringdata_test_app_t</primary><secondary>stringdata0</secondary></indexterm>
+<para><computeroutput>char qt_meta_stringdata_test_app_t::stringdata0[99]</computeroutput></para><para>
+Definition at line <link linkend="_moc__test__app_8cpp_source_1l00027">27</link> of file <link linkend="_moc__test__app_8cpp_source">moc_test_app.cpp</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/<link linkend="_moc__test__app_8cpp">moc_test_app.cpp</link></section>
+</section>

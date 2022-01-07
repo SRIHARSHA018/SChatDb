@@ -1,0 +1,947 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_task__manager" xml:lang="en-US">
+<title>Task_manager Class Reference</title>
+<indexterm><primary>Task_manager</primary></indexterm>
+<para>
+
+<para>The <link linkend="_class_task__manager">Task_manager</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;task_manager.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Task_manager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_task__manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Slots    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_task__manager_1a94a24ecfee7f884c2d5a88a03185a1d3">on_ContactSelected</link> (QListWidgetItem *contact, QLabel *name, <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> mode)</para>
+
+<para>Setups the Chat Manager&apos;s settings to the contact selected. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a718a1571930c1ef472f921d27906f286">notificationReceived</link> (const QString &amp;name, QSqlDriver::NotificationSource source, const QVariant &amp;payload)</para>
+
+<para>Notification upon any member send message. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Signals    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_task__manager_1a470715f9c760ee45bbdc7b809e6f3cee">enteredMainWindow</link> ()</para>
+
+<para>Make <link linkend="_class_main_window">MainWindow</link> class to setup essentials. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a81ae1f648beda795c78acfc0085a7df8">setUpChatConnection</link> (QString name, <link linkend="_structprofile">profile</link> <link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>)</para>
+
+<para>Setup Chat connection when contact is selected. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1ac071409193a8ea2a08eb1e91e49d11ed">setUpGroupChatConnection</link> (QString name, <link linkend="_structprofile">profile</link> <link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>)</para>
+
+<para>Setup Group connection when group is selected. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1afece35eb1a2e2fe4dfd056bc4fe41c2d">cleanUpGroupsPage</link> ()</para>
+
+<para>Cleanup for groups page ui elements. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a24fb62c89440b033031210e4591f7616">cleanUpLoginPage</link> ()</para>
+
+<para>Cleanup for Login page ui elements. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_task__manager_1a0bea96effe1595b32539666ea2cff9aa">Task_manager</link> (QObject *parent=nullptr)</para>
+
+<para><link linkend="_class_task__manager_1a0bea96effe1595b32539666ea2cff9aa">Task_manager::Task_manager</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1ae601874b1890f2f035f5311b0ff50f7e">Init</link> ()</para>
+
+<para>Setups Database connection. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a68ba4818ada6d2ddf4016cdfd4a6b831">ValidateLoginDetails</link> (const QJsonObject &amp;details)</para>
+
+<para>Validates Login Details. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a9e1c7df0f397c06b6a0f62eaf96ee830">ValidateSignUpDetails</link> (const QJsonObject &amp;details, QLabel *status)</para>
+
+<para>Validate Signup details. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a2bf50ea73b70a5b0945489b3b221e762">ValidateGroupInfo</link> (const QJsonObject &amp;details, QLabel *status, QListWidget *members, const std::set&lt; QString &gt; &amp;set_members)</para>
+
+<para>Validate Group info details. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a6f273c9efef1901fba7c277ac2df9b1d">SetupMainPage</link> (QStackedWidget *pager)</para>
+
+<para>Setup main page and essentials. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1ab0a0ee3bbb2640920d1ae4e6b64dcefb">SetupLoginPage</link> (QStackedWidget *pager)</para>
+
+<para>SetupLoginPage and essentials. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1aa51984dfdedd6acacfe0ae3033b49baf">SetupContacts</link> (QListWidget *contact_list)</para>
+
+<para>Setup contacts in main page. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a31feeb979c4c678ae6cd27ed3d8e7ae6">SetupGroups</link> (QListWidget *groups)</para>
+
+<para>Setup groups in main page. </para>
+</listitem>
+            <listitem><para><link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> <link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">GetState</link> ()</para>
+
+<para>This will return state of TaskManager. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link> (<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> status)</para>
+
+<para>This will set the state of TaskManager. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_task__manager_1a368c57b2d23290e5a4b2de89ca31e91d">IsLoginSuccessful</link> ()</para>
+
+<para>Returns true if login details are valid. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_task__manager_1afb07a4947f98a6ab155d2e915116a120">IsSignUpSuccessful</link> ()</para>
+
+<para>Returns true if signup details are valid. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1ae439c36213f5247fba521f97af6df77c">setUpEditProfileWindow</link> (QStackedWidget *pager)</para>
+
+<para>Shows the users profile editor window and setup essentials. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a5d39254a45a6a0bfad8436af2b031460">setProfileDetails</link> (const QJsonObject &amp;details)</para>
+
+<para>Setup profile details when login. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a3f952dc180c1272323abbf98b802d723">displayDetails</link> (QListWidget *preview, QLabel *profile_pic)</para>
+
+<para>Display user chat details and reciever details. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1ae0e44b163a8c4b41d5c77536ec77cd98">setProfilePic</link> (const std::string &amp;filename)</para>
+
+<para>Helps in getting the filename from the file explorer. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1aa3f5de314d725cd5df56767df4801169">SendMessage</link> (QLineEdit *msg)</para>
+
+<para>Message from ui element is extracted and invokes send message of chat manager. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_task__manager_1a2d247180caa5d322e1ef2a144006de0b">cleanUp</link> ()</para>
+
+<para>cleaning up ui and other elements. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_structprofile">profile</link> <link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link></para>
+
+<para>user profile info for operations. </para>
+</listitem>
+            <listitem><para>QListWidget * <link linkend="_class_task__manager_1a783de3d16e7e13349f2648cf3b3f72eb">chat_pane</link></para>
+
+<para>Chat pane to display chat history and all. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The <link linkend="_class_task__manager">Task_manager</link> class. </para>
+
+
+
+<para>The backend validations are done by this class and updates the ui elements of main window. </para>
+<para>
+Definition at line <link linkend="_task__manager_8h_source_1l00025">25</link> of file <link linkend="_task__manager_8h_source">task_manager.h</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_task__manager_1a0bea96effe1595b32539666ea2cff9aa"/><section>
+    <title>Task_manager()</title>
+<indexterm><primary>Task_manager</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>Task_manager</secondary></indexterm>
+<para><computeroutput>Task_manager::Task_manager (QObject * parent = <computeroutput>nullptr</computeroutput>
+)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_class_task__manager_1a0bea96effe1595b32539666ea2cff9aa">Task_manager::Task_manager</link>. </para>
+</para>
+
+<para>Setup intial connections and signals to login and main window entry. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>parent</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00015">15</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_task__manager_1a2d247180caa5d322e1ef2a144006de0b"/><section>
+    <title>cleanUp()</title>
+<indexterm><primary>cleanUp</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>cleanUp</secondary></indexterm>
+<para><computeroutput>void Task_manager::cleanUp ( )</computeroutput></para><para>
+
+<para>cleaning up ui and other elements. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a2d247180caa5d322e1ef2a144006de0b">Task_manager::cleanUp</link>.</para>
+
+<para>Cleaup profile struct. </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00388">388</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1afece35eb1a2e2fe4dfd056bc4fe41c2d"/><section>
+    <title>cleanUpGroupsPage</title>
+<indexterm><primary>cleanUpGroupsPage</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>cleanUpGroupsPage</secondary></indexterm>
+<para><computeroutput>void Task_manager::cleanUpGroupsPage ( )<computeroutput>[signal]</computeroutput></computeroutput></para><para>
+
+<para>Cleanup for groups page ui elements. </para>
+</para>
+<para>
+Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00238">238</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a24fb62c89440b033031210e4591f7616"/><section>
+    <title>cleanUpLoginPage</title>
+<indexterm><primary>cleanUpLoginPage</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>cleanUpLoginPage</secondary></indexterm>
+<para><computeroutput>void Task_manager::cleanUpLoginPage ( )<computeroutput>[signal]</computeroutput></computeroutput></para><para>
+
+<para>Cleanup for Login page ui elements. </para>
+</para>
+<para>
+Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00244">244</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a3f952dc180c1272323abbf98b802d723"/><section>
+    <title>displayDetails()</title>
+<indexterm><primary>displayDetails</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>displayDetails</secondary></indexterm>
+<para><computeroutput>void Task_manager::displayDetails (QListWidget * preview, QLabel * profile_pic)</computeroutput></para><para>
+
+<para>Display user chat details and reciever details. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a3f952dc180c1272323abbf98b802d723">Task_manager::displayDetails</link>.</para>
+
+<para>Display profile details using ui elements from main window class. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>preview</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>profile_pic</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00343">343</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a470715f9c760ee45bbdc7b809e6f3cee"/><section>
+    <title>enteredMainWindow</title>
+<indexterm><primary>enteredMainWindow</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>enteredMainWindow</secondary></indexterm>
+<para><computeroutput>void Task_manager::enteredMainWindow ( )<computeroutput>[signal]</computeroutput></computeroutput></para><para>
+
+<para>Make <link linkend="_class_main_window">MainWindow</link> class to setup essentials. </para>
+</para>
+<para>
+Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00218">218</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c"/><section>
+    <title>GetState()</title>
+<indexterm><primary>GetState</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>GetState</secondary></indexterm>
+<para><computeroutput><link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> Task_manager::GetState ( )</computeroutput></para><para>
+
+<para>This will return state of TaskManager. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">Task_manager::GetState</link>.</para>
+
+<para>Return state variable for task manager. <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00240">240</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1ae601874b1890f2f035f5311b0ff50f7e"/><section>
+    <title>Init()</title>
+<indexterm><primary>Init</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>Init</secondary></indexterm>
+<para><computeroutput>void Task_manager::Init ( )</computeroutput></para><para>
+
+<para>Setups Database connection. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1ae601874b1890f2f035f5311b0ff50f7e">Task_manager::Init</link>.</para>
+
+<para>Database connections and intialization is done. </para>
+
+<para>setup deatails for database.</para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00025">25</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a368c57b2d23290e5a4b2de89ca31e91d"/><section>
+    <title>IsLoginSuccessful()</title>
+<indexterm><primary>IsLoginSuccessful</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>IsLoginSuccessful</secondary></indexterm>
+<para><computeroutput>bool Task_manager::IsLoginSuccessful ( )</computeroutput></para><para>
+
+<para>Returns true if login details are valid. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a368c57b2d23290e5a4b2de89ca31e91d">Task_manager::IsLoginSuccessful</link>.</para>
+
+<para>check weather login is successful. <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00258">258</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1afb07a4947f98a6ab155d2e915116a120"/><section>
+    <title>IsSignUpSuccessful()</title>
+<indexterm><primary>IsSignUpSuccessful</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>IsSignUpSuccessful</secondary></indexterm>
+<para><computeroutput>bool Task_manager::IsSignUpSuccessful ( )</computeroutput></para><para>
+
+<para>Returns true if signup details are valid. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1afb07a4947f98a6ab155d2e915116a120">Task_manager::IsSignUpSuccessful</link>.</para>
+
+<para>Check weather signup successful. <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00268">268</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a718a1571930c1ef472f921d27906f286"/><section>
+    <title>notificationReceived</title>
+<indexterm><primary>notificationReceived</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>notificationReceived</secondary></indexterm>
+<para><computeroutput>void Task_manager::notificationReceived (const QString &amp; name, QSqlDriver::NotificationSource source, const QVariant &amp; payload)<computeroutput>[slot]</computeroutput></computeroutput></para><para>
+
+<para>Notification upon any member send message. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a718a1571930c1ef472f921d27906f286">Task_manager::notificationReceived</link>.</para>
+
+<para>Notifies whenever a message is recieved into server end. This will notify clients as a signal. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>source</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>payload</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00425">425</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a94a24ecfee7f884c2d5a88a03185a1d3"/><section>
+    <title>on_ContactSelected</title>
+<indexterm><primary>on_ContactSelected</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>on_ContactSelected</secondary></indexterm>
+<para><computeroutput>void Task_manager::on_ContactSelected (QListWidgetItem * contact, QLabel * name, <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> mode)<computeroutput>[slot]</computeroutput></computeroutput></para><para>
+
+<para>Setups the Chat Manager&apos;s settings to the contact selected. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a94a24ecfee7f884c2d5a88a03185a1d3">Task_manager::on_ContactSelected</link>.</para>
+
+<para>Setup connection essentials to the contact selected using ui elements from main window class. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>contact</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>name</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>mode</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00399">399</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1aa3f5de314d725cd5df56767df4801169"/><section>
+    <title>SendMessage()</title>
+<indexterm><primary>SendMessage</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>SendMessage</secondary></indexterm>
+<para><computeroutput>void Task_manager::SendMessage (QLineEdit * msg)</computeroutput></para><para>
+
+<para>Message from ui element is extracted and invokes send message of chat manager. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1aa3f5de314d725cd5df56767df4801169">Task_manager::SendMessage</link>.</para>
+
+<para>Sends message to the contact selected. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>msg</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00451">451</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a5d39254a45a6a0bfad8436af2b031460"/><section>
+    <title>setProfileDetails()</title>
+<indexterm><primary>setProfileDetails</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>setProfileDetails</secondary></indexterm>
+<para><computeroutput>void Task_manager::setProfileDetails (const QJsonObject &amp; details)</computeroutput></para><para>
+
+<para>Setup profile details when login. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a5d39254a45a6a0bfad8436af2b031460">Task_manager::setProfileDetails</link>.</para>
+
+<para>Upadate profile details. So it will modify details in server end. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>details</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00287">287</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1ae0e44b163a8c4b41d5c77536ec77cd98"/><section>
+    <title>setProfilePic()</title>
+<indexterm><primary>setProfilePic</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>setProfilePic</secondary></indexterm>
+<para><computeroutput>void Task_manager::setProfilePic (const std::string &amp; filename)</computeroutput></para><para>
+
+<para>Helps in getting the filename from the file explorer. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1ae0e44b163a8c4b41d5c77536ec77cd98">Task_manager::setProfilePic</link>.</para>
+
+<para>Setup profile picture using filename in local device and uploads to server ends. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>filename</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00357">357</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98"/><section>
+    <title>SetState()</title>
+<indexterm><primary>SetState</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>SetState</secondary></indexterm>
+<para><computeroutput>void Task_manager::SetState (<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> status)</computeroutput></para><para>
+
+<para>This will set the state of TaskManager. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">Task_manager::SetState</link>.</para>
+
+<para>Set state variable for task manager. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>status</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00249">249</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a81ae1f648beda795c78acfc0085a7df8"/><section>
+    <title>setUpChatConnection</title>
+<indexterm><primary>setUpChatConnection</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>setUpChatConnection</secondary></indexterm>
+<para><computeroutput>void Task_manager::setUpChatConnection (QString name, <link linkend="_structprofile">profile</link> profile_details)<computeroutput>[signal]</computeroutput></computeroutput></para><para>
+
+<para>Setup Chat connection when contact is selected. </para>
+</para>
+<para>
+Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00224">224</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1aa51984dfdedd6acacfe0ae3033b49baf"/><section>
+    <title>SetupContacts()</title>
+<indexterm><primary>SetupContacts</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>SetupContacts</secondary></indexterm>
+<para><computeroutput>void Task_manager::SetupContacts (QListWidget * contact_list)</computeroutput></para><para>
+
+<para>Setup contacts in main page. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1aa51984dfdedd6acacfe0ae3033b49baf">Task_manager::SetupContacts</link>.</para>
+
+<para>Setup contacts list and display using ui element from main window class. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>contact_list</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00200">200</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1ae439c36213f5247fba521f97af6df77c"/><section>
+    <title>setUpEditProfileWindow()</title>
+<indexterm><primary>setUpEditProfileWindow</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>setUpEditProfileWindow</secondary></indexterm>
+<para><computeroutput>void Task_manager::setUpEditProfileWindow (QStackedWidget * pager)</computeroutput></para><para>
+
+<para>Shows the users profile editor window and setup essentials. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1ae439c36213f5247fba521f97af6df77c">Task_manager::setUpEditProfileWindow</link>.</para>
+
+<para>Setup Edit window for profile details using ui element from main window class. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pager</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00277">277</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1ac071409193a8ea2a08eb1e91e49d11ed"/><section>
+    <title>setUpGroupChatConnection</title>
+<indexterm><primary>setUpGroupChatConnection</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>setUpGroupChatConnection</secondary></indexterm>
+<para><computeroutput>void Task_manager::setUpGroupChatConnection (QString name, <link linkend="_structprofile">profile</link> profile_details)<computeroutput>[signal]</computeroutput></computeroutput></para><para>
+
+<para>Setup Group connection when group is selected. </para>
+</para>
+<para>
+Definition at line <link linkend="_moc__task__manager_8cpp_source_1l00231">231</link> of file <link linkend="_moc__task__manager_8cpp_source">moc_task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a31feeb979c4c678ae6cd27ed3d8e7ae6"/><section>
+    <title>SetupGroups()</title>
+<indexterm><primary>SetupGroups</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>SetupGroups</secondary></indexterm>
+<para><computeroutput>void Task_manager::SetupGroups (QListWidget * groups)</computeroutput></para><para>
+
+<para>Setup groups in main page. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a31feeb979c4c678ae6cd27ed3d8e7ae6">Task_manager::SetupGroups</link>.</para>
+
+<para>Setup groups list of user subscribed and setup. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>groups</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00215">215</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1ab0a0ee3bbb2640920d1ae4e6b64dcefb"/><section>
+    <title>SetupLoginPage()</title>
+<indexterm><primary>SetupLoginPage</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>SetupLoginPage</secondary></indexterm>
+<para><computeroutput>void Task_manager::SetupLoginPage (QStackedWidget * pager)</computeroutput></para><para>
+
+<para>SetupLoginPage and essentials. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1ab0a0ee3bbb2640920d1ae4e6b64dcefb">Task_manager::SetupLoginPage</link>.</para>
+
+<para>Setups login page using ui element from main window class. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pager</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00188">188</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a6f273c9efef1901fba7c277ac2df9b1d"/><section>
+    <title>SetupMainPage()</title>
+<indexterm><primary>SetupMainPage</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>SetupMainPage</secondary></indexterm>
+<para><computeroutput>void Task_manager::SetupMainPage (QStackedWidget * pager)</computeroutput></para><para>
+
+<para>Setup main page and essentials. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a6f273c9efef1901fba7c277ac2df9b1d">Task_manager::SetupMainPage</link>.</para>
+
+<para>If the state is login successful then setuops main page. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pager</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00162">162</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a2bf50ea73b70a5b0945489b3b221e762"/><section>
+    <title>ValidateGroupInfo()</title>
+<indexterm><primary>ValidateGroupInfo</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>ValidateGroupInfo</secondary></indexterm>
+<para><computeroutput>void Task_manager::ValidateGroupInfo (const QJsonObject &amp; details, QLabel * status, QListWidget * members, const std::set&lt; QString &gt; &amp; set_members)</computeroutput></para><para>
+
+<para>Validate Group info details. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a2bf50ea73b70a5b0945489b3b221e762">Task_manager::ValidateGroupInfo</link>.</para>
+
+<para>Validate Group info details. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>details</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>status</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>members</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>set_members</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00138">138</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a68ba4818ada6d2ddf4016cdfd4a6b831"/><section>
+    <title>ValidateLoginDetails()</title>
+<indexterm><primary>ValidateLoginDetails</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>ValidateLoginDetails</secondary></indexterm>
+<para><computeroutput>void Task_manager::ValidateLoginDetails (const QJsonObject &amp; details)</computeroutput></para><para>
+
+<para>Validates Login Details. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a68ba4818ada6d2ddf4016cdfd4a6b831">Task_manager::ValidateLoginDetails</link>.</para>
+
+<para>Validation for login with database queries. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>details</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>local details setup.</para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00053">53</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a9e1c7df0f397c06b6a0f62eaf96ee830"/><section>
+    <title>ValidateSignUpDetails()</title>
+<indexterm><primary>ValidateSignUpDetails</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>ValidateSignUpDetails</secondary></indexterm>
+<para><computeroutput>void Task_manager::ValidateSignUpDetails (const QJsonObject &amp; details, QLabel * status)</computeroutput></para><para>
+
+<para>Validate Signup details. </para>
+</para>
+
+<para><link linkend="_class_task__manager_1a9e1c7df0f397c06b6a0f62eaf96ee830">Task_manager::ValidateSignUpDetails</link>.</para>
+
+<para>Takes ui component from main window class and validates signup. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>details</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>status</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_task__manager_8cpp_source_1l00094">94</link> of file <link linkend="_task__manager_8cpp_source">task_manager.cpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_task__manager_1a783de3d16e7e13349f2648cf3b3f72eb"/><section>
+    <title>chat_pane</title>
+<indexterm><primary>chat_pane</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>chat_pane</secondary></indexterm>
+<para><computeroutput>QListWidget* Task_manager::chat_pane</computeroutput></para><para>
+
+<para>Chat pane to display chat history and all. </para>
+</para>
+<para>
+Definition at line <link linkend="_task__manager_8h_source_1l00069">69</link> of file <link linkend="_task__manager_8h_source">task_manager.h</link>.</para>
+</section>
+<anchor xml:id="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba"/><section>
+    <title>profile_details</title>
+<indexterm><primary>profile_details</primary><secondary>Task_manager</secondary></indexterm>
+<indexterm><primary>Task_manager</primary><secondary>profile_details</secondary></indexterm>
+<para><computeroutput><link linkend="_structprofile">profile</link> Task_manager::profile_details</computeroutput></para><para>
+
+<para>user profile info for operations. </para>
+</para>
+<para>
+Definition at line <link linkend="_task__manager_8h_source_1l00067">67</link> of file <link linkend="_task__manager_8h_source">task_manager.h</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_task__manager_8h">task_manager.h</link>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/<link linkend="_moc__task__manager_8cpp">moc_task_manager.cpp</link>E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_task__manager_8cpp">task_manager.cpp</link></section>
+</section>

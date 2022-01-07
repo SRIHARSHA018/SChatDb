@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_chatmanager_8h" xml:lang="en-US">
+<title>E:/workspace/qt/ClientPulled/SChatDb/SRC/chatmanager.h File Reference</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/chatmanager.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;QObject&gt;
+#include &lt;string&gt;
+#include &lt;QSqlDatabase&gt;
+#include &lt;QListWidget&gt;
+#include &lt;QListWidgetItem&gt;
+#include &lt;QSqlQuery&gt;
+#include &lt;QSqlError&gt;
+#include &lt;QJsonObject&gt;
+#include &lt;QJsonDocument&gt;
+#include &lt;QJsonArray&gt;
+#include &lt;QDateTime&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;profile.h&gt;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_chat_manager">ChatManager</link></para>
+
+<para>The <link linkend="_class_chat_manager">ChatManager</link> class. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_ui_1_1emoji__pop__up" xml:lang="en-US">
+<title>Ui::emoji_pop_up Class Reference</title>
+<indexterm><primary>Ui::emoji_pop_up</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ui_emoji_pop_up.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Ui::emoji_pop_up:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_ui_1_1emoji__pop__up.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_ui__emoji__pop__up_8h_source_1l00284">284</link> of file <link linkend="_ui__emoji__pop__up_8h_source">ui_emoji_pop_up.h</link>.</para>
+<para>
+The documentation for this class was generated from the following file:</para>
+E:/workspace/qt/ClientPulled/SChatDb/BUILD/<link linkend="_ui__emoji__pop__up_8h">ui_emoji_pop_up.h</link></section>
+</section>

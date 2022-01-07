@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_moc__test__app_8cpp_source" xml:lang="en-US">
+<title>moc_test_app.cpp</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/moc_test_app.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_moc__test__app_8cpp_source_1l00001"/>00001 <emphasis role="comment">/****************************************************************************</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00002"/>00002 <emphasis role="comment">**&#32;Meta&#32;object&#32;code&#32;from&#32;reading&#32;C++&#32;file&#32;&apos;test_app.h&apos;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00003"/>00003 <emphasis role="comment">**</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00004"/>00004 <emphasis role="comment">**&#32;Created&#32;by:&#32;The&#32;Qt&#32;Meta&#32;Object&#32;Compiler&#32;version&#32;68&#32;(Qt&#32;6.2.2)</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00005"/>00005 <emphasis role="comment">**</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00006"/>00006 <emphasis role="comment">**&#32;WARNING!&#32;All&#32;changes&#32;made&#32;in&#32;this&#32;file&#32;will&#32;be&#32;lost!</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00007"/>00007 <emphasis role="comment">*****************************************************************************/</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00008"/>00008 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00010"/>00010 <emphasis role="preprocessor">#include&#32;&quot;../../TESTS/test_app.h&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00011"/>00011 <emphasis role="preprocessor">#include&#32;&lt;QtNetwork/QSslError&gt;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00012"/>00012 <emphasis role="preprocessor">#include&#32;&lt;QtCore/qbytearray.h&gt;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00013"/>00013 <emphasis role="preprocessor">#include&#32;&lt;QtCore/qmetatype.h&gt;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00014"/>00014 <emphasis role="preprocessor">#if&#32;!defined(Q_MOC_OUTPUT_REVISION)</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00015"/>00015 <emphasis role="preprocessor">#error&#32;&quot;The&#32;header&#32;file&#32;&apos;test_app.h&apos;&#32;doesn&apos;t&#32;include&#32;&lt;QObject&gt;.&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00016"/>00016 <emphasis role="preprocessor">#elif&#32;Q_MOC_OUTPUT_REVISION&#32;!=&#32;68</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00017"/>00017 <emphasis role="preprocessor">#error&#32;&quot;This&#32;file&#32;was&#32;generated&#32;using&#32;the&#32;moc&#32;from&#32;6.2.2.&#32;It&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00018"/>00018 <emphasis role="preprocessor">#error&#32;&quot;cannot&#32;be&#32;used&#32;with&#32;the&#32;include&#32;files&#32;from&#32;this&#32;version&#32;of&#32;Qt.&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00019"/>00019 <emphasis role="preprocessor">#error&#32;&quot;(The&#32;moc&#32;has&#32;changed&#32;too&#32;much.)&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00020"/>00020 <emphasis role="preprocessor">#endif</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00021"/>00021 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00022"/>00022 QT_BEGIN_MOC_NAMESPACE
+<anchor xml:id="_moc__test__app_8cpp_source_1l00023"/>00023 QT_WARNING_PUSH
+<anchor xml:id="_moc__test__app_8cpp_source_1l00024"/>00024 QT_WARNING_DISABLE_DEPRECATED
+<anchor xml:id="_moc__test__app_8cpp_source_1l00025"/><link linkend="_structqt__meta__stringdata__test__app__t">00025</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_structqt__meta__stringdata__test__app__t">qt_meta_stringdata_test_app_t</link>&#32;{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00026"/><link linkend="_structqt__meta__stringdata__test__app__t_1aa648c1168288025443fa6585c97e8bf9">00026</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;uint&#32;<link linkend="_structqt__meta__stringdata__test__app__t_1aa648c1168288025443fa6585c97e8bf9">offsetsAndSize</link>[18];
+<anchor xml:id="_moc__test__app_8cpp_source_1l00027"/><link linkend="_structqt__meta__stringdata__test__app__t_1ab459d09ec953769f3295d9ec58af0a60">00027</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="_structqt__meta__stringdata__test__app__t_1ab459d09ec953769f3295d9ec58af0a60">stringdata0</link>[99];
+<anchor xml:id="_moc__test__app_8cpp_source_1l00028"/>00028 };
+<anchor xml:id="_moc__test__app_8cpp_source_1l00029"/><link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">00029</link> <emphasis role="preprocessor">#define&#32;QT_MOC_LITERAL(ofs,&#32;len)&#32;\</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00030"/>00030 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;uint(offsetof(qt_meta_stringdata_test_app_t,&#32;stringdata0)&#32;+&#32;ofs),&#32;len&#32;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00031"/>00031 <emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structqt__meta__stringdata__test__app__t">qt_meta_stringdata_test_app_t</link>&#32;qt_meta_stringdata_test_app&#32;=&#32;{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00033"/>00033 <link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(0,&#32;8),&#32;<emphasis role="comment">//&#32;&quot;test_app&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00034"/>00034 <link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(9,&#32;12),&#32;<emphasis role="comment">//&#32;&quot;initTestCase&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00035"/>00035 <link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(22,&#32;0),&#32;<emphasis role="comment">//&#32;&quot;&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00036"/>00036 <link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(23,&#32;4),&#32;<emphasis role="comment">//&#32;&quot;init&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00037"/>00037 <link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(28,&#32;23),&#32;<emphasis role="comment">//&#32;&quot;DatabaseConnection_test&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00038"/>00038 <link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(52,&#32;11),&#32;<emphasis role="comment">//&#32;&quot;SignUp_test&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00039"/>00039 <link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(64,&#32;10),&#32;<emphasis role="comment">//&#32;&quot;Login_test&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00040"/>00040 <link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(75,&#32;7),&#32;<emphasis role="comment">//&#32;&quot;cleanup&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00041"/>00041 <link linkend="_moc__test__app_8cpp_1a3c6e81753001d10d51e62d0a29c273bc">QT_MOC_LITERAL</link>(83,&#32;15)&#32;<emphasis role="comment">//&#32;&quot;cleanupTestCase&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00042"/>00042 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;},
+<anchor xml:id="_moc__test__app_8cpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;test_app\0initTestCase\0\0init\0&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;DatabaseConnection_test\0SignUp_test\0&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Login_test\0cleanup\0cleanupTestCase&quot;</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00047"/>00047 };
+<anchor xml:id="_moc__test__app_8cpp_source_1l00048"/>00048 <emphasis role="preprocessor">#undef&#32;QT_MOC_LITERAL</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00049"/>00049 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00050"/>00050 <emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;uint&#32;qt_meta_data_test_app[]&#32;=&#32;{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00051"/>00051 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00052"/>00052 &#32;<emphasis role="comment">//&#32;content:</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;10,&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;revision</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;classname</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;&#32;0,&#32;<emphasis role="comment">//&#32;classinfo</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;7,&#32;&#32;&#32;14,&#32;<emphasis role="comment">//&#32;methods</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;&#32;0,&#32;<emphasis role="comment">//&#32;properties</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;&#32;0,&#32;<emphasis role="comment">//&#32;enums/sets</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;&#32;0,&#32;<emphasis role="comment">//&#32;constructors</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;flags</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;signalCount</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00062"/>00062 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00063"/>00063 &#32;<emphasis role="comment">//&#32;slots:&#32;name,&#32;argc,&#32;parameters,&#32;tag,&#32;flags,&#32;initial&#32;metatype&#32;offsets</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;1,&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;56,&#32;&#32;&#32;&#32;2,&#32;0x08,&#32;&#32;&#32;&#32;1&#32;<emphasis role="comment">/*&#32;Private&#32;*/</emphasis>,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;3,&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;57,&#32;&#32;&#32;&#32;2,&#32;0x08,&#32;&#32;&#32;&#32;2&#32;<emphasis role="comment">/*&#32;Private&#32;*/</emphasis>,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;4,&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;58,&#32;&#32;&#32;&#32;2,&#32;0x08,&#32;&#32;&#32;&#32;3&#32;<emphasis role="comment">/*&#32;Private&#32;*/</emphasis>,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;5,&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;59,&#32;&#32;&#32;&#32;2,&#32;0x08,&#32;&#32;&#32;&#32;4&#32;<emphasis role="comment">/*&#32;Private&#32;*/</emphasis>,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;6,&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;60,&#32;&#32;&#32;&#32;2,&#32;0x08,&#32;&#32;&#32;&#32;5&#32;<emphasis role="comment">/*&#32;Private&#32;*/</emphasis>,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;7,&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;61,&#32;&#32;&#32;&#32;2,&#32;0x08,&#32;&#32;&#32;&#32;6&#32;<emphasis role="comment">/*&#32;Private&#32;*/</emphasis>,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;8,&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;62,&#32;&#32;&#32;&#32;2,&#32;0x08,&#32;&#32;&#32;&#32;7&#32;<emphasis role="comment">/*&#32;Private&#32;*/</emphasis>,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00071"/>00071 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00072"/>00072 &#32;<emphasis role="comment">//&#32;slots:&#32;parameters</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;QMetaType::Void,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;QMetaType::Void,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;QMetaType::Void,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;QMetaType::Void,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;QMetaType::Void,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;QMetaType::Void,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;QMetaType::Void,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00080"/>00080 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;0&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;eod</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00082"/>00082 };
+<anchor xml:id="_moc__test__app_8cpp_source_1l00083"/>00083 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00084"/>00084 <emphasis role="keywordtype">void</emphasis>&#32;test_app::qt_static_metacall(QObject&#32;*_o,&#32;QMetaObject::Call&#32;_c,&#32;<emphasis role="keywordtype">int</emphasis>&#32;_id,&#32;<emphasis role="keywordtype">void</emphasis>&#32;**_a)
+<anchor xml:id="_moc__test__app_8cpp_source_1l00085"/>00085 {
+<anchor xml:id="_moc__test__app_8cpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(_c&#32;==&#32;QMetaObject::InvokeMetaMethod)&#32;{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;*_t&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis><link linkend="_classtest__app">test_app</link>&#32;*<emphasis role="keyword">&gt;</emphasis>(_o);
+<anchor xml:id="_moc__test__app_8cpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(void)_t;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(_id)&#32;{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;0:&#32;_t-&gt;initTestCase();&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:&#32;_t-&gt;init();&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:&#32;_t-&gt;DatabaseConnection_test();&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:&#32;_t-&gt;SignUp_test();&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;4:&#32;_t-&gt;Login_test();&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;5:&#32;_t-&gt;cleanup();&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;6:&#32;_t-&gt;cleanupTestCase();&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:&#32;;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_moc__test__app_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_moc__test__app_8cpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;(void)_a;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00101"/>00101 }
+<anchor xml:id="_moc__test__app_8cpp_source_1l00102"/>00102 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00103"/>00103 <emphasis role="keyword">const</emphasis>&#32;QMetaObject&#32;test_app::staticMetaObject&#32;=&#32;{&#32;{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;QMetaObject::SuperData::link&lt;QObject::staticMetaObject&gt;(),
+<anchor xml:id="_moc__test__app_8cpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;qt_meta_stringdata_test_app.<link linkend="_structqt__meta__stringdata__test__app__t_1aa648c1168288025443fa6585c97e8bf9">offsetsAndSize</link>,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;qt_meta_data_test_app,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;qt_static_metacall,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;<emphasis role="keyword">nullptr</emphasis>,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00109"/>00109 qt_incomplete_metaTypeArray&lt;<link linkend="_structqt__meta__stringdata__test__app__t">qt_meta_stringdata_test_app_t</link>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00110"/>00110 ,&#32;QtPrivate::TypeAndForceComplete&lt;test_app,&#32;std::true_type&gt;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00111"/>00111 ,&#32;QtPrivate::TypeAndForceComplete&lt;void,&#32;std::false_type&gt;,&#32;QtPrivate::TypeAndForceComplete&lt;void,&#32;std::false_type&gt;,&#32;QtPrivate::TypeAndForceComplete&lt;void,&#32;std::false_type&gt;,&#32;QtPrivate::TypeAndForceComplete&lt;void,&#32;std::false_type&gt;,&#32;QtPrivate::TypeAndForceComplete&lt;void,&#32;std::false_type&gt;,&#32;QtPrivate::TypeAndForceComplete&lt;void,&#32;std::false_type&gt;,&#32;QtPrivate::TypeAndForceComplete&lt;void,&#32;std::false_type&gt;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00112"/>00112 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00113"/>00113 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00114"/>00114 &gt;,
+<anchor xml:id="_moc__test__app_8cpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;<emphasis role="keyword">nullptr</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00116"/>00116 }&#32;};
+<anchor xml:id="_moc__test__app_8cpp_source_1l00117"/>00117 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00118"/>00118 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00119"/>00119 <emphasis role="keyword">const</emphasis>&#32;QMetaObject&#32;*test_app::metaObject()<emphasis role="keyword">&#32;const</emphasis>
+<anchor xml:id="_moc__test__app_8cpp_source_1l00120"/>00120 <emphasis role="keyword"></emphasis>{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00121"/>00121 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;QObject::d_ptr-&gt;metaObject&#32;?&#32;QObject::d_ptr-&gt;dynamicMetaObject()&#32;:&#32;&amp;staticMetaObject;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00122"/>00122 }
+<anchor xml:id="_moc__test__app_8cpp_source_1l00123"/>00123 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00124"/>00124 <emphasis role="keywordtype">void</emphasis>&#32;*test_app::qt_metacast(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*_clname)
+<anchor xml:id="_moc__test__app_8cpp_source_1l00125"/>00125 {
+<anchor xml:id="_moc__test__app_8cpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!_clname)&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">nullptr</emphasis>;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!strcmp(_clname,&#32;qt_meta_stringdata_test_app.<link linkend="_structqt__meta__stringdata__test__app__t_1ab459d09ec953769f3295d9ec58af0a60">stringdata0</link>))
+<anchor xml:id="_moc__test__app_8cpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast&lt;</emphasis><emphasis role="keywordtype">void</emphasis>*<emphasis role="keyword">&gt;</emphasis>(<emphasis role="keyword">this</emphasis>);
+<anchor xml:id="_moc__test__app_8cpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;QObject::qt_metacast(_clname);
+<anchor xml:id="_moc__test__app_8cpp_source_1l00130"/>00130 }
+<anchor xml:id="_moc__test__app_8cpp_source_1l00131"/>00131 
+<anchor xml:id="_moc__test__app_8cpp_source_1l00132"/>00132 <emphasis role="keywordtype">int</emphasis>&#32;test_app::qt_metacall(QMetaObject::Call&#32;_c,&#32;<emphasis role="keywordtype">int</emphasis>&#32;_id,&#32;<emphasis role="keywordtype">void</emphasis>&#32;**_a)
+<anchor xml:id="_moc__test__app_8cpp_source_1l00133"/>00133 {
+<anchor xml:id="_moc__test__app_8cpp_source_1l00134"/>00134 &#32;&#32;&#32;&#32;_id&#32;=&#32;QObject::qt_metacall(_c,&#32;_id,&#32;_a);
+<anchor xml:id="_moc__test__app_8cpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(_id&#32;&lt;&#32;0)
+<anchor xml:id="_moc__test__app_8cpp_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;_id;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00137"/>00137 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(_c&#32;==&#32;QMetaObject::InvokeMetaMethod)&#32;{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00138"/>00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(_id&#32;&lt;&#32;7)
+<anchor xml:id="_moc__test__app_8cpp_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qt_static_metacall(<emphasis role="keyword">this</emphasis>,&#32;_c,&#32;_id,&#32;_a);
+<anchor xml:id="_moc__test__app_8cpp_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_id&#32;-=&#32;7;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00141"/>00141 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(_c&#32;==&#32;QMetaObject::RegisterMethodArgumentMetaType)&#32;{
+<anchor xml:id="_moc__test__app_8cpp_source_1l00142"/>00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(_id&#32;&lt;&#32;7)
+<anchor xml:id="_moc__test__app_8cpp_source_1l00143"/>00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<emphasis role="keyword">reinterpret_cast&lt;</emphasis>QMetaType&#32;*<emphasis role="keyword">&gt;</emphasis>(_a[0])&#32;=&#32;QMetaType();
+<anchor xml:id="_moc__test__app_8cpp_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_id&#32;-=&#32;7;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00145"/>00145 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_moc__test__app_8cpp_source_1l00146"/>00146 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;_id;
+<anchor xml:id="_moc__test__app_8cpp_source_1l00147"/>00147 }
+<anchor xml:id="_moc__test__app_8cpp_source_1l00148"/>00148 QT_WARNING_POP
+<anchor xml:id="_moc__test__app_8cpp_source_1l00149"/>00149 QT_END_MOC_NAMESPACE
+</programlisting></section>

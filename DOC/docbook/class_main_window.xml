@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_main_window" xml:lang="en-US">
+<title>MainWindow Class Reference</title>
+<indexterm><primary>MainWindow</primary></indexterm>
+<para>
+<computeroutput>#include &lt;mainwindow.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for MainWindow:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_main_window.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Slots    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_main_window_1afcb7fbc4f2188ae33fe1daef711fdec0">on_EnterMainWindow</link> ()</para>
+
+<para>This is a slot method which will be invoked by a signal from TaskManager class after login. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_main_window_1aa649a72035add83412df5806b7d1a457">on_cleanUpGroupsPage</link> ()</para>
+
+<para>This is a slot method which will clean up groups page of app. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_main_window_1ad58baa98f19b32c2cc1cfcd9ee9bef85">on_cleanUpLoginPage</link> ()</para>
+
+<para>This is a slot method which will clean up login page of app. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_main_window_1aa8c176f2ebc486fa184a70c7f4bff187">on_emojiSelected</link> (QString emoji)</para>
+
+<para>This is a slot method which will shows the emojis. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Signals    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_main_window_1a88a355a3de354aa568146e01f7d7548e">contactSelected</link> (QListWidgetItem *contact, QLabel *name, <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> mode)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_main_window_1a996c5a2b6f77944776856f08ec30858d">MainWindow</link> (QWidget *parent=nullptr)</para>
+
+<para><link linkend="_class_main_window_1a996c5a2b6f77944776856f08ec30858d">MainWindow::MainWindow</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Mainwindow to start every other dependency. The main functionality of this class is to maintain the <link linkend="_namespace_ui">Ui</link> elements of this application and Provide TaskManager class with the essential elements it requires. </para>
+<para>
+Definition at line <link linkend="_mainwindow_8h_source_1l00023">23</link> of file <link linkend="_mainwindow_8h_source">mainwindow.h</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_main_window_1a996c5a2b6f77944776856f08ec30858d"/><section>
+    <title>MainWindow()</title>
+<indexterm><primary>MainWindow</primary><secondary>MainWindow</secondary></indexterm>
+<indexterm><primary>MainWindow</primary><secondary>MainWindow</secondary></indexterm>
+<para><computeroutput>MainWindow::MainWindow (QWidget * parent = <computeroutput>nullptr</computeroutput>
+)</computeroutput></para><para>
+
+<para><link linkend="_class_main_window_1a996c5a2b6f77944776856f08ec30858d">MainWindow::MainWindow</link>. </para>
+</para>
+
+<para>Setup TaskManager class and <link linkend="_namespace_ui">Ui</link>. This will intialize Task manager object. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>parent</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_mainwindow_8cpp_source_1l00012">12</link> of file <link linkend="_mainwindow_8cpp_source">mainwindow.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7"/><section>
+    <title>~MainWindow()</title>
+<indexterm><primary>~MainWindow</primary><secondary>MainWindow</secondary></indexterm>
+<indexterm><primary>MainWindow</primary><secondary>~MainWindow</secondary></indexterm>
+<para><computeroutput>MainWindow::~MainWindow ( )</computeroutput></para><para>
+Definition at line <link linkend="_mainwindow_8cpp_source_1l00023">23</link> of file <link linkend="_mainwindow_8cpp_source">mainwindow.cpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_main_window_1a88a355a3de354aa568146e01f7d7548e"/><section>
+    <title>contactSelected</title>
+<indexterm><primary>contactSelected</primary><secondary>MainWindow</secondary></indexterm>
+<indexterm><primary>MainWindow</primary><secondary>contactSelected</secondary></indexterm>
+<para><computeroutput>void MainWindow::contactSelected (QListWidgetItem * contact, QLabel * name, <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link> mode)<computeroutput>[signal]</computeroutput></computeroutput></para>
+<para>This is a Signal function which will be invoked when a contact element is selected. Then the contact details are setup with respect to contact. </para>
+<para>
+Definition at line <link linkend="_moc__mainwindow_8cpp_source_1l00263">263</link> of file <link linkend="_moc__mainwindow_8cpp_source">moc_mainwindow.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_main_window_1aa649a72035add83412df5806b7d1a457"/><section>
+    <title>on_cleanUpGroupsPage</title>
+<indexterm><primary>on_cleanUpGroupsPage</primary><secondary>MainWindow</secondary></indexterm>
+<indexterm><primary>MainWindow</primary><secondary>on_cleanUpGroupsPage</secondary></indexterm>
+<para><computeroutput>void MainWindow::on_cleanUpGroupsPage ( )<computeroutput>[slot]</computeroutput></computeroutput></para><para>
+
+<para>This is a slot method which will clean up groups page of app. </para>
+</para>
+
+<para><link linkend="_class_main_window_1aa649a72035add83412df5806b7d1a457">MainWindow::on_cleanUpGroupsPage</link>.</para>
+
+<para>Cleanup method for Clearing the values in ui elements of Groups page. </para>
+<para>
+Definition at line <link linkend="_mainwindow_8cpp_source_1l00042">42</link> of file <link linkend="_mainwindow_8cpp_source">mainwindow.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_main_window_1ad58baa98f19b32c2cc1cfcd9ee9bef85"/><section>
+    <title>on_cleanUpLoginPage</title>
+<indexterm><primary>on_cleanUpLoginPage</primary><secondary>MainWindow</secondary></indexterm>
+<indexterm><primary>MainWindow</primary><secondary>on_cleanUpLoginPage</secondary></indexterm>
+<para><computeroutput>void MainWindow::on_cleanUpLoginPage ( )<computeroutput>[slot]</computeroutput></computeroutput></para><para>
+
+<para>This is a slot method which will clean up login page of app. </para>
+</para>
+
+<para><link linkend="_class_main_window_1ad58baa98f19b32c2cc1cfcd9ee9bef85">MainWindow::on_cleanUpLoginPage</link>.</para>
+
+<para>Cleanup method for Clearing the values in ui elements of Login page. </para>
+<para>
+Definition at line <link linkend="_mainwindow_8cpp_source_1l00054">54</link> of file <link linkend="_mainwindow_8cpp_source">mainwindow.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_main_window_1aa8c176f2ebc486fa184a70c7f4bff187"/><section>
+    <title>on_emojiSelected</title>
+<indexterm><primary>on_emojiSelected</primary><secondary>MainWindow</secondary></indexterm>
+<indexterm><primary>MainWindow</primary><secondary>on_emojiSelected</secondary></indexterm>
+<para><computeroutput>void MainWindow::on_emojiSelected (QString emoji)<computeroutput>[slot]</computeroutput></computeroutput></para><para>
+
+<para>This is a slot method which will shows the emojis. </para>
+</para>
+
+<para><link linkend="_class_main_window_1aa8c176f2ebc486fa184a70c7f4bff187">MainWindow::on_emojiSelected</link>.</para>
+
+<para>This is a slot method invoked when emoji is selected from dialogue window. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>emoji</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_mainwindow_8cpp_source_1l00064">64</link> of file <link linkend="_mainwindow_8cpp_source">mainwindow.cpp</link>.</para>
+</section>
+<anchor xml:id="_class_main_window_1afcb7fbc4f2188ae33fe1daef711fdec0"/><section>
+    <title>on_EnterMainWindow</title>
+<indexterm><primary>on_EnterMainWindow</primary><secondary>MainWindow</secondary></indexterm>
+<indexterm><primary>MainWindow</primary><secondary>on_EnterMainWindow</secondary></indexterm>
+<para><computeroutput>void MainWindow::on_EnterMainWindow ( )<computeroutput>[slot]</computeroutput></computeroutput></para><para>
+
+<para>This is a slot method which will be invoked by a signal from TaskManager class after login. </para>
+</para>
+
+<para><link linkend="_class_main_window_1afcb7fbc4f2188ae33fe1daef711fdec0">MainWindow::on_EnterMainWindow</link>.</para>
+
+<para>This is slot function defination Which is invoked when login validations by Task manager is completed. </para>
+<para>
+Definition at line <link linkend="_mainwindow_8cpp_source_1l00032">32</link> of file <link linkend="_mainwindow_8cpp_source">mainwindow.cpp</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_mainwindow_8h">mainwindow.h</link>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/<link linkend="_moc__mainwindow_8cpp">moc_mainwindow.cpp</link>E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_mainwindow_8cpp">mainwindow.cpp</link></section>
+</section>

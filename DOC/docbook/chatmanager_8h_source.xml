@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_chatmanager_8h_source" xml:lang="en-US">
+<title>chatmanager.h</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/chatmanager.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_chatmanager_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;CHATMANAGER_H</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;CHATMANAGER_H</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00003"/>00003 
+<anchor xml:id="_chatmanager_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;QObject&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;QSqlDatabase&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&lt;QListWidget&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00008"/>00008 <emphasis role="preprocessor">#include&#32;&lt;QListWidgetItem&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&lt;QSqlQuery&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00010"/>00010 <emphasis role="preprocessor">#include&#32;&lt;QSqlError&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00011"/>00011 <emphasis role="preprocessor">#include&#32;&lt;QJsonObject&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00012"/>00012 <emphasis role="preprocessor">#include&#32;&lt;QJsonDocument&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00013"/>00013 <emphasis role="preprocessor">#include&#32;&lt;QJsonArray&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00014"/>00014 <emphasis role="preprocessor">#include&#32;&lt;QDateTime&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00015"/>00015 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00016"/>00016 <emphasis role="preprocessor">#include&#32;&lt;algorithm&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00017"/>00017 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="_profile_8h">profile.h</link>&gt;</emphasis>
+<anchor xml:id="_chatmanager_8h_source_1l00018"/>00018 
+<anchor xml:id="_chatmanager_8h_source_1l00023"/><link linkend="_class_chat_manager">00023</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_chat_manager">ChatManager</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;QObject
+<anchor xml:id="_chatmanager_8h_source_1l00024"/>00024 {
+<anchor xml:id="_chatmanager_8h_source_1l00025"/>00025 &#32;&#32;&#32;&#32;Q_OBJECT
+<anchor xml:id="_chatmanager_8h_source_1l00026"/>00026 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_chatmanager_8h_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_class_chat_manager_1af07f739d452b3481011bfb368c20eeac">ChatManager</link>(QObject&#32;*parent&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>);
+<anchor xml:id="_chatmanager_8h_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1a76b6fe934b15f768c3c6f67bb9c05a51">SendChat</link>(std::string&#32;msg);
+<anchor xml:id="_chatmanager_8h_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1a056db0c78b7a03f59015c1d4ecf1c48f">SendGroupChat</link>(std::string&#32;msg);
+<anchor xml:id="_chatmanager_8h_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1ad0d86de90b2f5fcc7ac7449ebf4aa118">DisplayChat</link>();
+<anchor xml:id="_chatmanager_8h_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1ae7d5f10f9b62470a34be758c8f4020c3">DisplayGroupChat</link>();
+<anchor xml:id="_chatmanager_8h_source_1l00037"/><link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">00037</link> &#32;&#32;&#32;&#32;QSqlQuery&#32;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>;
+<anchor xml:id="_chatmanager_8h_source_1l00039"/><link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">00039</link> &#32;&#32;&#32;&#32;QListWidget*&#32;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>;
+<anchor xml:id="_chatmanager_8h_source_1l00040"/>00040 signals:
+<anchor xml:id="_chatmanager_8h_source_1l00041"/>00041 <emphasis role="keyword">public</emphasis>&#32;slots:
+<anchor xml:id="_chatmanager_8h_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1a15348d3bc3eaa99a84f94798cbfa00a0">on_SetupChatConnection</link>(QString&#32;name,<link linkend="_structprofile">profile</link>&#32;details);
+<anchor xml:id="_chatmanager_8h_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_chat_manager_1adad8b7f76c29f0b3aefa3e0455490163">on_SetupGroupChatConnection</link>(QString&#32;name,<link linkend="_structprofile">profile</link>&#32;details);
+<anchor xml:id="_chatmanager_8h_source_1l00046"/>00046 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_chatmanager_8h_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;x_sender_id;
+<anchor xml:id="_chatmanager_8h_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<link linkend="_structprofile">profile</link>&#32;x_profile_details_reciever;
+<anchor xml:id="_chatmanager_8h_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;x_fetchRecieverDetails();
+<anchor xml:id="_chatmanager_8h_source_1l00054"/>00054 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;x_fetchGroupRecieverDetails();
+<anchor xml:id="_chatmanager_8h_source_1l00055"/>00055 };
+<anchor xml:id="_chatmanager_8h_source_1l00056"/>00056 
+<anchor xml:id="_chatmanager_8h_source_1l00057"/>00057 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;CHATMANAGER_H</emphasis>
+</programlisting></section>

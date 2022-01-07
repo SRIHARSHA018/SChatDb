@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_ui__emoji__pop__up" xml:lang="en-US">
+<title>Ui_emoji_pop_up Class Reference</title>
+<indexterm><primary>Ui_emoji_pop_up</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ui_emoji_pop_up.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Ui_emoji_pop_up:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_ui__emoji__pop__up.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_ui__emoji__pop__up_1a92e45254cd870b2dac343201082d77cf">setupUi</link> (QDialog *<link linkend="_classemoji__pop__up">emoji_pop_up</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_ui__emoji__pop__up_1aa664b6923e112e0b5fdddc5447a3c75a">retranslateUi</link> (QDialog *<link linkend="_classemoji__pop__up">emoji_pop_up</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>QVBoxLayout * <link linkend="_class_ui__emoji__pop__up_1a4ba71878f120014a76291a552834d813">verticalLayout</link></para>
+</listitem>
+            <listitem><para>QTableWidget * <link linkend="_class_ui__emoji__pop__up_1a3cbe8575cbb921bd080ea7363d836c22">tableWidget</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_ui__emoji__pop__up_8h_source_1l00021">21</link> of file <link linkend="_ui__emoji__pop__up_8h_source">ui_emoji_pop_up.h</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_ui__emoji__pop__up_1aa664b6923e112e0b5fdddc5447a3c75a"/><section>
+    <title>retranslateUi()</title>
+<indexterm><primary>retranslateUi</primary><secondary>Ui_emoji_pop_up</secondary></indexterm>
+<indexterm><primary>Ui_emoji_pop_up</primary><secondary>retranslateUi</secondary></indexterm>
+<para><computeroutput>void Ui_emoji_pop_up::retranslateUi (QDialog * emoji_pop_up)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_ui__emoji__pop__up_8h_source_1l00199">199</link> of file <link linkend="_ui__emoji__pop__up_8h_source">ui_emoji_pop_up.h</link>.</para>
+</section>
+<anchor xml:id="_class_ui__emoji__pop__up_1a92e45254cd870b2dac343201082d77cf"/><section>
+    <title>setupUi()</title>
+<indexterm><primary>setupUi</primary><secondary>Ui_emoji_pop_up</secondary></indexterm>
+<indexterm><primary>Ui_emoji_pop_up</primary><secondary>setupUi</secondary></indexterm>
+<para><computeroutput>void Ui_emoji_pop_up::setupUi (QDialog * emoji_pop_up)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_ui__emoji__pop__up_8h_source_1l00027">27</link> of file <link linkend="_ui__emoji__pop__up_8h_source">ui_emoji_pop_up.h</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_ui__emoji__pop__up_1a3cbe8575cbb921bd080ea7363d836c22"/><section>
+    <title>tableWidget</title>
+<indexterm><primary>tableWidget</primary><secondary>Ui_emoji_pop_up</secondary></indexterm>
+<indexterm><primary>Ui_emoji_pop_up</primary><secondary>tableWidget</secondary></indexterm>
+<para><computeroutput>QTableWidget* Ui_emoji_pop_up::tableWidget</computeroutput></para><para>
+Definition at line <link linkend="_ui__emoji__pop__up_8h_source_1l00025">25</link> of file <link linkend="_ui__emoji__pop__up_8h_source">ui_emoji_pop_up.h</link>.</para>
+</section>
+<anchor xml:id="_class_ui__emoji__pop__up_1a4ba71878f120014a76291a552834d813"/><section>
+    <title>verticalLayout</title>
+<indexterm><primary>verticalLayout</primary><secondary>Ui_emoji_pop_up</secondary></indexterm>
+<indexterm><primary>Ui_emoji_pop_up</primary><secondary>verticalLayout</secondary></indexterm>
+<para><computeroutput>QVBoxLayout* Ui_emoji_pop_up::verticalLayout</computeroutput></para><para>
+Definition at line <link linkend="_ui__emoji__pop__up_8h_source_1l00024">24</link> of file <link linkend="_ui__emoji__pop__up_8h_source">ui_emoji_pop_up.h</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+E:/workspace/qt/ClientPulled/SChatDb/BUILD/<link linkend="_ui__emoji__pop__up_8h">ui_emoji_pop_up.h</link></section>
+</section>

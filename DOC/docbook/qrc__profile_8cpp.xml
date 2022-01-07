@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_qrc__profile_8cpp" xml:lang="en-US">
+<title>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/qrc_profile.cpp File Reference</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/qrc_profile.cpp</primary></indexterm>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_qrc__profile_8cpp_1afbfc3bb3cd2fa03dd0a3fc36563480d6">QT_RCC_PREPEND_NAMESPACE</link>(name)   name</para>
+</listitem>
+            <listitem><para>#define <link linkend="_qrc__profile_8cpp_1a590f80ddb226779f6f432d80438ea190">QT_RCC_MANGLE_NAMESPACE</link>(name)   name</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_qrc__profile_8cpp_1a2ce5a6cde5b318dc75442940471e05f7">qRegisterResourceData</link> (int, const unsigned char *, const unsigned char *, const unsigned char *)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_qrc__profile_8cpp_1a54b96c9f44d004fc0ea13bb581f97a71">qUnregisterResourceData</link> (int, const unsigned char *, const unsigned char *, const unsigned char *)</para>
+</listitem>
+            <listitem><para>unsigned char <link linkend="_qrc__profile_8cpp_1a257a3ef0a2e75e3f0b4f308e92731828">qResourceFeatureZlib</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_qrc__profile_8cpp_1a590f80ddb226779f6f432d80438ea190">QT_RCC_MANGLE_NAMESPACE</link>() <link linkend="_qrc__profile_8cpp_1a4e02d98c5e22364b5d383bb0e06fb6f5">qInitResources_profile</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_qrc__profile_8cpp_1a590f80ddb226779f6f432d80438ea190">QT_RCC_MANGLE_NAMESPACE</link>() <link linkend="_qrc__profile_8cpp_1a0d2cbe46dda20724e35254be745e36e0">qCleanupResources_profile</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_qrc__profile_8cpp_1a590f80ddb226779f6f432d80438ea190"/><section>
+    <title>QT_RCC_MANGLE_NAMESPACE</title>
+<indexterm><primary>QT_RCC_MANGLE_NAMESPACE</primary><secondary>qrc_profile.cpp</secondary></indexterm>
+<indexterm><primary>qrc_profile.cpp</primary><secondary>QT_RCC_MANGLE_NAMESPACE</secondary></indexterm>
+<para><computeroutput>#define QT_RCC_MANGLE_NAMESPACE( name)   name</computeroutput></para><para>
+Definition at line <link linkend="_qrc__profile_8cpp_source_1l00530">530</link> of file <link linkend="_qrc__profile_8cpp_source">qrc_profile.cpp</link>.</para>
+</section>
+<anchor xml:id="_qrc__profile_8cpp_1afbfc3bb3cd2fa03dd0a3fc36563480d6"/><section>
+    <title>QT_RCC_PREPEND_NAMESPACE</title>
+<indexterm><primary>QT_RCC_PREPEND_NAMESPACE</primary><secondary>qrc_profile.cpp</secondary></indexterm>
+<indexterm><primary>qrc_profile.cpp</primary><secondary>QT_RCC_PREPEND_NAMESPACE</secondary></indexterm>
+<para><computeroutput>#define QT_RCC_PREPEND_NAMESPACE( name)   name</computeroutput></para><para>
+Definition at line <link linkend="_qrc__profile_8cpp_source_1l00529">529</link> of file <link linkend="_qrc__profile_8cpp_source">qrc_profile.cpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_qrc__profile_8cpp_1a0d2cbe46dda20724e35254be745e36e0"/><section>
+    <title>qCleanupResources_profile()</title>
+<indexterm><primary>qCleanupResources_profile</primary><secondary>qrc_profile.cpp</secondary></indexterm>
+<indexterm><primary>qrc_profile.cpp</primary><secondary>qCleanupResources_profile</secondary></indexterm>
+<para><computeroutput>int <link linkend="_qrc__profile_8cpp_1a590f80ddb226779f6f432d80438ea190">QT_RCC_MANGLE_NAMESPACE</link>() qCleanupResources_profile ( )</computeroutput></para><para>
+Definition at line <link linkend="_qrc__profile_8cpp_source_1l00564">564</link> of file <link linkend="_qrc__profile_8cpp_source">qrc_profile.cpp</link>.</para>
+</section>
+<anchor xml:id="_qrc__profile_8cpp_1a4e02d98c5e22364b5d383bb0e06fb6f5"/><section>
+    <title>qInitResources_profile()</title>
+<indexterm><primary>qInitResources_profile</primary><secondary>qrc_profile.cpp</secondary></indexterm>
+<indexterm><primary>qrc_profile.cpp</primary><secondary>qInitResources_profile</secondary></indexterm>
+<para><computeroutput>int <link linkend="_qrc__profile_8cpp_1a590f80ddb226779f6f432d80438ea190">QT_RCC_MANGLE_NAMESPACE</link>() qInitResources_profile ( )</computeroutput></para><para>
+Definition at line <link linkend="_qrc__profile_8cpp_source_1l00555">555</link> of file <link linkend="_qrc__profile_8cpp_source">qrc_profile.cpp</link>.</para>
+</section>
+<anchor xml:id="_qrc__profile_8cpp_1a2ce5a6cde5b318dc75442940471e05f7"/><section>
+    <title>qRegisterResourceData()</title>
+<indexterm><primary>qRegisterResourceData</primary><secondary>qrc_profile.cpp</secondary></indexterm>
+<indexterm><primary>qrc_profile.cpp</primary><secondary>qRegisterResourceData</secondary></indexterm>
+<para><computeroutput>bool qRegisterResourceData (int , const unsigned char * , const unsigned char * , const unsigned char * )</computeroutput></para></section>
+<anchor xml:id="_qrc__profile_8cpp_1a257a3ef0a2e75e3f0b4f308e92731828"/><section>
+    <title>qResourceFeatureZlib()</title>
+<indexterm><primary>qResourceFeatureZlib</primary><secondary>qrc_profile.cpp</secondary></indexterm>
+<indexterm><primary>qrc_profile.cpp</primary><secondary>qResourceFeatureZlib</secondary></indexterm>
+<para><computeroutput>unsigned char qResourceFeatureZlib ( )</computeroutput></para></section>
+<anchor xml:id="_qrc__profile_8cpp_1a54b96c9f44d004fc0ea13bb581f97a71"/><section>
+    <title>qUnregisterResourceData()</title>
+<indexterm><primary>qUnregisterResourceData</primary><secondary>qrc_profile.cpp</secondary></indexterm>
+<indexterm><primary>qrc_profile.cpp</primary><secondary>qUnregisterResourceData</secondary></indexterm>
+<para><computeroutput>bool qUnregisterResourceData (int , const unsigned char * , const unsigned char * , const unsigned char * )</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_task__manager_8cpp_source" xml:lang="en-US">
+<title>task_manager.cpp</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/task_manager.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_task__manager_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_task__manager_8h">task_manager.h</link>&quot;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&lt;QDebug&gt;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;QSqlQuery&gt;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;QSqlError&gt;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;QImage&gt;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;QBuffer&gt;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&lt;QtGlobal&gt;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00008"/>00008 <emphasis role="preprocessor">#include&#32;&lt;QPixmap&gt;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00015"/><link linkend="_class_task__manager_1a0bea96effe1595b32539666ea2cff9aa">00015</link> <link linkend="_class_task__manager_1a0bea96effe1595b32539666ea2cff9aa">Task_manager::Task_manager</link>(QObject&#32;*parent)
+<anchor xml:id="_task__manager_8cpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;:&#32;QObject{parent}
+<anchor xml:id="_task__manager_8cpp_source_1l00017"/>00017 {
+<anchor xml:id="_task__manager_8cpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connect(<emphasis role="keyword">this</emphasis>,SIGNAL(<link linkend="_class_task__manager_1a470715f9c760ee45bbdc7b809e6f3cee">enteredMainWindow</link>()),parent,SLOT(on_EnterMainWindow()));
+<anchor xml:id="_task__manager_8cpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connect(<emphasis role="keyword">this</emphasis>,SIGNAL(<link linkend="_class_task__manager_1a24fb62c89440b033031210e4591f7616">cleanUpLoginPage</link>()),parent,SLOT(on_cleanUpLoginPage()));
+<anchor xml:id="_task__manager_8cpp_source_1l00020"/>00020 }
+<anchor xml:id="_task__manager_8cpp_source_1l00025"/><link linkend="_class_task__manager_1ae601874b1890f2f035f5311b0ff50f7e">00025</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1ae601874b1890f2f035f5311b0ff50f7e">Task_manager::Init</link>()
+<anchor xml:id="_task__manager_8cpp_source_1l00026"/>00026 {
+<anchor xml:id="_task__manager_8cpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;x_db&#32;=&#32;QSqlDatabase::addDatabase(<emphasis role="stringliteral">&quot;QPSQL&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;x_db.setHostName(<emphasis role="stringliteral">&quot;localhost&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;x_db.setUserName(<emphasis role="stringliteral">&quot;postgres&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;x_db.setPassword(<emphasis role="stringliteral">&quot;Sj@&amp;15634&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;x_db.setDatabaseName(<emphasis role="stringliteral">&quot;Schat&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;x_db.setPort(5432);
+<anchor xml:id="_task__manager_8cpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x_db.open()){
+<anchor xml:id="_task__manager_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;<emphasis role="stringliteral">&quot;DatabaseConnected&quot;</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;failed&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;<emphasis role="stringliteral">&quot;Database&#32;Connection&#32;failed&quot;</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>(...){
+<anchor xml:id="_task__manager_8cpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&lt;&lt;<emphasis role="stringliteral">&quot;Database&#32;connection&#32;failure,&#32;Please&#32;check&#32;the&#32;connection&quot;</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00046"/>00046 
+<anchor xml:id="_task__manager_8cpp_source_1l00047"/>00047 }
+<anchor xml:id="_task__manager_8cpp_source_1l00053"/><link linkend="_class_task__manager_1a68ba4818ada6d2ddf4016cdfd4a6b831">00053</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a68ba4818ada6d2ddf4016cdfd4a6b831">Task_manager::ValidateLoginDetails</link>(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&#32;&amp;details)
+<anchor xml:id="_task__manager_8cpp_source_1l00054"/>00054 {
+<anchor xml:id="_task__manager_8cpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;QSqlQuery&#32;query(x_db);
+<anchor xml:id="_task__manager_8cpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;username&#32;=&#32;details[<emphasis role="stringliteral">&quot;username&quot;</emphasis>].toString();
+<anchor xml:id="_task__manager_8cpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;password&#32;=&#32;details[<emphasis role="stringliteral">&quot;password&quot;</emphasis>].toString();
+<anchor xml:id="_task__manager_8cpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;query.exec(&#32;QString(<emphasis role="stringliteral">&quot;SELECT&#32;username,password&#32;FROM&#32;public.users&#32;WHERE&#32;username=&apos;&quot;</emphasis>+username+<emphasis role="stringliteral">&quot;&apos;&#32;AND&#32;password=&apos;&quot;</emphasis>+password+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>));
+<anchor xml:id="_task__manager_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.next()){
+<anchor xml:id="_task__manager_8cpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;User&#32;details&#32;are&#32;correct&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a3bef8f7d8b7b3cb58fb951486dc737b3">STATUS::LOGIN_SUCCESSFUL</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query.exec(<emphasis role="stringliteral">&quot;SELECT&#32;id,username,firstname,lastname,contactno,profile_pic&#32;FROM&#32;public.users&#32;WHERE&#32;username=&apos;&quot;</emphasis>+username+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.next()){
+<anchor xml:id="_task__manager_8cpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>&#32;=&#32;query.value(0).toInt();
+<anchor xml:id="_task__manager_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a8845e6d4ac278c3be41cf8e5bde753b2">user_name</link>&#32;=&#32;query.value(1).toString().toStdString();
+<anchor xml:id="_task__manager_8cpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a8ce634fbaa51e8f9d9fefc9b810650d4">first_name</link>&#32;=&#32;query.value(2).toString().toStdString();
+<anchor xml:id="_task__manager_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a968301cdf224f740c2a477a49baa0dca">last_name</link>&#32;=&#32;query.value(3).toString().toStdString();
+<anchor xml:id="_task__manager_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1ae3bf17315f4d50b6d7a923cbe9e72105">contactno</link>&#32;=&#32;query.value(4).toString().toStdString();
+<anchor xml:id="_task__manager_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!query.value(5).isNull()){
+<anchor xml:id="_task__manager_8cpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;feteched&#32;image&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;QPixmap&#32;image;
+<anchor xml:id="_task__manager_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(image.loadFromData(query.value(5).toByteArray())){
+<anchor xml:id="_task__manager_8cpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a0cfcc0dfdd028e6bb76af94cba6d1a62">profile_pic</link>&#32;=&#32;image;
+<anchor xml:id="_task__manager_8cpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;QString::fromStdString(profile_details.profile_pic);</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00080"/>00080 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00081"/>00081 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;query.lastError();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4ad57e6995e0b5105bfeb9bde15ed0a7a0">STATUS::LOGIN_FAILED</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00087"/>00087 }
+<anchor xml:id="_task__manager_8cpp_source_1l00094"/><link linkend="_class_task__manager_1a9e1c7df0f397c06b6a0f62eaf96ee830">00094</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a9e1c7df0f397c06b6a0f62eaf96ee830">Task_manager::ValidateSignUpDetails</link>(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&#32;&amp;details,&#32;QLabel*&#32;status)
+<anchor xml:id="_task__manager_8cpp_source_1l00095"/>00095 {
+<anchor xml:id="_task__manager_8cpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;QSqlQuery&#32;query(x_db);
+<anchor xml:id="_task__manager_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;username&#32;=&#32;details[<emphasis role="stringliteral">&quot;username&quot;</emphasis>].toString();
+<anchor xml:id="_task__manager_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;password&#32;=&#32;details[<emphasis role="stringliteral">&quot;password&quot;</emphasis>].toString();
+<anchor xml:id="_task__manager_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;confirmpassword&#32;=&#32;details[<emphasis role="stringliteral">&quot;confirmpassword&quot;</emphasis>].toString();
+<anchor xml:id="_task__manager_8cpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;firstname&#32;=&#32;details[<emphasis role="stringliteral">&quot;firstname&quot;</emphasis>].toString();
+<anchor xml:id="_task__manager_8cpp_source_1l00101"/>00101 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;lastname&#32;=&#32;details[<emphasis role="stringliteral">&quot;lastname&quot;</emphasis>].toString();
+<anchor xml:id="_task__manager_8cpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;contactno&#32;=&#32;details[<emphasis role="stringliteral">&quot;contactno&quot;</emphasis>].toString();
+<anchor xml:id="_task__manager_8cpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(username.length()!=0&#32;&amp;&amp;&#32;firstname.length()!=0&#32;&amp;&amp;&#32;lastname.length()!=0&#32;&amp;&amp;&#32;contactno.length()!=0&#32;&amp;&amp;&#32;password.length()&gt;=6){
+<anchor xml:id="_task__manager_8cpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(password!=confirmpassword){
+<anchor xml:id="_task__manager_8cpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a110999835c9c77eea71a06c701f5038a">STATUS::SIGNUP_FAILED</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setStyleSheet(<emphasis role="stringliteral">&quot;QLabel{color:&#32;red}&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setText(QString::fromStdString(<emphasis role="stringliteral">&quot;confirm&#32;password&#32;and&#32;password&#32;should&#32;be&#32;same.&quot;</emphasis>));
+<anchor xml:id="_task__manager_8cpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(query.exec(<emphasis role="stringliteral">&quot;INSERT&#32;INTO&#32;public.users&#32;(username,password,firstname,lastname,contactno)&#32;VALUES&#32;(&apos;&quot;</emphasis>+username+<emphasis role="stringliteral">&quot;&apos;,&apos;&quot;</emphasis>+password+<emphasis role="stringliteral">&quot;&apos;,&apos;&quot;</emphasis>+&#32;firstname&#32;+&#32;<emphasis role="stringliteral">&quot;&apos;,&#32;&apos;&quot;</emphasis>&#32;+&#32;lastname&#32;+&#32;<emphasis role="stringliteral">&quot;&apos;,&#32;&apos;&quot;</emphasis>&#32;+&#32;contactno&#32;+&#32;<emphasis role="stringliteral">&quot;&apos;);&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a946a9f413ba99ef2cb0a173c76451f2e">STATUS::SIGNUP_SUCCESSFUL</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00113"/>00113 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text().toStdString();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00114"/>00114 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(password.length()&lt;6){
+<anchor xml:id="_task__manager_8cpp_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a110999835c9c77eea71a06c701f5038a">STATUS::SIGNUP_FAILED</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setStyleSheet(<emphasis role="stringliteral">&quot;QLabel{color:&#32;red}&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setText(QString::fromStdString(<emphasis role="stringliteral">&quot;atleast&#32;6&#32;characters&#32;for&#32;password&quot;</emphasis>));
+<anchor xml:id="_task__manager_8cpp_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a110999835c9c77eea71a06c701f5038a">STATUS::SIGNUP_FAILED</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setStyleSheet(<emphasis role="stringliteral">&quot;QLabel{color:&#32;red}&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setText(QString::fromStdString(<emphasis role="stringliteral">&quot;All&#32;fields&#32;are&#32;mandatory.&quot;</emphasis>));
+<anchor xml:id="_task__manager_8cpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00128"/>00128 
+<anchor xml:id="_task__manager_8cpp_source_1l00129"/>00129 }
+<anchor xml:id="_task__manager_8cpp_source_1l00138"/><link linkend="_class_task__manager_1a2bf50ea73b70a5b0945489b3b221e762">00138</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a2bf50ea73b70a5b0945489b3b221e762">Task_manager::ValidateGroupInfo</link>(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&#32;&amp;details,&#32;QLabel&#32;*status,&#32;QListWidget*&#32;members,<emphasis role="keyword">const</emphasis>&#32;std::set&lt;QString&gt;&amp;&#32;set_members)
+<anchor xml:id="_task__manager_8cpp_source_1l00139"/>00139 {
+<anchor xml:id="_task__manager_8cpp_source_1l00140"/>00140 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(details[<emphasis role="stringliteral">&quot;group_name&quot;</emphasis>].toString().length()==0){
+<anchor xml:id="_task__manager_8cpp_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setStyleSheet(<emphasis role="stringliteral">&quot;QLabel{color:&#32;red}&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00142"/>00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setText(QString::fromStdString(<emphasis role="stringliteral">&quot;Please&#32;Provide&#32;Group&#32;Name&quot;</emphasis>));
+<anchor xml:id="_task__manager_8cpp_source_1l00143"/>00143 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00144"/>00144 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(details[<emphasis role="stringliteral">&quot;desc&quot;</emphasis>].toString().length()==0){
+<anchor xml:id="_task__manager_8cpp_source_1l00145"/>00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setStyleSheet(<emphasis role="stringliteral">&quot;QLabel{color:&#32;red}&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00146"/>00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setText(QString::fromStdString(<emphasis role="stringliteral">&quot;Please&#32;Provide&#32;Group&#32;Description&quot;</emphasis>));
+<anchor xml:id="_task__manager_8cpp_source_1l00147"/>00147 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00148"/>00148 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(members-&gt;count()==0){
+<anchor xml:id="_task__manager_8cpp_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setStyleSheet(<emphasis role="stringliteral">&quot;QLabel{color:&#32;red}&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setText(QString::fromStdString(<emphasis role="stringliteral">&quot;atleast&#32;two&#32;members&#32;are&#32;required&#32;to&#32;create&#32;a&#32;group&#32;including&#32;you&quot;</emphasis>));
+<anchor xml:id="_task__manager_8cpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00152"/>00152 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00153"/>00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;x_createGroup(details,status,members,set_members);
+<anchor xml:id="_task__manager_8cpp_source_1l00154"/>00154 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00155"/>00155 
+<anchor xml:id="_task__manager_8cpp_source_1l00156"/>00156 }
+<anchor xml:id="_task__manager_8cpp_source_1l00162"/><link linkend="_class_task__manager_1a6f273c9efef1901fba7c277ac2df9b1d">00162</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a6f273c9efef1901fba7c277ac2df9b1d">Task_manager::SetupMainPage</link>(QStackedWidget&#32;*pager)
+<anchor xml:id="_task__manager_8cpp_source_1l00163"/>00163 {
+<anchor xml:id="_task__manager_8cpp_source_1l00164"/>00164 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(this-&gt;<link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">GetState</link>()==<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a3bef8f7d8b7b3cb58fb951486dc737b3">STATUS::LOGIN_SUCCESSFUL</link>){
+<anchor xml:id="_task__manager_8cpp_source_1l00165"/>00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pager-&gt;setCurrentIndex(2);
+<anchor xml:id="_task__manager_8cpp_source_1l00166"/>00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;emit&#32;<link linkend="_class_task__manager_1a24fb62c89440b033031210e4591f7616">cleanUpLoginPage</link>();
+<anchor xml:id="_task__manager_8cpp_source_1l00167"/>00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;emit&#32;<link linkend="_class_task__manager_1a470715f9c760ee45bbdc7b809e6f3cee">enteredMainWindow</link>();
+<anchor xml:id="_task__manager_8cpp_source_1l00168"/>00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x_SetupMainWindowControls();
+<anchor xml:id="_task__manager_8cpp_source_1l00169"/>00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(this-&gt;x_db.driver()-&gt;hasFeature(QSqlDriver::EventNotifications)){
+<anchor xml:id="_task__manager_8cpp_source_1l00170"/>00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;x_db.driver()-&gt;subscribeToNotification(<emphasis role="stringliteral">&quot;msg&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00171"/>00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;got&#32;the&#32;feature&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;this-&gt;x_db.driver()-&gt;subscribedToNotifications();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00173"/>00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connect(this-&gt;x_db.driver(),&#32;SIGNAL(notification(<emphasis role="keyword">const</emphasis>&#32;QString&amp;,&#32;QSqlDriver::NotificationSource&#32;,&#32;<emphasis role="keyword">const</emphasis>&#32;QVariant&#32;&amp;)),
+<anchor xml:id="_task__manager_8cpp_source_1l00174"/>00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>,&#32;SLOT(<link linkend="_class_task__manager_1a718a1571930c1ef472f921d27906f286">notificationReceived</link>(<emphasis role="keyword">const</emphasis>&#32;QString&amp;,&#32;QSqlDriver::NotificationSource,&#32;<emphasis role="keyword">const</emphasis>&#32;QVariant&#32;&amp;)));
+<anchor xml:id="_task__manager_8cpp_source_1l00175"/>00175 
+<anchor xml:id="_task__manager_8cpp_source_1l00176"/>00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00177"/>00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00178"/>00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;No&#32;Event&#32;feature&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00179"/>00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00180"/>00180 
+<anchor xml:id="_task__manager_8cpp_source_1l00181"/>00181 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00182"/>00182 }
+<anchor xml:id="_task__manager_8cpp_source_1l00188"/><link linkend="_class_task__manager_1ab0a0ee3bbb2640920d1ae4e6b64dcefb">00188</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1ab0a0ee3bbb2640920d1ae4e6b64dcefb">Task_manager::SetupLoginPage</link>(QStackedWidget&#32;*pager)
+<anchor xml:id="_task__manager_8cpp_source_1l00189"/>00189 {
+<anchor xml:id="_task__manager_8cpp_source_1l00190"/>00190 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(this-&gt;<link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">GetState</link>()==<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a946a9f413ba99ef2cb0a173c76451f2e">STATUS::SIGNUP_SUCCESSFUL</link>){
+<anchor xml:id="_task__manager_8cpp_source_1l00191"/>00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pager-&gt;setCurrentIndex(0);
+<anchor xml:id="_task__manager_8cpp_source_1l00192"/>00192 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00193"/>00193 
+<anchor xml:id="_task__manager_8cpp_source_1l00194"/>00194 }
+<anchor xml:id="_task__manager_8cpp_source_1l00200"/><link linkend="_class_task__manager_1aa51984dfdedd6acacfe0ae3033b49baf">00200</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1aa51984dfdedd6acacfe0ae3033b49baf">Task_manager::SetupContacts</link>(QListWidget&#32;*contact_list)
+<anchor xml:id="_task__manager_8cpp_source_1l00201"/>00201 {
+<anchor xml:id="_task__manager_8cpp_source_1l00202"/>00202 &#32;&#32;&#32;&#32;QSqlQuery&#32;query(this-&gt;x_db);
+<anchor xml:id="_task__manager_8cpp_source_1l00203"/>00203 &#32;&#32;&#32;&#32;query.exec(<emphasis role="stringliteral">&quot;SELECT&#32;firstname&#32;FROM&#32;public.users&#32;WHERE&#32;username!=&apos;&quot;</emphasis>+QString::fromStdString(<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a8845e6d4ac278c3be41cf8e5bde753b2">user_name</link>)+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00204"/>00204 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(query.next()){
+<anchor xml:id="_task__manager_8cpp_source_1l00205"/>00205 &#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;qDebug()&lt;&lt;query.value(0);</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00206"/>00206 &#32;&#32;&#32;&#32;&#32;&#32;contact_list-&gt;addItem(query.value(0).toString());
+<anchor xml:id="_task__manager_8cpp_source_1l00207"/>00207 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00208"/>00208 
+<anchor xml:id="_task__manager_8cpp_source_1l00209"/>00209 }
+<anchor xml:id="_task__manager_8cpp_source_1l00215"/><link linkend="_class_task__manager_1a31feeb979c4c678ae6cd27ed3d8e7ae6">00215</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a31feeb979c4c678ae6cd27ed3d8e7ae6">Task_manager::SetupGroups</link>(QListWidget&#32;*groups)
+<anchor xml:id="_task__manager_8cpp_source_1l00216"/>00216 {
+<anchor xml:id="_task__manager_8cpp_source_1l00217"/>00217 
+<anchor xml:id="_task__manager_8cpp_source_1l00218"/>00218 &#32;&#32;&#32;&#32;QSqlQuery&#32;query(this-&gt;x_db);
+<anchor xml:id="_task__manager_8cpp_source_1l00219"/>00219 &#32;&#32;&#32;&#32;query.prepare(<emphasis role="stringliteral">&quot;SELECT&#32;group_name,participants&#32;FROM&#32;public.groups;&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00220"/>00220 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.exec()){
+<anchor xml:id="_task__manager_8cpp_source_1l00221"/>00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(query.next()){
+<anchor xml:id="_task__manager_8cpp_source_1l00222"/>00222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;participants&#32;=&#32;query.value(1).toString().split(<emphasis role="charliteral">&apos;,&apos;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00223"/>00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(participants.contains(QString::number(this-&gt;profile_details.id))){
+<anchor xml:id="_task__manager_8cpp_source_1l00224"/>00224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;query.value(0);</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00225"/>00225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;groups-&gt;addItem(query.value(0).toString());
+<anchor xml:id="_task__manager_8cpp_source_1l00226"/>00226 
+<anchor xml:id="_task__manager_8cpp_source_1l00227"/>00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00228"/>00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00229"/>00229 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00230"/>00230 &#32;&#32;&#32;<emphasis role="comment">/*&#32;else{</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00231"/>00231 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00232"/>00232 <emphasis role="comment">&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00233"/>00233 
+<anchor xml:id="_task__manager_8cpp_source_1l00234"/>00234 }
+<anchor xml:id="_task__manager_8cpp_source_1l00240"/><link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">00240</link> <link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;<link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">Task_manager::GetState</link>()
+<anchor xml:id="_task__manager_8cpp_source_1l00241"/>00241 {
+<anchor xml:id="_task__manager_8cpp_source_1l00242"/>00242 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;x_state;
+<anchor xml:id="_task__manager_8cpp_source_1l00243"/>00243 }
+<anchor xml:id="_task__manager_8cpp_source_1l00249"/><link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">00249</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">Task_manager::SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;status)
+<anchor xml:id="_task__manager_8cpp_source_1l00250"/>00250 {
+<anchor xml:id="_task__manager_8cpp_source_1l00251"/>00251 &#32;&#32;&#32;&#32;this-&gt;x_state&#32;=&#32;status;
+<anchor xml:id="_task__manager_8cpp_source_1l00252"/>00252 }
+<anchor xml:id="_task__manager_8cpp_source_1l00258"/><link linkend="_class_task__manager_1a368c57b2d23290e5a4b2de89ca31e91d">00258</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_task__manager_1a368c57b2d23290e5a4b2de89ca31e91d">Task_manager::IsLoginSuccessful</link>()
+<anchor xml:id="_task__manager_8cpp_source_1l00259"/>00259 {
+<anchor xml:id="_task__manager_8cpp_source_1l00260"/>00260 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(this-&gt;<link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">GetState</link>()==<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a3bef8f7d8b7b3cb58fb951486dc737b3">STATUS::LOGIN_SUCCESSFUL</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00261"/>00261 }
+<anchor xml:id="_task__manager_8cpp_source_1l00262"/>00262 
+<anchor xml:id="_task__manager_8cpp_source_1l00268"/><link linkend="_class_task__manager_1afb07a4947f98a6ab155d2e915116a120">00268</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_task__manager_1afb07a4947f98a6ab155d2e915116a120">Task_manager::IsSignUpSuccessful</link>()
+<anchor xml:id="_task__manager_8cpp_source_1l00269"/>00269 {
+<anchor xml:id="_task__manager_8cpp_source_1l00270"/>00270 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(this-&gt;<link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">GetState</link>()==<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a946a9f413ba99ef2cb0a173c76451f2e">STATUS::SIGNUP_SUCCESSFUL</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00271"/>00271 }
+<anchor xml:id="_task__manager_8cpp_source_1l00277"/><link linkend="_class_task__manager_1ae439c36213f5247fba521f97af6df77c">00277</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1ae439c36213f5247fba521f97af6df77c">Task_manager::setUpEditProfileWindow</link>(QStackedWidget&#32;*pager)
+<anchor xml:id="_task__manager_8cpp_source_1l00278"/>00278 {
+<anchor xml:id="_task__manager_8cpp_source_1l00279"/>00279 &#32;&#32;&#32;&#32;pager-&gt;setCurrentIndex(3);
+<anchor xml:id="_task__manager_8cpp_source_1l00280"/>00280 }
+<anchor xml:id="_task__manager_8cpp_source_1l00281"/>00281 
+<anchor xml:id="_task__manager_8cpp_source_1l00287"/><link linkend="_class_task__manager_1a5d39254a45a6a0bfad8436af2b031460">00287</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a5d39254a45a6a0bfad8436af2b031460">Task_manager::setProfileDetails</link>(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&#32;&amp;details)
+<anchor xml:id="_task__manager_8cpp_source_1l00288"/>00288 {
+<anchor xml:id="_task__manager_8cpp_source_1l00289"/>00289 &#32;&#32;&#32;&#32;QSqlQuery&#32;query(this-&gt;x_db);
+<anchor xml:id="_task__manager_8cpp_source_1l00290"/>00290 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(details.contains(<emphasis role="stringliteral">&quot;username&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00291"/>00291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.exec(<emphasis role="stringliteral">&quot;UPDATE&#32;public.users&#32;SET&#32;username=&apos;&quot;</emphasis>+details[<emphasis role="stringliteral">&quot;username&quot;</emphasis>].toString()+<emphasis role="stringliteral">&quot;&apos;&#32;WHERE&#32;id=&apos;&quot;</emphasis>+QString::number(<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>)+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00292"/>00292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a8845e6d4ac278c3be41cf8e5bde753b2">user_name</link>&#32;=&#32;details[<emphasis role="stringliteral">&quot;username&quot;</emphasis>].toString().toStdString();
+<anchor xml:id="_task__manager_8cpp_source_1l00293"/>00293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;<emphasis role="stringliteral">&quot;updated&#32;username&#32;successfully&quot;</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00294"/>00294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00295"/>00295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00296"/>00296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();
+<anchor xml:id="_task__manager_8cpp_source_1l00297"/>00297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00298"/>00298 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00299"/>00299 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(details.contains(<emphasis role="stringliteral">&quot;firstname&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00300"/>00300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.exec(<emphasis role="stringliteral">&quot;UPDATE&#32;public.users&#32;SET&#32;firstname=&apos;&quot;</emphasis>+details[<emphasis role="stringliteral">&quot;firstname&quot;</emphasis>].toString()+<emphasis role="stringliteral">&quot;&apos;&#32;WHERE&#32;id=&apos;&quot;</emphasis>+QString::number(<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>)+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00301"/>00301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a8ce634fbaa51e8f9d9fefc9b810650d4">first_name</link>=&#32;details[<emphasis role="stringliteral">&quot;firstname&quot;</emphasis>].toString().toStdString();
+<anchor xml:id="_task__manager_8cpp_source_1l00302"/>00302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;<emphasis role="stringliteral">&quot;updated&#32;firstname&#32;successfully&quot;</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00303"/>00303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00304"/>00304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00305"/>00305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();
+<anchor xml:id="_task__manager_8cpp_source_1l00306"/>00306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00307"/>00307 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00308"/>00308 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(details.contains(<emphasis role="stringliteral">&quot;lastname&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00309"/>00309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.exec(<emphasis role="stringliteral">&quot;UPDATE&#32;public.users&#32;SET&#32;lastname=&apos;&quot;</emphasis>+details[<emphasis role="stringliteral">&quot;lastname&quot;</emphasis>].toString()+<emphasis role="stringliteral">&quot;&apos;&#32;WHERE&#32;id=&apos;&quot;</emphasis>+QString::number(<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>)+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00310"/>00310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a968301cdf224f740c2a477a49baa0dca">last_name</link>&#32;=&#32;details[<emphasis role="stringliteral">&quot;lastname&quot;</emphasis>].toString().toStdString();
+<anchor xml:id="_task__manager_8cpp_source_1l00311"/>00311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;<emphasis role="stringliteral">&quot;updated&#32;lastname&#32;successfully&quot;</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00312"/>00312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00313"/>00313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00314"/>00314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();
+<anchor xml:id="_task__manager_8cpp_source_1l00315"/>00315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00316"/>00316 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00317"/>00317 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(details.contains(<emphasis role="stringliteral">&quot;contactno&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00318"/>00318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.exec(<emphasis role="stringliteral">&quot;UPDATE&#32;public.users&#32;SET&#32;contactno=&apos;&quot;</emphasis>+details[<emphasis role="stringliteral">&quot;contactno&quot;</emphasis>].toString()+<emphasis role="stringliteral">&quot;&apos;&#32;WHERE&#32;id=&apos;&quot;</emphasis>+QString::number(<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>)+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00319"/>00319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1ae3bf17315f4d50b6d7a923cbe9e72105">contactno</link>&#32;=&#32;details[<emphasis role="stringliteral">&quot;contactno&quot;</emphasis>].toString().toStdString();
+<anchor xml:id="_task__manager_8cpp_source_1l00320"/>00320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;<emphasis role="stringliteral">&quot;updated&#32;contactno&#32;successfully&quot;</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00321"/>00321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00322"/>00322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00323"/>00323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();
+<anchor xml:id="_task__manager_8cpp_source_1l00324"/>00324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00325"/>00325 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00326"/>00326 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(details.contains(<emphasis role="stringliteral">&quot;password&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00327"/>00327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.exec(<emphasis role="stringliteral">&quot;UPDATE&#32;public.users&#32;SET&#32;password=&apos;&quot;</emphasis>+details[<emphasis role="stringliteral">&quot;password&quot;</emphasis>].toString()+<emphasis role="stringliteral">&quot;&apos;&#32;WHERE&#32;id=&apos;&quot;</emphasis>+QString::number(<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>)+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>)){
+<anchor xml:id="_task__manager_8cpp_source_1l00328"/>00328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;<emphasis role="stringliteral">&quot;updated&#32;contactno&#32;successfully&quot;</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00329"/>00329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00330"/>00330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00331"/>00331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();
+<anchor xml:id="_task__manager_8cpp_source_1l00332"/>00332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00333"/>00333 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00334"/>00334 
+<anchor xml:id="_task__manager_8cpp_source_1l00335"/>00335 
+<anchor xml:id="_task__manager_8cpp_source_1l00336"/>00336 }
+<anchor xml:id="_task__manager_8cpp_source_1l00343"/><link linkend="_class_task__manager_1a3f952dc180c1272323abbf98b802d723">00343</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a3f952dc180c1272323abbf98b802d723">Task_manager::displayDetails</link>(QListWidget&#32;*preview,&#32;QLabel*&#32;profile_pic)
+<anchor xml:id="_task__manager_8cpp_source_1l00344"/>00344 {
+<anchor xml:id="_task__manager_8cpp_source_1l00345"/>00345 &#32;&#32;&#32;&#32;preview-&gt;clear();
+<anchor xml:id="_task__manager_8cpp_source_1l00346"/>00346 &#32;&#32;&#32;&#32;preview-&gt;addItem(QString::fromStdString(<emphasis role="stringliteral">&quot;Username:&#32;&quot;</emphasis>+this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a8845e6d4ac278c3be41cf8e5bde753b2">user_name</link>));
+<anchor xml:id="_task__manager_8cpp_source_1l00347"/>00347 &#32;&#32;&#32;&#32;preview-&gt;addItem(QString::fromStdString(<emphasis role="stringliteral">&quot;Firstname:&#32;&quot;</emphasis>+this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a8ce634fbaa51e8f9d9fefc9b810650d4">first_name</link>));
+<anchor xml:id="_task__manager_8cpp_source_1l00348"/>00348 &#32;&#32;&#32;&#32;preview-&gt;addItem(QString::fromStdString(<emphasis role="stringliteral">&quot;Lastname:&#32;&quot;</emphasis>+this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a968301cdf224f740c2a477a49baa0dca">last_name</link>));
+<anchor xml:id="_task__manager_8cpp_source_1l00349"/>00349 &#32;&#32;&#32;&#32;preview-&gt;addItem(QString::fromStdString(<emphasis role="stringliteral">&quot;Phone&#32;Number:&#32;&quot;</emphasis>+this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1ae3bf17315f4d50b6d7a923cbe9e72105">contactno</link>));
+<anchor xml:id="_task__manager_8cpp_source_1l00350"/>00350 &#32;&#32;&#32;&#32;profile_pic-&gt;setPixmap(this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a0cfcc0dfdd028e6bb76af94cba6d1a62">profile_pic</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00351"/>00351 }
+<anchor xml:id="_task__manager_8cpp_source_1l00357"/><link linkend="_class_task__manager_1ae0e44b163a8c4b41d5c77536ec77cd98">00357</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1ae0e44b163a8c4b41d5c77536ec77cd98">Task_manager::setProfilePic</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;filename)
+<anchor xml:id="_task__manager_8cpp_source_1l00358"/>00358 {
+<anchor xml:id="_task__manager_8cpp_source_1l00359"/>00359 &#32;&#32;&#32;&#32;QSqlQuery&#32;query(this-&gt;x_db);
+<anchor xml:id="_task__manager_8cpp_source_1l00360"/>00360 &#32;&#32;&#32;&#32;query.prepare(<emphasis role="stringliteral">&quot;UPDATE&#32;public.users&#32;SET&#32;profile_pic=&#32;?&#32;WHERE&#32;id&#32;=&#32;?;&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00361"/>00361 
+<anchor xml:id="_task__manager_8cpp_source_1l00362"/>00362 &#32;&#32;&#32;&#32;QImage&#32;image;
+<anchor xml:id="_task__manager_8cpp_source_1l00363"/>00363 &#32;&#32;&#32;&#32;image.load(QString::fromStdString(filename));
+<anchor xml:id="_task__manager_8cpp_source_1l00364"/>00364 &#32;&#32;&#32;&#32;QByteArray&#32;image_bytes;
+<anchor xml:id="_task__manager_8cpp_source_1l00365"/>00365 &#32;&#32;&#32;&#32;QBuffer&#32;buffer(&amp;image_bytes);
+<anchor xml:id="_task__manager_8cpp_source_1l00366"/>00366 &#32;&#32;&#32;&#32;buffer.open(QIODevice::WriteOnly);
+<anchor xml:id="_task__manager_8cpp_source_1l00367"/>00367 &#32;&#32;&#32;&#32;image.save(&amp;buffer,<emphasis role="stringliteral">&quot;PNG&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00368"/>00368 &#32;&#32;&#32;&#32;query.bindValue(0,image_bytes);
+<anchor xml:id="_task__manager_8cpp_source_1l00369"/>00369 &#32;&#32;&#32;&#32;query.bindValue(1,this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00370"/>00370 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.exec()){
+<anchor xml:id="_task__manager_8cpp_source_1l00371"/>00371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;qDebug()&lt;&lt;&quot;insertion&#32;of&#32;image&#32;successful&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00372"/>00372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a0cfcc0dfdd028e6bb76af94cba6d1a62">profile_pic</link>.loadFromData(image_bytes)){
+<anchor xml:id="_task__manager_8cpp_source_1l00373"/>00373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;qDebug()&lt;&lt;&quot;profile&#32;pic&#32;updated&#32;successfully&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00374"/>00374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00375"/>00375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//else{</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00376"/>00376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;qDebug()&lt;&lt;&quot;Failed&#32;to&#32;update&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00377"/>00377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;}</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00378"/>00378 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00379"/>00379 &#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00380"/>00380 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00381"/>00381 <emphasis role="comment">&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00382"/>00382 
+<anchor xml:id="_task__manager_8cpp_source_1l00383"/>00383 }
+<anchor xml:id="_task__manager_8cpp_source_1l00388"/><link linkend="_class_task__manager_1a2d247180caa5d322e1ef2a144006de0b">00388</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a2d247180caa5d322e1ef2a144006de0b">Task_manager::cleanUp</link>()
+<anchor xml:id="_task__manager_8cpp_source_1l00389"/>00389 {
+<anchor xml:id="_task__manager_8cpp_source_1l00390"/>00390 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a0cfcc0dfdd028e6bb76af94cba6d1a62">profile_pic</link>&#32;=&#32;QPixmap(<link linkend="_profile_8h_1aee5f1def2d0fb53bfdb4f30679ca5a02">DEFAULT_PROFILE_PIC</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00391"/>00391 }
+<anchor xml:id="_task__manager_8cpp_source_1l00399"/><link linkend="_class_task__manager_1a94a24ecfee7f884c2d5a88a03185a1d3">00399</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a94a24ecfee7f884c2d5a88a03185a1d3">Task_manager::on_ContactSelected</link>(QListWidgetItem&#32;*contact,&#32;QLabel*&#32;name,<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>&#32;mode)
+<anchor xml:id="_task__manager_8cpp_source_1l00400"/>00400 {
+<anchor xml:id="_task__manager_8cpp_source_1l00401"/>00401 &#32;&#32;&#32;<emphasis role="comment">//&#32;qDebug()&lt;&lt;&quot;Contact&#32;selected&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00402"/>00402 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(mode)
+<anchor xml:id="_task__manager_8cpp_source_1l00403"/>00403 &#32;&#32;&#32;&#32;{
+<anchor xml:id="_task__manager_8cpp_source_1l00404"/>00404 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223">STATUS::REGULAR_CHAT</link>:
+<anchor xml:id="_task__manager_8cpp_source_1l00405"/>00405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;name-&gt;setText(contact-&gt;text());
+<anchor xml:id="_task__manager_8cpp_source_1l00406"/>00406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223">STATUS::REGULAR_CHAT</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00407"/>00407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;emit&#32;<link linkend="_class_task__manager_1a81ae1f648beda795c78acfc0085a7df8">setUpChatConnection</link>(contact-&gt;text(),<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00408"/>00408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00409"/>00409 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb">STATUS::GROUP_CHAT</link>:
+<anchor xml:id="_task__manager_8cpp_source_1l00410"/>00410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;name-&gt;setText(contact-&gt;text());
+<anchor xml:id="_task__manager_8cpp_source_1l00411"/>00411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_task__manager_1a7830416fb2f0666636aa6c755ab78a98">SetState</link>(<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb">STATUS::GROUP_CHAT</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00412"/>00412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;emit&#32;<link linkend="_class_task__manager_1ac071409193a8ea2a08eb1e91e49d11ed">setUpGroupChatConnection</link>(contact-&gt;text(),<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00413"/>00413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00414"/>00414 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+<anchor xml:id="_task__manager_8cpp_source_1l00415"/>00415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00416"/>00416 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00417"/>00417 }
+<anchor xml:id="_task__manager_8cpp_source_1l00425"/><link linkend="_class_task__manager_1a718a1571930c1ef472f921d27906f286">00425</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1a718a1571930c1ef472f921d27906f286">Task_manager::notificationReceived</link>(<emphasis role="keyword">const</emphasis>&#32;QString&#32;&amp;name,&#32;&#32;QSqlDriver::NotificationSource&#32;source,&#32;<emphasis role="keyword">const</emphasis>&#32;QVariant&#32;&amp;payload)
+<anchor xml:id="_task__manager_8cpp_source_1l00426"/>00426 {
+<anchor xml:id="_task__manager_8cpp_source_1l00427"/>00427 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;name&lt;&lt;&quot;&#32;&quot;&lt;&lt;source&lt;&lt;&quot;&#32;&quot;&lt;&lt;payload;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00428"/>00428 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(this-&gt;<link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">GetState</link>())
+<anchor xml:id="_task__manager_8cpp_source_1l00429"/>00429 &#32;&#32;&#32;&#32;{
+<anchor xml:id="_task__manager_8cpp_source_1l00430"/>00430 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223">STATUS::REGULAR_CHAT</link>:
+<anchor xml:id="_task__manager_8cpp_source_1l00431"/>00431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(name==<emphasis role="stringliteral">&quot;msg&quot;</emphasis>){
+<anchor xml:id="_task__manager_8cpp_source_1l00432"/>00432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;qDebug()&lt;&lt;&quot;got&#32;notify&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00433"/>00433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;x_chat_manager-&gt;<link linkend="_class_chat_manager_1ad0d86de90b2f5fcc7ac7449ebf4aa118">DisplayChat</link>();
+<anchor xml:id="_task__manager_8cpp_source_1l00434"/>00434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;qDebug()&lt;&lt;&quot;updated&#32;chat&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00435"/>00435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00436"/>00436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00437"/>00437 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb">STATUS::GROUP_CHAT</link>:
+<anchor xml:id="_task__manager_8cpp_source_1l00438"/>00438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(name==<emphasis role="stringliteral">&quot;msg&quot;</emphasis>){
+<anchor xml:id="_task__manager_8cpp_source_1l00439"/>00439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;x_chat_manager-&gt;<link linkend="_class_chat_manager_1ae7d5f10f9b62470a34be758c8f4020c3">DisplayGroupChat</link>();
+<anchor xml:id="_task__manager_8cpp_source_1l00440"/>00440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00441"/>00441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00442"/>00442 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+<anchor xml:id="_task__manager_8cpp_source_1l00443"/>00443 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00444"/>00444 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00445"/>00445 }
+<anchor xml:id="_task__manager_8cpp_source_1l00451"/><link linkend="_class_task__manager_1aa3f5de314d725cd5df56767df4801169">00451</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_task__manager_1aa3f5de314d725cd5df56767df4801169">Task_manager::SendMessage</link>(QLineEdit&#32;*msg)
+<anchor xml:id="_task__manager_8cpp_source_1l00452"/>00452 {
+<anchor xml:id="_task__manager_8cpp_source_1l00453"/>00453 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(this-&gt;<link linkend="_class_task__manager_1a17f7faa6034ecce8e4276ad38dd1720c">GetState</link>())
+<anchor xml:id="_task__manager_8cpp_source_1l00454"/>00454 &#32;&#32;&#32;&#32;{
+<anchor xml:id="_task__manager_8cpp_source_1l00455"/>00455 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223">STATUS::REGULAR_CHAT</link>:
+<anchor xml:id="_task__manager_8cpp_source_1l00456"/>00456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//QSqlQuery&#32;query(x_db);</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00457"/>00457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;qDebug()&lt;&lt;&quot;Regular&#32;Chat&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00458"/>00458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x_chat_manager-&gt;<link linkend="_class_chat_manager_1a76b6fe934b15f768c3c6f67bb9c05a51">SendChat</link>(msg-&gt;text().toStdString());
+<anchor xml:id="_task__manager_8cpp_source_1l00459"/>00459 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;reached&#32;taskmanager&#32;send&#32;btn&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00460"/>00460 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msg-&gt;clear();
+<anchor xml:id="_task__manager_8cpp_source_1l00461"/>00461 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00462"/>00462 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb">STATUS::GROUP_CHAT</link>:
+<anchor xml:id="_task__manager_8cpp_source_1l00463"/>00463 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;Group&#32;Chat&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00464"/>00464 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x_chat_manager-&gt;<link linkend="_class_chat_manager_1a056db0c78b7a03f59015c1d4ecf1c48f">SendGroupChat</link>(msg-&gt;text().toStdString());
+<anchor xml:id="_task__manager_8cpp_source_1l00465"/>00465 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msg-&gt;clear();
+<anchor xml:id="_task__manager_8cpp_source_1l00466"/>00466 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00467"/>00467 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+<anchor xml:id="_task__manager_8cpp_source_1l00468"/>00468 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_task__manager_8cpp_source_1l00469"/>00469 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00470"/>00470 
+<anchor xml:id="_task__manager_8cpp_source_1l00471"/>00471 }
+<anchor xml:id="_task__manager_8cpp_source_1l00476"/>00476 <emphasis role="keywordtype">void</emphasis>&#32;Task_manager::x_SetupMainWindowControls()
+<anchor xml:id="_task__manager_8cpp_source_1l00477"/>00477 {
+<anchor xml:id="_task__manager_8cpp_source_1l00478"/>00478 
+<anchor xml:id="_task__manager_8cpp_source_1l00479"/>00479 &#32;&#32;&#32;&#32;this-&gt;x_chat_manager&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_chat_manager">ChatManager</link>(<emphasis role="keyword">this</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00480"/>00480 &#32;&#32;&#32;&#32;this-&gt;x_chat_manager-&gt;<link linkend="_class_chat_manager_1ac198a6ebd0d7e6d31a79c3298ee7079f">query</link>&#32;=&#32;QSqlQuery(this-&gt;x_db);
+<anchor xml:id="_task__manager_8cpp_source_1l00481"/>00481 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>{
+<anchor xml:id="_task__manager_8cpp_source_1l00482"/>00482 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;x_chat_manager-&gt;<link linkend="_class_chat_manager_1aa2af7bfdd7c100313ba14731a183931a">chat_pane</link>&#32;=&#32;this-&gt;<link linkend="_class_task__manager_1a783de3d16e7e13349f2648cf3b3f72eb">chat_pane</link>;
+<anchor xml:id="_task__manager_8cpp_source_1l00483"/>00483 &#32;&#32;&#32;&#32;}<emphasis role="keywordflow">catch</emphasis>(<emphasis role="keyword">const</emphasis>&#32;std::exception&amp;&#32;e){
+<anchor xml:id="_task__manager_8cpp_source_1l00484"/>00484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&lt;&lt;e.what();
+<anchor xml:id="_task__manager_8cpp_source_1l00485"/>00485 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00486"/>00486 
+<anchor xml:id="_task__manager_8cpp_source_1l00487"/>00487 &#32;&#32;&#32;&#32;connect(<emphasis role="keyword">this</emphasis>,SIGNAL(<link linkend="_class_task__manager_1a81ae1f648beda795c78acfc0085a7df8">setUpChatConnection</link>(QString,<link linkend="_structprofile">profile</link>)),x_chat_manager,SLOT(on_SetupChatConnection(QString,<link linkend="_structprofile">profile</link>)));
+<anchor xml:id="_task__manager_8cpp_source_1l00488"/>00488 &#32;&#32;&#32;&#32;connect(<emphasis role="keyword">this</emphasis>,SIGNAL(<link linkend="_class_task__manager_1ac071409193a8ea2a08eb1e91e49d11ed">setUpGroupChatConnection</link>(QString,<link linkend="_structprofile">profile</link>)),x_chat_manager,SLOT(on_SetupGroupChatConnection(QString,<link linkend="_structprofile">profile</link>)));
+<anchor xml:id="_task__manager_8cpp_source_1l00489"/>00489 
+<anchor xml:id="_task__manager_8cpp_source_1l00490"/>00490 }
+<anchor xml:id="_task__manager_8cpp_source_1l00499"/>00499 <emphasis role="keywordtype">void</emphasis>&#32;Task_manager::x_createGroup(<emphasis role="keyword">const</emphasis>&#32;QJsonObject&#32;&amp;details,&#32;QLabel&#32;*status,&#32;QListWidget&#32;*members,<emphasis role="keyword">const</emphasis>&#32;std::set&lt;QString&gt;&amp;&#32;set_members)
+<anchor xml:id="_task__manager_8cpp_source_1l00500"/>00500 {
+<anchor xml:id="_task__manager_8cpp_source_1l00501"/>00501 &#32;&#32;&#32;&#32;QSqlQuery&#32;query(this-&gt;x_db);
+<anchor xml:id="_task__manager_8cpp_source_1l00502"/>00502 &#32;&#32;&#32;&#32;QString&#32;ids=QString::number(<link linkend="_class_task__manager_1a93eeefe5c06cfb754ebb4c67b3ca9fba">profile_details</link>.<link linkend="_structprofile_1a495f383adeff6448ebe436557896de6c">id</link>);
+<anchor xml:id="_task__manager_8cpp_source_1l00503"/>00503 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;members-&gt;count();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00504"/>00504 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;members-&gt;takeItem(1)-&gt;text();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00505"/>00505 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;it=set_members.begin();it!=set_members.end();it++){
+<anchor xml:id="_task__manager_8cpp_source_1l00506"/>00506 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;members-&gt;takeItem(i)-&gt;text();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00507"/>00507 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;(*it);</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00508"/>00508 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;query.exec(<emphasis role="stringliteral">&quot;SELECT&#32;id&#32;FROM&#32;public.users&#32;WHERE&#32;username=&apos;&quot;</emphasis>+(*it)+<emphasis role="stringliteral">&quot;&apos;;&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00509"/>00509 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.next()){
+<anchor xml:id="_task__manager_8cpp_source_1l00510"/>00510 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ids+=<emphasis role="charliteral">&apos;,&apos;</emphasis>+query.value(0).toString();
+<anchor xml:id="_task__manager_8cpp_source_1l00511"/>00511 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00512"/>00512 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00513"/>00513 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;&quot;Error&#32;here&quot;;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00514"/>00514 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00515"/>00515 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00516"/>00516 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00517"/>00517 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;ids;</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00518"/>00518 &#32;&#32;&#32;&#32;query.prepare(<emphasis role="stringliteral">&quot;INSERT&#32;INTO&#32;public.groups&#32;(group_name,description,participants)&#32;VALUES&#32;(?,?,?);&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00519"/>00519 &#32;&#32;&#32;&#32;query.bindValue(0,details[<emphasis role="stringliteral">&quot;group_name&quot;</emphasis>].toString());
+<anchor xml:id="_task__manager_8cpp_source_1l00520"/>00520 &#32;&#32;&#32;&#32;query.bindValue(1,details[<emphasis role="stringliteral">&quot;desc&quot;</emphasis>].toString());
+<anchor xml:id="_task__manager_8cpp_source_1l00521"/>00521 &#32;&#32;&#32;&#32;query.bindValue(2,ids);
+<anchor xml:id="_task__manager_8cpp_source_1l00522"/>00522 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(query.exec()){
+<anchor xml:id="_task__manager_8cpp_source_1l00523"/>00523 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setStyleSheet(<emphasis role="stringliteral">&quot;QLabel{color:&#32;green}&quot;</emphasis>);
+<anchor xml:id="_task__manager_8cpp_source_1l00524"/>00524 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;status-&gt;setText(QString::fromStdString(<emphasis role="stringliteral">&quot;successfully&#32;created&quot;</emphasis>));
+<anchor xml:id="_task__manager_8cpp_source_1l00525"/>00525 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;emit&#32;<link linkend="_class_task__manager_1afece35eb1a2e2fe4dfd056bc4fe41c2d">cleanUpGroupsPage</link>();
+<anchor xml:id="_task__manager_8cpp_source_1l00526"/>00526 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_task__manager_8cpp_source_1l00527"/>00527 &#32;&#32;&#32;&#32;<emphasis role="comment">/*else{</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00528"/>00528 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qDebug()&lt;&lt;query.lastError().text();</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00529"/>00529 <emphasis role="comment">&#32;&#32;&#32;&#32;}*/</emphasis>
+<anchor xml:id="_task__manager_8cpp_source_1l00530"/>00530 
+<anchor xml:id="_task__manager_8cpp_source_1l00531"/>00531 }
+<anchor xml:id="_task__manager_8cpp_source_1l00532"/>00532 
+<anchor xml:id="_task__manager_8cpp_source_1l00533"/>00533 
+</programlisting></section>

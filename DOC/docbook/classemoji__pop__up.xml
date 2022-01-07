@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classemoji__pop__up" xml:lang="en-US">
+<title>emoji_pop_up Class Reference</title>
+<indexterm><primary>emoji_pop_up</primary></indexterm>
+<para>
+<computeroutput>#include &lt;emoji_pop_up.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for emoji_pop_up:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classemoji__pop__up.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Signals    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classemoji__pop__up_1a6f75f65d905c756f4869b45c921524a9">emojiSelected</link> (QString emoji)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classemoji__pop__up_1aec3cd2d70a9a679e9395030afe088fc4">emoji_pop_up</link> (QWidget *parent=nullptr)</para>
+
+<para><link linkend="_classemoji__pop__up_1aec3cd2d70a9a679e9395030afe088fc4">emoji_pop_up::emoji_pop_up</link> </para>
+</listitem>
+            <listitem><para><link linkend="_classemoji__pop__up_1a33ef6725dcbf645f2eeef656c9ef8a82">~emoji_pop_up</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_emoji__pop__up_8h_source_1l00012">12</link> of file <link linkend="_emoji__pop__up_8h_source">emoji_pop_up.h</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classemoji__pop__up_1aec3cd2d70a9a679e9395030afe088fc4"/><section>
+    <title>emoji_pop_up()</title>
+<indexterm><primary>emoji_pop_up</primary><secondary>emoji_pop_up</secondary></indexterm>
+<indexterm><primary>emoji_pop_up</primary><secondary>emoji_pop_up</secondary></indexterm>
+<para><computeroutput>emoji_pop_up::emoji_pop_up (QWidget * parent = <computeroutput>nullptr</computeroutput>
+)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_classemoji__pop__up_1aec3cd2d70a9a679e9395030afe088fc4">emoji_pop_up::emoji_pop_up</link> </para>
+</para>
+
+<para>Setup <link linkend="_namespace_ui">Ui</link>,signal and slot connection of emoji selection 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>parent</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_emoji__pop__up_8cpp_source_1l00008">8</link> of file <link linkend="_emoji__pop__up_8cpp_source">emoji_pop_up.cpp</link>.</para>
+</section>
+<anchor xml:id="_classemoji__pop__up_1a33ef6725dcbf645f2eeef656c9ef8a82"/><section>
+    <title>~emoji_pop_up()</title>
+<indexterm><primary>~emoji_pop_up</primary><secondary>emoji_pop_up</secondary></indexterm>
+<indexterm><primary>emoji_pop_up</primary><secondary>~emoji_pop_up</secondary></indexterm>
+<para><computeroutput>emoji_pop_up::~emoji_pop_up ( )</computeroutput></para><para>
+Definition at line <link linkend="_emoji__pop__up_8cpp_source_1l00015">15</link> of file <link linkend="_emoji__pop__up_8cpp_source">emoji_pop_up.cpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classemoji__pop__up_1a6f75f65d905c756f4869b45c921524a9"/><section>
+    <title>emojiSelected</title>
+<indexterm><primary>emojiSelected</primary><secondary>emoji_pop_up</secondary></indexterm>
+<indexterm><primary>emoji_pop_up</primary><secondary>emojiSelected</secondary></indexterm>
+<para><computeroutput>void emoji_pop_up::emojiSelected (QString emoji)<computeroutput>[signal]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_moc__emoji__pop__up_8cpp_source_1l00144">144</link> of file <link linkend="_moc__emoji__pop__up_8cpp_source">moc_emoji_pop_up.cpp</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_emoji__pop__up_8h">emoji_pop_up.h</link>E:/workspace/qt/ClientPulled/SChatDb/BUILD/debug/<link linkend="_moc__emoji__pop__up_8cpp">moc_emoji_pop_up.cpp</link>E:/workspace/qt/ClientPulled/SChatDb/SRC/<link linkend="_emoji__pop__up_8cpp">emoji_pop_up.cpp</link></section>
+</section>

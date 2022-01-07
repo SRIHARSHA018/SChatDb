@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainwindow_8cpp_source" xml:lang="en-US">
+<title>mainwindow.cpp</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/mainwindow.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_mainwindow_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_mainwindow_8h">mainwindow.h</link>&quot;</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_ui__mainwindow_8h">ui_mainwindow.h</link>&quot;</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;QPixmap&gt;</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;QFileDialog&gt;</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;QResource&gt;</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00006"/>00006 
+<anchor xml:id="_mainwindow_8cpp_source_1l00012"/><link linkend="_class_main_window_1a996c5a2b6f77944776856f08ec30858d">00012</link> <link linkend="_class_main_window_1a996c5a2b6f77944776856f08ec30858d">MainWindow::MainWindow</link>(QWidget&#32;*parent)
+<anchor xml:id="_mainwindow_8cpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;:&#32;QMainWindow(parent)
+<anchor xml:id="_mainwindow_8cpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;,&#32;ui(new&#32;<link linkend="_namespace_ui">Ui</link>::<link linkend="_class_main_window">MainWindow</link>)
+<anchor xml:id="_mainwindow_8cpp_source_1l00015"/>00015 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1acf4a0872c4c77d8f43a2ec66ed849b58">setupUi</link>(<emphasis role="keyword">this</emphasis>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>-&gt;setCurrentIndex(0);
+<anchor xml:id="_mainwindow_8cpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;tasker=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_task__manager">Task_manager</link>(<emphasis role="keyword">this</emphasis>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1ae601874b1890f2f035f5311b0ff50f7e">Init</link>();
+<anchor xml:id="_mainwindow_8cpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a356f1cf3ebda15f1fac59467ee081b74">centralwidget</link>=ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>;
+<anchor xml:id="_mainwindow_8cpp_source_1l00021"/>00021 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00022"/>00022 
+<anchor xml:id="_mainwindow_8cpp_source_1l00023"/><link linkend="_class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7">00023</link> <link linkend="_class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</link>()
+<anchor xml:id="_mainwindow_8cpp_source_1l00024"/>00024 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;ui;
+<anchor xml:id="_mainwindow_8cpp_source_1l00026"/>00026 
+<anchor xml:id="_mainwindow_8cpp_source_1l00027"/>00027 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00032"/><link linkend="_class_main_window_1afcb7fbc4f2188ae33fe1daef711fdec0">00032</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1afcb7fbc4f2188ae33fe1daef711fdec0">MainWindow::on_EnterMainWindow</link>()
+<anchor xml:id="_mainwindow_8cpp_source_1l00033"/>00033 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;connect(<emphasis role="keyword">this</emphasis>,SIGNAL(<link linkend="_class_main_window_1a88a355a3de354aa568146e01f7d7548e">contactSelected</link>(QListWidgetItem*,QLabel*,<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>)),tasker,SLOT(on_ContactSelected(QListWidgetItem*,QLabel*,<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4">STATUS</link>)));
+<anchor xml:id="_mainwindow_8cpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="comment">//ui-&gt;username_label_chat-&gt;setText(QString(&quot;&#32;hiiii&#32;\xF0\x9F\x98\x81&quot;));</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a783de3d16e7e13349f2648cf3b3f72eb">chat_pane</link>&#32;=&#32;ui-&gt;<link linkend="_class_ui___main_window_1a9f5f7a5b2208b4aa333c9f5e1ff3d262">chat_pane</link>;
+<anchor xml:id="_mainwindow_8cpp_source_1l00037"/>00037 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00042"/><link linkend="_class_main_window_1aa649a72035add83412df5806b7d1a457">00042</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1aa649a72035add83412df5806b7d1a457">MainWindow::on_cleanUpGroupsPage</link>()
+<anchor xml:id="_mainwindow_8cpp_source_1l00043"/>00043 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a7661b953d283e98635471ba322cffe73">group_name_box</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a096a88f2762910a08e7e29187503a40a">group_desc_box</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a4b944e17598c3d328c4c03cfa19ada12">group_members</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;this-&gt;x_group_members.clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a31feeb979c4c678ae6cd27ed3d8e7ae6">SetupGroups</link>(ui-&gt;<link linkend="_class_ui___main_window_1a7084ad9b33409e639982e3c594355ec9">groups_list</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00049"/>00049 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00054"/><link linkend="_class_main_window_1ad58baa98f19b32c2cc1cfcd9ee9bef85">00054</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1ad58baa98f19b32c2cc1cfcd9ee9bef85">MainWindow::on_cleanUpLoginPage</link>()
+<anchor xml:id="_mainwindow_8cpp_source_1l00055"/>00055 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a391cee276faf867e4531433e6e3e369e">username_box</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1aada55a94d464464f4f9f6a43730cf1d4">password_box</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00058"/>00058 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00064"/><link linkend="_class_main_window_1aa8c176f2ebc486fa184a70c7f4bff187">00064</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_window_1aa8c176f2ebc486fa184a70c7f4bff187">MainWindow::on_emojiSelected</link>(QString&#32;emoji)
+<anchor xml:id="_mainwindow_8cpp_source_1l00065"/>00065 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a655c6f3fcac024488518cc8dda765bb8">message_box_chat</link>-&gt;setText(ui-&gt;<link linkend="_class_ui___main_window_1a655c6f3fcac024488518cc8dda765bb8">message_box_chat</link>-&gt;text()+emoji);
+<anchor xml:id="_mainwindow_8cpp_source_1l00067"/>00067 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00068"/>00068 
+<anchor xml:id="_mainwindow_8cpp_source_1l00074"/>00074 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_login_btn_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00075"/>00075 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00076"/>00076 
+<anchor xml:id="_mainwindow_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;QJsonObject&#32;details;
+<anchor xml:id="_mainwindow_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;username&quot;</emphasis>]=ui-&gt;<link linkend="_class_ui___main_window_1a391cee276faf867e4531433e6e3e369e">username_box</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;password&quot;</emphasis>]=ui-&gt;<link linkend="_class_ui___main_window_1aada55a94d464464f4f9f6a43730cf1d4">password_box</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a68ba4818ada6d2ddf4016cdfd4a6b831">ValidateLoginDetails</link>(details);
+<anchor xml:id="_mainwindow_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(tasker-&gt;<link linkend="_class_task__manager_1a368c57b2d23290e5a4b2de89ca31e91d">IsLoginSuccessful</link>()){
+<anchor xml:id="_mainwindow_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a6f273c9efef1901fba7c277ac2df9b1d">SetupMainPage</link>(ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1aa51984dfdedd6acacfe0ae3033b49baf">SetupContacts</link>(ui-&gt;<link linkend="_class_ui___main_window_1a8459834160a54df3f22b1501d364590c">contacts_list</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a31feeb979c4c678ae6cd27ed3d8e7ae6">SetupGroups</link>(ui-&gt;<link linkend="_class_ui___main_window_1a7084ad9b33409e639982e3c594355ec9">groups_list</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_mainwindow_8cpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1ab9b649689a888678e3fe6a150c7e28be">status_label_login</link>-&gt;setStyleSheet(<emphasis role="stringliteral">&quot;QLabel{color:&#32;red}&quot;</emphasis>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1ab9b649689a888678e3fe6a150c7e28be">status_label_login</link>-&gt;setText(QString::fromStdString(<emphasis role="stringliteral">&quot;login&#32;failed&#32;check&#32;your&#32;username/password&#32;and&#32;try&#32;again&quot;</emphasis>));
+<anchor xml:id="_mainwindow_8cpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00090"/>00090 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00091"/>00091 
+<anchor xml:id="_mainwindow_8cpp_source_1l00096"/>00096 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_signup_btn_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00097"/>00097 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>-&gt;setCurrentIndex(1);
+<anchor xml:id="_mainwindow_8cpp_source_1l00099"/>00099 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00100"/>00100 
+<anchor xml:id="_mainwindow_8cpp_source_1l00105"/>00105 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_submit_btn_signup_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00106"/>00106 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;QJsonObject&#32;details;
+<anchor xml:id="_mainwindow_8cpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;username&quot;</emphasis>]=ui-&gt;<link linkend="_class_ui___main_window_1a87549d416d1cf57c8fc2d7a116268b24">username_box_signup</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;password&quot;</emphasis>]=ui-&gt;<link linkend="_class_ui___main_window_1a98ab927dc2e25a1aae5fa61c350865a2">password_box_signup</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;firstname&quot;</emphasis>]=ui-&gt;<link linkend="_class_ui___main_window_1a0e84afaa8e337c244f59caa662bd378d">firstname_box_signup</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;lastname&quot;</emphasis>]=ui-&gt;<link linkend="_class_ui___main_window_1a0d62f369cbc1877c337c7ad2956a0ef1">lastname_box_signup</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;confirmpassword&quot;</emphasis>]=ui-&gt;<link linkend="_class_ui___main_window_1a87f7926debd857d48ed8f7da34303e7f">confirmpass_box_signup</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;contactno&quot;</emphasis>]&#32;=&#32;ui-&gt;<link linkend="_class_ui___main_window_1aa92f58fa5018c2a0565704858d5435e1">mobileno_box_signup</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00114"/>00114 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a9e1c7df0f397c06b6a0f62eaf96ee830">ValidateSignUpDetails</link>(details,ui-&gt;<link linkend="_class_ui___main_window_1adf7bda03b5a417b2903d0bfe902d36d0">status_label_signup</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(tasker-&gt;<link linkend="_class_task__manager_1afb07a4947f98a6ab155d2e915116a120">IsSignUpSuccessful</link>()){
+<anchor xml:id="_mainwindow_8cpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1ab0a0ee3bbb2640920d1ae4e6b64dcefb">SetupLoginPage</link>(ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00118"/>00118 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00119"/>00119 
+<anchor xml:id="_mainwindow_8cpp_source_1l00124"/>00124 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_send_btn_chat_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00125"/>00125 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;&quot;send&#32;clicked&quot;;</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1aa3f5de314d725cd5df56767df4801169">SendMessage</link>(ui-&gt;<link linkend="_class_ui___main_window_1a655c6f3fcac024488518cc8dda765bb8">message_box_chat</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00128"/>00128 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00129"/>00129 
+<anchor xml:id="_mainwindow_8cpp_source_1l00130"/>00130 
+<anchor xml:id="_mainwindow_8cpp_source_1l00136"/>00136 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_contacts_list_itemClicked(QListWidgetItem&#32;*item)
+<anchor xml:id="_mainwindow_8cpp_source_1l00137"/>00137 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00138"/>00138 
+<anchor xml:id="_mainwindow_8cpp_source_1l00139"/>00139 &#32;&#32;&#32;&#32;emit&#32;<link linkend="_class_main_window_1a88a355a3de354aa568146e01f7d7548e">contactSelected</link>(item,ui-&gt;<link linkend="_class_ui___main_window_1acb1092d67fcb8828e98460cc70cc8886">username_label_chat</link>,<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4acd88c8725da793206f9f226f1b8f6223">STATUS::REGULAR_CHAT</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00140"/>00140 &#32;&#32;&#32;<emphasis role="comment">//&#32;qDebug()&lt;&lt;&quot;Contact&#32;selected&#32;main&#32;window&quot;;</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00141"/>00141 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00142"/>00142 
+<anchor xml:id="_mainwindow_8cpp_source_1l00148"/>00148 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_groups_list_itemClicked(QListWidgetItem&#32;*item)
+<anchor xml:id="_mainwindow_8cpp_source_1l00149"/>00149 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00150"/>00150 &#32;&#32;&#32;&#32;emit&#32;<link linkend="_class_main_window_1a88a355a3de354aa568146e01f7d7548e">contactSelected</link>(item,ui-&gt;<link linkend="_class_ui___main_window_1acb1092d67fcb8828e98460cc70cc8886">username_label_chat</link>,<link linkend="_profile_8h_1a32c27cc471df37f4fc818d65de0a56c4a005ba455f58ee372595f7a29a4b6f2eb">STATUS::GROUP_CHAT</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00151"/>00151 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00152"/>00152 
+<anchor xml:id="_mainwindow_8cpp_source_1l00157"/>00157 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_createGroup_btn_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00158"/>00158 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00159"/>00159 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>-&gt;setCurrentIndex(4);
+<anchor xml:id="_mainwindow_8cpp_source_1l00160"/>00160 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1aa51984dfdedd6acacfe0ae3033b49baf">SetupContacts</link>(ui-&gt;<link linkend="_class_ui___main_window_1a460e93c3c4145026269f10c03f0243c1">contactListtoAddtoGroup</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00161"/>00161 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00166"/>00166 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_editProfile_btn_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00167"/>00167 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00168"/>00168 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1ae439c36213f5247fba521f97af6df77c">setUpEditProfileWindow</link>(ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00169"/>00169 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a3f952dc180c1272323abbf98b802d723">displayDetails</link>(ui-&gt;<link linkend="_class_ui___main_window_1a4e107504ed93688c3d5f098cf8dea25e">PreviewDetails_list</link>,ui-&gt;<link linkend="_class_ui___main_window_1a17dfd1c7e4d326f3522b22af8cb78ead">profile_picture</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00170"/>00170 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00176"/>00176 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_save_details_profile_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00177"/>00177 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00178"/>00178 
+<anchor xml:id="_mainwindow_8cpp_source_1l00179"/>00179 &#32;&#32;&#32;&#32;QJsonObject&#32;changed_profile_details;
+<anchor xml:id="_mainwindow_8cpp_source_1l00180"/>00180 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ui-&gt;<link linkend="_class_ui___main_window_1aec7aca825077bbed19d1dbccf90fd72e">profileEdit_username_box</link>-&gt;text().length()!=0){
+<anchor xml:id="_mainwindow_8cpp_source_1l00181"/>00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;changed_profile_details[<emphasis role="stringliteral">&quot;username&quot;</emphasis>]&#32;=&#32;ui-&gt;<link linkend="_class_ui___main_window_1aec7aca825077bbed19d1dbccf90fd72e">profileEdit_username_box</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00182"/>00182 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00183"/>00183 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ui-&gt;<link linkend="_class_ui___main_window_1ad729dc51abb39d4cb63517f128032402">profileEdit_firstname_box</link>-&gt;text().length()!=0){
+<anchor xml:id="_mainwindow_8cpp_source_1l00184"/>00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;changed_profile_details[<emphasis role="stringliteral">&quot;firstname&quot;</emphasis>]&#32;=&#32;ui-&gt;<link linkend="_class_ui___main_window_1ad729dc51abb39d4cb63517f128032402">profileEdit_firstname_box</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00185"/>00185 
+<anchor xml:id="_mainwindow_8cpp_source_1l00186"/>00186 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00187"/>00187 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ui-&gt;<link linkend="_class_ui___main_window_1a11a4e333ceefcd5f27551ebf1e9cbc96">profileEdit_lastname_box</link>-&gt;text().length()!=0){
+<anchor xml:id="_mainwindow_8cpp_source_1l00188"/>00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;changed_profile_details[<emphasis role="stringliteral">&quot;lastname&quot;</emphasis>]&#32;=&#32;ui-&gt;<link linkend="_class_ui___main_window_1a11a4e333ceefcd5f27551ebf1e9cbc96">profileEdit_lastname_box</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00189"/>00189 
+<anchor xml:id="_mainwindow_8cpp_source_1l00190"/>00190 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00191"/>00191 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ui-&gt;<link linkend="_class_ui___main_window_1a36a9302f8787a21e2fc8b0a452bfcc4d">profileEdit_contactno_box</link>-&gt;text().length()!=0){
+<anchor xml:id="_mainwindow_8cpp_source_1l00192"/>00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;changed_profile_details[<emphasis role="stringliteral">&quot;contactno&quot;</emphasis>]&#32;=&#32;ui-&gt;<link linkend="_class_ui___main_window_1a36a9302f8787a21e2fc8b0a452bfcc4d">profileEdit_contactno_box</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00193"/>00193 
+<anchor xml:id="_mainwindow_8cpp_source_1l00194"/>00194 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00195"/>00195 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ui-&gt;<link linkend="_class_ui___main_window_1a288fb2684b36337ab9532132190ccb1a">profileEdit_password_box</link>-&gt;text().length()!=0&#32;&amp;&amp;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a8d008bb2fa1dcd53ba7e843aa0ff32c0">profileEdit_confirmpass_box</link>-&gt;text().length()!=0){
+<anchor xml:id="_mainwindow_8cpp_source_1l00196"/>00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ui-&gt;<link linkend="_class_ui___main_window_1a8d008bb2fa1dcd53ba7e843aa0ff32c0">profileEdit_confirmpass_box</link>-&gt;text()==ui-&gt;<link linkend="_class_ui___main_window_1a288fb2684b36337ab9532132190ccb1a">profileEdit_password_box</link>-&gt;text()){
+<anchor xml:id="_mainwindow_8cpp_source_1l00197"/>00197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;changed_profile_details[<emphasis role="stringliteral">&quot;password&quot;</emphasis>]&#32;=&#32;ui-&gt;<link linkend="_class_ui___main_window_1a288fb2684b36337ab9532132190ccb1a">profileEdit_password_box</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00198"/>00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00199"/>00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_mainwindow_8cpp_source_1l00200"/>00200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1ab3c4e608f0f40514b0707f12675d92de">status_profileEdit</link>-&gt;setStyleSheet(<emphasis role="stringliteral">&quot;QLabel{color:&#32;red}&quot;</emphasis>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00201"/>00201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1ab3c4e608f0f40514b0707f12675d92de">status_profileEdit</link>-&gt;setText(QString::fromStdString(<emphasis role="stringliteral">&quot;confirm&#32;password&#32;and&#32;password&#32;should&#32;be&#32;same.&quot;</emphasis>));
+<anchor xml:id="_mainwindow_8cpp_source_1l00202"/>00202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00203"/>00203 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00204"/>00204 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a5d39254a45a6a0bfad8436af2b031460">setProfileDetails</link>(changed_profile_details);
+<anchor xml:id="_mainwindow_8cpp_source_1l00205"/>00205 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a3f952dc180c1272323abbf98b802d723">displayDetails</link>(ui-&gt;<link linkend="_class_ui___main_window_1a4e107504ed93688c3d5f098cf8dea25e">PreviewDetails_list</link>,ui-&gt;<link linkend="_class_ui___main_window_1a17dfd1c7e4d326f3522b22af8cb78ead">profile_picture</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00206"/>00206 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00207"/>00207 
+<anchor xml:id="_mainwindow_8cpp_source_1l00212"/>00212 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_Home_btn_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00213"/>00213 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00214"/>00214 &#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>-&gt;setCurrentIndex(2);
+<anchor xml:id="_mainwindow_8cpp_source_1l00215"/>00215 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00216"/>00216 
+<anchor xml:id="_mainwindow_8cpp_source_1l00221"/>00221 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_Home_btn_2_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00222"/>00222 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00223"/>00223 &#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>-&gt;setCurrentIndex(2);
+<anchor xml:id="_mainwindow_8cpp_source_1l00224"/>00224 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00225"/>00225 
+<anchor xml:id="_mainwindow_8cpp_source_1l00231"/>00231 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_contactListtoAddtoGroup_itemClicked(QListWidgetItem&#32;*item)
+<anchor xml:id="_mainwindow_8cpp_source_1l00232"/>00232 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00233"/>00233 <emphasis role="comment">//&#32;&#32;&#32;&#32;qDebug()&lt;&lt;&quot;contact&#32;clicked&quot;&lt;&lt;item-&gt;text();</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00234"/>00234 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ui-&gt;<link linkend="_class_ui___main_window_1a4b944e17598c3d328c4c03cfa19ada12">group_members</link>-&gt;findItems(item-&gt;text(),Qt::MatchExactly).length()==0){
+<anchor xml:id="_mainwindow_8cpp_source_1l00235"/>00235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a4b944e17598c3d328c4c03cfa19ada12">group_members</link>-&gt;addItem(item-&gt;text());
+<anchor xml:id="_mainwindow_8cpp_source_1l00236"/>00236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;x_group_members.insert(item-&gt;text());
+<anchor xml:id="_mainwindow_8cpp_source_1l00237"/>00237 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00238"/>00238 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00239"/>00239 
+<anchor xml:id="_mainwindow_8cpp_source_1l00244"/>00244 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_removeGroupMember_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00245"/>00245 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00246"/>00246 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ui-&gt;<link linkend="_class_ui___main_window_1a4b944e17598c3d328c4c03cfa19ada12">group_members</link>-&gt;selectedItems().length()&gt;0){
+<anchor xml:id="_mainwindow_8cpp_source_1l00247"/>00247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//qDebug()&lt;&lt;ui-&gt;group_members-&gt;selectedItems()[0]-&gt;text();</emphasis>
+<anchor xml:id="_mainwindow_8cpp_source_1l00248"/>00248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a4b944e17598c3d328c4c03cfa19ada12">group_members</link>-&gt;removeItemWidget(ui-&gt;<link linkend="_class_ui___main_window_1a4b944e17598c3d328c4c03cfa19ada12">group_members</link>-&gt;selectedItems()[0]);
+<anchor xml:id="_mainwindow_8cpp_source_1l00249"/>00249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;x_group_members.erase(this-&gt;x_group_members.find(ui-&gt;<link linkend="_class_ui___main_window_1a4b944e17598c3d328c4c03cfa19ada12">group_members</link>-&gt;selectedItems()[0]-&gt;text()));
+<anchor xml:id="_mainwindow_8cpp_source_1l00250"/>00250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;ui-&gt;<link linkend="_class_ui___main_window_1a4b944e17598c3d328c4c03cfa19ada12">group_members</link>-&gt;selectedItems()[0];
+<anchor xml:id="_mainwindow_8cpp_source_1l00251"/>00251 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mainwindow_8cpp_source_1l00252"/>00252 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00253"/>00253 
+<anchor xml:id="_mainwindow_8cpp_source_1l00254"/>00254 
+<anchor xml:id="_mainwindow_8cpp_source_1l00259"/>00259 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_create_group_btn_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00260"/>00260 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00261"/>00261 &#32;&#32;&#32;&#32;QJsonObject&#32;details;
+<anchor xml:id="_mainwindow_8cpp_source_1l00262"/>00262 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;group_name&quot;</emphasis>]=ui-&gt;<link linkend="_class_ui___main_window_1a7661b953d283e98635471ba322cffe73">group_name_box</link>-&gt;text();
+<anchor xml:id="_mainwindow_8cpp_source_1l00263"/>00263 &#32;&#32;&#32;&#32;details[<emphasis role="stringliteral">&quot;desc&quot;</emphasis>]&#32;=&#32;ui-&gt;<link linkend="_class_ui___main_window_1a096a88f2762910a08e7e29187503a40a">group_desc_box</link>-&gt;toPlainText();
+<anchor xml:id="_mainwindow_8cpp_source_1l00264"/>00264 &#32;&#32;&#32;&#32;connect(tasker,SIGNAL(cleanUpGroupsPage()),<emphasis role="keyword">this</emphasis>,SLOT(<link linkend="_class_main_window_1aa649a72035add83412df5806b7d1a457">on_cleanUpGroupsPage</link>()));
+<anchor xml:id="_mainwindow_8cpp_source_1l00265"/>00265 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a2bf50ea73b70a5b0945489b3b221e762">ValidateGroupInfo</link>(details,ui-&gt;<link linkend="_class_ui___main_window_1a03d36d07f851992a5a58b36f7cb60b32">status_group_create</link>,ui-&gt;<link linkend="_class_ui___main_window_1a4b944e17598c3d328c4c03cfa19ada12">group_members</link>,this-&gt;x_group_members);
+<anchor xml:id="_mainwindow_8cpp_source_1l00266"/>00266 
+<anchor xml:id="_mainwindow_8cpp_source_1l00267"/>00267 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00268"/>00268 
+<anchor xml:id="_mainwindow_8cpp_source_1l00273"/>00273 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_signout_btn_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00274"/>00274 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00275"/>00275 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>-&gt;setCurrentIndex(0);
+<anchor xml:id="_mainwindow_8cpp_source_1l00276"/>00276 &#32;&#32;&#32;&#32;this-&gt;x_cleanUpEverything();
+<anchor xml:id="_mainwindow_8cpp_source_1l00277"/>00277 &#32;&#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a2d247180caa5d322e1ef2a144006de0b">cleanUp</link>();
+<anchor xml:id="_mainwindow_8cpp_source_1l00278"/>00278 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00279"/>00279 
+<anchor xml:id="_mainwindow_8cpp_source_1l00284"/>00284 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_submit_btn_signup_2_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00285"/>00285 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00286"/>00286 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a8d440a6df1de0bc57afcdda7476d8f19">stackedWidget</link>-&gt;setCurrentIndex(0);
+<anchor xml:id="_mainwindow_8cpp_source_1l00287"/>00287 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00292"/>00292 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::x_cleanUpEverything()
+<anchor xml:id="_mainwindow_8cpp_source_1l00293"/>00293 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00294"/>00294 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a8459834160a54df3f22b1501d364590c">contacts_list</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00295"/>00295 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a7084ad9b33409e639982e3c594355ec9">groups_list</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00296"/>00296 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1a9f5f7a5b2208b4aa333c9f5e1ff3d262">chat_pane</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00297"/>00297 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1ab9b649689a888678e3fe6a150c7e28be">status_label_login</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00298"/>00298 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui___main_window_1adf7bda03b5a417b2903d0bfe902d36d0">status_label_signup</link>-&gt;clear();
+<anchor xml:id="_mainwindow_8cpp_source_1l00299"/>00299 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00300"/>00300 
+<anchor xml:id="_mainwindow_8cpp_source_1l00305"/>00305 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_emoji_btn_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00306"/>00306 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00307"/>00307 &#32;&#32;&#32;&#32;this-&gt;emojisWin&#32;=<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classemoji__pop__up">emoji_pop_up</link>(<emphasis role="keyword">this</emphasis>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00308"/>00308 &#32;&#32;&#32;&#32;emojisWin-&gt;show();
+<anchor xml:id="_mainwindow_8cpp_source_1l00309"/>00309 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00310"/>00310 
+<anchor xml:id="_mainwindow_8cpp_source_1l00315"/>00315 <emphasis role="keywordtype">void</emphasis>&#32;MainWindow::on_profile_pic_btn_edit_clicked()
+<anchor xml:id="_mainwindow_8cpp_source_1l00316"/>00316 {
+<anchor xml:id="_mainwindow_8cpp_source_1l00317"/>00317 &#32;&#32;&#32;QFileDialog&#32;dialog(<emphasis role="keyword">this</emphasis>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00318"/>00318 &#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;filename&#32;=&#32;QFileDialog::getOpenFileName(<emphasis role="keyword">this</emphasis>,tr(<emphasis role="stringliteral">&quot;Profile&#32;pic&quot;</emphasis>));
+<anchor xml:id="_mainwindow_8cpp_source_1l00319"/>00319 &#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1ae0e44b163a8c4b41d5c77536ec77cd98">setProfilePic</link>(filename.toStdString());
+<anchor xml:id="_mainwindow_8cpp_source_1l00320"/>00320 &#32;&#32;&#32;tasker-&gt;<link linkend="_class_task__manager_1a3f952dc180c1272323abbf98b802d723">displayDetails</link>(ui-&gt;<link linkend="_class_ui___main_window_1a4e107504ed93688c3d5f098cf8dea25e">PreviewDetails_list</link>,ui-&gt;<link linkend="_class_ui___main_window_1a17dfd1c7e4d326f3522b22af8cb78ead">profile_picture</link>);
+<anchor xml:id="_mainwindow_8cpp_source_1l00321"/>00321 }
+<anchor xml:id="_mainwindow_8cpp_source_1l00322"/>00322 
+</programlisting></section>

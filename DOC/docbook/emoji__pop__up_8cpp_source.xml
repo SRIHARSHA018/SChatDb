@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_emoji__pop__up_8cpp_source" xml:lang="en-US">
+<title>emoji_pop_up.cpp</title>
+<indexterm><primary>E:/workspace/qt/ClientPulled/SChatDb/SRC/emoji_pop_up.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_emoji__pop__up_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_emoji__pop__up_8h">emoji_pop_up.h</link>&quot;</emphasis>
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_ui__emoji__pop__up_8h">ui_emoji_pop_up.h</link>&quot;</emphasis>
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00008"/><link linkend="_classemoji__pop__up_1aec3cd2d70a9a679e9395030afe088fc4">00008</link> <link linkend="_classemoji__pop__up_1aec3cd2d70a9a679e9395030afe088fc4">emoji_pop_up::emoji_pop_up</link>(QWidget&#32;*parent)&#32;:
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;QDialog(parent),
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;ui(new&#32;<link linkend="_namespace_ui">Ui</link>::<link linkend="_classemoji__pop__up">emoji_pop_up</link>)
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00011"/>00011 {
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;ui-&gt;<link linkend="_class_ui__emoji__pop__up_1a92e45254cd870b2dac343201082d77cf">setupUi</link>(<emphasis role="keyword">this</emphasis>);
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;connect(<emphasis role="keyword">this</emphasis>,SIGNAL(<link linkend="_classemoji__pop__up_1a6f75f65d905c756f4869b45c921524a9">emojiSelected</link>(QString)),parent,SLOT(on_emojiSelected(QString)));
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00014"/>00014 }
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00015"/><link linkend="_classemoji__pop__up_1a33ef6725dcbf645f2eeef656c9ef8a82">00015</link> <link linkend="_classemoji__pop__up_1a33ef6725dcbf645f2eeef656c9ef8a82">emoji_pop_up::~emoji_pop_up</link>()
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00016"/>00016 {
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;ui;
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00018"/>00018 }
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00024"/>00024 <emphasis role="keywordtype">void</emphasis>&#32;emoji_pop_up::on_tableWidget_itemClicked(QTableWidgetItem&#32;*item)
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00025"/>00025 {
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;emit&#32;<link linkend="_classemoji__pop__up_1a6f75f65d905c756f4869b45c921524a9">emojiSelected</link>(item-&gt;text());
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00027"/>00027 }
+<anchor xml:id="_emoji__pop__up_8cpp_source_1l00028"/>00028 
+</programlisting></section>
