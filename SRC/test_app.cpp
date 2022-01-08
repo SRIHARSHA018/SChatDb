@@ -18,7 +18,7 @@ test_app::test_app(QObject *parent)
 void test_app::initTestCase()
 {
     t_db = QSqlDatabase::addDatabase("QPSQL");
-    t_db.setHostName("localhost");
+    t_db.setHostName("192.168.0.151");
     t_db.setUserName("postgres");
     t_db.setPassword("Sj@&15634");
     t_db.setDatabaseName("Schat");
