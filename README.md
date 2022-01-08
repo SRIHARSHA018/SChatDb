@@ -41,6 +41,11 @@ $ make
 $ ./ClientWithDb
 ```
 
+- Sometimes some errors regarding shared libraries will pop up. So, most of the time it is easy to use Qt6 application to open the project file and Build from there. This project file is SRC/ClientWithDb.pro. Make sure to open with Qt application.
+- And make sure to replace Hostname from Init function in TaskManager.cpp and test_app.cpp to the Server ip address. Which means the ip address of Postgresql Running.
+- Before Building the app make sure of host address. Then make sure Server is running.
+- If the build errors are continue to pop up. Use the already build files from BUILD folder. Select Configuration based on needs and proceed Running the app.
+
 ## Notes:
 
 - Testcases will run before the app run. This may not affect from running app (Please make sure why testcases are failed).
