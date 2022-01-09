@@ -26,7 +26,7 @@ void Task_manager::Init()
 {
     x_db = QSqlDatabase::addDatabase("QPSQL");
     ///setup deatails for database.
-    x_db.setHostName("192.168.0.151");
+    x_db.setHostName("localhost");
     x_db.setUserName("postgres");
     x_db.setPassword("Sj@&15634");
     x_db.setDatabaseName("Schat");
