@@ -28,7 +28,7 @@ void Task_manager::Init()
     ///setup deatails for database.
     x_db.setHostName("localhost");
     x_db.setUserName("postgres");
-    x_db.setPassword("Sj@&15634");
+    x_db.setPassword("root");
     x_db.setDatabaseName("Schat");
     x_db.setPort(5432);
     try{
