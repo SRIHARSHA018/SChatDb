@@ -80,7 +80,9 @@ void MainWindow::on_login_btn_clicked()
     tasker->ValidateLoginDetails(details);
     if(tasker->IsLoginSuccessful()){
        tasker->SetupMainPage(ui->stackedWidget);
+       tasker->contacts=ui->contacts_list;
        tasker->SetupContacts(ui->contacts_list);
+       tasker->groups = ui->groups_list;
        tasker->SetupGroups(ui->groups_list);
     }
     else{
