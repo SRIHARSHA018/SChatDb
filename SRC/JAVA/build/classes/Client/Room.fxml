@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane prefHeight="562.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Room">
+   <children>
+      <StackPane layoutY="67.0" prefHeight="562.0" prefWidth="680.0">
+         <children>
+            <Pane fx:id="profile" prefHeight="562.0" prefWidth="444.0">
+               <children>
+                  <Label fx:id="regFullName" layoutX="9.0" layoutY="93.0" text="Full Name: " textFill="#090909">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="regLastName" layoutX="9.0" layoutY="133.0" text="Lastname:" textFill="#170c0c">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="8.0" layoutY="173.0" text="Phone No:" textFill="#2c0e0e">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="regStatus" layoutX="7.0" layoutY="205.0" prefHeight="34.0" prefWidth="74.0" text="status" textFill="#250a0a">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="FullName" layoutX="129.0" layoutY="93.0" opacity="0.0" style="-fx-background-color: white;" textFill="#2f1111" wrapText="true">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Lastname" layoutX="129.0" layoutY="133.0" opacity="0.0" textFill="#140606">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="phoneNo" layoutX="129.0" layoutY="174.0" textFill="#170808">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="status" layoutX="129.0" layoutY="212.0" textFill="#250b0b">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="proImage" fitHeight="84.0" fitWidth="83.0" layoutX="227.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/user.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="7.0" layoutY="250.0" text="Change Profile Picture:" textFill="#1e0808">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fileChoosePath" editable="false" layoutX="9.0" layoutY="285.0" prefHeight="27.0" prefWidth="210.0" promptText="Choose Image..." stylesheets="@../Css/style.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="232.0" layoutY="285.0" mnemonicParsing="false" onAction="#chooseImageButton" prefHeight="26.0" prefWidth="77.0" stylesheets="@../Css/style.css" text="Choose" textFill="#9a9595">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="118.0" layoutY="397.0" mnemonicParsing="false" onAction="#saveImage" prefHeight="38.0" prefWidth="107.0" stylesheets="@../Css/style.css" text="Save" textFill="#16b9dd">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="chat" prefHeight="547.0" prefWidth="437.0">
+               <children>
+                  <Pane layoutX="437.0" layoutY="11.0">
+                     <children>
+                        <Label layoutX="13.0" layoutY="3.0" prefHeight="28.0" prefWidth="107.0" text="Contacts">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="groupBtn" layoutX="127.0" mnemonicParsing="false" onAction="#handleGroupsButton" prefHeight="34.0" prefWidth="93.0" stylesheets="@../Css/style.css" text=" Groups">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                        </Button>
+                        <StackPane layoutY="37.0" prefHeight="408.0" prefWidth="220.0">
+                           <children>
+                              <Pane fx:id="GroupsPane">
+                                 <children>
+                                    <VBox prefHeight="408.0" prefWidth="220.0" style="-fx-background-color: white;">
+                                       <children>
+                                          <ListView fx:id="GroupsListView" prefHeight="412.0" prefWidth="220.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="ContactsPane">
+                                 <children>
+                                    <VBox prefHeight="415.0" prefWidth="220.0" style="-fx-background-color: white;">
+                                       <children>
+                                          <ListView fx:id="ListView" prefHeight="447.0" prefWidth="220.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+                  <Pane>
+                     <children>
+                        <TextArea fx:id="msgRoom" layoutY="2.0" prefHeight="443.0" prefWidth="431.0" />
+                        <TextFlow fx:id="emojiList" layoutX="157.0" layoutY="345.0" prefHeight="91.0" prefWidth="260.0" style="-fx-background-color: White;" visible="false">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: yellow;" text="😀" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: yellow;" text="😁" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😂" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😃" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😄" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😅" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😆" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😇" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😈" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😉" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😊" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😋" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😌" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😍" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😎" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😏" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😐" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😑" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😒" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😓" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😔" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😕" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😖" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😗" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😘" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😙" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😚" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😛" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😜" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😝" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😞" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😟" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😠" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😡" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😢" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😣" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😤" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😥" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😦" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😧" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😨" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😩" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😪" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😫" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😬" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😭" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😮" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😯" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😰" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😱" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😲" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😳" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😴" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😵" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😶" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😷" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😸" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😹" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😺" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😻" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😼" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😽" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😾" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="😿" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙀" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙁" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙂" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙃" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙄" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙅" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙆" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙇" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙈" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙉" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙊" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙋" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙌" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙍" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙎" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🙏" />
+                           </children>
+                        </TextFlow>
+                        <ScrollPane fx:id="scrollPane" accessibleRole="PARENT" hbarPolicy="NEVER" layoutY="2.0" prefHeight="443.0" prefWidth="431.0" vvalue="1.0">
+                           <content>
+                              <VBox fx:id="chatBox" alignment="TOP_RIGHT" prefHeight="451.0" prefWidth="398.0">
+                                 <children>
+                                    <ListView fx:id="ChatPane" prefHeight="443.0" prefWidth="398.0" />
+                                 </children></VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </Pane>
+                  <TextField fx:id="msgField" layoutX="7.0" layoutY="449.0" onKeyPressed="#sendMessageByKey" prefHeight="38.0" prefWidth="360.0" promptText="Write messages here...." stylesheets="@../Css/style.css">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="42.0" fitWidth="73.0" layoutX="376.0" layoutY="447.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8-sent.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnEmoji" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" layoutX="318.0" layoutY="453.0" maxWidth="-Infinity" minHeight="19.0" minWidth="39.0" mnemonicParsing="false" onAction="#emojiAction" style="-fx-background-color: transparent;" styleClass="btnEmoji" text="😊" />
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <AnchorPane prefHeight="56.0" prefWidth="655.0">
+         <children>
+            <Label fx:id="clientName" layoutX="82.0" layoutY="22.0" prefHeight="24.0" prefWidth="93.0" text="Username" textFill="#1a2519" wrapText="true">
+               <font>
+                  <Font name="Arial" size="19.0" />
+               </font>
+            </Label>
+            <Button fx:id="profileBtn" layoutX="555.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleProfileBtn" prefHeight="34.0" prefWidth="83.0" stylesheets="@../Css/style.css" text="Profile">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Circle fx:id="showProPic" fill="DODGERBLUE" layoutX="35.0" layoutY="34.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+            <Button fx:id="AddGroup" layoutX="438.0" layoutY="17.0" mnemonicParsing="false" onAction="#AddGroups" prefHeight="34.0" prefWidth="97.0" stylesheets="@../Css/style.css" text="Add Group">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
