@@ -63,6 +63,9 @@ $ ./ClientWithDb
 
 ## Software Architecture:
 
-It's a simple server and client model architecture. The server mainly concerntrates on processing the queries from clients and maintain the information of the user. Postgresql maintains the database and grant access to the client app. Mainly the queries send by the client are taken into account and server do its job of giving the response. There are layers of communication. The first layer is authentication. It is like a gate to every other layer. Then the remaining layers comes into play. This makes the server and client having a secure connection from other layers. The client applications make queries to do some stuff like fetch contact details, edit ones own profile like changing password, user to user as well as group chat e.t.c. This Database can be hosted by any of the hosting services like Google firebase. As long as the ip address of the database is known to the client application, communication will be carried out between these applications.
+It's a simple server and client model architecture. The server mainly concerntrates on processing the queries from clients and maintain the information of the user. Postgresql maintains the database and grant access to the client app. Mainly the queries send by the client are taken into account and server do its job of giving the response. There are layers of communication.
+![client-server-architecture](DOC/docImages/Arcitecture.jpeg)
+
+The first layer is authentication. It is like a gate to every other layer. Then the remaining layers comes into play. This makes the server and client having a secure connection from other layers. The client applications make queries to do some stuff like fetch contact details, edit ones own profile like changing password, user to user as well as group chat e.t.c. This Database can be hosted by any of the hosting services like Google firebase. As long as the ip address of the database is known to the client application, communication will be carried out between these applications.
 
 ## Implementation:
