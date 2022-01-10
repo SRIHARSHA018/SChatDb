@@ -87,7 +87,7 @@ Now, after entering the app the main page of the application will appear. Below 
 
 ### Main Window:
 
-![client-main-page](<RESULTS/software Images/MAinWindow.png>)
+![client-main-page](<RESULTS/software Images/MainWindow.png>)
 The list of contacts and Groups are on the left. The chat pane is extended from middle to right with send button.
 The chat display should look like the below image.
 
