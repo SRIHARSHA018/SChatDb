@@ -168,6 +168,8 @@ void Task_manager::SetupMainPage(QStackedWidget *pager)
         x_SetupMainWindowControls();
         if(this->x_db.driver()->hasFeature(QSqlDriver::EventNotifications)){
             this->x_db.driver()->subscribeToNotification("msg");
+            this->x_db.driver()->subscribeToNotification("group_added");
+            this->x_db.driver()->subscribeToNotification("user_added");
             //qDebug()<<"got the feature";
             //qDebug()<<this->x_db.driver()->subscribedToNotifications();
             connect(this->x_db.driver(), SIGNAL(notification(const QString&, QSqlDriver::NotificationSource , const QVariant &)),
@@ -199,6 +201,7 @@ void Task_manager::SetupLoginPage(QStackedWidget *pager)
  */
 void Task_manager::SetupContacts(QListWidget *contact_list)
 {
+    contact_list->clear();
     QSqlQuery query(this->x_db);
     query.exec("SELECT firstname FROM public.users WHERE username!='"+QString::fromStdString(profile_details.user_name)+"';");
     while(query.next()){
@@ -215,6 +218,7 @@ void Task_manager::SetupContacts(QListWidget *contact_list)
 void Task_manager::SetupGroups(QListWidget *groups)
 {
 
+    groups->clear();
     QSqlQuery query(this->x_db);
     query.prepare("SELECT group_name,participants FROM public.groups;");
     if(query.exec()){
@@ -441,6 +445,12 @@ void Task_manager::notificationReceived(const QString &name,  QSqlDriver::Notifi
         break;
     default:
         break;
+    }
+    if(name=="group_added"){
+        this->SetupGroups(this->groups);
+    }
+    if(name=="user_added"){
+        this->SetupContacts(this->contacts);
     }
 }
 /**

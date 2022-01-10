@@ -67,6 +67,10 @@ public:
     profile profile_details;
     ///Chat pane to display chat history and all.
     QListWidget* chat_pane;
+    ///Groups pane display
+    QListWidget *groups;
+    ///Contacts List pane display
+    QListWidget *contacts;
 
 signals:
     ///Make MainWindow class to setup essentials.
@@ -99,6 +103,7 @@ private:
     ChatManager* x_chat_manager;
     ///State Varible to track state of Task Manager.
     STATUS x_state;
+
 
 };
 
